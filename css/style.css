@@ -1,0 +1,106 @@
+body {
+    background: #EEEEEE;
+    margin: 0;
+    padding: 0;
+}
+
+.list-container {
+    float: left;
+    width: 40%;
+    margin-left: 20px;
+}
+
+.list-controls {
+    width: 40%;
+    margin-left: 10px;
+    border: 1px solid #4D4E53;
+    float: left;
+    padding: 10px;
+    background: white;
+}
+
+.code {
+    border-left: 6px solid #558ABB;
+    background: url("https://developer.cdn.mozilla.net/media/redesign/img/blueprint-dark.png");
+    padding: 12px;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu, Arial, Tahoma, 'Sans Serif';
+}
+
+.header {
+    background: #27547E;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    color: white;
+}
+
+.links-section {
+    float: left;
+    margin: 10px;
+    color: #4D4E53;
+}
+
+/* Demo styles */
+
+@counter-style cs-cyclic {
+    system: cyclic;
+    symbols: ◆ ◇;
+    suffix: " ";
+}
+
+.demo-cyclic {
+    list-style: cs-cyclic;
+}
+
+@counter-style cs-fixed {
+    system: fixed;
+    symbols:          ;
+    suffix: " ";
+}
+
+.demo-fixed {
+    list-style: cs-fixed;
+}
+
+@counter-style cs-symbolic {
+    system: symbolic;
+    symbols: '*' ⁑ † ‡;
+    range: 1 15;
+    suffix: " ";
+}
+
+.demo-symbolic {
+    list-style: cs-symbolic;
+}
+
+@counter-style cs-alphabetic {
+    system: alphabetic;
+    symbols: A B C D E;
+    suffix: " ";
+}
+
+.demo-alphabetic {
+    list-style: cs-alphabetic;
+}
+
+@counter-style cs-numeric {
+    system: numeric;
+    symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+}
+
+.demo-numeric {
+    list-style: cs-numeric;
+}
+
+.demo-lower-alpha {
+    list-style: lower-alpha;
+}
+
+.demo-upper-alpha {
+    list-style: upper-alpha;
+}
+

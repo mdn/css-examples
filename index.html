@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS @counter-style Demo</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="header">
+    <h1>CSS @counter-style Demo</h1>
+
+</div>
+    <div class="list-container">
+        <ul id="demo-list" class="demo-cyclic">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+            <li>Five</li>
+            <li>Six</li>
+            <li>Seven</li>
+            <li>Eight</li>
+            <li>Nine</li>
+            <li>Ten</li>
+            <li>Eleven</li>
+            <li>Twelve</li>
+            <li>Thirteen</li>
+            <li>Fourteen</li>
+            <li>Fifteen</li>
+            <li>Sixteen</li>
+            <li>Seventeen</li>
+            <li>Eighteen</li>
+            <li>Nineteen</li>
+            <li>Twenty</li>
+            <li>Twenty One</li>
+            <li>Twenty Two</li>
+            <li>Twenty Three</li>
+            <li>Twenty Four</li>
+            <li>Twenty Five</li>
+            <li>Twenty Six</li>
+            <li>Twenty Seven</li>
+            <li>Twenty Eight</li>
+            <li>Twenty Nine</li>
+            <li>Thirty</li>
+        </ul>
+    </div>
+
+    <div class="list-controls">
+        <h3>Select a counter style from the list</h3>
+        <select id="style-select">
+            <optgroup label="System">
+                <option value="cyclic">cyclic</option>
+                <option value="fixed">fixed</option>
+                <option value="symbolic">symbolic</option>
+            </optgroup>
+            <optgroup label="Predefined styles">
+                <option value="lower-alpha">lower-alpha</option>
+                <option value="upper-alpha">upper-alpha</option>
+            </optgroup>
+        </select>
+
+
+            <pre class="code" id="code">
+@counter-style alternating {
+  system: cyclic;
+  additive-symbols: ◆ ◇;
+  suffix: " ";
+}</pre>
+
+    </div>
+<div class="links-section">
+    <i>Read more on <code>@counter-style</code> on
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style">Mozilla Developer Network</a></i>
+</div>
+    <script src="js/script.js"></script>
+</body>
+</html>
