@@ -38,10 +38,18 @@ body {
     color: white;
 }
 
-.links-section {
-    float: left;
+.notes-section {
     margin: 10px;
     color: #4D4E53;
+    font-family: Ubuntu, Arial, Tahoma, 'Sans Serif';
+    float: left;
+}
+
+.compatibility-warning {
+    color: #E05252;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.7em;
 }
 
 /* Demo styles */
