@@ -1,0 +1,68 @@
+html {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body {
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+img {
+	width: 480px;
+	height: 320px;
+	background: gray;
+	border: 2px solid black;
+	display: block;
+	margin: 0 auto;
+}
+
+video {
+	margin: 0 auto;
+	display: block;
+	border: 2px solid black;
+}
+
+.contain {
+	object-fit: contain;
+}
+
+.cover {
+	object-fit: cover;
+}
+
+.fill {
+	object-fit: fill;
+}
+
+.none {
+	width: 200px;
+	height: 200px;
+
+	overflow: hidden;
+	object-fit: none;
+	object-position: 25% 50%;
+	transition: 1s width, 1s height;
+}
+
+.none:hover, .none:focus {
+	height: 350px;
+	width: 350px;
+}
+
+.objpos {
+	object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.pos1 {
+	object-position: 0 0;
+}
+
+.pos2 {
+	object-position: bottom;
+}
+
+.pos3 {
+	object-position: 100px 100px;
+}
