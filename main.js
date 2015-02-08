@@ -8,8 +8,8 @@ for(i = 1; i <= thumbs.length ; i++) {
 
 function retrieveImage(requestObj,imageNo) {
   var request = new XMLHttpRequest();
-  request.responseType = 'blob';
   request.open('GET', requestObj, true);
+  request.responseType = 'blob';
   request.send();
 
   request.onload = function() {
