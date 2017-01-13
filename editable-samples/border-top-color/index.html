@@ -9,10 +9,10 @@
   </div>
     
   <div id="buttons">
-  &nbsp; <input id="edit" type="button" value="Edit CSS" />
-  &nbsp; <input id="reset" type="button" value="Reset" />
+    <input id="edit" type="button" value="Edit CSS" />
+    <input id="reset" type="button" value="Reset" />
   </div>
-  <textarea id="code" class="playable-code" rows="2">border-top-color: red;</textarea>
+  <textarea id="code" rows="2">border-top-color: red;</textarea>
 
 <style>
 
@@ -22,8 +22,7 @@ body {
 }
 
 textarea {
-  width: 90%;
-  height:auto;
+  width: 100%;
   background-color: white;
   padding: 1em 1em 0 1em;
   box-sizing: border-box;
@@ -34,11 +33,12 @@ textarea {
 }
 
 #container {
+  width: 100%;
   background-color: white;
   padding: 1em;
-  width: 90%;
   box-sizing: border-box;
 }
+
 #box {
   border: solid 0.3em gold;
 }
