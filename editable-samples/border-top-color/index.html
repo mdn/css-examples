@@ -1,0 +1,80 @@
+
+<body>
+  <div id="container">
+  <div id="box">
+      <p>This is a box with a border around it.
+         Note which side of the box is
+         red.</p>
+  </div>
+  </div>
+    
+  <div class="playable-buttons">
+  &nbsp; <input id="edit" type="button" value="Edit CSS" />
+  &nbsp; <input id="reset" type="button" value="Reset" />
+  </div>
+  <textarea id="code" class="playable-code" rows="2">border-top-color: red;</textarea>
+
+<style>
+
+body {
+  background-color: #F6F7F8;
+  margin:3em auto;
+  padding:1em;
+}
+
+textarea {
+  width: 90%;
+  height:auto;
+  background-color: white;
+  padding-right:16px;
+}
+
+#container {
+  background-color: white;
+  padding: 1em;
+  width: 90%;
+}
+#box {
+  border: solid 0.3em gold;
+}
+</style>
+
+<script>
+var box = document.getElementById("box");
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var edit = document.getElementById("edit");
+var code = textarea.value;
+
+function applyCode() {
+  box.style.cssText = textarea.value;
+}
+
+reset.addEventListener("click", function() {
+  textarea.value = code;
+  applyCode();
+});
+
+function setSelection() {
+  var start = textarea.value.indexOf(":") + 1;
+  if ((textarea.value.length > start) && (textarea.value[start] === " ")) {
+    start++;
+  }
+
+  var end = textarea.value.length - 1;
+  if ((textarea.value.length > 0) && (textarea.value[end-1] === ";")) {
+    end--;
+  }
+
+  textarea.setSelectionRange(start, end);
+}
+
+edit.addEventListener("click", function() {
+  textarea.focus();
+  setSelection();
+});
+
+textarea.addEventListener("input", applyCode);
+window.addEventListener("load", applyCode);
+</script>
+</body>
