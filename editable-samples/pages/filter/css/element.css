@@ -1,0 +1,6 @@
+#example-element {
+  max-width: 80%;
+  max-height: 80%;
+  display: block;
+  margin: 1em auto 0 auto;
+}
