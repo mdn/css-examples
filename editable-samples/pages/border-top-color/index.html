@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link href="../../css/editable.css" rel="stylesheet"></link>
+
+    <link href="../../codemirror/lib/codemirror.css" rel="stylesheet">
+    <link href="../../codemirror/theme/mdn-like.css" rel="stylesheet"></link>
+    <link href="../../codemirror/addon/hint/show-hint.css" rel="stylesheet"></link>
+
     <link href="css/element.css" rel="stylesheet"></link>
   </head>
 
@@ -19,9 +24,13 @@
       <input id="edit" type="button" value="Edit CSS" />
       <input id="reset" type="button" value="Reset" />
     </div>
-  
-    <textarea id="input" rows="2">border-top-color: red;</textarea>
 
+    <script src="../../codemirror/lib/codemirror.js"></script>
+    <script src="../../codemirror/mode/css/css.js"></script>
+    <script src="../../codemirror/addon/hint/css-hint.js"></script>
+    <script src="../../codemirror/addon/hint/show-hint.js"></script>
+  
+    <script src="js/border-top-color.js"></script>
     <script type="text/javascript" src="../../js/editable.js"></script>
 
 </body>

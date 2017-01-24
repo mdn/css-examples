@@ -4,13 +4,6 @@ body {
   margin: 0;
 }
 
-#input {
-  width: 100%;
-  background-color: white;
-  padding: 1em 1em 0 1em;
-  box-sizing: border-box;
-}
-
 #buttons {
   margin: 0.5em;
 }
