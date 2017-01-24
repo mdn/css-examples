@@ -28,7 +28,7 @@ function applyCode() {
 }
 
 reset.addEventListener("click", function() {
-  cmEditor.doc.setValue(cmInit);
+  cmEditor.doc.setValue(cmInitContent);
   applyCode();
 });
 
