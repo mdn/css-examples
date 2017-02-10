@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS @counter-style Demo</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="header">
+    <h1>CSS @counter-style Demo</h1>
+
+</div>
+    <div class="list-container">
+        <ul id="demo-list" class="demo-cyclic">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+            <li>Five</li>
+            <li>Six</li>
+            <li>Seven</li>
+            <li>Eight</li>
+            <li>Nine</li>
+            <li>Ten</li>
+            <li>Eleven</li>
+            <li>Twelve</li>
+            <li>Thirteen</li>
+            <li>Fourteen</li>
+            <li>Fifteen</li>
+            <li>Sixteen</li>
+            <li>Seventeen</li>
+            <li>Eighteen</li>
+            <li>Nineteen</li>
+            <li>Twenty</li>
+            <li>Twenty One</li>
+            <li>Twenty Two</li>
+            <li>Twenty Three</li>
+            <li>Twenty Four</li>
+            <li>Twenty Five</li>
+            <li>Twenty Six</li>
+            <li>Twenty Seven</li>
+            <li>Twenty Eight</li>
+            <li>Twenty Nine</li>
+            <li>Thirty</li>
+        </ul>
+    </div>
+
+    <div class="list-controls">
+        <h3>Select a counter style from the list</h3>
+        <select id="style-select">
+            <optgroup label="@counter-style system">
+                <option value="cyclic">cyclic</option>
+                <option value="fixed">fixed</option>
+                <option value="symbolic">symbolic</option>
+                <option value="alphabetic">alphabetic</option>
+                <option value="numeric">numeric</option>
+                <option value="additive">additive</option>
+                <option value="extends">extends</option>
+            </optgroup>
+            <optgroup label="Predefined styles">
+                <option disabled>Numeric ▼</option>
+                <option value="decimal">decimal</option>
+                <option value="decimal-leading-zero">decimal-leading-zero</option>
+                <option value="arabic-indic">arabic-indic</option>
+                <option value="armenian">armenian</option>
+                <option value="upper-armenian">upper-armenian</option>
+                <option value="lower-armenian">lower-armenian</option>
+                <option value="bengali">bengali</option>
+                <option value="cambodian">cambodian</option>
+                <option value="khmer">khmer</option>
+                <option value="cjk-decimal">cjk-decimal</option>
+                <option value="devanagiri">devanagiri</option>
+                <option value="georgian">georgian</option>
+                <option value="gujarati">gujarati</option>
+                <option value="gurmukhi">gurmukhi</option>
+                <option value="hebrew">hebrew</option>
+                <option value="kannada">kannada</option>
+                <option value="lao">lao</option>
+                <option value="malayalam">malayalam</option>
+                <option value="mongolian">mongolian</option>
+                <option value="myanmar">myanmar</option>
+                <option value="oriya">oriya</option>
+                <option value="persian">persian</option>
+                <option value="lower-roman">lower-roman</option>
+                <option value="upper-roman">upper-roman</option>
+                <option value="telugu">telugu</option>
+                <option value="thai">thai</option>
+                <option value="tibetan">tibetan</option>
+                <option value="lower-alpha">lower-alpha</option>
+                <option value="upper-alpha">upper-alpha</option>
+                <option disabled>Alphabetic ▼</option>
+                <option value="lower-alpha">lower-alpha</option>
+                <option value="lower-latin">lower-latin</option>
+                <option value="upper-alpha">upper-alpha</option>
+                <option value="upper-latin">upper-latin</option>
+                <option value="cjk-earthly-branch">cjk-earthly-branch</option>
+                <option value="cjk-heavenly-stem">cjk-heavenly-stem</option>
+                <option value="lower-greek">lower-greek</option>
+                <option value="hiragana">hiragana</option>
+                <option value="hiragana-iroha">hiragana-iroha</option>
+                <option value="katakana">katakana</option>
+                <option value="katakana-iroha">katakana-iroha</option>
+                <option disabled>Symbolic ▼</option>
+                <option value="disc">disc</option>
+                <option value="circle">circle</option>
+                <option value="square">square</option>
+                <option value="disclosure-open">disclosure-open</option>
+                <option value="disclosure-closed">disclosure-closed</option>
+                <option disabled>Predefined complex styles ▼</option>
+                <option value="japanese-informal">japanese-informal</option>
+                <option value="japanese-formal">japanese-formal</option>
+                <option value="korean-hangul-formal">korean-hangul-formal</option>
+                <option value="korean-hanja-informal">korean-hanja-informal</option>
+                <option value="korean-hanja-formal">korean-hanja-formal</option>
+                <option value="simp-chinese-informal">simp-chinese-informal</option>
+                <option value="simp-chinese-formal">simp-chinese-formal</option>
+                <option value="trad-chinese-informal">trad-chinese-informal</option>
+                <option value="trad-chinese-formal">trad-chinese-formal</option>
+                <option value="cjk-ideographic">cjk-ideographic</option>
+                <option value="ethiopic-numeric">ethiopic-numeric</option>
+            </optgroup>
+        </select>
+
+            <pre class="code" id="code">
+@counter-style blacknwhite {
+  system: cyclic;
+  symbols: ◆ ◇;
+  suffix: " ";
+}
+
+ul {
+  list-style: blacknwhite;
+}</pre>
+
+    </div>
+<div class="notes-section">
+
+    <i>Read more about <code>@counter-style</code> on
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style">Mozilla Developer Network</a></i>
+
+    <div class="compatibility-warning">⚠ Warning: <i>@counter-style</i> currently works only on Firefox 33+</div>
+</div>
+    <script src="js/script.js"></script>
+</body>
+</html>

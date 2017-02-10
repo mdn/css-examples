@@ -1,0 +1,345 @@
+body {
+    background: #EEEEEE;
+    margin: 0;
+    padding: 0;
+}
+
+.list-container {
+    float: left;
+    width: 40%;
+    margin-left: 20px;
+}
+
+.list-controls {
+    width: 40%;
+    margin-left: 10px;
+    border: 1px solid #4D4E53;
+    float: left;
+    padding: 10px;
+    background: white;
+}
+
+.code {
+    border-left: 6px solid #558ABB;
+    background: url("https://developer.cdn.mozilla.net/media/redesign/img/blueprint-dark.png");
+    padding: 12px;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu, Arial, Tahoma, 'Sans Serif';
+}
+
+.header {
+    background: #27547E;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    color: white;
+}
+
+.notes-section {
+    margin: 10px;
+    color: #4D4E53;
+    font-family: Ubuntu, Arial, Tahoma, 'Sans Serif';
+    float: left;
+}
+
+.compatibility-warning {
+    color: #E05252;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.7em;
+}
+
+/* Demo styles */
+
+@counter-style demo-cyclic {
+    system: cyclic;
+    symbols: ◆ ◇;
+    suffix: " ";
+}
+
+.demo-cyclic {
+    list-style: demo-cyclic;
+}
+
+@counter-style cs-fixed {
+    system: fixed;
+    symbols:          ;
+    suffix: " ";
+}
+
+.demo-fixed {
+    list-style: cs-fixed;
+}
+
+@counter-style cs-symbolic {
+    system: symbolic;
+    symbols: '*' ⁑ † ‡;
+    range: 1 15;
+    suffix: " ";
+}
+
+.demo-symbolic {
+    list-style: cs-symbolic;
+}
+
+@counter-style cs-alphabetic {
+    system: alphabetic;
+    symbols: A B C D E;
+    suffix: " ";
+}
+
+.demo-alphabetic {
+    list-style: cs-alphabetic;
+}
+
+@counter-style cs-numeric {
+    system: numeric;
+    symbols: A B C D E;
+}
+
+.demo-numeric {
+    list-style: cs-numeric;
+}
+
+@counter-style cs-additive-roman {
+    system: additive;
+    range: 1 100;
+    additive-symbols: 1000 M, 900 CM, 500 D, 400 CD, 100 C, 90 XC, 50 L, 40 XL, 10 X, 9 IX, 5 V, 4 IV, 1 I;
+}
+
+.demo-additive {
+    list-style: cs-additive-roman;
+}
+
+@counter-style cs-extends {
+    system: extends decimal;
+    prefix: '(';
+    suffix: ') ';
+}
+
+.demo-extends {
+    list-style: cs-extends;
+}
+
+
+/* Predefined styles */
+
+.demo-decimal {
+    list-style: decimal;
+}
+
+.demo-decimal-leading-zero {
+    list-style: decimal-leading-zero;
+}
+
+.demo-arabic-indic {
+    list-style: arabic-indic;
+}
+
+.demo-armenian {
+    list-style: armenian;
+}
+
+.demo-upper-armenian {
+    list-style: upper-armenian;
+}
+
+.demo-lower-armenian {
+    list-style: lower-armenian;
+}
+
+.demo-bengali {
+    list-style: bengali;
+}
+
+.demo-cambodian {
+    list-style: cambodian;
+}
+
+.demo-khmer {
+    list-style: khmer;
+}
+
+.demo-cjk-decimal {
+    list-style: cjk-decimal;
+}
+
+.demo-devanagiri {
+    list-style: devanagiri;
+}
+
+.demo-georgian {
+    list-style: georgian;
+}
+
+.demo-gujarati {
+    list-style: gujarati;
+}
+
+.demo-gurmukhi {
+    list-style: gurmukhi;
+}
+
+.demo-hebrew {
+    list-style: hebrew;
+}
+
+.demo-kannada {
+    list-style: kannada;
+}
+
+.demo-lao {
+    list-style: lao;
+}
+
+.demo-malayalam {
+    list-style: malayalam;
+}
+
+.demo-mongolian {
+    list-style: mongolian;
+}
+
+.demo-myanmar {
+    list-style: myanmar;
+}
+
+.demo-oriya {
+    list-style: oriya;
+}
+
+.demo-persian {
+    list-style: persian;
+}
+
+.demo-lower-roman {
+    list-style: lower-roman;
+}
+
+.demo-upper-roman {
+    list-style: upper-roman;
+}
+
+.demo-telugu {
+    list-style: telugu;
+}
+
+.demo-thai {
+    list-style: thai;
+}
+
+.demo-tibetan {
+    list-style: tibetan;
+}
+
+.demo-lower-alpha {
+    list-style: lower-alpha;
+}
+
+.demo-lower-latin {
+    list-style: lower-latin;
+}
+
+.demo-upper-alpha {
+    list-style: upper-alpha;
+}
+
+.demo-upper-latin {
+    list-style: upper-latin;
+}
+
+.demo-cjk-earthly-branch {
+    list-style: cjk-earthly-branch;
+}
+
+.demo-cjk-heavenly-stem {
+    list-style: cjk-heavenly-stem;
+}
+
+.demo-lower-greek {
+    list-style: lower-greek;
+}
+
+.demo-hiragana {
+    list-style: hiragana;
+}
+
+.demo-hiragana-iroha {
+    list-style: hiragana-iroha;
+}
+
+.demo-katakana {
+    list-style: katakana;
+}
+
+.demo-katakana-iroha {
+    list-style: katakana-iroha;
+}
+
+.demo-disc {
+    list-style: disc;
+}
+
+.demo-circle {
+    list-style: circle;
+}
+
+.demo-square {
+    list-style: square;
+}
+
+.demo-disclosure-open {
+    list-style: disclosure-open;
+}
+
+.demo-disclosure-closed {
+    list-style: disclosure-closed;
+}
+
+.demo-japanese-informal {
+    list-style: japanese-informal;
+}
+
+.demo-japanese-formal {
+    list-style: japanese-formal;
+}
+
+.demo-korean-hangul-formal {
+    list-style: korean-hangul-formal;
+}
+
+.demo-korean-hanja-informal {
+    list-style: korean-hanja-informal;
+}
+
+.demo-korean-hanja-formal {
+    list-style: korean-hanja-formal;
+}
+
+.demo-simp-chinese-informal {
+    list-style: simp-chinese-informal;
+}
+
+.demo-simp-chinese-formal {
+    list-style: simp-chinese-formal;
+}
+
+.demo-trad-chinese-informal {
+    list-style: trad-chinese-informal;
+}
+
+.demo-trad-chinese-formal {
+    list-style: trad-chinese-formal;
+}
+
+.demo-cjk-ideographic {
+    list-style: cjk-ideographic;
+}
+
+.demo-ethiopic-numeric {
+    list-style: ethiopic-numeric;
+}
+
