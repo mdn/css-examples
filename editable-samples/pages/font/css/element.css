@@ -1,0 +1,7 @@
+#output {
+  overflow: hidden;
+}
+
+#example-element {
+  display: block;
+}
