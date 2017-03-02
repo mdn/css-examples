@@ -1,4 +1,4 @@
-var cmInitContent = 'font: 1em/1.5 "Open Sans", sans-serif;';
+var cmInitContent = 'font: italic 2em cursive;';
 
 var cmMatchToShowCompletions = "font: ";
 
