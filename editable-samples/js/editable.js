@@ -1,14 +1,17 @@
 var element = document.getElementById("example-element");
 var input = document.getElementById("input");
+var editor = document.getElementById("editor");
 var reset = document.getElementById("reset");
 var edit = document.getElementById("edit");
 
 var cmOptions = {
   mode: "css",
-  theme: "mdn-like"
+  theme: "eclipse",
+  lineNumbers: true,
+  showCursorWhenSelecting: true
 }
 
-var cmEditor = CodeMirror(document.body, cmOptions);
+var cmEditor = CodeMirror(editor, cmOptions);
 cmEditor.setSize("100%", 50);
 cmEditor.doc.setValue(cmInitContent);
 

@@ -5,24 +5,25 @@
     <link href="../../css/editable.css" rel="stylesheet"></link>
 
     <link href="../../codemirror/lib/codemirror.css" rel="stylesheet">
-    <link href="../../codemirror/theme/mdn-like.css" rel="stylesheet"></link>
+    <link href="../../codemirror/theme/eclipse.css" rel="stylesheet"></link>
     <link href="../../codemirror/addon/hint/show-hint.css" rel="stylesheet"></link>
 
     <link href="css/element.css" rel="stylesheet"></link>
   </head>
 
   <body>
+
+    <div id="editor">
+      <input id="edit" type="button" value="Edit" />
+      <input id="reset" type="button" value="Reset" />
+    </div>
+
     <div id="output">
       <div id="example-element">
           <p>This is a box with a border around it.
              Note which side of the box is
              red.</p>
       </div>
-    </div>
-
-    <div id="buttons">
-      <input id="edit" type="button" value="Edit CSS" />
-      <input id="reset" type="button" value="Reset" />
     </div>
 
     <script src="../../codemirror/lib/codemirror.js"></script>
