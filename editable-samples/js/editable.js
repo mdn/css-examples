@@ -33,6 +33,8 @@ function applyCode() {
 reset.addEventListener("click", function() {
   cmEditor.doc.setValue(cmInitContent);
   applyCode();
+  reset.classList.add("hidden");
+  edit.classList.remove("hidden");
 });
 
 function selectValue() {
@@ -55,6 +57,8 @@ function selectValue() {
 edit.addEventListener("click", function() {
   cmEditor.focus();
   selectValue();
+  edit.classList.add("hidden");
+  reset.classList.remove("hidden");
 });
 
 cmEditor.on("change", applyCode);

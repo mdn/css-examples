@@ -27,16 +27,12 @@ body {
 #editor>input {
   position: absolute;
   z-index: 10;
-}
-
-#edit {
-  top: 10px;
-  right: 80px;
-}
-
-#reset {
   top: 10px;
   right: 10px;
+}
+
+#editor>input.hidden {
+  display: none;
 }
 
 #output {
