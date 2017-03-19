@@ -1,0 +1,57 @@
+
+body {
+  background-color: #EAEFF2;
+  padding: 0;
+  margin: 0;
+}
+
+#output {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.1);
+}
+
+#example-element {
+  max-width: 80%;
+  max-height: 80%;
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+#output {
+  overflow: hidden;
+}
+
+#example-element {
+  display: block;
+  color: #C13832;
+}
+
+p {
+  padding: 0 0.5em;
+  font: 14px "Open Sans", sans-serif;
+}
+
+.example-choice {
+  padding: 0.5em 0.5em;
+  font-size: 14px;
+  transition: background-color .2s ease-out;
+  cursor: pointer;
+}
+
+.example-choice:hover {
+  background-color: whitesmoke;
+}
+
+.example-choice.selected {
+  background-color: white;
+  transition: background-color .2s ease-in;
+  box-shadow: inset 0px 2px 2px -2px rgba(0,0,0,0.2);
+  cursor: text;
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
