@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Color pickel</title>
+
+    <link rel="stylesheet" href="color-picker.css">
+    <script src='color-picker.js'></script>
+  </head>
+
+  <body>
+      <div id="container">
+          <div id="palette" class="block">
+              <div id="color-palette"></div>
+              <div id="color-info">
+                  <div class="title"> CSS Color </div>
+              </div>
+          </div>
+
+          <div id="picker" class="block">
+              <div class="ui-color-picker" data-topic="picker" data-mode="HSL"></div>
+              <div id="picker-samples" sample-id="master"></div>
+              <div id="controls">
+                  <div id="delete">
+                      <div id="trash-can"></div>
+                  </div>
+                  <div id="void-sample" class="icon"></div>
+              </div>
+          </div>
+
+          <div id="canvas" data-tutorial="drop">
+              <div id="zindex" class="ui-input-slider" data-topic="z-index" data-info="z-index"
+                  data-max="20" data-sensivity="10"></div>
+          </div>
+      </div>
+  </body>
+</html>
