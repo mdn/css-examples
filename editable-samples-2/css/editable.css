@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: #EAEFF2;
@@ -35,10 +38,13 @@ p {
 }
 
 .example-choice {
-  padding: 0.5em 0.5em;
   font-size: 14px;
   transition: background-color .2s ease-out;
   cursor: pointer;
+  padding: 0.25em;
+  display: inline-block;
+  width: 100%;
+  position: relative;
 }
 
 .example-choice:hover {
@@ -50,6 +56,33 @@ p {
   transition: background-color .2s ease-in;
   box-shadow: inset 0px 2px 2px -2px rgba(0,0,0,0.2);
   cursor: text;
+}
+
+.example-choice>code {
+  width: 90%;
+  display: inline-block;
+}
+
+.reset {
+  display: none;
+  position: absolute;
+  top: .75em;
+  right: 1em;
+}
+
+.example-choice.selected>.reset {
+  display: unset;
+}
+
+.error {
+  max-height: 1em;
+  position: absolute;
+  top: .75em;
+  right: 5.5em;
+}
+
+.hidden {
+  display: none;
 }
 
 [contenteditable]:focus {
