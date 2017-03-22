@@ -52,7 +52,8 @@ function onEdit(e) {
   applyCode(e.currentTarget.textContent, e.currentTarget.parentNode); 
 }
 
-document.addEventListener('copy', function(e){
+
+function copyTextOnly(e) {
   var selection = window.getSelection();
   var range = selection.getRangeAt(0);
 
@@ -60,8 +61,10 @@ document.addEventListener('copy', function(e){
   e.clipboardData.setData('text/html', range.toString());
   e.preventDefault();
   e.stopPropagation();
-    
-});
+}
+
+document.addEventListener('cut', copyTextOnly);
+document.addEventListener('copy', copyTextOnly);
 
 for (exampleChoice of exampleChoices) {
   exampleChoice.addEventListener("click", onChoose);
