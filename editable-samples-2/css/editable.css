@@ -79,6 +79,7 @@ p {
   position: absolute;
   top: .75em;
   right: 5.5em;
+  cursor: pointer;
 }
 
 .hidden {
