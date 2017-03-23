@@ -1,6 +1,7 @@
 var element = document.getElementById("example-element");
 var input = document.getElementById("input");
 var editor = document.getElementById("editor");
+var editorContent = document.getElementById("editor-content");
 var reset = document.getElementById("reset");
 
 var cmOptions = {
@@ -10,9 +11,8 @@ var cmOptions = {
   showCursorWhenSelecting: true
 }
 
-var cmEditor = CodeMirror(editor, cmOptions);
+var cmEditor = CodeMirror.fromTextArea(editorContent, cmOptions);
 cmEditor.setSize("100%", 50);
-cmEditor.doc.setValue(cmInitContent);
 cmEditor.focus();
 cmEditor.doc.setCursor({line:0, pos: -1});
 
