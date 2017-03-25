@@ -1,4 +1,6 @@
 var element = document.getElementById("example-element");
+var originalChoices = [];
+var initialChoice = 0;
 
 function applyCode(code, choice) {
   element.style.cssText = code;
@@ -67,6 +69,10 @@ document.addEventListener('cut', copyTextOnly);
 document.addEventListener('copy', copyTextOnly);
 
 for (exampleChoice of exampleChoices) {
+  originalChoices.push(exampleChoice.textContent);
+  if (exampleChoice.getAttribute("initial-choice")) {
+    initialChoice = indexOf(exampleChoices, exampleChoice);
+  }
   exampleChoice.addEventListener("click", onChoose);
   exampleChoice.firstChild.addEventListener("keyup", onEdit);
   exampleChoice.querySelector(".reset").addEventListener("click", function(e) {
@@ -77,4 +83,4 @@ for (exampleChoice of exampleChoices) {
   });
 }
 
-choose(exampleChoices[4]);
+choose(exampleChoices[initialChoice]);

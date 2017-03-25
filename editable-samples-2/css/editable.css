@@ -32,11 +32,6 @@ body {
   color: #C13832;
 }
 
-p {
-  padding: 0 0.5em;
-  font: 14px "Open Sans", sans-serif;
-}
-
 .example-choice {
   font-size: 14px;
   transition: background-color .2s ease-out;
@@ -88,4 +83,17 @@ p {
 
 [contenteditable]:focus {
   outline: 0px solid transparent;
+}
+
+
+@media (min-width: 800px) {
+  #example-choice-list, #output {
+    float: left;
+  }
+  #example-choice-list {
+    width: 70%;
+  }
+  #output {
+    width: 30%;
+  }
 }
