@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animation-timing-function frames example</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      div {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background: red;
+        animation: grow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+
+      p {
+        position: absolute;
+        width: 250px;
+        top: 10px;
+        left: 10px;
+        color: white;
+      }
+
+      .div1 {
+        animation-timing-function: frames(10);
+      }
+
+      .div2 {
+        animation-timing-function: steps(10);
+      }
+
+      .div3 {
+        animation-timing-function: ease-in;
+      }
+
+      @keyframes grow {
+        from {
+          width: 0%;
+          background: red;
+        }
+
+        to {
+          width: 100%;
+          background: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"><p>animation-timing-function: frames(10)<p></div>
+    <div class="div2"><p>animation-timing-function: steps(10);<p></div>
+    <div class="div3"><p>animation-timing-function: ease-in;<p></div>
+  </body>
+</html>
