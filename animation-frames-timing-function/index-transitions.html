@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>transition-timing-function frames example</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      div {
+        position: relative;
+        width: 10%;
+        height: 200px;
+        background: red;
+        transition-property: all;
+        transition-duration: 5s;
+        transition-iteration-count: infinite;
+      }
+
+      p {
+        position: absolute;
+        width: 250px;
+        top: 10px;
+        left: 10px;
+        color: white;
+      }
+
+      .div1 {
+        transition-timing-function: frames(10);
+      }
+
+      .div2 {
+        transition-timing-function: steps(10);
+      }
+
+      .div3 {
+        transition-timing-function: ease-in;
+      }
+
+      div:hover {
+        width: 100%;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"><p>transition-timing-function: frames(10)<p></div>
+    <div class="div2"><p>transition-timing-function: steps(10);<p></div>
+    <div class="div3"><p>transition-timing-function: ease-in;<p></div>
+  </body>
+</html>

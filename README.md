@@ -2,7 +2,7 @@
 
 This repository contains examples of CSS usage.
 
-The "animation-frames-timing-function" directory contains a simple example that demonstrates the difference between the step() timing function available for CSS animations and transitions, and the new frames() timing function. [Run the example live](http://mdn.github.io/css-examples/animation-frames-timing-function/).
+The "animation-frames-timing-function" directory contains a simple example that demonstrates the difference between the step() timing function available for CSS animations and transitions, and the new frames() timing function. [Run the example live](http://mdn.github.io/css-examples/animation-frames-timing-function/). You can also find a version that shows the [same timing function used with transitions](http://mdn.github.io/css-examples/animation-frames-timing-function/index-transitions.html).
 
 The "counter-style-demo" directory contains a demo for the [@counter-style documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style). See the live demo [here](https://mdn.github.io/css-examples/counter-style-demo/).
 
