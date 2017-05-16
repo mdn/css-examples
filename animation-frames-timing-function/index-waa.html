@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Web animations API frames example</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      div {
+        position: relative;
+        width: 0%;
+        height: 200px;
+        background: red;
+      }
+
+      p {
+        position: absolute;
+        width: 250px;
+        top: 10px;
+        left: 10px;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="div1"><p>transition-timing-function: frames(10)<p></div>
+    <div class="div2"><p>transition-timing-function: steps(10);<p></div>
+    <div class="div3"><p>transition-timing-function: ease-in;<p></div>
+
+    <script>
+
+      var easingFunctions = [
+        'frames(10)',
+        'steps(10)',
+        'ease-in'
+      ]
+
+      var keyFrames = [
+        { width: '0%', background : 'red'},
+        { width: '100%', background : 'blue'},
+      ]
+
+      var divs = document.querySelectorAll('div');
+
+      for(var i = 0; i < divs.length; i++) {
+        divs[i].animate(keyFrames, {
+          easing : easingFunctions[i],
+          duration : 5000,
+          iterations: Infinity
+        });
+      }
+
+    </script>
+  </body>
+</html>
