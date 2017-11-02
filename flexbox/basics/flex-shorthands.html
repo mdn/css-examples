@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flexbox Basics: The Flex Container</title>
+  <title>Flexbox Basics: flex shorthands</title>
 
   <style>
     body {
@@ -46,20 +46,26 @@
       margin: 5px;
     }
 
-    .box {
-      width: 500px;
-      border: 2px dotted rgb(96, 139, 168);
-    }
-
     .box>* {
       border: 2px solid rgb(96, 139, 168);
       border-radius: 5px;
       background-color: rgba(96, 139, 168, .2);
     }
+
+    .box {
+      display: flex;
+      width: 500px;
+      border: 2px dotted rgb(96, 139, 168);
+    }
   </style>
+
   <style class="editable">
     .box {
       display: flex;
+    }
+
+    .box>* {
+      flex: 1;
     }
   </style>
 </head>
@@ -69,30 +75,25 @@
     <div class="box">
       <div>One</div>
       <div>Two</div>
-      <div>Three
-        <br>has
-        <br>extra
-        <br>text
-      </div>
+      <div>Three</div>
     </div>
-
   </section>
   <textarea class="playable-css">
-          .box {
-            display: flex;
-          }
-      </textarea>
+      .box {
+        display: flex;
+      }
+  
+      .box>* {
+        flex: 1;
+      }
+  </textarea>
   <textarea id="code" class="playable-html">
-        <div class="box">
-          <div>One</div>
-          <div>Two</div>
-          <div>Three
-              <br>has
-              <br>extra
-              <br>text
-          </div>
-        </div>
-      </textarea>
+      <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+      </div>
+    </textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">
   </div>

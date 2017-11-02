@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flexbox Basics: The Flex Container</title>
+  <title>Flexbox Basics: aligning items on the cross axis</title>
 
   <style>
     body {
@@ -48,6 +48,7 @@
 
     .box {
       width: 500px;
+      height: 130px;
       border: 2px dotted rgb(96, 139, 168);
     }
 
@@ -60,6 +61,7 @@
   <style class="editable">
     .box {
       display: flex;
+      align-items: flex-start;
     }
   </style>
 </head>
@@ -80,6 +82,7 @@
   <textarea class="playable-css">
           .box {
             display: flex;
+            align-items: flex-start;
           }
       </textarea>
   <textarea id="code" class="playable-html">

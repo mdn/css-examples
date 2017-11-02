@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flexbox Basics: The Flex Container</title>
+  <title>Flexbox Basics: justify content on the main axis</title>
 
   <style>
     body {
@@ -13,7 +13,7 @@
     }
 
     textarea {
-      height: 160px;
+      height: 100px;
       background-color: #F4F7F8;
       border: none;
       border-left: 6px solid #558ABB;
@@ -60,6 +60,7 @@
   <style class="editable">
     .box {
       display: flex;
+      justify-content: flex-start;
     }
   </style>
 </head>
@@ -69,28 +70,21 @@
     <div class="box">
       <div>One</div>
       <div>Two</div>
-      <div>Three
-        <br>has
-        <br>extra
-        <br>text
-      </div>
+      <div>Three</div>
     </div>
 
   </section>
   <textarea class="playable-css">
           .box {
             display: flex;
+            justify-content: flex-start;
           }
       </textarea>
   <textarea id="code" class="playable-html">
         <div class="box">
           <div>One</div>
           <div>Two</div>
-          <div>Three
-              <br>has
-              <br>extra
-              <br>text
-          </div>
+          <div>Three</div>
         </div>
       </textarea>
   <div class="playable-buttons">
