@@ -17,7 +17,8 @@
     }
 
     textarea {
-      height: 80px;
+      display: block;
+      margin-bottom: 10px;
       background-color: #F4F7F8;
       border: none;
       border-left: 6px solid #558ABB;
@@ -26,6 +27,14 @@
       max-width: 700px;
       padding: 10px 10px 0px;
       font-size: 90%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 160px
+    }
+
+    textarea:nth-of-type(2) {
+      height: 160px
     }
 
     .playable-buttons {
@@ -64,7 +73,7 @@
       border: 2px dotted rgb(96, 139, 168);
     }
 
-  
+
   </style>
   <style class="editable">
     .box {
@@ -131,7 +140,7 @@
   reset.addEventListener('click', function () {
     textareaHTML.value = htmlCode;
     textareaCSS.value = cssCode;
-    fillSection();
+    fillCode();
   });
 
   textareaHTML.addEventListener('input', fillCode);
