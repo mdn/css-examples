@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flexbox Basics: The flex-directio property</title>
+  <title>Flexbox Basics: The flex-direction property</title>
 
   <style>
     body {
@@ -13,7 +13,8 @@
     }
 
     textarea {
-      height: 80px;
+      display: block;
+      margin-bottom: 10px;
       background-color: #F4F7F8;
       border: none;
       border-left: 6px solid #558ABB;
@@ -22,6 +23,14 @@
       max-width: 700px;
       padding: 10px 10px 0px;
       font-size: 90%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 80px
+    }
+
+    textarea:nth-of-type(2) {
+      height: 90px
     }
 
     .playable-buttons {
@@ -45,8 +54,6 @@
       display: block;
       margin: 5px;
     }
-
-
 
     .box>* {
       border: 2px solid rgb(96, 139, 168);
