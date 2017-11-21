@@ -26,7 +26,7 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 120px
+      height: 240px
     }
 
     textarea:nth-of-type(2) {
@@ -55,7 +55,7 @@
       margin: 5px;
     }
 
-    .box>* {
+    .box > * {
       border: 2px solid rgb(96, 139, 168);
       border-radius: 5px;
       background-color: rgba(96, 139, 168, .2);
@@ -69,13 +69,7 @@
   </style>
 
   <style class="editable">
-    .box {
-      display: flex;
-    }
 
-    .box>* {
-      flex: 1;
-    }
   </style>
 </head>
 
@@ -92,15 +86,23 @@
         display: flex;
       }
 
-      .box>* {
+      .one {
+        flex: 1;
+      }
+
+      .two {
+        flex: 1;
+      }
+
+      .three {
         flex: 1;
       }
   </textarea>
   <textarea id="code" class="playable-html">
       <div class="box">
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
       </div>
     </textarea>
   <div class="playable-buttons">
