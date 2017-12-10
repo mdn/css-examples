@@ -55,12 +55,16 @@
       margin: 5px;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     .media {
       width: 300px;
       border: 2px dotted rgb(96, 139, 168);
     }
 
-    .media img {
+    .media .image {
         margin: 0 10px 0 0;
     }
 
@@ -81,7 +85,7 @@
 <body>
   <section>
     <div class="media">
-      <img src="https://placehold.it/60x60" alt="placeholder">
+      <div class="image"><img src="https://placehold.it/60x60" alt="placeholder"></div>
       <div class="content">This is the content of my media object. Items directly inside the flex container will be aligned to flex-start.</div>
     </div>
 
@@ -98,7 +102,7 @@
       </textarea>
   <textarea id="code" class="playable-html">
 <div class="media">
-    <img src="https://placehold.it/60x60" alt="placeholder">
+  <div class="image"><img src="https://placehold.it/60x60" alt="placeholder"></div>
     <div class="content">This is the content of my media object. Items directly inside the flex container will be aligned to flex-start.</div>
 </div>
       </textarea>
