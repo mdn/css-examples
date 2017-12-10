@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Use cases: label, input element and button</title>
+
+  <style>
+    body {
+      font: 1.2em Helvetica, Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+
+    textarea {
+      display: block;
+      margin-bottom: 10px;
+      background-color: #F4F7F8;
+      border: none;
+      border-left: 6px solid #558ABB;
+      color: #4D4E53;
+      width: 90%;
+      max-width: 700px;
+      padding: 10px 10px 0px;
+      font-size: 90%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 170px
+    }
+
+    textarea:nth-of-type(2) {
+      height: 80px
+    }
+
+    .playable-buttons {
+      text-align: right;
+      width: 90%;
+      max-width: 700px;
+      padding: 5px 10px 5px 26px;
+      font-size: 100%;
+    }
+
+    section {
+      width: 90%;
+      max-width: 700px;
+      border: 1px solid #4D4E53;
+      border-radius: 2px;
+      padding: 10px 14px 10px 10px;
+      margin-bottom: 10px;
+    }
+
+    section input {
+      display: block;
+      margin: 5px;
+    }
+
+    section .example input,
+    section .example label {
+        margin: 0;
+        font-size: 1.2em;
+        font-weight:  normal;
+        padding: 10px;
+
+    }
+
+    .wrapper {
+        border: 1px solid rgb(96, 139, 168);
+    }
+
+    .wrapper > * {
+        border: none;
+        line-height: 1;
+    }
+    .wrapper > input[type="text"] {
+        background-color: rgba(96, 139, 168,.5); 
+        border-right: 1px solid rgb(96, 139, 168);
+    }
+    .wrapper input[type="submit"] {
+        background-color: rgba(96, 139, 168,1); 
+        color: #fff;
+    }
+    .wrapper label {
+      background-color: #666; 
+        color: #fff;
+    }
+  </style>
+  <style class="editable">
+  .wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper input[type="text"] {
+  flex: 1 1 auto;
+}  
+  </style>
+</head>
+
+<body>
+  <section>
+    <form class="example">
+        <div class="wrapper"><label for="text">Label</label><input type="text" id="text"><input type="submit" value="Send"></div>
+    </form>
+  </section>
+  <textarea class="playable-css">
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper input[type="text"] {
+    flex: 1 1 auto;
+  }
+      </textarea>
+  <textarea id="code" class="playable-html">
+<form class="example">
+        <div class="wrapper"><label for="text">Label</label><input type="text" id="text"><input type="submit" value="Send"></div>
+</form>
+      </textarea>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script>
+  var section = document.querySelector('section');
+  var editable = document.querySelector('.editable');
+  var textareaHTML = document.querySelector('.playable-html');
+  var textareaCSS = document.querySelector('.playable-css');
+  var reset = document.getElementById('reset');
+  var htmlCode = textareaHTML.value;
+  var cssCode = textareaCSS.value;
+
+  function fillCode() {
+    editable.innerHTML = textareaCSS.value;
+    section.innerHTML = textareaHTML.value;
+  }
+
+  reset.addEventListener('click', function () {
+    textareaHTML.value = htmlCode;
+    textareaCSS.value = cssCode;
+    fillCode();
+  });
+
+  textareaHTML.addEventListener('input', fillCode);
+  textareaCSS.addEventListener('input', fillCode);
+  window.addEventListener('load', fillCode);
+</script>
+
+</html>
