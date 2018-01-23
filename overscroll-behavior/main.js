@@ -23,6 +23,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
   let pElem = document.createElement('p');
+  pElem.setAttribute('class', 'me');
   pElem.textContent = 'Chris: ' + input.value;
 
   messages.appendChild(pElem);
