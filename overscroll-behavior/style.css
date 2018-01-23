@@ -48,7 +48,7 @@ main div p {
 }
 
 body > header {
-  position: fixed;
+  position: sticky;
   top: 0;
 }
 
