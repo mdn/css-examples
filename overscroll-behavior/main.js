@@ -22,13 +22,15 @@ messages.scrollTop = messages.scrollHeight;
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  let pElem = document.createElement('p');
-  pElem.setAttribute('class', 'me');
-  pElem.textContent = 'Chris: ' + input.value;
+  if(input.value !== '') {
+    let pElem = document.createElement('p');
+    pElem.setAttribute('class', 'me');
+    pElem.textContent = 'Chris: ' + input.value;
 
-  messages.appendChild(pElem);
-  messages.scrollTop = messages.scrollHeight;
+    messages.appendChild(pElem);
+    messages.scrollTop = messages.scrollHeight;
 
-  input.value = '';
-  input.focus();
+    input.value = '';
+    input.focus();
+  }
 });
