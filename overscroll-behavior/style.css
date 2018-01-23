@@ -12,7 +12,7 @@ body {
   margin: 0;
   /* Use overscroll-behavior to stop the "bounce" or refresh effect you get on mobile
   browsers when getting to the top or bottom scroll limits of the page */
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none;
 }
 
 /* Styling of contacts */
