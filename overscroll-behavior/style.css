@@ -47,8 +47,8 @@ main div p {
   line-height: 20px;
 }
 
-header {
-  position: sticky;
+body > header {
+  position: fixed;
   top: 0;
 }
 
