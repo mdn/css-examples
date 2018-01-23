@@ -1,0 +1,98 @@
+/* General set up */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Styling of contacts */
+
+header, footer {
+  background-color: #a60000;
+  color: white;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  text-shadow: 2px 2px 1px black;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+main div {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+p {
+  margin: 0;
+}
+
+main div p {
+  line-height: 20px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+/* Styling of chatbox */
+
+.chatbox {
+  background: white;
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.messages {
+  height: 220px;
+  overflow: auto;
+  /* use overscroll-behavior-y to stop page scrolling behind the chatbox,
+  when the chatbox's scroll limits are reached */
+  overscroll-behavior-y: contain;
+}
+
+.messages p {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.me {
+  background-color: #bbb;
+}
+
+.you {
+  background-color: #eee;
+}
+
+.chatbox form {
+  height: 30px;
+  display: flex;
+}
+
+form input, form button {
+  display: block;
+}
+
+form input {
+  width: 70%;
+}
+
+form button {
+  width: 30%;
+  font-size: 0.7rem;
+}
