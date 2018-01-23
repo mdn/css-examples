@@ -10,6 +10,9 @@ html {
 
 body {
   margin: 0;
+  /* Use overscroll-behavior to stop the "bounce" effect you get on mobile
+  browsers when getting to the top or bottom scroll limits of the page */
+  overscroll-behavior: none;
 }
 
 /* Styling of contacts */
@@ -34,6 +37,10 @@ main div {
 
 p {
   margin: 0;
+}
+
+a {
+  color: #ccc;
 }
 
 main div p {
@@ -67,8 +74,8 @@ header {
 
 .messages p {
   margin: 10px;
-  padding: 5px;
-  border: 1px solid black;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .me {
@@ -77,6 +84,7 @@ header {
 
 .you {
   background-color: #eee;
+  text-align: right;
 }
 
 .chatbox form {
