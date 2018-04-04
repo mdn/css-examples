@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CSS Shapes Overview: Box values</title>
+  <title>CSS Shapes Box values: Border Box</title>
 
   <style>
     body {
@@ -27,7 +27,7 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 180px
+      height: 140px
     }
 
     textarea:nth-of-type(2) {
@@ -56,14 +56,18 @@
       margin: 5px;
     }
 
-  </style>
-  <style class="editable">
     .shape {
         background-color: rebeccapurple;
-        height: 150px;
-        width: 150px;
+        height: 80px;
+        width: 80px;
+    }
+
+  </style>
+  <style class="editable">
+    .shape {   
         padding: 20px;
         margin: 20px;
+        border: 10px solid black;
         border-radius: 50%;
         float: left;
         shape-outside: border-box;
@@ -75,17 +79,15 @@
   <section>
     <div class="box">
       <div class="shape"></div>
-      <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery. Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact; but on this particular occasion, as Stephen, the younger of the brothers, sat and gazed at the familiar sight, the question flashed across his mind, “What is the hidden power that makes those curling smoke-wreaths rise upwards, and10 could I not employ it to make other things rise also?”</p>
+      <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
     </div>
 
   </section>
   <textarea class="playable-css">
 .shape {
-  background-color: rebeccapurple;
-  height: 150px;
-  width: 150px;
   padding: 20px;
   margin: 20px;
+  border: 10px solid black;
   border-radius: 50%;
   float: left;
   shape-outside: border-box;
@@ -94,7 +96,7 @@
   <textarea id="code" class="playable-html">
 <div class="box">
   <div class="shape"></div>
-    <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery. Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact; but on this particular occasion, as Stephen, the younger of the brothers, sat and gazed at the familiar sight, the question flashed across his mind, “What is the hidden power that makes those curling smoke-wreaths rise upwards, and10 could I not employ it to make other things rise also?”</p>
+    <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
 </div>
       </textarea>
   <div class="playable-buttons">
