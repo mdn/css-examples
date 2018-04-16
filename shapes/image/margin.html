@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CSS Shapes from Images: Shape from image with generated content</title>
+  <title>CSS Shapes from Images: Using shape-margin</title>
 
   <style>
     body {
@@ -58,13 +58,11 @@
 
   </style>
   <style class="editable">
-    .box::before {
-        content: "";
+    img {
         float: left;
-        width: 400px;
-        height: 300px;
-        shape-outside: url(../images/star-shape-large.png);
-        shape-image-threshold: .3;
+        shape-outside: url(../images/star-shape1-20.png);
+        shape-image-threshold: .2;
+        shape-margin: 20px;
     }
   </style>
 </head>
@@ -72,22 +70,22 @@
 <body>
   <section>
     <div class="box">
+      <img src="../images/star-shape1-20.png" alt="star">
       <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery. Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.</p>
     </div>
 
   </section>
   <textarea class="playable-css">
-.box::before {
-    content: "";
-    float: left;
-    width: 400px;
-    height: 300px;
-    shape-outside: url(../images/star-shape-large.png);
-    shape-image-threshold: .3;
+img {
+  float: left;
+  shape-outside: url(../images/star-shape1-20.png);
+  shape-image-threshold: .2;
+  shape-margin: 20px;
 }
       </textarea>
   <textarea id="code" class="playable-html">
 <div class="box">
+  <img src="../images/star-shape1-20.png" alt="star">
   <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney. Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery. Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.</p>
 </div>
       </textarea>

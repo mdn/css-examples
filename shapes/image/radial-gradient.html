@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CSS Shapes from Images: Shape from image with generated content</title>
+  <title>CSS Shapes from Images: simple example</title>
 
   <style>
     body {
@@ -61,9 +61,10 @@
     .box::before {
         content: "";
         float: left;
+        height: 250px;
         width: 400px;
-        height: 300px;
-        shape-outside: url(../images/star-shape-large.png);
+        background-image: radial-gradient(ellipse closest-side, rebeccapurple, blue 50%, transparent);
+        shape-outside: radial-gradient(ellipse closest-side, rebeccapurple, blue 50%, transparent);
         shape-image-threshold: .3;
     }
   </style>
@@ -80,9 +81,10 @@
 .box::before {
     content: "";
     float: left;
+    height: 250px;
     width: 400px;
-    height: 300px;
-    shape-outside: url(../images/star-shape-large.png);
+    background-image: radial-gradient(ellipse closest-side, rebeccapurple, blue 50%, transparent);
+    shape-outside: radial-gradient(ellipse closest-side, rebeccapurple, blue 50%, transparent);
     shape-image-threshold: .3;
 }
       </textarea>
