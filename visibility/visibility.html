@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Visibility Example</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+        span {
+          vertical-align: 50%;
+        }
+        button {
+          line-height: 1em;
+        }
+        .invisible {
+          visibility: hidden;
+        }        
+    </style>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <h1>Visibility Example</h1>
+    
+    <p>This page illustrates usage of the CSS <code>visibility</code> property. The SVG icon image path is toggled on click.</p>
+    
+    <button id="nav-toggle-button" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="button-icon">
+        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+        <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z" class="invisible"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+      <span>
+        navigate
+      </span>
+    </button>
+    
+  </body>
+  <script>
+    document.querySelector("button").addEventListener("click", function (evt) {
+      this.querySelector("svg > path:nth-of-type(1)").classList.toggle("invisible");
+      this.querySelector("svg > path:nth-of-type(2)").classList.toggle("invisible");
+    });
+  </script>
+</html>
