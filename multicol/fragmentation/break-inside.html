@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Multicol example - auto</title>
+  <title>Multicol example - break-inside</title>
 
   <style>
     body {
@@ -56,16 +56,27 @@
       display: block;
       margin: 5px;
     }
+
     img {
-    max-width: 100%;
-}
+        max-width: 100%;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    figcaption {
+        font-weight: bold;
+        border-bottom: 2px solid #999;
+    }
 
   </style>
   <style class="editable">
     .container {
-      column-width: 150px;
-      column-fill: auto;
-      height: 250px;
+      column-width: 200px;
+    }
+    figure {
+        break-inside: avoid;
     }
   </style>
 </head>
@@ -73,33 +84,37 @@
 <body>
   <section>
     <div class="container">
-        <img src="../overflow/image.jpg" alt="balloons">
-        
+        <figure>
+            <img src="../overflow/image.jpg" alt="balloons">
+            <figcaption>Balloons</figcaption>
+        </figure>
         <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
         
-        <p>Gumbo beet greens corn soko endive gumbo gourd.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. </p>
         
-       
+        
     </div>
 
   </section>
   <textarea class="playable-css">
 .container {
-  column-width: 150px;
-  column-fill: auto;
-  height: 250px;
+  column-width: 200px;
 }
-
+figure {
+    break-inside: avoid;
+}
       </textarea>
   <textarea id="code" class="playable-html">
 <div class="container">
-  <img src="../overflow/image.jpg" alt="balloons">
-
+  <figure>
+    <img src="../overflow/image.jpg" alt="balloons">
+    <figcaption>Balloons</figcaption>
+  </figure>
   <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-
-  <p>Gumbo beet greens corn soko endive gumbo gourd.</p>
+  
+  <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato.</p>
             
- 
+  
 </div>
       </textarea>
   <div class="playable-buttons">

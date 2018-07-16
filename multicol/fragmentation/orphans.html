@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Multicol example - auto</title>
+  <title>Multicol example - orphans</title>
 
   <style>
     body {
@@ -56,50 +56,64 @@
       display: block;
       margin: 5px;
     }
+
     img {
-    max-width: 100%;
-}
+        max-width: 100%;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    figcaption {
+        font-weight: bold;
+        border-bottom: 2px solid #999;
+    }
 
   </style>
   <style class="editable">
     .container {
-      column-width: 150px;
-      column-fill: auto;
-      height: 250px;
+      column-width: 200px;
+      orphans: 3;
     }
+
+    
+
   </style>
 </head>
 
 <body>
   <section>
     <div class="container">
-        <img src="../overflow/image.jpg" alt="balloons">
-        
-        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-        
-        <p>Gumbo beet greens corn soko endive gumbo gourd.</p>
-        
        
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon.</p>
+        
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce.</p>
+        
+        
     </div>
 
   </section>
   <textarea class="playable-css">
 .container {
-  column-width: 150px;
-  column-fill: auto;
-  height: 250px;
+  column-width: 200px;
+  orphans: 3;
 }
+
 
       </textarea>
   <textarea id="code" class="playable-html">
 <div class="container">
-  <img src="../overflow/image.jpg" alt="balloons">
 
-  <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-
-  <p>Gumbo beet greens corn soko endive gumbo gourd.</p>
+    <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon.</p>
+        
+    <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        
+    <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce.</p>
             
- 
+  
 </div>
       </textarea>
   <div class="playable-buttons">
