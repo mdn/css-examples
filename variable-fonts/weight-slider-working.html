@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Variable Font example - weight</title>
+
+  <style>
+    @font-face {
+      font-family: 'Amstelvar VF';
+      src: url('fonts/Amstelvar-Roman-VF.woff2') format('woff');
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Amstelvar VF';
+      src: url('fonts/Amstelvar-Italic-VF.woff2') format('woff');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+    body {
+      font: 1.2em "Amstelvar VF", Georgia, serif;
+      margin: 20px;
+      padding: 0;
+    }
+
+    textarea {
+      font-family: monospace;
+      display: block;
+      margin-bottom: 10px;
+      height: 160px;
+      background-color: #F4F7F8;
+      border: none;
+      border-left: 6px solid #558ABB;
+      color: #4D4E53;
+      width: 90%;
+      max-width: 700px;
+      padding: 10px 10px 0px;
+      font-size: 90%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 80px
+    }
+
+    textarea:nth-of-type(2) {
+      height: 160px
+    }
+
+    .playable-buttons {
+      text-align: right;
+      width: 90%;
+      max-width: 700px;
+      padding: 5px 10px 5px 26px;
+      font-size: 100%;
+    }
+
+    section {
+      width: 90%;
+      max-width: 700px;
+      border: 1px solid #4D4E53;
+      border-radius: 2px;
+      padding: 10px 14px 10px 10px;
+      margin-bottom: 10px;
+    }
+
+    section input {
+      display: block;
+      margin: 5px;
+    }
+    .container * {
+      font-size: 3rem;
+    }
+}
+
+  </style>
+  <style class="editable">
+    .container * {
+      font-weight: 675;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="container">
+        
+        <p>Weight</p>
+       
+    </div>
+
+  </section>
+  <div id='demo-controls'>
+    <div class="controls range-weight">
+      <input type="range" name="range-weight" value="675" id="text-vf-wght" class="controls--weight" min="300" max="900"> <label for="controls__weight">Weight</label>
+    </div>
+  </div>
+
+  <textarea class="playable-css">
+.container * {
+  font-weight: 675;
+}
+
+      </textarea>
+  <textarea id="code" class="playable-html">
+<div class="container">
+
+  <p>Weight</p>         
+ 
+</div>
+      </textarea>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script>
+  var section = document.querySelector('section');
+  var editable = document.querySelector('.editable');
+  var textareaHTML = document.querySelector('.playable-html');
+  var textareaCSS = document.querySelector('.playable-css');
+  var reset = document.getElementById('reset');
+  var htmlCode = textareaHTML.value;
+  var cssCode = textareaCSS.value;
+
+  function fillCode() {
+    editable.innerHTML = textareaCSS.value;
+    section.innerHTML = textareaHTML.value;
+  }
+
+  reset.addEventListener('click', function () {
+    textareaHTML.value = htmlCode;
+    textareaCSS.value = cssCode;
+    fillCode();
+  });
+
+  textareaHTML.addEventListener('input', fillCode);
+  textareaCSS.addEventListener('input', fillCode);
+  window.addEventListener('load', fillCode);
+
+// get the inputs
+const inputs = [].slice.call(document.querySelectorAll('.range__wght .controls input'));
+
+// listen for changes
+inputs.forEach(input => input.addEventListener('change', handleUpdate));
+inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+
+function handleUpdate(e) {
+  document.querySelector('.range__wght').style.setProperty(`--${this.id}`, this.value);
+}
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Variable Font example - slant</title>
+
+  <style>
+    @font-face {
+      font-family: 'Roboto VF';
+      src: url('fonts/Roboto-VF.woff2') format('woff2');
+      font-weight: 100 900;
+      font-stretch: 75 100;
+      font-style: oblique 0deg 12deg;
+      font-display: swap;
+    }
+
+    html {
+      box-sizing: border-box;
+      font-size: 100%;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font: 1.2em "Roboto VF", Georgia, serif;
+      margin: 20px;
+      padding: 0;
+    }
+    
+    .wrapper {
+      width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(28rem,1fr));
+        grid-gap: 2rem;
+    }
+
+    textarea {
+      font-family: monospace;
+      display: block;
+      margin-bottom: 10px;
+      height: 160px;
+      background-color: #F4F7F8;
+      border: none;
+      border-left: 6px solid #558ABB;
+      color: #4D4E53;
+      padding: 1rem 0;
+      width: 100%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 130px;
+    }
+
+    textarea:nth-of-type(2) {
+      height: 100px;
+    }
+
+    .playable-buttons {
+      text-align: right;
+      width: 100%;
+      padding: 0.5rem 0;
+      font-size: 100%;
+    }
+
+    .section {
+      width: 100%;
+      border: 1px solid #4D4E53;
+      border-radius: 2px;
+      padding: 10px 14px 10px 10px;
+      margin-bottom: 10px;
+    }
+
+    .section input {
+      display: block;
+      margin: 5px;
+    }
+    .container * {
+      font-size: 4rem;
+      margin: 1.5rem 0;
+    }
+}
+
+  </style>
+  <style class="editable1">
+    /* slant range is from 0deg to 12deg */
+    .container1 * {
+      font-style: oblique 0deg;
+    }
+  </style>
+  <style class="editable2">
+    /* slant range is from 0 to 12 */
+    .container2 * {
+      font-variation-settings: "slnt" 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="demo1">
+      <section class="section section1">
+        <div class="container container1">
+            <p>Slant</p>
+        </div>
+      </section>
+    
+<textarea class="playable-css1">
+  /* slant range is from 0deg to 12deg */
+  .container1 * {
+    font-style: oblique 0deg;
+  }
+</textarea>
+<textarea id="code1" class="playable-html1">
+  <div class="container container1">
+    <p>Slant</p>
+  </div>
+</textarea>
+    </div>
+    <div class="demo2">
+      <section class="section section2">
+        <div class="container container2">
+            <p>Slant</p>
+        </div>
+      </section>
+    
+<textarea class="playable-css2">
+  /* slant range is from 0 to 12 */
+  .container2 * {
+    font-variation-settings: "slnt" 0;
+  }
+</textarea>
+<textarea id="code2" class="playable-html2">
+  <div class="container container2">
+    <p>Slant</p>
+  </div>
+</textarea>
+    </div>
+  </div>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script>
+  var section1 = document.querySelector('.section1');
+  var editable1 = document.querySelector('.editable1');
+  var textareaHTML1 = document.querySelector('.playable-html1');
+  var textareaCSS1 = document.querySelector('.playable-css1');
+  var section2 = document.querySelector('.section2');
+  var editable2 = document.querySelector('.editable2');
+  var textareaHTML2 = document.querySelector('.playable-html2');
+  var textareaCSS2 = document.querySelector('.playable-css2');
+  var reset = document.getElementById('reset');
+  var htmlCode1 = textareaHTML1.value;
+  var cssCode1 = textareaCSS1.value;
+  var htmlCode2 = textareaHTML2.value;
+  var cssCode2 = textareaCSS2.value;
+
+  function fillCode() {
+    editable1.innerHTML = textareaCSS1.value;
+    section1.innerHTML = textareaHTML1.value;
+    editable2.innerHTML = textareaCSS2.value;
+    section2.innerHTML = textareaHTML2.value;
+  }
+
+  reset.addEventListener('click', function () {
+    textareaHTML1.value = htmlCode1;
+    textareaCSS1.value = cssCode1;
+    textareaHTML2.value = htmlCode2;
+    textareaCSS2.value = cssCode2;
+    fillCode();
+  });
+
+  textareaHTML1.addEventListener('input', fillCode);
+  textareaCSS1.addEventListener('input', fillCode);
+  textareaHTML2.addEventListener('input', fillCode);
+  textareaCSS2.addEventListener('input', fillCode);
+  window.addEventListener('load', fillCode);
+
+</script>
+
+</html>
