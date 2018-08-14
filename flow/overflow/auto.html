@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Overflow auto</title>
+
+  <style>
+    body {
+      font: 1.2em Helvetica, Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+
+    textarea {
+      font-family: monospace;
+      display: block;
+      margin-bottom: 10px;
+      background-color: #F4F7F8;
+      border: none;
+      border-left: 6px solid #558ABB;
+      color: #4D4E53;
+      width: 90%;
+      max-width: 700px;
+      padding: 10px 10px 0px;
+      font-size: 90%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 80px
+    }
+
+    textarea:nth-of-type(2) {
+      height: 160px
+    }
+
+    .playable-buttons {
+      text-align: right;
+      width: 90%;
+      max-width: 700px;
+      padding: 5px 10px 5px 26px;
+      font-size: 100%;
+    }
+
+    section {
+      width: 90%;
+      max-width: 700px;
+      border: 1px solid #4D4E53;
+      border-radius: 2px;
+      padding: 10px 14px 10px 10px;
+      margin-bottom: 10px;
+    }
+
+    section input {
+      display: block;
+      margin: 5px;
+    }
+
+  </style>
+  <style class="editable">
+    .box {
+        width: 300px;
+        height: 100px;
+        border: 5px solid rebeccapurple;
+        padding: 10px;
+        overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="box">
+      <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney.</p>
+     
+    </div>
+    <p>Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+    <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+
+  </section>
+  <textarea class="playable-css">
+.box {
+    width: 300px;
+    height: 100px;
+    border: 5px solid rebeccapurple;
+    padding: 10px;
+    overflow: auto;
+}
+      </textarea>
+  <textarea id="code" class="playable-html">
+<div class="box">
+    <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney.</p> 
+
+</div>
+<p>Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
+<p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
+      </textarea>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script>
+  var section = document.querySelector('section');
+  var editable = document.querySelector('.editable');
+  var textareaHTML = document.querySelector('.playable-html');
+  var textareaCSS = document.querySelector('.playable-css');
+  var reset = document.getElementById('reset');
+  var htmlCode = textareaHTML.value;
+  var cssCode = textareaCSS.value;
+
+  function fillCode() {
+    editable.innerHTML = textareaCSS.value;
+    section.innerHTML = textareaHTML.value;
+  }
+
+  reset.addEventListener('click', function () {
+    textareaHTML.value = htmlCode;
+    textareaCSS.value = cssCode;
+    fillCode();
+  });
+
+  textareaHTML.addEventListener('input', fillCode);
+  textareaCSS.addEventListener('input', fillCode);
+  window.addEventListener('load', fillCode);
+</script>
+
+</html>
