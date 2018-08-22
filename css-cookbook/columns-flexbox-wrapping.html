@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>CSS Cookbook: columns with flexbox, wrapping</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .container {
+            border: 2px solid rgb(75, 70, 74);
+            border-radius: .5em;
+            padding: 20px 10px;
+            width: 500px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container>* {
+            margin: 0 10px;
+            flex: 1 1 200px;
+            padding: 10px;
+            border: 2px solid rgb(95, 97, 110);
+            border-radius: .5em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+            melon azuki bean garlic.</p>
+
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard
+            greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+
+        <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea
+            prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane
+            fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
+    </div>
+</body>
+
+</html>

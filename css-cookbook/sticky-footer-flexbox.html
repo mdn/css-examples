@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>CSS Cookbook: sticky footer with flexbox</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .page-header,
+        .page-footer {
+            background-color: rgb(75, 70, 74);
+            color: #fff;
+            padding: 20px;
+            flex-shrink: 0;
+        }
+
+        .page-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="page-header">This is the header</header>
+    <article class="page-body">
+        <div class="item">Main page content here, add more if you want to see the footer push down.</div>
+    </article>
+    <footer class="page-footer">Sticky footer</footer>
+</body>
+
+</html>
