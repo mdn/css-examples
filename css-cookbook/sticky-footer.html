@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        body {
-            min-height: 100vh;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-        }
-
         * {
             box-sizing: border-box;
         }
@@ -30,16 +24,55 @@
         .page-body {
             padding: 20px;
         }
+
+        .preview {
+            height: 400px;
+        }
+    </style>
+
+    <style class="editable">
+        .wrapper {
+            min-height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
     </style>
 
 </head>
 
 <body>
+    <section class="preview">
+        <div class="wrapper">
+            <header class="page-header">This is the header</header>
+            <main class="page-body">
+                <p>Main page content here, add more if you want to see the footer push down.</p>
+            </main>
+            <footer class="page-footer">Sticky footer</footer>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css">
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+</textarea>
+
+    <textarea class="playable playable-html">
+<div class="wrapper">
     <header class="page-header">This is the header</header>
     <article class="page-body">
-        <div class="item">Main page content here, add more if you want to see the footer push down.</div>
+        <p>Main page content here, add more if you want to see the footer push down.</p>
     </article>
     <footer class="page-footer">Sticky footer</footer>
+</div>
+</textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
 </body>
+<script src="playable.js"></script>
 
 </html>
