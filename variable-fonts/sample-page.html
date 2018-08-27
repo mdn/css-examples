@@ -8,18 +8,10 @@
   <style>
     @font-face {
       font-family: 'Amstelvar VF';
-      src: url('fonts/Amstelvar-Roman-VF.woff2') format('woff2-variations');
+      src: url('fonts/AmstelvarAlpha-VF.woff2') format('woff2-variations');
       font-weight: 300 900;
       font-stretch: 75 150;
       font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Amstelvar VF';
-      src: url('fonts/Amstelvar-Italic-VF.woff2') format('woff2-variations');
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: italic;
       font-display: swap;
     }
 
@@ -119,9 +111,9 @@
       --text-wdth: 100;
       --text-opsz: 16;
     }
-    .container2 h1, .container2 h2, .container2 p {
+    .container2 > * {
       font-size: 5rem;
-      font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz);
+      font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz), 'GRAD' var(--text-GRAD)
     }
     .container2 h1 {
       --text-wght: 450;
@@ -134,6 +126,9 @@
       --text-wdth: 95;
       --text-opsz: 36;
       font-size: 2.25rem;
+    }
+    .container2 h2:hover {
+      --text-GRAD: 130;
     }
     .container2 p {
       font-size: 1rem;
@@ -217,7 +212,7 @@
       <section class="section section2">
         <div class="container container2">
           <h1>Moby Dick</h1>
-          <h2>CHAPTER 1. Loomings.</h2>
+          <h2>CHAPTER 1. Loomings. (hover here)</h2>
           <p>
             Call me Ishmael. Some years ago—never mind how long precisely–having
             little or no money in my purse, and nothing particular to interest me on
@@ -243,10 +238,11 @@
           --text-wght: 375;
           --text-wdth: 100;
           --text-opsz: 16;
+          --text-GRAD: 88;
         }
-        .container2 h1, .container2 h2, .container2 p {
+        .container2 > * {
           font-size: 5rem;
-          font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz);
+          font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz), 'GRAD' var(--text-GRAD);
         }
         .container2 h1 {
           --text-wght: 450;
@@ -260,6 +256,9 @@
           --text-opsz: 36;
           font-size: 2.25rem;
         }
+        .container2 h2:hover {
+          --text-GRAD: 130;
+        }
         .container2 p {
           font-size: 1rem;
         }
@@ -267,7 +266,7 @@
       <textarea id="code2" class="playable-html2">
         <div class="container container2">
           <h1>Moby Dick</h1>
-          <h2>CHAPTER 1. Loomings.</h2>
+          <h2>CHAPTER 1. Loomings. (hover here)</h2>
           <p>
             Call me Ishmael. Some years ago—never mind how long precisely–having
             little or no money in my purse, and nothing particular to interest me on
