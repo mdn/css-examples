@@ -127,12 +127,9 @@
         </div>
       </section>
       <textarea class="playable-css1">
-        /* width range is from 75 to 150 */
+        /* width range is from 75% to 150% */
         .container1 * {
-          font-stretch: 100;
-          /* above should work, but is not implemented yet */
-          /* so supplying alternate syntax below */
-          font-variation-settings: 'wdth' 100;
+          font-stretch: 100%;
         }
       </textarea>
       <textarea id="code1" class="playable-html1">
@@ -148,7 +145,7 @@
         </div>
       </section>
       <textarea class="playable-css2">
-        /* width range is from 75 to 150 */
+        /* width range is an integer from 75 to 150 */
         .container2 * {
           font-variation-settings: 'wdth' 100;
         }
