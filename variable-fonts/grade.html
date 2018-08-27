@@ -3,15 +3,15 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Variable Font example - slant</title>
+  <title>Variable Font example - grade</title>
 
   <style>
     @font-face {
-      font-family: 'Roboto VF';
-      src: url('fonts/Roboto-VF.woff2') format('woff2-variations');
+      font-family: 'Amstelvar VF';
+      src: url('fonts/AmstelvarAlpha-VF.woff2') format('woff2');
       font-weight: 100 900;
       font-stretch: 75 100;
-      font-style: oblique 0deg 12deg;
+      font-style: normal;
       font-display: swap;
     }
 
@@ -27,7 +27,7 @@
     }
 
     body {
-      font: 1.2em "Roboto VF", Georgia, serif;
+      font: 1.2em "Amstelvar VF", Georgia, serif;
       margin: 20px;
       padding: 0;
     }
@@ -35,8 +35,8 @@
     .wrapper {
       width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
-        grid-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill,minmax(28rem,1fr));
+        grid-gap: 2rem;
     }
 
     textarea {
@@ -81,32 +81,25 @@
     }
 
     .container * {
-      font-size: 4rem;
       margin: 1.5rem 0;
     }
 
-    .demo3 {
-      --text-axis: 0;
+    .demo2 {
+      --text-axis: 88;
     }
-}
-
   </style>
   <style class="editable1">
-    /* slant range is from 0deg to 12deg */
+    /* grade range is 88 to 150 */
     .container1 * {
-      font-style: oblique 0deg;
+      font-size: 64px;
+      font-variation-settings: 'GRAD' 88;
     }
   </style>
   <style class="editable2">
-    /* slant range is from 0 to 12 */
-    .container2 * {
-      font-variation-settings: 'slnt' 0;
-    }
-  </style>
-  <style class="editable3">
     /* Adjusted with slider and custom property */
-    .container3 * {
-      font-variation-settings: 'slnt' var(--text-axis);
+    .container2 * {
+      font-size: 64px;
+      font-variation-settings: 'GRAD' var(--text-axis);
     }
   </style>
 </head>
@@ -116,58 +109,42 @@
     <div class="demo1">
       <section class="section section1">
         <div class="container container1">
-            <p>Slant</p>
+            <p>Grade</p>
         </div>
       </section>
       <textarea class="playable-css1">
-        /* slant range is from 0deg to 12deg */
+        /* grade (GRAD) range is 88 (default) up to 150 */
         .container1 * {
-          font-style: oblique 0deg;
+          font-size: 64px;
+          font-variation-settings: 'GRAD' 88;
         }
       </textarea>
       <textarea id="code1" class="playable-html1">
         <div class="container container1">
-          <p>Slant</p>
+          <p>Grade</p>
         </div>
       </textarea>
     </div>
     <div class="demo2">
       <section class="section section2">
         <div class="container container2">
-            <p>Slant</p>
+            <p>Grade</p>
         </div>
       </section>
       <textarea class="playable-css2">
-        /* slant range is from 0 to 12 */
+        /* Adjusted with slider and custom property */
         .container2 * {
-          font-variation-settings: 'slnt' 0;
+          font-size: 64px;
+          font-variation-settings: 'GRAD' var(--text-axis);
         }
       </textarea>
       <textarea id="code2" class="playable-html2">
         <div class="container container2">
-          <p>Slant</p>
-        </div>
-      </textarea>
-    </div>
-    <div class="demo3">
-      <section class="section section3">
-        <div class="container container3">
-            <p>Slant</p>
-        </div>
-      </section>
-      <textarea class="playable-css3">
-        /* Adjusted with slider and custom property */
-        .container3 * {
-          font-variation-settings: 'slnt' var(--text-axis);
-        }
-      </textarea>
-      <textarea id="code3" class="playable-html3">
-        <div class="container container3">
-          <p>Slant</p>
+          <p>Grade</p>
         </div>
       </textarea>
       <div class="controls range-slider">
-        <label for="controls__slider">Adjust Slant: </label><input type="range" name="range-slider" value="0" id="text-axis" class="controls--slider" min="0" max="12"> 
+        <label for="controls__slider">Adjust Grade: </label><input type="range" name="range-slider" value="88" id="text-axis" class="controls--slider" min="88" max="150"> 
       </div>
     </div>
   </div>
@@ -184,28 +161,21 @@
   var editable2 = document.querySelector('.editable2');
   var textareaHTML2 = document.querySelector('.playable-html2');
   var textareaCSS2 = document.querySelector('.playable-css2');
-  var section3 = document.querySelector('.section3');
-  var editable3 = document.querySelector('.editable3');
-  var textareaHTML3 = document.querySelector('.playable-html3');
-  var textareaCSS3 = document.querySelector('.playable-css3');
   var rangeinput = document.querySelector('.controls--slider');
   var reset = document.getElementById('reset');
   var htmlCode1 = textareaHTML1.value;
   var cssCode1 = textareaCSS1.value;
   var htmlCode2 = textareaHTML2.value;
   var cssCode2 = textareaCSS2.value;
-  var htmlCode3 = textareaHTML3.value;
-  var cssCode3 = textareaCSS3.value;
+  var rangeValue = rangeinput.value;
 
   function fillCode() {
     editable1.innerHTML = textareaCSS1.value;
     section1.innerHTML = textareaHTML1.value;
     editable2.innerHTML = textareaCSS2.value;
     section2.innerHTML = textareaHTML2.value;
-    editable3.innerHTML = textareaCSS3.value;
-    section3.innerHTML = textareaHTML3.value;
-    rangeinput.value = 0;
-    document.querySelector('.demo3').style.setProperty('--text-axis', 0);
+    rangeinput.value = 88;
+    document.querySelector('.demo2').style.setProperty('--text-axis', 88);
   }
 
   reset.addEventListener('click', function () {
@@ -213,8 +183,6 @@
     textareaCSS1.value = cssCode1;
     textareaHTML2.value = htmlCode2;
     textareaCSS2.value = cssCode2;
-    textareaHTML3.value = htmlCode3;
-    textareaCSS3.value = cssCode3;
     fillCode();
   });
 
@@ -222,19 +190,17 @@
   textareaCSS1.addEventListener('input', fillCode);
   textareaHTML2.addEventListener('input', fillCode);
   textareaCSS2.addEventListener('input', fillCode);
-  textareaHTML3.addEventListener('input', fillCode);
-  textareaCSS3.addEventListener('input', fillCode);
   window.addEventListener('load', fillCode);
 
   // get the inputs
-  const inputs = [].slice.call(document.querySelectorAll('.demo3 .controls input'));
+  const inputs = [].slice.call(document.querySelectorAll('.demo2 .controls input'));
 
   // listen for changes
   inputs.forEach(input => input.addEventListener('change', handleUpdate));
   inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
 
   function handleUpdate(e) {
-    document.querySelector('.demo3').style.setProperty(`--${this.id}`, this.value);
+    document.querySelector('.demo2').style.setProperty(`--${this.id}`, this.value);
   }
 
 </script>
