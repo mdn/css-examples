@@ -35,8 +35,8 @@
     .wrapper {
       width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
-        grid-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+        grid-gap: 1rem;
     }
 
     textarea {
@@ -104,7 +104,7 @@
     }
   </style>
   <style class="editable3">
-    /* Adjusted with slider and custom property */
+    /* Adjust with slider & custom property */
     .container3 * {
       font-variation-settings: 'slnt' var(--text-axis);
     }
@@ -119,17 +119,17 @@
             <p>Slant</p>
         </div>
       </section>
-      <textarea class="playable-css1">
-        /* slant range is from 0deg to 12deg */
-        .container1 * {
-          font-style: oblique 0deg;
-        }
-      </textarea>
-      <textarea id="code1" class="playable-html1">
-        <div class="container container1">
-          <p>Slant</p>
-        </div>
-      </textarea>
+<textarea class="playable-css1">
+  /* slant range is from 0deg to 12deg */
+  .container1 * {
+    font-style: oblique 0deg;
+  }
+</textarea>
+<textarea id="code1" class="playable-html1">
+  <div class="container container1">
+    <p>Slant</p>
+  </div>
+</textarea>
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -137,17 +137,17 @@
             <p>Slant</p>
         </div>
       </section>
-      <textarea class="playable-css2">
-        /* slant range is from 0 to 12 */
-        .container2 * {
-          font-variation-settings: 'slnt' 0;
-        }
-      </textarea>
-      <textarea id="code2" class="playable-html2">
-        <div class="container container2">
-          <p>Slant</p>
-        </div>
-      </textarea>
+<textarea class="playable-css2">
+  /* slant range is from 0 to 12 */
+  .container2 * {
+    font-variation-settings: 'slnt' 0;
+  }
+</textarea>
+<textarea id="code2" class="playable-html2">
+  <div class="container container2">
+    <p>Slant</p>
+  </div>
+</textarea>
     </div>
     <div class="demo3">
       <section class="section section3">
@@ -155,17 +155,17 @@
             <p>Slant</p>
         </div>
       </section>
-      <textarea class="playable-css3">
-        /* Adjusted with slider and custom property */
-        .container3 * {
-          font-variation-settings: 'slnt' var(--text-axis);
-        }
-      </textarea>
-      <textarea id="code3" class="playable-html3">
-        <div class="container container3">
-          <p>Slant</p>
-        </div>
-      </textarea>
+<textarea class="playable-css3">
+  /* Adjust with slider & custom property */
+  .container3 * {
+    font-variation-settings: 'slnt' var(--text-axis);
+  }
+</textarea>
+<textarea id="code3" class="playable-html3">
+  <div class="container container3">
+    <p>Slant</p>
+  </div>
+</textarea>
       <div class="controls range-slider">
         <label for="controls__slider">Adjust Slant: </label><input type="range" name="range-slider" value="0" id="text-axis" class="controls--slider" min="0" max="12"> 
       </div>

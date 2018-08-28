@@ -43,8 +43,8 @@
     .wrapper {
       width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(22rem,1fr));
-        grid-gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+        grid-gap: 1rem;
     }
 
     textarea {
@@ -99,19 +99,19 @@
 
   </style>
   <style class="editable1">
-    /* width range is from 75 to 150 */
+    /* width range is 75 to 150 */
     .container1 * {
       font-stretch: 100;
     }
   </style>
   <style class="editable2">
-    /* width range is from 75 to 150 */
+    /* width range is an integer from 75 to 150 */
     .container2 * {
       font-variation-settings: 'wdth' 100;
     }
   </style>
   <style class="editable3">
-    /* Adjusted with slider and custom property */
+    /* Adjust with slider & custom property */
     .container3 * {
       font-variation-settings: 'wdth' var(--text-axis);
     }
@@ -126,17 +126,17 @@
             <p>Width</p>
         </div>
       </section>
-      <textarea class="playable-css1">
-        /* width range is from 75% to 150% */
-        .container1 * {
-          font-stretch: 100%;
-        }
-      </textarea>
-      <textarea id="code1" class="playable-html1">
-        <div class="container container1">
-          <p>Width</p>
-        </div>
-      </textarea>
+<textarea class="playable-css1">
+  /* width range is from 75% to 150% */
+  .container1 * {
+    font-stretch: 100%;
+  }
+</textarea>
+<textarea id="code1" class="playable-html1">
+  <div class="container container1">
+    <p>Width</p>
+  </div>
+</textarea>
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -144,17 +144,17 @@
             <p>Width</p>
         </div>
       </section>
-      <textarea class="playable-css2">
-        /* width range is an integer from 75 to 150 */
-        .container2 * {
-          font-variation-settings: 'wdth' 100;
-        }
-      </textarea>
-      <textarea id="code2" class="playable-html2">
-        <div class="container container2">
-          <p>Width</p>
-        </div>
-      </textarea>
+<textarea class="playable-css2">
+  /* width range is an integer from 75 to 150 */
+  .container2 * {
+    font-variation-settings: 'wdth' 100;
+  }
+</textarea>
+<textarea id="code2" class="playable-html2">
+  <div class="container container2">
+    <p>Width</p>
+  </div>
+</textarea>
     </div>
     <div class="demo3">
       <section class="section section3">
@@ -162,17 +162,17 @@
             <p>Width</p>
         </div>
       </section>
-      <textarea class="playable-css3">
-        /* Adjusted with slider and custom property */
-        .container3 * {
-          font-variation-settings: 'wdth' var(--text-axis);
-        }
-      </textarea>
-      <textarea id="code3" class="playable-html3">
-        <div class="container container3">
-          <p>Width</p>
-        </div>
-      </textarea>
+<textarea class="playable-css3">
+  /* Adjusted with slider and custom property */
+  .container3 * {
+    font-variation-settings: 'wdth' var(--text-axis);
+  }
+</textarea>
+<textarea id="code3" class="playable-html3">
+  <div class="container container3">
+    <p>Width</p>
+  </div>
+</textarea>
       <div class="controls range-slider">
         <label for="controls__slider">Adjust Width: </label><input type="range" name="range-slider" value="100" id="text-axis" class="controls--slider" min="75" max="150"> 
       </div>
