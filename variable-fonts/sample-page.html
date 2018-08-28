@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Variable Font example page (static CSS)</title>
+
+  <style>
+    @font-face {
+      font-family: 'Amstelvar VF';
+      src: url('fonts/AmstelvarAlpha-VF.woff2') format('woff2-variations');
+      font-weight: 300 900;
+      font-stretch: 75 150;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html {
+      box-sizing: border-box;
+      font-size: 100%;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font: 1.2em "Amstelvar VF", Georgia, serif;
+      margin: 20px;
+      padding: 0;
+    }
+    
+    .wrapper {
+      width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(29rem,1fr));
+        grid-gap: 1.5rem;
+    }
+
+    textarea {
+      font-family: monospace;
+      display: block;
+      margin-bottom: 10px;
+      height: 160px;
+      background-color: #F4F7F8;
+      border: none;
+      border-left: 6px solid #558ABB;
+      color: #4D4E53;
+      padding: 1rem 0;
+      width: 100%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 300px;
+    }
+
+    textarea:nth-of-type(2) {
+      height: 200px;
+    }
+
+    .playable-buttons {
+      text-align: right;
+      width: 100%;
+      padding: 0.5rem 0;
+      font-size: 100%;
+    }
+
+    .section {
+      width: 100%;
+      border: 1px solid #4D4E53;
+      border-radius: 2px;
+      padding: 10px 14px 10px 10px;
+      margin-bottom: 10px;
+    }
+
+    .section input {
+      display: block;
+      margin: 5px;
+    }
+
+    .container * {
+      margin: 0.5rem auto 1rem;
+      max-width: 42rem;
+    }
+  </style>
+  <style class="editable1">
+    .container1 h1 {
+      font-optical-sizing: auto;
+      font-size: 5rem;
+      font-stretch: 85%;
+      font-weight: 450;
+    }
+    .container1 h2 {
+      font-optical-sizing: auto;
+      font-size: 2.25rem;
+      font-stretch: 95%;
+      font-weight: 575;
+    }
+    .container1 p {
+      font-optical-sizing: auto;
+      font-size: 1rem;
+      font-stretch: 100%;
+      font-weight: 375;
+    }
+  </style>
+  <style class="editable2">
+    .demo2 {
+      --text-wght: 375;
+      --text-wdth: 100;
+      --text-opsz: 16;
+    }
+    .container2 > * {
+      font-size: 5rem;
+      font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz), 'GRAD' var(--text-GRAD)
+    }
+    .container2 h1 {
+      --text-wght: 450;
+      --text-wdth: 85;
+      --text-opsz: 80;
+      font-size: 5rem;
+    }
+    .container2 h2 {
+      --text-wght: 575;
+      --text-wdth: 95;
+      --text-opsz: 36;
+      font-size: 2.25rem;
+    }
+    .container2 h2:hover {
+      --text-GRAD: 130;
+    }
+    .container2 p {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="demo1">
+      <section class="section section1">
+        <div class="container container1">
+          <h1>Moby Dick</h1>
+          <h2>CHAPTER 1. Loomings.</h2>
+          <p>
+            Call me Ishmael. Some years ago—never mind how long precisely–having
+            little or no money in my purse, and nothing particular to interest me on
+            shore, I thought I would sail about a little and see the watery part of
+            the world. It is a way I have of driving off the spleen and regulating the
+            circulation. Whenever I find myself growing grim about the mouth; whenever
+            it is a damp, drizzly November in my soul; whenever I find myself
+            involuntarily pausing before coffin warehouses, and bringing up the rear
+            of every funeral I meet; and especially whenever my hypos get such an
+            upper hand of me, that it requires a strong moral principle to prevent me
+            from deliberately stepping into the street, and methodically knocking
+            people’s hats off then, I account it high time to get to sea as soon
+            as I can. This is my substitute for pistol and ball. With a philosophical
+            flourish Cato throws himself upon his sword; I quietly take to the ship.
+            There is nothing surprising in this. If they but knew it, almost all men
+            in their degree, some time or other, cherish very nearly the same feelings
+            towards the ocean with me.
+          </p>
+        </div>
+      </section>
+      <textarea class="playable-css1">
+        .container1 h1 {
+          font-optical-sizing: auto;
+          font-size: 5rem;
+          font-stretch: 85%;
+          font-weight: 450;
+        }
+        .container1 h2 {
+          font-optical-sizing: auto;
+          font-size: 2.25rem;
+          font-stretch: 90%;
+          font-weight: 575;
+        }
+        .container1 p {
+          font-optical-sizing: auto;
+          font-size: 1rem;
+          font-stretch: 100%;
+          font-weight: 375;
+        }
+      </textarea>
+      <textarea id="code1" class="playable-html1">
+        <div class="container container1">
+          <h1>Moby Dick</h1>
+          <h2>CHAPTER 1. Loomings.</h2>
+          <p>
+            Call me Ishmael. Some years ago—never mind how long precisely–having
+            little or no money in my purse, and nothing particular to interest me on
+            shore, I thought I would sail about a little and see the watery part of
+            the world. It is a way I have of driving off the spleen and regulating the
+            circulation. Whenever I find myself growing grim about the mouth; whenever
+            it is a damp, drizzly November in my soul; whenever I find myself
+            involuntarily pausing before coffin warehouses, and bringing up the rear
+            of every funeral I meet; and especially whenever my hypos get such an
+            upper hand of me, that it requires a strong moral principle to prevent me
+            from deliberately stepping into the street, and methodically knocking
+            people’s hats off then, I account it high time to get to sea as soon
+            as I can. This is my substitute for pistol and ball. With a philosophical
+            flourish Cato throws himself upon his sword; I quietly take to the ship.
+            There is nothing surprising in this. If they but knew it, almost all men
+            in their degree, some time or other, cherish very nearly the same feelings
+            towards the ocean with me.
+          </p>
+        </div>
+      </textarea>
+    </div>
+    <div class="demo2">
+      <section class="section section2">
+        <div class="container container2">
+          <h1>Moby Dick</h1>
+          <h2>CHAPTER 1. Loomings. (hover here)</h2>
+          <p>
+            Call me Ishmael. Some years ago—never mind how long precisely–having
+            little or no money in my purse, and nothing particular to interest me on
+            shore, I thought I would sail about a little and see the watery part of
+            the world. It is a way I have of driving off the spleen and regulating the
+            circulation. Whenever I find myself growing grim about the mouth; whenever
+            it is a damp, drizzly November in my soul; whenever I find myself
+            involuntarily pausing before coffin warehouses, and bringing up the rear
+            of every funeral I meet; and especially whenever my hypos get such an
+            upper hand of me, that it requires a strong moral principle to prevent me
+            from deliberately stepping into the street, and methodically knocking
+            people’s hats off then, I account it high time to get to sea as soon
+            as I can. This is my substitute for pistol and ball. With a philosophical
+            flourish Cato throws himself upon his sword; I quietly take to the ship.
+            There is nothing surprising in this. If they but knew it, almost all men
+            in their degree, some time or other, cherish very nearly the same feelings
+            towards the ocean with me.
+          </p>
+        </div>
+      </section>
+      <textarea class="playable-css2">
+        .demo2 {
+          --text-wght: 375;
+          --text-wdth: 100;
+          --text-opsz: 16;
+          --text-GRAD: 88;
+        }
+        .container2 > * {
+          font-size: 5rem;
+          font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz), 'GRAD' var(--text-GRAD);
+        }
+        .container2 h1 {
+          --text-wght: 450;
+          --text-wdth: 85;
+          --text-opsz: 80;
+          font-size: 5rem;
+        }
+        .container2 h2 {
+          --text-wght: 575;
+          --text-wdth: 95;
+          --text-opsz: 36;
+          font-size: 2.25rem;
+        }
+        .container2 h2:hover {
+          --text-GRAD: 130;
+        }
+        .container2 p {
+          font-size: 1rem;
+        }
+      </textarea>
+      <textarea id="code2" class="playable-html2">
+        <div class="container container2">
+          <h1>Moby Dick</h1>
+          <h2>CHAPTER 1. Loomings. (hover here)</h2>
+          <p>
+            Call me Ishmael. Some years ago—never mind how long precisely–having
+            little or no money in my purse, and nothing particular to interest me on
+            shore, I thought I would sail about a little and see the watery part of
+            the world. It is a way I have of driving off the spleen and regulating the
+            circulation. Whenever I find myself growing grim about the mouth; whenever
+            it is a damp, drizzly November in my soul; whenever I find myself
+            involuntarily pausing before coffin warehouses, and bringing up the rear
+            of every funeral I meet; and especially whenever my hypos get such an
+            upper hand of me, that it requires a strong moral principle to prevent me
+            from deliberately stepping into the street, and methodically knocking
+            people’s hats off then, I account it high time to get to sea as soon
+            as I can. This is my substitute for pistol and ball. With a philosophical
+            flourish Cato throws himself upon his sword; I quietly take to the ship.
+            There is nothing surprising in this. If they but knew it, almost all men
+            in their degree, some time or other, cherish very nearly the same feelings
+            towards the ocean with me.
+          </p>
+        </div>
+      </textarea>
+    </div>
+  </div>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script>
+  var section1 = document.querySelector('.section1');
+  var editable1 = document.querySelector('.editable1');
+  var textareaHTML1 = document.querySelector('.playable-html1');
+  var textareaCSS1 = document.querySelector('.playable-css1');
+  var section2 = document.querySelector('.section2');
+  var editable2 = document.querySelector('.editable2');
+  var textareaHTML2 = document.querySelector('.playable-html2');
+  var textareaCSS2 = document.querySelector('.playable-css2');
+  var reset = document.getElementById('reset');
+  var htmlCode1 = textareaHTML1.value;
+  var cssCode1 = textareaCSS1.value;
+  var htmlCode2 = textareaHTML2.value;
+  var cssCode2 = textareaCSS2.value;
+
+  function fillCode() {
+    editable1.innerHTML = textareaCSS1.value;
+    section1.innerHTML = textareaHTML1.value;
+    editable2.innerHTML = textareaCSS2.value;
+    section2.innerHTML = textareaHTML2.value;
+  }
+
+  reset.addEventListener('click', function () {
+    textareaHTML1.value = htmlCode1;
+    textareaCSS1.value = cssCode1;
+    textareaHTML2.value = htmlCode2;
+    textareaCSS2.value = cssCode2;
+    fillCode();
+  });
+
+  textareaHTML1.addEventListener('input', fillCode);
+  textareaCSS1.addEventListener('input', fillCode);
+  textareaHTML2.addEventListener('input', fillCode);
+  textareaCSS2.addEventListener('input', fillCode);
+  window.addEventListener('load', fillCode);
+
+</script>
+
+</html>
