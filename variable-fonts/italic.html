@@ -35,8 +35,20 @@
     .wrapper {
       width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(15rem,1fr));
+        grid-template-columns: 1fr;
         grid-gap: 1rem;
+    }
+
+    @media screen and (min-width: 35rem) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media screen and (min-width: 52rem) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
 
     textarea {
