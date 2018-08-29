@@ -8,9 +8,9 @@
   <style>
     @font-face {
       font-family: 'Amstelvar VF';
-      src: url('fonts/Amstelvar-Roman-VF.woff2') format('woff2-variations');
+      src: url('fonts/AmstelvarAlpha-VF.woff2') format('woff2-variations');
       font-weight: 300 900;
-      font-stretch: 75 150;
+      font-stretch: 35% 100%;
       font-style: normal;
       font-display: swap;
     }
@@ -111,13 +111,13 @@
 
   </style>
   <style class="editable1">
-    /* width range is 75 to 150 */
+    /* width range is 55% to 100% */
     .container1 * {
-      font-stretch: 100;
+      font-stretch: 100%;
     }
   </style>
   <style class="editable2">
-    /* width range is an integer from 75 to 150 */
+    /* width range is an integer from 55 to 100 */
     .container2 * {
       font-variation-settings: 'wdth' 100;
     }
@@ -139,7 +139,7 @@
         </div>
       </section>
 <textarea class="playable-css1">
-  /* width range is from 75% to 150% */
+  /* width range is from 55% to 100% */
   .container1 * {
     font-stretch: 100%;
   }
@@ -157,7 +157,7 @@
         </div>
       </section>
 <textarea class="playable-css2">
-  /* width range is an integer from 75 to 150 */
+  /* width range is an integer from 55 to 100 */
   .container2 * {
     font-variation-settings: 'wdth' 100;
   }
@@ -186,7 +186,7 @@
   </div>
 </textarea>
       <div class="controls range-slider">
-        <label for="controls__slider">Adjust Width: </label><input type="range" name="range-slider" value="100" id="text-axis" class="controls--slider" min="75" max="150"> 
+        <label for="controls__slider">Adjust Width: </label><input type="range" name="range-slider" value="100" id="text-axis" class="controls--slider" min="55" max="100"> 
       </div>
     </div>
   </div>
