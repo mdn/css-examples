@@ -27,11 +27,11 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 180px
+      height: 250px
     }
 
     textarea:nth-of-type(2) {
-      height: 120px
+      height: 180px
     }
 
     .playable-buttons {
@@ -101,23 +101,30 @@
   </section>
   <textarea class="playable-css">
 .media {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
+
 .media.flipped {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
+
 .media .content {
-    flex: 1;
-    padding: 10px;
+  flex: 1;
+  padding: 10px;
 }
-      </textarea>
+</textarea>
   <textarea id="code" class="playable-html">
 <div class="media flipped">
-  <div class="image"><img src="https://placehold.it/60x60" alt="placeholder"></div>
-    <div class="content">This is the content of my media object. Items directly inside the flex container will be aligned to flex-start.</div>
+  <div class="image">
+    <img src="https://placehold.it/60x60" alt="placeholder">
+  </div>
+  <div class="content">
+    This is the content of my media object.
+    Items directly inside the flex container will be aligned to flex-start.
+  </div>
 </div>
-      </textarea>
+</textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">
   </div>
