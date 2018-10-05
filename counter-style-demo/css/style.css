@@ -45,13 +45,6 @@ body {
     float: left;
 }
 
-.compatibility-warning {
-    color: #E05252;
-    margin-top: 10px;
-    border-radius: 4px;
-    font-size: 0.7em;
-}
-
 /* Demo styles */
 
 @counter-style demo-cyclic {
@@ -342,4 +335,3 @@ body {
 .demo-ethiopic-numeric {
     list-style: ethiopic-numeric;
 }
-
