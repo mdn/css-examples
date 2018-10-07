@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- this is an example from the MDN Layout Cookbook -->
+    <title>CSS Cookbook: Split Navigation</title>
+
+
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-nav a {
+            padding: .5em 1em;
+            display: block;
+        }
+
+        .push {
+            margin-left: auto;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <nav>
+        <ul class="main-nav">
+            <li><a href="">About</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">Our Team</a></li>
+            <li class="push"><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

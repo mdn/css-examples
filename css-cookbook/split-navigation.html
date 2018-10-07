@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Cookbook: Split Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-nav {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-nav a {
+            padding: .5em 1em;
+            display: block;
+        }
+    </style>
+
+    <style class="editable">
+        .main-nav {
+            display: flex;
+        }
+
+        .push {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <nav>
+            <ul class="main-nav">
+                <li><a href="">About</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Our Team</a></li>
+                <li class="push"><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 140px;">
+.main-nav {
+    display: flex;
+}
+    
+.push {
+    margin-left: auto;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 150px;">
+<nav>
+    <ul class="main-nav">
+        <li><a href="">About</a></li>
+        <li><a href="">Products</a></li>
+        <li><a href="">Our Team</a></li>
+        <li class="push"><a href="">Contact</a></li>
+</ul>
+</nav>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="playable.js"></script>
+
+</html>
