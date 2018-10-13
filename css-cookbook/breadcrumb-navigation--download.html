@@ -28,12 +28,8 @@
             padding: .5em 1em;
         }
 
-        .breadcrumb li::before {
+        .breadcrumb li:not(:first-child)::before {
             content: "→";
-        }
-
-        .breadcrumb li:first-child::before {
-            content: "";
         }
     </style>
 

@@ -24,12 +24,8 @@
             display: flex;
         }
 
-        .breadcrumb li::before {
+        .breadcrumb li:not(:first-child)::before {
             content: "→";
-        }
-
-        .breadcrumb li:first-child::before {
-            content: "";
         }
     </style>
 </head>
@@ -50,13 +46,9 @@
 .breadcrumb ul {
     display: flex;
 }
-    
-.breadcrumb li::before {
+
+.breadcrumb li:not(:first-child)::before {
     content: "→";
-}
-    
-.breadcrumb li:first-child::before {
-    content: "";
 }
     </textarea>
 
