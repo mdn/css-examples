@@ -3,16 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Font feature example - numeric fractions, ordinals, and slashed zero</title>
+  <title>Font feature example - variant shorthand</title>
 
   <style>
     @font-face{
-        font-family: 'Source Serif';
+        font-family: 'Playfair Display';
         font-weight: 400;
         font-style: normal;
         font-stretch: normal;
-        src: url('fonts/source-serif/SourceSerifPro-Regular.ttf.woff') format('woff'),
-             url('fonts/source-serif/SourceSerifPro-Regular.ttf.woff2') format('woff2');
+        src: url('fonts/playfair-display/playfair-display-regular.woff') format('woff'),
+             url('fonts/playfair-display/playfair-display-regular.woff2') format('woff2');
     }
 
 
@@ -28,7 +28,7 @@
     }
 
     body {
-      font: 1.2em "Source Serif", "Times New Roman", serif;
+      font: 1.2em "Playfair Display", "Times New Roman", serif;
       margin: 20px;
       padding: 0;
     }
@@ -66,7 +66,7 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 190px;
+      height: 130px;
     }
 
     textarea:nth-of-type(2) {
@@ -100,32 +100,19 @@
 
   </style>
   <style class="editable1">
-    .container1 .diagonal-fracs {
-      font-variant-numeric: diagonal-fractions;
-    }
-    .container1 .ordinal {
-      font-variant-numeric: ordinal;
-    }
-    .container1 .zero {
-      font-variant-numeric: slashed-zero;
+    .container1 * {
+      font-variant: common-ligatures discretionary-ligatures contextual diagonal-fractions;
     }
     .inactive .container1 * {
-      font-variant-numeric: normal;
+      font-variant: none;
     }
   </style>
   <style class="editable2">
-    /* 'subs', 'sups; */
-    .container2 .diagonal-fracs {
-      font-feature-settings: 'frac' 1;
-    }
-    .container2 .ordinal {
-      font-feature-settings: 'ordn' 1;
-    }
-    .container2 .zero {
-      font-feature-settings: 'zero' 1;
+    .container2 * {
+      font-feature-settings: 'dlig', 'liga', 'calt', 'frac';
     }
     .inactive .container2 * {
-      font-feature-settings: 'frac' 0, 'ordn' 0, 'zero' 0;
+      font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 0, 'frac' 0;
     }
   </style>
 </head>
@@ -135,56 +122,44 @@
     <div class="demo1">
       <section class="section section1">
         <div class="container container1">
-          <p><span class="diagonal-fracs">3/16</span>, or <span class="ordinal">1st</span> of <span class="zero">0</span></p>
+            <p>Spiffy Plastic -> 3/4 time</p>
         </div>
       </section>
 <textarea class="playable-css1">
-  .container1 .diagonal-fracs {
-    font-variant-numeric: diagonal-fractions;
-  }
-  .container1 .ordinal {
-    font-variant-numeric: ordinal;
-  }
-  .container1 .zero {
-    font-variant-numeric: slashed-zero;
+  .container1 * {
+    font-variant: common-ligatures discretionary-ligatures contextual diagonal-fractions;
   }
   .inactive .container1 * {
-    font-variant-numeric: normal;
+    font-variant: none;
   }
 </textarea>
 <textarea id="code1" class="playable-html1">
   <div class="container container1">
-    <p><span class="diagonal-fracs">3/16</span>, or <span class="ordinal">1st</span> of <span class="zero">0</span></p>
+    <p>Spiffy Plastic -> 3/4 time</p>
   </div>
 </textarea>
-<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Numeric active</label>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Ligatures active</label>
     </div>
     <div class="demo2">
       <section class="section section2">
         <div class="container container2">
-          <p><span class="diagonal-fracs">3/16</span> or <span class="ordinal">1st</span> of <span class="zero">0</span></p>
+            <p>Spiffy Plastic -> 3/4 time</p>
         </div>
       </section>
 <textarea class="playable-css2">
-  .container2 .diagonal-fracs {
-    font-feature-settings: 'frac' 1;
-  }
-  .container2 .ordinal {
-    font-feature-settings: 'ordn' 1;
-  }
-  .container2 .zero {
-    font-feature-settings: 'zero' 1;
+  .container2 * {
+    font-feature-settings: 'dlig', 'liga', 'calt', 'frac';
   }
   .inactive .container2 * {
-    font-feature-settings: 'frac' 0, 'ordn' 0, 'zero' 0;
+    font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 0, 'frac' 0;
   }
 </textarea>
 <textarea id="code2" class="playable-html2">
   <div class="container container2">
-    <p><span class="diagonal-fracs">3/16</span>, or <span class="ordinal">1st</span> of <span class="zero">0</span></p>
+    <p>Spiffy Plastic -> 3/4 time</p>
   </div>
 </textarea>
-<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Numeric active</label>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Ligatures active</label>
     </div>
   </div>
   <div class="playable-buttons">
