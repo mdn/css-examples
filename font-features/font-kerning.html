@@ -104,11 +104,17 @@
     .container1 * {
       font-kerning: normal;
     }
+    .inactive .container1 * {
+      font-kerning: none;
+    }
   </style>
   <style class="editable2">
     /* 'kern' 1|0 (on or off) */
     .container2 * {
       font-feature-settings: 'kern' 1;
+    }
+    .inactive .container2 * {
+      font-feature-settings: 'kern' 0;
     }
   </style>
 </head>
@@ -126,12 +132,16 @@
   .container1 * {
     font-kerning: normal;
   }
+  .inactive .container1 * {
+    font-kerning: none;
+  }
 </textarea>
 <textarea id="code1" class="playable-html1">
   <div class="container container1">
     <p>Puffy Pangolins</p>
   </div>
 </textarea>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> Kerning active
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -144,12 +154,16 @@
   .container2 * {
     font-feature-settings: 'kern' 1;
   }
+  .inactive .container2 * {
+    font-feature-settings: 'kern' 0;
+  }
 </textarea>
 <textarea id="code2" class="playable-html2">
   <div class="container container2">
     <p>Puffy Pangolins</p>
   </div>
 </textarea>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> Kerning active
     </div>
   </div>
   <div class="playable-buttons">
@@ -171,6 +185,8 @@
   var cssCode1 = textareaCSS1.value;
   var htmlCode2 = textareaHTML2.value;
   var cssCode2 = textareaCSS2.value;
+  var demo1_active = document.getElementById('demo1_control');
+  var demo2_active = document.getElementById('demo2_control');
 
   function fillCode() {
     editable1.innerHTML = textareaCSS1.value;
@@ -185,6 +201,22 @@
     textareaHTML2.value = htmlCode2;
     textareaCSS2.value = cssCode2;
     fillCode();
+  });
+
+  demo1_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
+
+  demo2_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
   });
 
   textareaHTML1.addEventListener('input', fillCode);

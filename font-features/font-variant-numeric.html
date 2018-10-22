@@ -3,16 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Font feature example - position</title>
+  <title>Font feature example - numeric</title>
 
   <style>
     @font-face{
-        font-family: 'Playfair Display';
+        font-family: 'Source Serif';
         font-weight: 400;
         font-style: normal;
         font-stretch: normal;
-        src: url('fonts/playfair-display/playfair-display-regular.woff') format('woff'),
-             url('fonts/playfair-display/playfair-display-regular.woff2') format('woff2');
+        src: url('fonts/source-serif/SourceSerifPro-Regular.ttf.woff') format('woff'),
+             url('fonts/source-serif/SourceSerifPro-Regular.ttf.woff2') format('woff2');
     }
 
 
@@ -28,7 +28,7 @@
     }
 
     body {
-      font: 1.2em "Playfair Display", "Times New Roman", serif;
+      font: 1.2em "Source Serif", "Times New Roman", serif;
       margin: 20px;
       padding: 0;
     }
@@ -101,20 +101,32 @@
   </style>
   <style class="editable1">
     /* position: normal|sub|super */
-    .container1 .super {
-      font-variant-position: super;
+    .container1 .lining {
+      font-variant-numeric: lining-nums;
     }
-    .container1 .sub {
-      font-variant-position: sub;
+    .container1 .oldstyle {
+      font-variant-numeric: oldstyle-nums;
+    }
+    .container1 .diagonal-fracs {
+      font-variant-numeric: diagonal-fractions;
+    }
+    .container1 .stacked-fracs {
+      font-variant-numeric: stacked-fractions;
     }
   </style>
   <style class="editable2">
     /* 'subs', 'sups; */
-    .container2 .super {
-      font-feature-settings: 'sups' 1;
+    .container2 .lining {
+      font-feature-settings: 'lnum' 1;
     }
-    .container2 .sub {
-      font-feature-settings: 'subs' 1;
+    .container2 .oldstyle {
+      font-feature-settings: 'onum' 1;
+    }
+    .container2 .diagonal-fracs {
+      font-feature-settings: 'frac' 1;
+    }
+    .container2 .stacked-fracs {
+      font-feature-settings: 'afrc' 1;
     }
   </style>
 </head>
@@ -124,42 +136,57 @@
     <div class="demo1">
       <section class="section section1">
         <div class="container container1">
-          <p>Ups<span class="super">1</span> and downs<span class="sub">2</span></p>
+          <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
+          <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
         </div>
       </section>
 <textarea class="playable-css1">
   /* position: normal|sub|super */
-  .container1 .super {
-    font-variant-position: super;
+  .container1 .lining {
+    font-variant-numeric: lining-nums;
   }
-  .container1 .sub {
-    font-variant-position: sub;
+  .container1 .oldstyle {
+    font-variant-numeric: oldstyle-nums;
+  }
+  .container1 .diagonal-fracs {
+    font-variant-numeric: diagonal-fractions;
+  }
+  .container1 .stacked-fracs {
+    font-variant-numeric: stacked-fractions;
   }
 </textarea>
 <textarea id="code1" class="playable-html1">
   <div class="container container1">
-    <p>Ups<span class="super">1</span> and downs<span class="sub">2</span></p>
+    <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
+    <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
   </div>
 </textarea>
     </div>
     <div class="demo2">
       <section class="section section2">
         <div class="container container2">
-          <p>Ups<span class="super">1</span> and downs<span class="sub">2</span></p>
+          <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
+          <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
         </div>
       </section>
 <textarea class="playable-css2">
-  /* 'subs', 'sups' */
-  .container2 .super {
-    font-feature-settings: 'sups';
+  .container2 .lining {
+    font-feature-settings: 'lnum' 1;
   }
-  .container2 .sub {
-    font-feature-settings: 'subs';
+  .container2 .oldstyle {
+    font-feature-settings: 'onum' 1;
+  }
+  .container2 .diagonal-fracs {
+    font-feature-settings: 'frac' 1;
+  }
+  .container2 .stacked-fracs {
+    font-feature-settings: 'afrc' 1;
   }
 </textarea>
 <textarea id="code2" class="playable-html2">
   <div class="container container2">
-    <p>Ups<span class="super">1</span> and downs<span class="sub">2</span></p>
+    <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
+    <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
   </div>
 </textarea>
     </div>
