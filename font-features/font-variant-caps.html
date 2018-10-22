@@ -107,6 +107,9 @@
     .container1 .all-small-caps {
       font-variant-caps: all-small-caps;
     }
+    .inactive .container1 * {
+      font-variant-caps: normal;
+    }
   </style>
   <style class="editable2">
     /* 'smcp', 'c2sc' */
@@ -115,6 +118,9 @@
     }
     .container2 .all-small-caps {
       font-feature-settings: 'c2sc' 1, 'smcp' 1;
+    }
+    .inactive .container2 * {
+      font-feature-settings: 'smcp' 0, 'c2sc' 0;
     }
   </style>
 </head>
@@ -135,12 +141,16 @@
   .container1 .all-small-caps {
     font-variant-caps: all-small-caps;
   }
+  .inactive .container1 * {
+    font-variant-caps: normal;
+  }
 </textarea>
 <textarea id="code1" class="playable-html1">
   <div class="container container1">
     <p><span class="small-caps">Small Caps</span> and <span class="all-small-caps">All Small Caps</span></p>
   </div>
 </textarea>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Caps active</label>
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -156,12 +166,16 @@
   .container2 .all-small-caps {
     font-feature-settings: 'c2sc' 1, 'smcp' 1;
   }
+  .inactive .container2 * {
+    font-feature-settings: 'smcp' 0, 'c2sc' 0;
+  }
 </textarea>
 <textarea id="code2" class="playable-html2">
   <div class="container container2">
     <p><span class="small-caps">Small Caps</span> and <span class="all-small-caps">All Small Caps</span></p>
   </div>
 </textarea>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Caps active</label>
     </div>
   </div>
   <div class="playable-buttons">
@@ -183,6 +197,24 @@
   var cssCode1 = textareaCSS1.value;
   var htmlCode2 = textareaHTML2.value;
   var cssCode2 = textareaCSS2.value;
+  var demo1_active = document.getElementById('demo1_control');
+  var demo2_active = document.getElementById('demo2_control');
+
+  demo1_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
+
+  demo2_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
 
   function fillCode() {
     editable1.innerHTML = textareaCSS1.value;
@@ -196,6 +228,10 @@
     textareaCSS1.value = cssCode1;
     textareaHTML2.value = htmlCode2;
     textareaCSS2.value = cssCode2;
+    demo1_active.checked = true;
+    demo1_active.parentNode.classList.remove('inactive');
+    demo2_active.checked = true;
+    demo2_active.parentNode.classList.remove('inactive');
     fillCode();
   });
 

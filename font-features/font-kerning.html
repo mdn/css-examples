@@ -141,7 +141,7 @@
     <p>Puffy Pangolins</p>
   </div>
 </textarea>
-<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> Kerning active
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Kerning active</label>
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -163,7 +163,7 @@
     <p>Puffy Pangolins</p>
   </div>
 </textarea>
-<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> Kerning active
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Kerning active</label>
     </div>
   </div>
   <div class="playable-buttons">
@@ -200,6 +200,10 @@
     textareaCSS1.value = cssCode1;
     textareaHTML2.value = htmlCode2;
     textareaCSS2.value = cssCode2;
+    demo1_active.checked = true;
+    demo1_active.parentNode.classList.remove('inactive');
+    demo2_active.checked = true;
+    demo2_active.parentNode.classList.remove('inactive');
     fillCode();
   });
 

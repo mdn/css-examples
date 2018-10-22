@@ -104,11 +104,17 @@
     .container1 * {
       font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
     }
+    .inactive .container1 * {
+      font-variant-ligatures: none;
+    }
   </style>
   <style class="editable2">
     /* 'liga', 'dlig', 'hlig', 'calt' */
     .container2 * {
       font-feature-settings: 'dlig', 'liga', 'calt';
+    }
+    .inactive .container2 * {
+      font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 0;
     }
   </style>
 </head>
@@ -126,12 +132,16 @@
   .container1 * {
     font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
   }
+  .inactive .container1 * {
+    font-variant-ligatures: none;
+  }
 </textarea>
 <textarea id="code1" class="playable-html1">
   <div class="container container1">
     <p>Puffy Perfect -^ <-></p>
   </div>
 </textarea>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Ligatures active</label>
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -144,12 +154,16 @@
   .container2 * {
     font-feature-settings: 'dlig', 'liga', 'calt';
   }
+  .inactive .container2 * {
+    font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 0;
+  }
 </textarea>
 <textarea id="code2" class="playable-html2">
   <div class="container container2">
     <p>Puffy Perfect -^ <-></p>
   </div>
 </textarea>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Ligatures active</label>
     </div>
   </div>
   <div class="playable-buttons">
@@ -171,6 +185,24 @@
   var cssCode1 = textareaCSS1.value;
   var htmlCode2 = textareaHTML2.value;
   var cssCode2 = textareaCSS2.value;
+  var demo1_active = document.getElementById('demo1_control');
+  var demo2_active = document.getElementById('demo2_control');
+
+  demo1_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
+
+  demo2_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
 
   function fillCode() {
     editable1.innerHTML = textareaCSS1.value;
@@ -184,6 +216,10 @@
     textareaCSS1.value = cssCode1;
     textareaHTML2.value = htmlCode2;
     textareaCSS2.value = cssCode2;
+    demo1_active.checked = true;
+    demo1_active.parentNode.classList.remove('inactive');
+    demo2_active.checked = true;
+    demo2_active.parentNode.classList.remove('inactive');
     fillCode();
   });
 
