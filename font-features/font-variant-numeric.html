@@ -66,7 +66,7 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 130px;
+      height: 160px;
     }
 
     textarea:nth-of-type(2) {
@@ -100,33 +100,25 @@
 
   </style>
   <style class="editable1">
-    /* position: normal|sub|super */
     .container1 .lining {
       font-variant-numeric: lining-nums;
     }
     .container1 .oldstyle {
       font-variant-numeric: oldstyle-nums;
     }
-    .container1 .diagonal-fracs {
-      font-variant-numeric: diagonal-fractions;
-    }
-    .container1 .stacked-fracs {
-      font-variant-numeric: stacked-fractions;
+    .inactive .container1 * {
+      font-variant-numeric: normal;
     }
   </style>
   <style class="editable2">
-    /* 'subs', 'sups; */
     .container2 .lining {
       font-feature-settings: 'lnum' 1;
     }
     .container2 .oldstyle {
       font-feature-settings: 'onum' 1;
     }
-    .container2 .diagonal-fracs {
-      font-feature-settings: 'frac' 1;
-    }
-    .container2 .stacked-fracs {
-      font-feature-settings: 'afrc' 1;
+    .inactive .container2 * {
+      font-feature-settings: 'lnum' 0, 'onum' 0;
     }
   </style>
 </head>
@@ -136,37 +128,31 @@
     <div class="demo1">
       <section class="section section1">
         <div class="container container1">
-          <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
-          <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
+          <p><span class="lining">6,142</span> or <span class="oldstyle">6,142</span></p>
         </div>
       </section>
 <textarea class="playable-css1">
-  /* position: normal|sub|super */
   .container1 .lining {
     font-variant-numeric: lining-nums;
   }
   .container1 .oldstyle {
     font-variant-numeric: oldstyle-nums;
   }
-  .container1 .diagonal-fracs {
-    font-variant-numeric: diagonal-fractions;
-  }
-  .container1 .stacked-fracs {
-    font-variant-numeric: stacked-fractions;
+  .inactive .container1 * {
+    font-variant-numeric: normal;
   }
 </textarea>
 <textarea id="code1" class="playable-html1">
   <div class="container container1">
-    <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
-    <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
+    <p><span class="lining">6,142</span> or <span class="oldstyle">6,142</span></p>
   </div>
 </textarea>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Numeric active</label>
     </div>
     <div class="demo2">
       <section class="section section2">
         <div class="container container2">
-          <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
-          <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
+          <p><span class="lining">6,142</span> or <span class="oldstyle">6,142</span></p>
         </div>
       </section>
 <textarea class="playable-css2">
@@ -176,19 +162,16 @@
   .container2 .oldstyle {
     font-feature-settings: 'onum' 1;
   }
-  .container2 .diagonal-fracs {
-    font-feature-settings: 'frac' 1;
-  }
-  .container2 .stacked-fracs {
-    font-feature-settings: 'afrc' 1;
+  .inactive .container2 * {
+    font-feature-settings: 'lnum' 0, 'onum' 0;
   }
 </textarea>
 <textarea id="code2" class="playable-html2">
   <div class="container container2">
-    <p><span class="lining">642</span> or <span class="oldstyle">642</span></p>
-    <p><span class="diagonal-fracs">3/16</span> or <span class="stacked-fracs">1/2</span></p>
+    <p><span class="lining">6,142</span> or <span class="oldstyle">6,142</span></p>
   </div>
 </textarea>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Numeric active</label>
     </div>
   </div>
   <div class="playable-buttons">
@@ -210,6 +193,24 @@
   var cssCode1 = textareaCSS1.value;
   var htmlCode2 = textareaHTML2.value;
   var cssCode2 = textareaCSS2.value;
+  var demo1_active = document.getElementById('demo1_control');
+  var demo2_active = document.getElementById('demo2_control');
+
+  demo1_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
+
+  demo2_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
 
   function fillCode() {
     editable1.innerHTML = textareaCSS1.value;
@@ -223,6 +224,10 @@
     textareaCSS1.value = cssCode1;
     textareaHTML2.value = htmlCode2;
     textareaCSS2.value = cssCode2;
+    demo1_active.checked = true;
+    demo1_active.parentNode.classList.remove('inactive');
+    demo2_active.checked = true;
+    demo2_active.parentNode.classList.remove('inactive');
     fillCode();
   });
 
