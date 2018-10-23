@@ -120,26 +120,24 @@
       @stylistic { alternates: 1; } 
     }
     .container1 * {
-      font-variant-ligatures: common-ligatures;
       font-variant-alternates: styleset(alt-a);
     }
     .script {
       font-variant-alternates: stylistic(alternates);
     }
     .inactive .container1 * {
-      font-variant-ligatures: none;
       font-variant-alternates: normal;
     }
   </style>
   <style class="editable2">
     .container2 * {
-      font-feature-settings: 'liga', 'ss01';
+      font-feature-settings: 'ss01';
     }
     .script {
       font-feature-settings: 'salt';
     }
     .inactive .container2 * {
-      font-feature-settings: 'liga' 0, 'ss01' 0, 'salt' 0;
+      font-feature-settings: 'ss01' 0, 'salt' 0;
     }
   </style>
 </head>
@@ -161,14 +159,12 @@
     @stylistic { alternates: 1; } 
   }
   .container1 * {
-    font-variant-ligatures: common-ligatures;
     font-variant-alternates: styleset(alt-a);
   }
   .script {
     font-variant-alternates: stylistic(alternates);
   }
   .inactive .container1 * {
-    font-variant-ligatures: none;
     font-variant-alternates: normal;
   }
 </textarea>
@@ -177,7 +173,7 @@
     <p><span class="script">My</span> Perfidious pangram</p>
   </div>
 </textarea>
-<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Ligatures active</label>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Alternates active</label>
     </div>
     <div class="demo2">
       <section class="section section2">
@@ -187,13 +183,13 @@
       </section>
 <textarea class="playable-css2">
   .container2 * {
-    font-feature-settings: 'liga', 'ss01';
+    font-feature-settings: 'ss01';
   }
   .script {
     font-feature-settings: 'salt';
   }
   .inactive .container2 * {
-    font-feature-settings: 'liga' 0, 'ss01' 0, 'salt' 0;
+    font-feature-settings: 'ss01' 0, 'salt' 0;
   }
 </textarea>
 <textarea id="code2" class="playable-html2">
@@ -201,7 +197,7 @@
     <p><span class="script">My</span> Perfidious pangram</p>
   </div>
 </textarea>
-<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Ligatures active</label>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Alternates active</label>
     </div>
   </div>
   <div class="playable-buttons">
