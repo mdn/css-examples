@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Size: max-inline-size</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+        .box {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            padding: 10px;
+            margin: 10px;
+        }
+
+      
+    </style>
+
+    <style class="editable">
+        .box {
+            writing-mode: horizontal-tb;
+        }
+
+        .physical {
+        max-width: 200px;
+        }
+
+        .logical {
+            max-inline-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="physical box">
+                I have a max-width of 200px.
+            </div>
+
+            <div class="logical box">
+                I have an max-inline-size of 200px.
+            </div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.box {
+    writing-mode: horizontal-tb;
+}
+
+.physical {
+    max-width: 200px;
+}
+
+.logical {
+    max-inline-size: 200px;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="container">
+    <div class="physical box">
+        I have a max-width of 200px.
+    </div>
+
+    <div class="logical box">
+        I have an max-inline-size of 200px.
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

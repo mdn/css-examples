@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Size: inline-size and block-size</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+        .box {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            padding: 10px;
+            margin: 10px;
+        }
+
+      
+    </style>
+
+    <style class="editable">
+        .box {
+            writing-mode: horizontal-tb;
+        }
+
+        .physical {
+        width: 200px;
+        height: 100px;
+        }
+
+        .logical {
+            inline-size: 200px;
+            block-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="physical box">
+                I have a width of 200px and a height of 100px.
+            </div>
+
+            <div class="logical box">
+                I have an inline-size of 200px and a block-size of 100px.
+            </div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.box {
+    writing-mode: horizontal-tb;
+}
+
+.physical {
+  width: 200px;
+  height: 100px;
+}
+
+.logical {
+    inline-size: 200px;
+    block-size: 100px;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="container">
+    <div class="physical box">
+        I have a width of 200px and a height of 100px.
+    </div>
+
+    <div class="logical box">
+        I have an inline-size of 200px and a block-size  of 100px.
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>
