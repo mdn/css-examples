@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>logical values for float</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+
+        .box {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            padding: 10px;
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+      
+    </style>
+
+    <style class="editable">
+        .inner {
+            writing-mode: horizontal-tb;
+        }
+
+        .physical {
+        float: left;
+        }
+
+        .logical {
+            float: inline-start;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="inner">
+                <div class="physical box"></div>
+                Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach
+                avocado daikon napa cabbage asparagus winter purslane kale.
+                <div class="inner">
+                    <div class="logical box"></div>
+                    Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water
+                    spinach
+                    avocado daikon napa cabbage asparagus winter purslane kale.
+                </div>
+            </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.inner {
+    writing-mode: horizontal-tb;
+}
+
+.physical {
+    float: left;
+}
+
+.logical {
+    float: inline-start;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="container">
+    <div class="inner">
+        <div class="physical box"></div>
+        Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale.  
+    </div>
+    <div class="inner">
+        <div class="logical box"></div>
+        Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale.  
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

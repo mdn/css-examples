@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Margin Longhands</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+        .inner {
+            border: 2px dotted grey;
+        }
+        .box {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            padding: 10px;
+            width: 220px;
+            height:220px;
+        }
+
+      
+    </style>
+
+    <style class="editable">
+        .box {
+            writing-mode: horizontal-tb;
+            direction: ltr;
+        }
+
+        .physical {
+            margin-top: 5px;
+            margin-right: 0;
+            margin-bottom: 2em;
+            margin-left: 50px;
+        }
+
+        .logical {
+            margin-block-start: 5px;
+            margin-inline-end: 0;
+            margin-block-end: 2em;
+            margin-inline-start: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="inner">
+                <div class="physical box">
+                    margin-top: 5px<br>
+                    margin-right: 0<br>
+                    margin-bottom: 2em<br>
+                    margin-left: 50px
+                </div>
+            </div>
+            <div class="inner">
+                <div class="logical box">
+                    margin-block-start: 5px<br>
+                    margin-inline-end: 0<br>
+                    margin-block-end: 2em<br>
+                    margin-inline-start: 50px
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 320px;">
+.box {
+    writing-mode: horizontal-tb;
+    direction: ltr;
+}
+
+.physical {
+    margin-top: 5px;
+    margin-right: 0;
+    margin-bottom: 2em;
+    margin-left: 50px;
+}
+
+.logical {
+    margin-block-start: 5px;
+    margin-inline-end: 0;
+    margin-block-end: 2em;
+    margin-inline-start: 50px;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 340px;">
+<div class="container">
+    <div class="inner">
+        <div class="physical box">
+            margin-top: 5px<br>
+            margin-right: 0<br>
+            margin-bottom: 2em<br>
+            margin-left: 50px
+        </div>
+    </div>
+    <div class="inner">
+        <div class="logical box">
+            margin-block-start: 5px<br>
+            margin-inline-end: 0<br>
+            margin-block-end: 2em<br>
+            margin-inline-start: 50px
+        </div>
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>
