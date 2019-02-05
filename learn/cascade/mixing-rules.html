@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>mixing rules</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+h2 {
+    font-size: 2em;
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.small {
+    font-size: 1em;
+}
+
+.bright {
+    color: rebeccapurple;
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <h2>Heading with no class</h2>
+        <h2 class="small">Heading with class of small</h2>
+        <h2 class="bright">Heading with class of bright</h2>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+h2 {
+    font-size: 2em;
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+        
+.small {
+    font-size: 1em;
+}
+        
+.bright {
+    color: rebeccapurple;
+}         
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+<h2>Heading with no class</h2>
+<h2 class="small">Heading with class of small</h2>
+<h2 class="bright">Heading with class of bright</h2>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

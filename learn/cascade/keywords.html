@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Keyword values</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+body {
+  color: green;
+}
+
+.my-class-1 a {
+  color: inherit;
+}
+
+.my-class-2 a {
+  color: initial;
+}
+
+.my-class-3 a {
+  color: unset;
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <ul>
+            <li>Default <a href="#">link</a> color</li>
+            <li class="my-class-1">Inherit the <a href="#">link</a> color</li>
+            <li class="my-class-2">Reset the <a href="#">link</a> color</li>
+            <li class="my-class-3">Unset the <a href="#">link</a> color</li>
+        </ul>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+body {
+    color: green;
+}
+          
+.my-class-1 a {
+    color: inherit;
+}
+          
+.my-class-2 a {
+    color: initial;
+}
+          
+.my-class-3 a {
+    color: unset;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+<ul>
+    <li>Default <a href="#">link</a> color</li>
+    <li class="my-class-1">Inherit the <a href="#">link</a> color</li>
+    <li class="my-class-2">Reset the <a href="#">link</a> color</li>
+    <li class="my-class-3">Unset the <a href="#">link</a> color</li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

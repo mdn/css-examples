@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>all</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+blockquote {
+    background-color: red;
+    border: 2px solid green;
+}
+
+.fix-this {
+    all: unset;
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <blockquote>
+            <p>This blockquote is styled</p>
+        </blockquote>
+
+        <blockquote class="fix-this">
+            <p>This blockquote is not styled</p>
+        </blockquote>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+blockquote {
+    background-color: red;
+    border: 2px solid green;
+}
+        
+.fix-this {
+    all: unset;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+        <blockquote>
+            <p>This blockquote is styled</p>
+        </blockquote>
+
+        <blockquote class="fix-this">
+            <p>This blockquote is not styled</p>
+        </blockquote>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>
