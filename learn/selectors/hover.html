@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectors: :hover</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    a:link,
+    a:visited {
+        color: rebeccapurple;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color:hotpink;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+    <p><a href="">Hover over me</a></p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 160px;">
+a:link,
+a:visited {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+a:hover {
+    color:hotpink;
+}   
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 60px;">
+<p><a href="">Hover over me</a></p>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

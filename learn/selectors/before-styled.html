@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectors: ::before</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    .box::before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: rebeccapurple;
+        border: 1px solid black;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+    <p class="box">Content in the box in my HTML page.</p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 160px;">
+.box::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+}   
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 60px;">
+<p class="box">Content in the box in my HTML page.</p>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>
