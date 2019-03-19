@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Inline boxes</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    p {
+        border: 2px solid rebeccapurple;
+        width: 300px;
+      }
+    </style>
+
+    <style class="editable">
+
+      span {
+        margin: 20px;
+        padding: 20px;
+        width: 80px;
+        height: 50px;
+        background-color: lightblue;
+        border: 2px solid blue;
+      } 
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <p>
+          I am a paragraph and this is a <span>span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
+      </p>     
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+span {
+  margin: 20px;
+  padding: 20px;
+  width: 80px;
+  height: 50px;
+  background-color: lightblue;
+  border: 2px solid blue;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<p>
+    I am a paragraph and this is a <span>span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
+</p>     
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

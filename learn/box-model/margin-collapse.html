@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Margin Collapsing</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .container {
+        border: 5px solid blue;
+        margin: 40px;
+      }
+
+      p {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+        padding: 10px;
+      }
+    </style>
+
+    <style class="editable">
+      .one {
+        margin-bottom: 50px;
+      }
+
+      .two {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <div class="container">
+          <p class="one">I am paragraph one.</p>
+          <p class="two">I am paragraph two.</p>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.one {
+  margin-bottom: 50px;
+}
+
+.two {
+  margin-top: 30px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="container">
+  <p class="one">I am paragraph one.</p>
+  <p class="two">I am paragraph two.</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
