@@ -1,45 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Values and Units: position</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css" />
     <style>
-        * {
-            box-sizing: border-box;
-        }      
+      * {
+        box-sizing: border-box;
+      }
 
-       .box {
-            margin: 20px auto;
-            border-radius: .5em;
-            border: 5px solid rebeccapurple;
-       }
+      .box {
+        margin: 20px auto;
+        border-radius: 0.5em;
+        border: 5px solid rebeccapurple;
+      }
     </style>
 
     <style class="editable">
-        .box {
-            height: 300px;
-            width:400px;
-            background-image: url(star.png);
-            background-repeat: no-repeat;
-            background-position: top 40px right 5em;
-        }
+      .box {
+        height: 300px;
+        width: 400px;
+        background-image: url(star.png);
+        background-repeat: no-repeat;
+        background-position: 40px right;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="box"></div>
+      <div class="box"></div>
     </section>
 
     <textarea class="playable playable-css" style="height: 180px;">
 .box {
-    height: 300px;
-    width:400px;
-    background-image: url(star.png);
-    background-repeat: no-repeat;
-    background-position: top 40px right 5em;
+  height: 300px;
+  width: 400px;
+  background-image: url(star.png);
+  background-repeat: no-repeat;
+  background-position: 40px right;
 }
     </textarea>
 
@@ -48,9 +47,8 @@
     </textarea>
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>
