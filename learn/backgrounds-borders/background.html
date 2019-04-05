@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: background</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 500px;
+        height: 300px;
+        padding: .5em;
+      }
+    </style>
+
+    <style class="editable">
+    .box {
+      background:   
+        linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat,
+    url(big-star.png) center no-repeat, 
+        rebeccapurple;
+    }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box"></div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.box {
+  background:   
+    linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat,
+url(big-star.png) center no-repeat, 
+    rebeccapurple;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="box"></div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

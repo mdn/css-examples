@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: background-color</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 500px;
+        padding: .5em;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        background-color: #567895;
+      }
+
+      h2 {
+        background-color: black;
+        color: white;
+      }
+
+      span {
+        background-color: rgba(255,255,255,.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        <h2>Background Colors</h2>
+        <p>Try changing the background <span>colors</span>.</p>
+      </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.box {
+  background-color: #567895;
+}
+
+h2 {
+  background-color: black;
+  color: white;
+}
+span {
+  background-color: rgba(255,255,255,.5);
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="box">
+  <h2>Background Colors</h2>
+  <p>Try changing the background <span>colors</span>.</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: border</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 500px;
+        padding: .5em;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        background-color: #567895;
+        border: 5px solid #0b385f;
+        border-bottom-style: dashed;
+        color: #fff;
+      }
+
+      h2 {
+        border-top: 2px dotted rebeccapurple;
+        border-bottom: 1em double rgb(24, 163, 78);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        <h2>Borders</h2>
+        <p>Try changing the borders.</p>
+      </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.box {
+  background-color: #567895;
+  border: 5px solid #0b385f;
+  border-bottom-style: dashed;
+  color: #fff;
+}
+
+h2 {
+  border-top: 2px dotted rebeccapurple;
+  border-bottom: 1em double rgb(24, 163, 78);
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="box">
+  <h2>Borders</h2>
+  <p>Try changing the borders.</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

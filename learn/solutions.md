@@ -35,3 +35,25 @@ a[href^="https"] {
   border-color: green;
 }
 ```
+
+## Backgrounds and Borders
+
+To style the box we add a border, using the `border` property. Round the corners with `border-radius` and then add the background image setting the size to `contain`.
+
+```
+.box {
+  border: 5px solid #000;
+  border-radius: 10px;
+  background-image: url(balloons.jpg);
+  background-size: contain;
+}
+```
+
+I used rgba colors to add a background color to the heading which is semi-transparent.
+
+```
+h2 {
+  background-color: rgba(0,0,0,.5);
+  color: white;
+}
+```
