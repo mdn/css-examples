@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: writing modes</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        background-color: black;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+
+    <style class="editable">
+      h1 {
+        writing-mode: vertical-rl;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <h1>Play with writing modes</h1>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+h1 {
+  writing-mode: vertical-rl;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<h1>Play with writing modes</h1>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

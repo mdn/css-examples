@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: logical MBP</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+        border: 5px solid #ccc;
+      }
+
+      .box {
+        margin-right: 30px;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        inline-size: 200px;
+        writing-mode: horizontal-tb;
+      }
+
+      .logical {
+        margin-block-start: 20px;
+        padding-inline-start: 2em;
+        padding-block-start: 2px;
+        border-block-start: 5px solid pink;
+        border-inline-end: 10px dotted rebeccapurple;
+        border-block-end: 1em double orange;
+        border-inline-start: 1px solid black;
+      }
+
+      .physical {
+        margin-top: 20px;
+        padding-right: 2em;
+        padding-top: 2px;
+        border-top: 5px solid pink;
+        border-right: 10px dotted rebeccapurple;
+        border-bottom: 1em double orange;
+        border-left: 1px solid black;
+      }
+
+      h2 {
+        border-bottom: 5px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box physical">
+          <h2>Physical Properties</h2>
+          <p>A paragraph. Demonstrating Logical Properties in CSS.</p>
+        </div>
+        <div class="box logical">
+          <h2>Logical Properties</h2>
+          <p>A paragraph. Demonstrating Logical Properties in CSS.</p>
+        </div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 500px;">
+.box {
+  inline-size: 200px;
+  writing-mode: horizontal-tb;
+}
+
+.logical {
+  margin-block-start: 20px;
+  padding-inline-start: 2em;
+  padding-block-start: 2px;
+  border-block-start: 5px solid pink;
+  border-inline-end: 10px dotted rebeccapurple;
+  border-block-end: 1em double orange;
+  border-inline-start: 1px solid black;
+}
+
+.physical {
+  margin-top: 20px;
+  padding-right: 2em;
+  padding-top: 2px;
+  border-top: 5px solid pink;
+  border-right: 10px dotted rebeccapurple;
+  border-bottom: 1em double orange;
+  border-left: 1px solid black;
+}
+
+h2 {
+  border-bottom: 5px solid black;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 230px;">
+<div class="wrapper">
+  <div class="box physical">
+    <h2>Physical Properties</h2>
+    <p>A paragraph. Demonstrating Logical Properties in CSS.</p>
+  </div>
+  <div class="box logical">
+    <h2>Logical Properties</h2>
+    <p>A paragraph. Demonstrating Logical Properties in CSS.</p>
+  </div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
