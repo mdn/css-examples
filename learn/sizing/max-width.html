@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sizing: max-width</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .wrapper > * {
+        margin: 20px;
+      }
+
+      .box, .minibox {
+        border: 5px solid darkblue;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        width: 200px;
+      }
+      .minibox {
+        width: 50px;
+      }
+      .width {
+        width: 100%;
+      }
+      .max {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box"><img src="star.png" alt="star" class="width"></div>
+        <div class="box"><img src="star.png" alt="star" class="max"></div>
+        <div class="minibox"><img src="star.png" alt="star" class="max"></div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.box {
+  width: 200px;
+}
+.minibox {
+  width: 50px;
+}
+.width {
+  width: 100%;
+}
+.max {
+  max-width: 100%;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="wrapper">
+  <div class="box"><img src="star.png" alt="star" class="width"></div>
+  <div class="box"><img src="star.png" alt="star" class="max"></div>
+  <div class="minibox"><img src="star.png" alt="star" class="max"></div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

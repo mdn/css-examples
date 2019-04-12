@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sizing: percentage margins and padding</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid darkblue;
+        width: 300px;
+        margin: 10%;
+        padding: 10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        I have margin and padding set to 10% on all sides.
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+.box {
+  border: 5px solid darkblue;
+  width: 300px;
+  margin: 10%;
+  padding: 10%;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="box">
+  I have margin and padding set to 10% on all sides.
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sizing: percentages</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid darkblue;
+        width: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        I have a percentage width.
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+.box {
+  border: 5px solid darkblue;
+  width: 50%;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="box">
+  I have a percentage width.
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
