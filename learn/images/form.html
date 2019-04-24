@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and other unusual elements: forms</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      form > div {
+        display: flex;
+      }
+
+      label {
+        width: 10em;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+      
+    </style>
+
+    <style class="editable">
+      input[type="text"],
+      input[type="email"] {
+        border: 2px solid #000;
+        margin: 0 0 1em 0;
+        padding: 10px;
+      }
+
+      input[type="submit"] {
+        border: 3px solid #333;
+        background-color: #999;
+        border-radius: 5px;
+        padding: 10px 2em;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <form>
+        <div><label for="name">Name</label>
+        <input type="text" id="name"></div>
+        <div><label for="email">Email</label>
+        <input type="email" id="email"></div>
+
+        <div class="buttons"><input type="submit" value="Submit"></div>
+      </form>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 420px;">
+input[type="text"],
+input[type="email"] {
+  border: 2px solid #000;
+  margin: 0 0 1em 0;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  border: 3px solid #333;
+  background-color: #999;
+  border-radius: 5px;
+  padding: 10px 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 200px;">
+<form>
+  <div><label for="name">Name</label>
+  <input type="text" id="name"></div>
+  <div><label for="email">Email</label>
+  <input type="email" id="email"></div>
+
+  <div class="buttons"><input type="submit" value="Submit"></div>
+</form>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

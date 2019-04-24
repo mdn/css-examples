@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and other unusual elements: filters</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .wrapper > * {
+        margin: 20px;
+        flex: 1;
+      }
+
+      .box {
+        border: 5px solid darkblue;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        width: 300px;
+        height: 200px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .blur {
+        filter: blur(10px);
+      }
+
+      .grayscale {
+        filter: grayscale(60%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box"><img src="balloons.jpg" alt="balloons" class="blur"></div>
+        <div class="box"><img src="balloons.jpg" alt="balloons" class="grayscale"></div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 320px;">
+img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.grayscale {
+  filter: grayscale(60%);
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="wrapper">
+  <div class="box"><img src="balloons.jpg" alt="balloons" class="blur"></div>
+  <div class="box"><img src="balloons.jpg" alt="balloons" class="grayscale"></div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
