@@ -54,6 +54,22 @@ a[href^="https"] {
 }
 ```
 
+## The Box Model
+
+[Task](https://developer.mozilla.org/en-US/docs/User:chrisdavidmills/CSS_Learn/The_Box_Model#Playing_with_box_models)
+
+Task: Change the size of the second box (by adding CSS to the .alternate class) to make it match the first box in width and height.
+
+```
+.alternate {
+  box-sizing: border-box;
+  width: 390px;
+  height: 240px;
+}
+```
+
+You will need to increase the height and width of the second block, to add the size of the padding and border.
+
 ## Backgrounds and Borders
 
 To style the box we add a border, using the `border` property. Round the corners with `border-radius` and then add the background image setting the size to `contain`.
