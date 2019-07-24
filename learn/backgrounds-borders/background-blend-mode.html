@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: background-blend-mode</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .box {
+        width: 250px;
+        height: 130px;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+
+    <style class="editable">
+    .box {
+      background: url(https://mdn.mozillademos.org/files/13090/colorful-heart.png) no-repeat center 20px;
+      background-color: green;
+    }
+
+    .multiply {
+      background-blend-mode: multiply;
+    }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box"></div>
+      <div class="box multiply"></div>     
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.box {
+  background: url(https://mdn.mozillademos.org/files/13090/colorful-heart.png) no-repeat center 20px;
+  background-color: green;
+}
+
+.multiply {
+  background-blend-mode: multiply;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 90px;">
+<div class="box"></div>
+<div class="box multiply"></div> 
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
