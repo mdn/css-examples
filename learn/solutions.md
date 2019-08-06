@@ -2,6 +2,24 @@
 
 Solutions for the tasks in the CSS Learn section of MDN.
 
+## The Cascade
+
+[Task](https://developer.mozilla.org/en-US/docs/User:chrisdavidmills/CSS_Learn/Cascade_and_inheritance#Active_learning_playing_with_the_cascade)
+
+Task: Write a declaration in a new rule that will reset the background color back to white, without using an actual color value?
+
+One possible solution is as follows:
+
+```
+#outer #inner a {
+  background-color: initial;
+}
+```
+
+There are two things you need to do in this task. First, you need to write a selector for the `a` element which is more specific than the selector used to turn the background blue. I have achieved this by using the `id` selector which has very high specificity. 
+
+Then you need to remember that there are special keyword values for all properties. In this case I am using `inherit` to set the background back to be the same as its parent element.
+
 ## Attribute Selectors
 
 [Task](https://developer.mozilla.org/en-US/docs/User:chrisdavidmills/CSS_Learn/CSS_Selectors/Attribute_selectors#Try_it_out)
@@ -35,6 +53,22 @@ a[href^="https"] {
   border-color: green;
 }
 ```
+
+## The Box Model
+
+[Task](https://developer.mozilla.org/en-US/docs/User:chrisdavidmills/CSS_Learn/The_Box_Model#Playing_with_box_models)
+
+Task: Change the size of the second box (by adding CSS to the .alternate class) to make it match the first box in width and height.
+
+```
+.alternate {
+  box-sizing: border-box;
+  width: 390px;
+  height: 240px;
+}
+```
+
+You will need to increase the height and width of the second block, to add the size of the padding and border.
 
 ## Backgrounds and Borders
 
