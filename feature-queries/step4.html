@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Feature Queries: step 4</title>
+    <link rel="stylesheet" href="../learn/styles.css">
+    <style>
+      * {
+        box-sizing: border-box; 
+      }
+      .wrapper {
+        overflow: auto;
+      }
+    </style>
+
+    <style class="editable">
+.box {
+  float: left;
+  width: 33%;
+  border: 2px solid rgb(95, 97, 110);
+  border-radius: .5em;
+  padding: 20px;
+}
+
+@supports (display: grid) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .box {
+    width: auto;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box">
+        Box 1
+        <br>Has more content
+        <br>than the other boxes.
+        </div>
+        <div class="box">
+        Box 2
+        </div>
+        <div class="box">
+        Box 3
+        </div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 340px;">
+.box {
+  float: left;
+  width: 33%;
+  border: 2px solid rgb(95, 97, 110);
+  border-radius: .5em;
+  padding: 20px;
+}
+
+@supports (display: grid) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .box {
+    width: auto;
+  }
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 280px;">
+<div class="wrapper">
+  <div class="box">
+  Box 1
+  <br>Has more content
+  <br>than the other boxes.
+  </div>
+  <div class="box">
+  Box 2
+  </div>
+  <div class="box">
+  Box 3
+  </div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../learn/playable.js"></script>
+
+</html>

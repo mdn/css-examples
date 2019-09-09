@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Feature Queries: not</title>
+    <link rel="stylesheet" href="../learn/styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+.box {
+    border: 4px solid blue;
+    color: blue;
+}
+@supports not (row-gap: 10px) {
+    .box {
+        border: 4px solid red;
+        color: red;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="box">
+        If your browser does not support row-gap, the text and border will be red.
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 200px;">
+.box {
+    border: 4px solid blue;
+    color: blue;
+}
+@supports not (row-gap: 10px) {
+    .box {
+        border: 4px solid red;
+        color: red;
+    }
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="box">
+If your browser does not support row-gap, the text and border will be red.
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../learn/playable.js"></script>
+
+</html>
