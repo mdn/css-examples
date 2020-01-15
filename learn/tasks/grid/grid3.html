@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Grid: task 3</title>
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .grid > * {
+          background-color: #4D7298;
+          border: 2px solid #77A6B6;
+          border-radius: .5em;
+          color: #fff;
+          padding: .5em;
+        }
+
+
+    </style>
+
+    <style class="editable">
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="preview">
+      <div class="grid">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+        <div class="four">Four</div>
+      </div>
+    </section>
+
+<textarea class="playable playable-css" style="min-height:220px;">
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+</textarea>
+
+<textarea class="playable playable-html">
+<div class="grid">
+  <div class="one">One</div>
+  <div class="two">Two</div>
+  <div class="three">Three</div>
+  <div class="four">Four</div>
+</div>
+</textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>
