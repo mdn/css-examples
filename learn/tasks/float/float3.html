@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Float: Task 3</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .preview {
+        display: flow-root;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 500px;
+        padding: .5em;
+      }
+      .float {
+        margin: 15px;
+        width: 150px;
+        height: 150px;
+        border-radius: 5px;
+        background-color: rgb(207,232,220);
+        padding: 1em;
+      }
+
+      .box {
+        background-color: rgb(79,185,227);
+        padding: 10px;
+        color: #fff;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+
+      }
+
+      .float {
+        float: right;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        <div class="float">Float</div>
+        <p>This sentence appears next to the float.</p>
+        
+      </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.float {
+  float: right;
+}
+
+.box {
+
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="box">
+  <div class="float">Float</div>
+  <p>This sentence appears next to the float.</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
