@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Grid and Flex: task 4</title>
+
+    <style>
+
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      .card {
+        display: grid;
+        grid-template-rows: 200px min-content;
+      }
+
+      .card > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .tags {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tags > * {
+        background-color: #999;
+        color: #fff;
+        padding: 0.2em 0.8em;
+        border-radius: 0.2em;
+        font-size: 80%;
+        margin: 5px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="card">
+        <img src="balloons1.jpg" alt="a single red balloon">
+        <ul class="tags">
+          <li>balloon</li>
+          <li>red</li>
+          <li>sky</li>
+          <li>blue</li>
+          <li>Hot air balloon</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="balloons2.jpg" alt="balloons over some houses">
+        <ul class="tags">
+          <li>balloons</li>
+          <li>houses</li>
+          <li>train</li>
+          <li>harborside</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="balloons3.jpg" alt="close-up of balloons inflating">
+        <ul class="tags">
+          <li>balloons</li>
+          <li>inflating</li>
+          <li>green</li>
+          <li>blue</li>
+        </ul>
+      </div>
+      <div class="card">
+        <img src="balloons4.jpg" alt="a balloon in the sun">
+        <ul class="tags">
+          <li>balloon</li>
+          <li>sun</li>
+          <li>sky</li>
+          <li>summer</li>
+          <li>bright</li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+
+</html>
