@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Position: Task 2</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 550px;
+        height: 400px;
+        padding: .5em;
+        border: 5px solid #ccc;
+        overflow: auto;
+      }
+      .sidebar {
+        background-color: rgb(207,232,220);
+        padding: 1em;
+        float: left;
+        width: 150px;
+      }
+      .content {
+        padding: 1em;
+        margin-left: 160px;
+      }
+    </style>
+
+    <style class="editable">
+      .container {
+
+      }
+
+      .sidebar {
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="container">
+        <div class="sidebar">
+          <p>This is the sidebar. It should remain in position as the content scrolls.</p>
+        </div>
+        <div class="content">
+          <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+          <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.container {
+
+}
+
+.sidebar {
+
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 500px;">
+<div class="container">
+  <div class="sidebar">
+    <p>This is the sidebar. It should remain in position as the content scrolls.</p>
+  </div>
+  <div class="content">
+    <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+    <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+    <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+  </div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

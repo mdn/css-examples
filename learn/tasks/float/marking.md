@@ -1,6 +1,6 @@
 # Floats Marking Guide
 
-The aim of the tasks are to demonstrate an understanding of the properties covered in the [Float](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders) lesson in Learn Web Development on MDN.
+The aim of the tasks are to demonstrate an understanding of the properties covered in the [Float](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats) lesson in Learn Web Development on MDN.
 
 ## Task 1
 
