@@ -1,6 +1,6 @@
 # Multicol Marking Guide
 
-The aim of the tasks are to demonstrate an understanding of the properties covered in the [Multiple-column Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning) lesson in Learn Web Development on MDN.
+The aim of the tasks are to demonstrate an understanding of the properties covered in the [Multiple-column Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout) lesson in Learn Web Development on MDN.
 
 ## Task 1
 
