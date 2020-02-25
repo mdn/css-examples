@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Writing Modes Task 2: Logical width and height</title>
+    <link rel="stylesheet" href="../styles.css"/>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+      .vertical {
+        writing-mode: vertical-rl;
+      }
+
+      .box {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+        padding: 40px;
+        margin: 40px;
+        width: 200px;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="box">Horizontal.</div>
+    <div class="box vertical">Vertical.</div>
+
+  </body>
+
+</html>

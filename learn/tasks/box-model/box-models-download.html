@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Box Model Task 1: Standard and Alternate Box Models</title>
+    <link rel="stylesheet" href="../styles.css"/>
+
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+      
+      .box {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+        padding: 40px;
+        margin: 40px;
+        width: 300px;
+        height: 150px;
+      }
+
+      .alternate {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="box">I use the standard box model.</div>
+    <div class="box alternate">I use the alternate box model.</div>
+
+  </body>
+</html>

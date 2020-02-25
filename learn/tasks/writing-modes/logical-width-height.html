@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Writing Modes Task 2: Logical width and height</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    .vertical {
+        writing-mode: vertical-rl;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+        padding: 40px;
+        margin: 40px;
+        width: 200px;
+        height: 100px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">Horizontal.</div>
+      <div class="box vertical">Vertical.</div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.box {
+  border: 5px solid rebeccapurple;
+  background-color: lightgray;
+  padding: 40px;
+  margin: 40px;
+  width: 200px;
+  height: 100px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="box">Horizontal.</div>
+<div class="box vertical">Vertical.</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
