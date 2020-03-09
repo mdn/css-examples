@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Values and Units Task 3: position values</title>
+    <title>Sizing Task 2: Percentages</title>
 
     <style>
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         background-color: #fff;
         color: #333;
@@ -12,24 +17,27 @@
         padding: 1em;
         margin: 0;
       }
+
       .box {
         border: 5px solid #000;
         width: 400px;
-        height: 200px;
+        margin-bottom: 1em;
       }
 
-      .box {
-        background-image: url("star.png");
-        background-repeat: no-repeat;
-      }
-    </style>
+      .inner {
+        background-color: rebeccapurple;
+        color: white;
+        border-radius: 5px;
+      }     
 
   </head>
 
   <body>
-
-    <div class="box"></div>
-
+   
+    <div class="box">
+      <div class="inner">Make me 60% of my parent's width.</div>
+    </div>
+  
   </body>
-
+ 
 </html>
