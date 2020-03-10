@@ -5,7 +5,13 @@
 There are two boxes, the first should be given a minimum height, in which case it will expand to take the additional content but if the student removes some content the box will be at least as tall as the min-height. The second is given a fixed height which will cause content to overflow.
 
 ```
+.box1 {
+  min-height: 100px;
+}
 
+.box2 {
+  height: 100px;
+}
 ```
 
 ## Task 2 percentages
