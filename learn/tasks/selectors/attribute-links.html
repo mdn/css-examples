@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectors: attribute selectors</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0 0 .5em 0;
+        }
+
+        a {
+            display: block;
+            padding: .5em;
+        }
+    </style>
+
+    <style class="editable">   
+        a {
+            border: 5px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        
+        <ul>
+            <li><a href="https://example.com">Link 1</a></li>
+            <li><a href="http://example.com" title="Visit example.com">Link 2</a></li>
+            <li><a href="/contact">Link 3</a></li>
+            <li><a href="../contact/index.html">Link 4</a></li>
+        </ul>
+        
+    </section>
+
+    <textarea class="playable playable-css" style="height: 100px;">
+a {
+    border: 5px solid grey;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 160px;">
+<ul>
+    <li><a href="https://example.com">Link 1</a></li>
+    <li><a href="http://example.com" title="Visit example.com">Link 2</a></li>
+    <li><a href="/contact">Link 3</a></li>
+    <li><a href="../contact/index.html">Link 4</a></li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

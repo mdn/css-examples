@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>The Cascade Task</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    #outer div ul .nav a {
+      background-color: blue;
+      padding: 5px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    div div li a {
+      color: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+      <div id="outer" class="container">
+        <div id="inner" class="container">
+          <ul>
+            <li class="nav"><a href="#">One</a></li>
+            <li class="nav"><a href="#">Two</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 250px;">
+#outer div ul .nav a {
+  background-color: blue;
+  padding: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+div div li a {
+  color: yellow;
+}               
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 170px;">
+<div id="outer" class="container">
+  <div id="inner" class="container">
+    <ul>
+      <li class="nav"><a href="#">One</a></li>
+      <li class="nav"><a href="#">Two</a></li>
+    </ul>
+  </div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>
