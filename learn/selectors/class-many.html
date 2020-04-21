@@ -13,54 +13,56 @@
 
     <style class="editable">
     .notebox {
-        border: 4px solid #666;
-        padding: .5em;
+      border: 4px solid #666;
+      padding: .5em;
     }
 
     .notebox.warning {
-        border: 4px solid orange;
-        font-weight: bold;
+      border-color: orange;
+      font-weight: bold;
     }
 
     .notebox.danger {
-        border: 4px solid red;
-        font-weight: bold;
+      border-color: red;
+      font-weight: bold;
     }
-        
+
     </style>
 </head>
 
 <body>
     <section class="preview">
-       <div class="notebox">
-           This is an informational note.
-       </div>
+      <div class="notebox">
+          This is an informational note.
+      </div>
 
-       <div class="notebox warning">
-           This note shows a warning.
-       </div>
+      <div class="notebox warning">
+          This note shows a warning.
+      </div>
 
-       <div class="notebox danger">
-           This note shows danger!
-       </div>
+      <div class="notebox danger">
+          This note shows danger!
+      </div>
 
-
+      <div class="danger">
+          This won't get styled — it also needs to have the notebox class.
+      </div>
     </section>
 
     <textarea class="playable playable-css" style="height: 240px;">
 .notebox {
-    border: 4px solid #666;
-    padding: .5em;
+  border: 4px solid #666;
+  padding: .5em;
 }
 
 .notebox.warning {
-    border: 4px solid orange;
-    font-weight: bold;
+  border-color: orange;
+  font-weight: bold;
 }
 
 .notebox.danger {
-    border: 4px solid red;
-    font-weight: bold;
+  border-color: red;
+  font-weight: bold;
 }
     </textarea>
 
@@ -75,6 +77,10 @@
 
 <div class="notebox danger">
     This note shows danger!
+</div>
+
+<div class="danger">
+    This won't get styled — it also needs to have the notebox class
 </div>
     </textarea>
 
