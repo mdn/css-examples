@@ -31,7 +31,7 @@ We also ask them to round only some of the corners on the border, ensuring they 
 There are also some elements which link back to earlier lessons:
 
 - They need to add padding to the heading in order that it doesn't overlay the star image - this links back to learning from the earlier Box Model lesson.
-- The text with be aligned with the `text-align` property.
+- (Optional) The text could be aligned with the `text-align` property, which isn't covereted yet in this phase.
 
 ```
 .box {
@@ -42,7 +42,10 @@ There are also some elements which link back to earlier lessons:
 
 h2 {
   padding: 0 40px;
+  
+  /* Optional since not covered yet*/
   text-align: center;
+  
   background: url(star.png) no-repeat left center,
     url(star.png) repeat-y right center;
 }
