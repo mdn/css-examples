@@ -20,7 +20,7 @@ This task covers understanding of `position: relative` and `position: absolute` 
 
 A likely issue will be that the student adds `position: absolute` to the child but does not apply `position: relative` to the container. In that case the target will end up being positioned according to the viewport.
 
-For the extra task, the student needs to add a negative `z-index` to the target, for example `z-index:2`.
+For the extra task, the student needs to add a negative `z-index` to the target, for example `z-index: -2`.
 
 ## Task 2
 
