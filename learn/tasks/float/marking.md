@@ -33,7 +33,7 @@ In task 2 we check that the student understands how to clear an element from a f
 
 ## Task 3
 
-In the final task the student is asked to use the most up to date method of clearing the box underneath the floated item. Therefore they should add `display: flow-root` to the class for `.box`. Other methods might be to use `overflow` or a clearfix hack, however the learning materials detail the `flow-root` method as the modern way to acheive this.
+In the final task the student is asked to use the most up to date method of clearing the box underneath the floated item. Therefore they should add `display: flow-root` to the class for `.box`. Other methods might be to use `overflow` or a clearfix hack, however the learning materials detail the `flow-root` method as the modern way to achieve this.
 
 ```
 .box {
