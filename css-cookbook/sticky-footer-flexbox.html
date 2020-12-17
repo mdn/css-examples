@@ -10,8 +10,17 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        * {
+        html {
+            height:100%;
             box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        body {
+            height: 100%;
         }
 
         .page-header,
@@ -28,7 +37,7 @@
         }
 
         .preview {
-            height: 400px;
+            height: 100%;
             overflow: auto;
         }
     </style>

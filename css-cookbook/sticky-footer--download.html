@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+
+        html {
+            height:100%;
+            box-sizing: border-box;
+        }
+
         body {
+            height:100%;
             background-color: #fff;
             color: #333;
             font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -19,12 +26,11 @@
         }
 
         * {
-            box-sizing: border-box;
+            box-sizing: inherit;
         }
 
         section {
-            height: 400px;
-            width: 500px;
+            height: 100%
         }
 
         .wrapper {
