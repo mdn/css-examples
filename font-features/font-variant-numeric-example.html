@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>font-variant-numeric</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style class="editable">
+
+        @font-face {
+          font-family: 'Source Sans Pro';
+          src: url("SourceSansPro-Regular.otf") format("opentype");
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        .ordinal {
+            font-variant-numeric: ordinal;
+            font-family: "Source Sans Pro";
+        }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="grid">
+        <div class="item">
+          <div class="subitem"></div>
+        </div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 200px;">
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("SourceSansPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+.ordinal {
+  font-variant-numeric: ordinal;
+  font-family: "Source Sans Pro";
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 60px;">
+<p class="ordinal">1st, 2nd, 3rd, 4th, 5th</p>
+    </textarea>
+
+    <p style="font-size: 80%;"><em>This example uses the Source Sans Pro OpenType font, developed by Adobe
+        and used here under the terms of the SIL Open Font License, Version 1.1:
+        <a href="http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web">http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web</a></em></p>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="playable.js"></script>
+</html>
