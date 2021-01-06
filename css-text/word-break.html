@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>overflow-wrap vs word-break</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        border: 4px solid #f76707;
+        border-radius: 5px;
+        padding: 10px;
+        inline-size: 30ch;
+        margin-block-end: 1em;
+      }
+    </style>
+
+    <style class="editable">
+      .box1 {
+        word-break: break-all; 
+      }
+
+      .box2 {
+        overflow-wrap: break-word; 
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box box1">
+        A Very LongWordThatHasNoBreakingPossibilities
+      </div>
+
+      <div class="box box2">
+        A Very LongWordThatHasNoBreakingPossibilities
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.box1 {
+  word-break: break-all;
+}
+
+.box2 {
+  overflow-wrap: break-word; 
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="box box1">
+A Very LongWordThatHasNoBreakingPossibilities
+</div>
+
+<div class="box box2">
+  A Very LongWordThatHasNoBreakingPossibilities
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="playable.js"></script>
+</html>

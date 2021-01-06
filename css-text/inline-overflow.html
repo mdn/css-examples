@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Inline overflow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        border: 4px solid #f76707;
+        border-radius: 5px;
+        padding: 10px;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        inline-size: 150px; 
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 100px;">
+.box {
+  inline-size: 150px; 
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 150px;">
+<div class="box">
+    Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="playable.js"></script>
+</html>
