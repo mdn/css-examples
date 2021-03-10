@@ -48,15 +48,6 @@
                 "footer image";
             }
 
-            .media > .media {
-                grid-column-start: 2;
-                clear: both;
-            }
-            
-            .media-flip > .media {
-                grid-column-start: 1;
-            }
-
             .img {
                 float: left;
                 margin-right: 20px;
@@ -169,9 +160,7 @@
                 <div class="content">
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet
-                        maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales
-                        tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus. Praesent quis risus id dolor
-                        venenatis condimentum.</p>
+                        maximus. </p>
                 </div>
 
                 <div class="footer"></div>
@@ -181,7 +170,7 @@
         </div>
     </section>
 
-    <textarea class="playable playable-css">
+    <textarea class="playable playable-css" style="height: 950px;">
 @media (min-width: 500px) {
     /* clearfix*/
     .media:after {
@@ -208,15 +197,6 @@
         "footer image";
     }
     
-    .media > .media {
-        grid-column-start: 2;
-        clear: both;
-    }
-    
-    .media-flip > .media {
-        grid-column-start: 1;
-    }
-    
     .img {
         float: left;
         margin-right: 20px;
@@ -229,30 +209,24 @@
         margin: 0 0 0 20px;
     }
     
-    .content {
-        grid-area: content;
-    }
+    .content { grid-area: content;}
     
-    .footer {
-        grid-area: footer;
-    }
+    .footer { grid-area: footer; }
     
     @supports(display: grid) {
         .media:after {
         content: none;
-        }
-        
+        }   
         .img,
         .media-flip .img{
         max-width: 100%;
-        margin: 0;
-        
-        }
+        margin: 0; 
+      }
     }
-    }
+}
 </textarea>
 
-    <textarea class="playable playable-html">
+    <textarea class="playable playable-html" style="height: 300px">
 <div class="media">
 
     <div class="img">
@@ -313,7 +287,7 @@
 
     <div class="content">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus. Praesent quis risus id dolor venenatis condimentum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. </p>
     </div>
 
     <div class="footer"></div>
