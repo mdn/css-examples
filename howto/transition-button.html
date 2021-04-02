@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .wrapper {
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         button {
-            padding: 5px 10px;
-            border: 0;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 140%;
+          padding: 5px 10px;
+          border: 0;
+          border-radius: 5px;
+          font-weight: bold;
+          font-size: 140%;
+          cursor: pointer;
+        }
+
+        .fade:focus,
+        .fade:active {
+          background-color: black;
         }
     </style>
 
@@ -26,11 +32,17 @@
         .fade {
           background-color: #DB1F48;
           color: #fff;
-          transition: background-color 2s;
+          transition: background-color 1s;
         }
 
         .fade:hover {
-            background-color: #004369;
+          background-color: #004369;
+        }
+
+        .fade:focus,
+        .fade:active {
+          background-color: black;
+          transition: none;
         }
     </style>
 </head>
@@ -46,11 +58,17 @@
 .fade {
   background-color: #DB1F48;
   color: #fff;
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
 
 .fade:hover {
   background-color: #004369;
+}
+
+.fade:focus,
+.fade:active {
+  background-color: black;
+  transition: none;
 }
     </textarea>
 
