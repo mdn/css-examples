@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Auto-placement example</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        list-style: none;
+        margin: 1em auto;
+        padding: 0;
+        max-width: 800px;
+      }
+        .wrapper li {
+            border: 1px solid #ccc;
+        }
+        
+        .wrapper li img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <style class="editable">
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        grid-auto-flow: dense;
+      }
+
+      .wrapper li.landscape {
+        grid-column-end: span 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <ul class="wrapper">
+            <li><img src="portrait.jpg" alt="placeholder"></li>
+            <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+            <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+            <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+            <li><img src="portrait.jpg" alt="placeholder"></li>
+            <li><img src="portrait.jpg" alt="placeholder"></li>
+            <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+            <li><img src="portrait.jpg" alt="placeholder"></li>
+            <li><img src="portrait.jpg" alt="placeholder"></li>
+            <li><img src="portrait.jpg" alt="placeholder"></li>
+         </ul>>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 200px;">
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.wrapper li.landscape {
+  grid-column-end: span 2;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 300px;">
+<ul class="wrapper">
+    <li><img src="./portrait.jpg" alt="placeholder"></li>
+    <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+    <li><img src="portrait.jpg" alt="placeholder"></li>
+    <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+    <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+    <li><img src="portrait.jpg" alt="placeholder"></li>
+    <li><img src="portrait.jpg" alt="placeholder"></li>
+    <li class="landscape"><img src="landscape.jpg" alt="placeholder"></li>
+    <li><img src="portrait.jpg" alt="placeholder"></li>
+    <li><img src="portrait.jpg" alt="placeholder"></li>
+    <li><img src="portrait.jpg" alt="placeholder"></li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>
