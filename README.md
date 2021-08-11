@@ -15,3 +15,5 @@ The "object-fit-basics" directory contains a simple page demonstrating typical u
 The "object-fit-gallery" directory contains a fun image gallery that uses <code>object-fit</code> to display the images more nicely, both in thumbnail and full size view. [Run the example live](http://mdn.github.io/css-examples/object-fit-gallery/).
 
 The "overscroll-behavior" directory contains a simple page demonstrating typical usage of different <code>overscroll-behavior</code> values. [Run example live](http://mdn.github.io/css-examples/overscroll-behavior/).
+
+The "tools" directory contains various tools for working with CSS, including a [color picker](http://mdn.github.io/css-examples/tools/color-picker/) and a [box shadow generator](http://mdn.github.io/css-examples/tools/box-shadow-generator/).
