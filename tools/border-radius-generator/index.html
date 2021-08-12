@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Border-radius generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <div id="container">
+      <div class="group section">
+          <div id="preview" class="col span_12">
+              <div id="subject">
+                  <div id="top-left" class="radius-container"
+                      data-X="left" data-Y="top">
+                  </div>
+                  <div id="top-right" class="radius-container"
+                      data-X="right" data-Y="top">
+                  </div>
+                  <div id="bottom-right" class="radius-container"
+                      data-X="right" data-Y="bottom">
+                  </div>
+                  <div id="bottom-left" class="radius-container"
+                      data-X="left" data-Y="bottom">
+                  </div>
+
+                  <div id="radius-ui-sliders">
+                      <div id="tlr" class="ui-input-slider" data-topic="top-left"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="tlw" class="ui-input-slider" data-topic="top-left-w"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="tlh" class="ui-input-slider" data-topic="top-left-h"
+                          data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="trr" class="ui-input-slider" data-topic="top-right"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="trw" class="ui-input-slider" data-topic="top-right-w"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="trh" class="ui-input-slider" data-topic="top-right-h"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="brr" class="ui-input-slider" data-topic="bottom-right"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="brw" class="ui-input-slider" data-topic="bottom-right-w"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="brh" class="ui-input-slider" data-topic="bottom-right-h"
+                          data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="blr" class="ui-input-slider" data-topic="bottom-left"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="blw" class="ui-input-slider" data-topic="bottom-left-w"
+                           data-unit=" px" data-sensitivity="2"></div>
+
+                      <div id="blh" class="ui-input-slider" data-topic="bottom-left-h"
+                          data-unit=" px" data-sensitivity="2"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="controls" class="group section">
+
+          <div class="group section">
+              <div id="dimensions">
+                  <div class="ui-input-slider" data-topic="width" data-info="width"
+                       data-unit=" px" data-min="150" data-max="700" data-sensitivity="1"></div>
+
+                  <div class="ui-input-slider" data-topic="height" data-info="height"
+                      data-unit=" px" data-min="75" data-max="350" data-sensitivity="1"></div>
+              </div>
+
+              <div id="output"></div>
+          </div>
+
+          <div class="group section">
+              <div id="radius-lock">
+                  <div class="info"> rounded corner </div>
+                  <div class="ui-checkbox" data-topic='top-left'></div>
+                  <div class="ui-checkbox" data-topic='top-right'></div>
+                  <div class="ui-checkbox" data-topic='bottom-right'></div>
+                  <div class="ui-checkbox" data-topic='bottom-left'></div>
+              </div>
+
+              <div id="unit-selection">
+                  <div class="info"> select border units </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+  <script src="script.js"></script>
+  </body>
+
+</html>

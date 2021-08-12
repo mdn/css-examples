@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Box-shadow generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <div id="container">
+        <div class="group section">
+            <div id="layer_manager">
+                <div class="group section">
+                    <div class="button" data-type="add"> </div>
+                    <div class="button" data-type="move-up"> </div>
+                    <div class="button" data-type="move-down"> </div>
+                </div>
+                <div id="stack_container"></div>
+            </div>
+
+            <div id="preview_zone">
+                <div id="layer_menu" class="col span_12">
+                    <div class="button" id="element" data-type="subject" data-title="element"> element </div>
+                    <div class="button" id="before" data-type="subject" data-title=":before">
+                        :before
+                        <span class="delete" data-type="disable"></span>
+                    </div>
+                    <div class="button" id="after" data-type="subject" data-title=":after">
+                        :after
+                        <span class="delete" data-type="disable"></span>
+                    </div>
+                    <div class="ui-checkbox" data-topic='before' data-label=":before"></div>
+                    <div class="ui-checkbox" data-topic='after' data-label=":after"></div>
+                </div>
+
+                <div id="preview">
+                    <div id="obj-element">
+                        <div class="content"> </div>
+                        <div id="obj-before"> </div>
+                        <div id="obj-after"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="controls" class="group section">
+            <div class="wrap-left">
+                <div class="colorpicker category">
+                    <div class="title"> </div>
+                    <div id="colorpicker" class="group">
+                        <div id="gradient" class="gradient">
+                            <div id="gradient_picker"> </div>
+                        </div>
+                        <div id="hue" data-topic="hue" class="hue">
+                            <div id="hue_selector"> </div>
+                        </div>
+                        <div class="info">
+                            <div class="input" data-topic="hue" data-title='H:' data-action="HSV"></div>
+                            <div class="input" data-topic="saturation" data-title='S:' data-action="HSV"></div>
+                            <div class="input" data-topic="value" data-title='V:' data-action="HSV"></div>
+                        </div>
+                        <div class="alpha">
+                            <div id="alpha" data-topic="alpha">
+                                <div id="alpha_selector"> </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="input" data-topic="r" data-title='R:' data-action="RGB"></div>
+                            <div class="input" data-topic="g" data-title='G:' data-action="RGB"></div>
+                            <div class="input" data-topic="b" data-title='B:' data-action="RGB"></div>
+                        </div>
+                        <div class="preview block">
+                            <div id="output_color"> </div>
+                        </div>
+                        <div class="block info">
+                            <div class="input" data-topic="a" data-title='alpha:' data-action="alpha"></div>
+                            <div class="input" data-topic="hexa" data-title='' data-action="hexa"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap-right">
+
+                <div id="shadow_properties" class="category">
+                    <div class="title"> Shadow properties </div>
+                    <div class="group">
+                        <div class="group property">
+                            <div class="ui-slider-name"> inset </div>
+                            <div class="ui-checkbox" data-topic='inset'></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> Position x </div>
+                            <div class="ui-slider-btn-set" data-topic="posX" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="posX"
+                                data-min="-500" data-max="500" data-step="1"> </div>
+                            <div class="ui-slider-btn-set" data-topic="posX" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="posX" data-unit="px"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> Position y </div>
+                            <div class="ui-slider-btn-set" data-topic="posY" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="posY"
+                                data-min="-500" data-max="500" data-step="1"> </div>
+                            <div class="ui-slider-btn-set" data-topic="posY" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="posY" data-unit="px"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> Blur </div>
+                            <div class="ui-slider-btn-set" data-topic="blur" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="blur"
+                                data-min="0" data-max="200" data-step="1"> </div>
+                            <div class="ui-slider-btn-set" data-topic="blur" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="blur" data-unit="px"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> Spread </div>
+                            <div class="ui-slider-btn-set" data-topic="spread" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="spread"
+                                data-min="-100"    data-max="100" data-step="1" data-value="50">
+                            </div>
+                            <div class="ui-slider-btn-set" data-topic="spread" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="spread" data-unit="px"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="element_properties" class="category">
+                    <div class="title"> Class element properties </div>
+                    <div class="group">
+                        <div class="group property">
+                            <div class="ui-slider-name"> border </div>
+                            <div class="ui-checkbox" data-topic='border-state' data-state="true"></div>
+                        </div>
+                        <div id="z-index" class="slidergroup">
+                            <div class="ui-slider-name"> z-index </div>
+                            <div class="ui-slider-btn-set" data-topic="z-index" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="z-index"
+                                data-min="-10" data-max="10" data-step="1"></div>
+                            <div class="ui-slider-btn-set" data-topic="z-index" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="z-index"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> top </div>
+                            <div class="ui-slider-btn-set" data-topic="top" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="top"
+                                data-min="-500" data-max="500" data-step="1"> </div>
+                            <div class="ui-slider-btn-set" data-topic="top" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="top" data-unit="px"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> left </div>
+                            <div class="ui-slider-btn-set" data-topic="left" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="left"
+                                data-min="-300" data-max="700" data-step="1"> </div>
+                            <div class="ui-slider-btn-set" data-topic="left" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="left" data-unit="px"></div>
+                        </div>
+                        <div id="transform_rotate" class="slidergroup">
+                            <div class="ui-slider-name"> Rotate </div>
+                            <div class="ui-slider-btn-set" data-topic="rotate" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="rotate"
+                                data-min="-360" data-max="360" data-step="1" data-value="0">
+                            </div>
+                            <div class="ui-slider-btn-set" data-topic="rotate" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="rotate" data-unit="deg"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> Width </div>
+                            <div class="ui-slider-btn-set" data-topic="width" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="width"
+                                data-min="0" data-max="1000" data-step="1" data-value="200">
+                            </div>
+                            <div class="ui-slider-btn-set" data-topic="width" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="width"  data-unit="px"></div>
+                        </div>
+                        <div class="slidergroup">
+                            <div class="ui-slider-name"> Height </div>
+                            <div class="ui-slider-btn-set" data-topic="height" data-type="sub"></div>
+                            <div class="ui-slider" data-topic="height"
+                                data-min="0" data-max="400" data-step="1" data-value="200">
+                            </div>
+                            <div class="ui-slider-btn-set" data-topic="height" data-type="add"></div>
+                            <div class="ui-slider-input" data-topic="height" data-unit="px"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="output" class="category">
+                    <div id="menu" class="menu"></div>
+                    <div class="title">    CSS Code </div>
+                    <div class="group" style="border-top-left-radius: 0;">
+                        <div class="output" data-topic="element" data-name="element"
+                            data-prop="width height background-color position=[relative] box-shadow">
+                        </div>
+                        <div class="output" data-topic="before" data-name="element:before"
+                            data-prop="content=[&quot;&quot;] position=[absolute] width height top left z-index background-color box-shadow transform -webkit-transform -ms-transform">
+                        </div>
+                        <div class="output" data-topic="after" data-name="element:after"
+                            data-prop="content=[&quot;&quot;] position=[absolute] width height top left z-index background-color box-shadow transform -webkit-transform -ms-transform">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <script src="script.js"></script>
+  </body>
+
+</html>
