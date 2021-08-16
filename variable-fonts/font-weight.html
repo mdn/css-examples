@@ -2,35 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Variable fonts: oblique</title>
+    <title>Variable fonts: weight</title>
     <link rel="stylesheet" href="../assets/styles.css" />
     <style>
 
-      /*
-      AmstelvarAlpha-VF is created by David Berlow (https://github.com/TypeNetwork/Amstelvar)
-      and is used here under the terms of its license:
-      https://github.com/TypeNetwork/Amstelvar/blob/master/OFL.txt
-      */
+        /*
+        Mutator Sans is created by LettError (https://github.com/LettError/mutatorSans)
+        and is used here under the terms of its license:
+        https://github.com/LettError/mutatorSans/blob/master/LICENSE
+        */
 
     </style>
 
     <style class="editable">
  
     @font-face {
-    src: url('fonts/AmstelvarAlpha-VF.ttf');
-    font-family:'AmstelvarAlpha';
-    font-style: normal;
+      src: url('fonts/MutatorSans.ttf');
+      font-family:'MutatorSans';
+      font-style: normal;
     }
 
     label {
-    font: 1rem monospace;
+      font: 1rem monospace;
+      white-space: nowrap;
     }
 
-
     .sample {
-    font: 2rem 'AmstelvarAlpha', sans-serif;
-    font-variation-settings: 'slnt' 14;
-    font-style: oblique 23deg;
+      text-transform: uppercase;
+      font: 1.5rem 'MutatorSans', sans-serif;
     }
     </style>
   </head>
@@ -46,18 +45,20 @@
 
     <textarea class="playable playable-css" style="height: 280px;">
 @font-face {
-  src: url('fonts/AmstelvarAlpha-VF.ttf');
-  font-family:'AmstelvarAlpha';
+  src: url('fonts/MutatorSans.ttf');
+  font-family:'MutatorSans';
   font-style: normal;
 }
 
 label {
   font: 1rem monospace;
+  white-space: nowrap;
 }
 
 .sample {
-  font: 2rem 'AmstelvarAlpha', sans-serif;
-  font-style: oblique 23deg;
+  text-transform: uppercase;
+  font: 1.5rem 'MutatorSans', sans-serif;
+  font-weight: 500;
 }
     </textarea>
 
