@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Variable fonts: font-stretch</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+
+        /*
+This example uses the League Mono Variable font, developed by
+Tyler Finck (https://www.tylerfinck.com/) and used here under
+the terms of the SIL Open Font License, Version 1.1:
+http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
+*/
+
+    </style>
+
+    <style class="editable">
+ 
+ @font-face {
+  src: url('fonts/LeagueMonoVariable.ttf');
+  font-family:'LeagueMonoVariable';
+  font-style: normal;
+  font-stretch: 1% 500%; /* Required by Chrome */
+}
+
+.container {
+  font: 1.5rem 'LeagueMonoVariable', sans-serif;
+}
+
+.condensed {
+  font-stretch: 50%;
+}
+
+.normal {
+  font-stretch: 100%;
+}
+
+.expanded {
+  font-stretch: 200%;
+}
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+        <div class="container">
+            <p class="condensed">an elephantine lizard</p>
+            <p class="normal">an elephantine lizard</p>
+            <p class="expanded">an elephantine lizard</p>
+        </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 400px;">
+@font-face {
+  src: url('fonts/LeagueMonoVariable.ttf');
+  font-family:'LeagueMonoVariable';
+  font-style: normal;
+  font-stretch: 1% 500%; /* Required by Chrome */
+}
+
+.container {
+  font: 1.5rem 'LeagueMonoVariable', sans-serif;
+}
+
+.condensed {
+  font-stretch: 50%;
+}
+
+.normal {
+  font-stretch: 100%;
+}
+
+.expanded {
+  font-stretch: 200%;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="container">
+  <p class="condensed">an elephantine lizard</p>
+  <p class="normal">an elephantine lizard</p>
+  <p class="expanded">an elephantine lizard</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+
+  <script src="../assets/playable.js"></script>
+</html>
