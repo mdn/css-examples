@@ -34,7 +34,7 @@ I have used the shorthands below, however it would be correct for the student to
 This extra question requires a little bit of research. One way of achieving this would be to use `order`, which we've encountered in the flexbox tutorial.
 ```
 .item1 {
- order: 1
+ order: 1;
 }
 ```
 Another valid solution is to use `z-index`:
