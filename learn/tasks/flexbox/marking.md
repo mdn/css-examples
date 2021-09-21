@@ -37,16 +37,6 @@ li {
 }
 ```
 
-### Additional question
-
-The student should add an additional selector that targets the first element and sets `flex: 2;` (or `flex: 2 0 0;` or `flex-grow: 2`):
-
-```
-li:first-child {
-  flex: 2;
-}
-```
-
 ## Flex Layout Three
 
 Here we use Flexbox to center an item horizontally and vertically. The aim of this task is to demonstrate the student has an understanding of how to use the alignment properties to achieve this.
@@ -64,14 +54,3 @@ On the parent they should use:
 ## Flex Layout Four
 
 This example demonstrates understanding of the `flex-wrap` property to wrap flex lines. In addition, to ensure that they end up with something that looks like the example they need to set `flex: auto` on the child (or `flex: 1 1 auto;`).
-
-```
-ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-li {
-  flex: auto;
-}
-```
