@@ -16,6 +16,9 @@
 
     <style class="editable">
        .box {
+          background-image: -webkit-image-set(
+            url("large-balloons.avif") type("image/avif"),
+            url("large-balloons.jpg") type("image/jpeg"));
           background-image: image-set(
             url("large-balloons.avif") type("image/avif"),
             url("large-balloons.jpg") type("image/jpeg"));
@@ -28,8 +31,11 @@
         <div class="box"></div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 150px;">
+    <textarea class="playable playable-css" style="height: 155px;">
 .box {
+  background-image: -webkit-image-set(
+    url("large-balloons.avif") type("image/avif"),
+    url("large-balloons.jpg") type("image/jpeg"));
   background-image: image-set(
     url("large-balloons.avif") type("image/avif"),
     url("large-balloons.jpg") type("image/jpeg"));
