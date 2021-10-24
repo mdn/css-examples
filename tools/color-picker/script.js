@@ -193,7 +193,7 @@ var UIColorPicker = (function UIColorPicker() {
 		this.b = parseInt(value.substr(4, 2), 16);
 
 		this.alpha	= 1;
-		this.RGBtoHSV();
+		this.updateHSX();
 	};
 
 	/*========== Conversion Methods ==========*/
