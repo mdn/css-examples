@@ -53,25 +53,8 @@
  * ========================================================================== */
 
 .section {
-	clear: both;
 	padding: 0px;
 	margin: 0px;
-}
-
-/*  GROUPING
- * ========================================================================== */
-
-.group:before, .group:after {
-    content: "";
-    display: table;
-}
-
-.group:after {
-    clear:both;
-}
-
-.group {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 /*  GRID COLUMN SETUP
@@ -79,7 +62,6 @@
 
 .col {
 	display: block;
-	float:left;
 	margin: 1% 0 1% 1.6%;
 }
 
@@ -96,10 +78,10 @@
 	font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 	-moz-user-select: none;
 	user-select: none;
+	display: flex;
 }
 
 .ui-input-slider * {
-	float: left;
 	height: 100%;
 	line-height: 100%;
 }
@@ -309,7 +291,6 @@
 	color: #FFF;
 	border-radius: 2px;
 	font-weight: bold;
-	float: left;
 }
 
 .ui-checkbox .text {
@@ -395,15 +376,14 @@ body[data-move='Y'] {
 }
 
 #image-gallery {
-	width: 600px;
-	height: 100px;
-	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	transition: margin 0.4s;
 }
 
 #image-gallery .image {
 	height: 80px;
-	float: left;
 	margin: 10px;
 	opacity: 0.5;
 	background-color: #FFF;
@@ -429,6 +409,7 @@ body[data-move='Y'] {
 
 #load-actions {
 	margin: 10px 0;
+	display: flex;
 }
 
 #toggle-gallery {
@@ -443,7 +424,6 @@ body[data-move='Y'] {
 	background-color: #888888 !important;
 
 	border-radius: 2px;
-	float: left;
 }
 
 #toggle-gallery:hover {
@@ -469,7 +449,6 @@ body[data-move='Y'] {
 	line-height: 25px;
 	background-color: #379B4A;
 	border-radius: 2px;
-	float: left;
 }
 
 .button:hover {
@@ -478,7 +457,7 @@ body[data-move='Y'] {
 }
 
 #load-image {
-	float: left;
+
 }
 
 #load-remote {
@@ -495,7 +474,6 @@ body[data-move='Y'] {
 	padding: 0 5px;
 	border: 1px solid #379B4A;
 	border-radius: 2px;
-	float: left;
 
 	transition: width 0.5s;
 }
@@ -686,11 +664,14 @@ body[data-move='Y'] {
 	color: #888;
 	/*border-radius: 2px;*/
 	box-shadow: 0 0 3px 0 #BABABA;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 10px;
 }
 
 #general-controls .property {
 	width: 130px;
-	float: left;
+	display: flex;
 }
 
 #general-controls .name {
@@ -698,16 +679,16 @@ body[data-move='Y'] {
 	margin: 0 10px 0 0;
 	line-height: 100%;
 	text-align: right;
-	float: left;
 }
 
 #general-controls .right {
 	width: 200px;
-	float: right;
+	margin-left: auto;
 }
 
 #general-controls .ui-checkbox label {
 	height: 10px;
+	display: block;
 }
 
 #general-controls .separator {
@@ -715,7 +696,6 @@ body[data-move='Y'] {
 	width: 1px;
 	margin: -10px 15px;
 	background-color: #EEE;
-	float: left;
 }
 
 /*
@@ -724,17 +704,18 @@ body[data-move='Y'] {
 
 #controls {
 	color: #444;
-	margin: 10px 0 0 0;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 20px;
+	padding: 20px;
+	justify-content: space-between;
 }
 
 #controls .category {
-	height: 190px;
-	min-width: 260px;
-	margin: 10px;
 	padding: 10px;
 	border: 1px solid #CCC;
 	border-radius: 3px;
-	float: left;
 
 	box-shadow: 0 0 3px 0 #BABABA;
 	transition: all 0.25s;
@@ -742,22 +723,6 @@ body[data-move='Y'] {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-@media (min-width: 880px) {
-	#controls .category {
-		width: 30%;
-		margin-left: 1.66%;
-		margin-right: 1.66%;
-	}
-}
-
-@media (max-width: 879px) {
-	#controls .category {
-		width: 37%;
-		margin-left: 6.5%;
-		margin-right: 6.5%;
-	}
 }
 
 #controls .category .title {
@@ -785,11 +750,11 @@ body[data-move='Y'] {
 	width: 250px;
 	height: 20px;
 	margin: 5px auto;
+	display: flex;
 }
 
 #controls .property .ui-input-slider {
 	margin: 0;
-	float: left;
 }
 
 #controls .property .ui-input-slider-info {
@@ -812,13 +777,11 @@ body[data-move='Y'] {
 	padding: 0px 10px 0px 0px;
 	text-align: right;
 	line-height: 100%;
-	float: left;
 }
 
 #controls .property .config {
 	width: 20px;
 	height: 20px;
-	float: left;
 	background: url("config.png") center center no-repeat;
 	opacity: 0.5;
 }
@@ -838,15 +801,14 @@ body[data-move='Y'] {
 
 #controls .property .ui-dropdown {
 	margin: 0 10px;
-	float: left;
 }
 
 #controls .property .ui-checkbox {
 	margin: 0 0 0 16px;
-	float: left;
 }
 
 #controls .property .ui-checkbox label {
+	display: block;
 	height: 0.85em;
 	width: 10px;
 }
@@ -994,23 +956,12 @@ body[data-move='Y'] {
 	box-shadow: none !important;
 	border-radius: 3px;
 	overflow: hidden;
+	grid-column: span 2;
 
 	-moz-user-select: text;
 	-webkit-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
-}
-
-@media (min-width: 880px) {
-	#output {
-		width: 63.33% !important;
-	}
-}
-
-@media (max-width: 879px) {
-	#output {
-		width: 87% !important;
-	}
 }
 
 #output .title {
@@ -1029,19 +980,17 @@ body[data-move='Y'] {
 	color: #555;
 	font-size: 14px;
 	line-height: 18px;
-	float: left;
+	display: flex;
 }
 
 #output .css-property .name {
 	width: 30%;
 	font-weight: bold;
 	text-align: right;
-	float: left;
 }
 
 #output .css-property .value {
 	width: 65%;
 	padding: 0 2.5%;
 	word-break: break-all;
-	float: left;
 }
