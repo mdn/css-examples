@@ -31,7 +31,7 @@ This tests that the student understands he different between these and also how 
 }
 
 .alert {
-  border: 2px solid grey;
+  border: 1px solid grey;
 }
 
 .alert.stop {
