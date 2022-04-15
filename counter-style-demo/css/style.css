@@ -59,7 +59,7 @@ body {
 
 @counter-style cs-fixed {
     system: fixed;
-    symbols:          ;
+    symbols: 😀 👻 👽 👾 🤖 🎃 😹 👋 👀 💋;
     suffix: " ";
 }
 
@@ -91,6 +91,7 @@ body {
 @counter-style cs-numeric {
     system: numeric;
     symbols: A B C D E;
+    suffix: " ";
 }
 
 .demo-numeric {
