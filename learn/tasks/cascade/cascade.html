@@ -10,19 +10,19 @@
     </style>
 
     <style class="editable">
-    @layer yellow, blue, green;
+    @layer yellow, purple, green;
 
-    @layer blue {
+    @layer yellow {
       #outer div ul .nav a {
-        background-color: blue;
+        background-color: yellow;
         padding: 5px;
         display: inline-block;
         margin-bottom: 10px;
       }
     }
-    @layer yellow {
+    @layer purple {
       div div li a {
-        color: yellow;
+        color: rebeccapurple;
       }
     }
     @layer green {
@@ -46,19 +46,19 @@
     </section>
 
     <textarea class="playable playable-css" style="height: 400px;">
-      @layer yellow, blue, green;
+      @layer yellow, purple, green;
 
-      @layer blue {
+      @layer yellow {
         #outer div ul .nav a {
-          background-color: blue;
+          background-color: yellow;
           padding: 5px;
           display: inline-block;
           margin-bottom: 10px;
         }
       }
-      @layer yellow {
+      @layer purple {
         div div li a {
-          color: yellow;
+          color: rebeccapurple;
         }
       }
       @layer green {
