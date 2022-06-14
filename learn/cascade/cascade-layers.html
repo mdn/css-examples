@@ -18,12 +18,12 @@ p { /* 0-0-1 */
   border: 5px inset purple;
   margin: 15px;
 }
-p#addSpecifity { /* 1-0-1 */
+p#addSpecificity { /* 1-0-1 */
   border-style: solid !important;
 }
 
 @layer firstLayer {
-  #addSpecifity { /* 1-0-0 */
+  #addSpecificity { /* 1-0-0 */
     background-color: blue;
     color: white !important;
     border-width: 5px;
@@ -32,7 +32,7 @@ p#addSpecifity { /* 1-0-1 */
 }
 
 @layer secondLayer {
-  p#addSpecifity { /* 1-0-1 */
+  p#addSpecificity { /* 1-0-1 */
     background-color: green;
     color: orange !important;
     border-width: 10px;
@@ -45,7 +45,7 @@ p#addSpecifity { /* 1-0-1 */
 
 <body>
   <section class="preview">
-        <p id="addSpecifity">
+        <p id="addSpecificity">
           A paragraph with a border and background
         </p>
   </section>
@@ -58,12 +58,12 @@ p { /* 0-0-1 */
   color: grey !important;
   border: 5px inset purple;
 }
-p#addSpecifity { /* 1-0-1 */
+p#addSpecificity { /* 1-0-1 */
   border-style: solid !important;
 }
 
 @layer firstLayer {
-  #addSpecifity { /* 1-0-0 */
+  #addSpecificity { /* 1-0-0 */
     background-color: blue;
     color: white !important;
     border-width: 5px;
@@ -82,7 +82,7 @@ p#addSpecifity { /* 1-0-1 */
     </textarea>
 
     <textarea class="playable playable-html" style="height: 140px;">
-<p id="addSpecifity">
+<p id="addSpecificity">
   A paragraph with a border and background
 </p>
     </textarea>
