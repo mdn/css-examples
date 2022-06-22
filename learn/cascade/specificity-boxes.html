@@ -10,37 +10,37 @@
     </style>
 
     <style class="editable">
-/* specificity: 0101 */
+/* 1. specificity: 1-0-1 */
 #outer a {
   background-color: red;
 }
 
-/* specificity: 0201 */
+/* 2. specificity: 2-0-1 */
 #outer #inner a {
   background-color: blue;
 }
 
-/* specificity: 0104 */
+/* 3. specificity: 1-0-4 */
 #outer div ul li a {
   color: yellow;
 }
 
-/* specificity: 0113 */
+/* 4. specificity: 1-1-3 */
 #outer div ul .nav a {
   color: white;
 }
 
-/* specificity: 0024 */
+/* 5. specificity: 0-2-4 */
 div div li:nth-child(2) a:hover {
   border: 10px solid black;
 }
 
-/* specificity: 0023 */
+/* 6. specificity: 0-2-3 */
 div li:nth-child(2) a:hover {
   border: 10px dashed black;
 }
 
-/* specificity: 0033 */
+/* 7. specificity: 0-3-3 */
 div div .nav:nth-child(2) a:hover {
   border: 10px double black;
 }
@@ -81,37 +81,37 @@ li {
 
     <textarea class="playable playable-css" style="height: 280px;">
 
-/* specificity: 0101 */
+/* 1. specificity: 1-0-1 */
 #outer a {
     background-color: red;
 }
         
-/* specificity: 0201 */
+/* 2. specificity: 2-0-1 */
 #outer #inner a {
     background-color: blue;
 }
 
-/* specificity: 0104 */
+/* 3. specificity: 1-0-4 */
 #outer div ul li a {
     color: yellow;
 }
 
-/* specificity: 0113 */
+/* 4. specificity: 1-1-3 */
 #outer div ul .nav a {
     color: white;
 }
 
-/* specificity: 0024 */
+/* 5. specificity: 0-2-4 */
 div div li:nth-child(2) a:hover {
     border: 10px solid black;
 }
 
-/* specificity: 0023 */
+/* 6. specificity: 0-2-3 */
 div li:nth-child(2) a:hover {
     border: 10px dashed black;
 }
 
-/* specificity: 0033 */
+/* 7. specificity: 0-3-3 */
 div div .nav:nth-child(2) a:hover {
     border: 10px double black;
 }
