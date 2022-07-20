@@ -19,11 +19,11 @@ There is no one right answer however the following code demontrates how simply t
   }
 
   header li {
-    margin: 0; / *remove the margin used in the mobile design */
+    margin: 0; /* remove the margin used in the mobile design */
   }
 
   header a {
-    border: 0; /*remove the border used in the mobile design */
+    border: 0; /* remove the border used in the mobile design */
   }
 
   main {
