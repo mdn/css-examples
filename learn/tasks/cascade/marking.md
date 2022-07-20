@@ -1,4 +1,6 @@
-# The Cascade Task Marking Guide
+# Cascade and inheritance marking guide
+
+## Task 1
 
 One possible solution is as follows:
 
@@ -8,6 +10,15 @@ One possible solution is as follows:
 }
 ```
 
-There are two things the student needs to do in this task. First, you need to write a selector for the a element which is more specific than the selector used to turn the background blue. I have achieved this by using the id selector which has very high specificity.
+There are two things the student needs to do in this task. First, write a selector for the `a` element which is more specific than the selector used to turn the background blue. In this solution, this is achieved by using the `id` selector which has very high specificity.  
 
-Then they need to remember that there are special keyword values for all properties. In this case I am using inherit to set the background back to be the same as its parent element.
+Then the student needs to remember there are special keyword values for all properties. In this case, using `inherit` sets the background color back to be the same as its parent element.
+
+## Task 2
+
+One possible solution is as follows:
+
+```
+ @layer yellow, green, purple;
+```
+
