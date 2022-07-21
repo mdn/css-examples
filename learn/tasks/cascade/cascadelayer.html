@@ -2,19 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>The Cascade Task</title>
+    <title>The Cascade Layer Task</title>
     <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-      #outer div ul .nav a {
-        background-color: powderblue;
-        padding: 5px;
-        display: inline-block;
-        margin-bottom: 10px;
-      }
+      @layer yellow, purple, green;
 
-      div div li a {
-        color: rebeccapurple;
+      @layer yellow {
+        #outer div ul .nav a {
+          padding: 5px;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+      }
+      @layer purple {
+        div div li a {
+          color: rebeccapurple;
+        }
+      }
+      @layer green {
+        a {
+          color: lightgreen;
+        }
       }
     </style>
   </head>
@@ -30,19 +40,27 @@
         </div>
       </div>
     </section>
-    <textarea class="playable playable-css" style="height: 250px">
-    #outer div ul .nav a {
-      background-color: powderblue;
-      padding: 5px;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
+    <textarea class="playable playable-css" style="height: 400px">
+      @layer yellow, purple, green;
 
-    div div li a {
-      color: rebeccapurple;
-    }             
-</textarea
-    >
+      @layer yellow {
+        #outer div ul .nav a {
+          padding: 5px;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+      }
+      @layer purple {
+        div div li a {
+          color: rebeccapurple;
+        }
+      }
+      @layer green {
+        a {
+          color: lightgreen;
+        }
+      }               
+    </textarea>
 
     <textarea class="playable playable-html" style="height: 170px">
 <div id="outer" class="container">

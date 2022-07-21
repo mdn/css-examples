@@ -2,25 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>The Cascade Task</title>
+    <title>The Cascade Layer Task</title>
 
     <style>
-      body {
-        background-color: #fff;
-        color: #333;
-        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
-        padding: 1em;
-        margin: 0;
-      }
-      #outer div ul .nav a {
-        background-color: yellow;
-        padding: 5px;
-        display: inline-block;
-        margin-bottom: 10px;
-      }
+      @layer yellow, purple, green;
 
-      div div li a {
-        color: rebeccapurple;
+      @layer yellow {
+        #outer div ul .nav a {
+          padding: 5px;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+      }
+      @layer purple {
+        div div li a {
+          color: rebeccapurple;
+        }
+      }
+      @layer green {
+        a {
+          color: lightgreen;
+        }
       }
     </style>
   </head>
