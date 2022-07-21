@@ -1,38 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>The Cascade Layer Task</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-    @layer yellow, purple, green;
+      @layer yellow, purple, green;
 
-    @layer yellow {
-      #outer div ul .nav a {
-        padding: 5px;
-        display: inline-block;
-        margin-bottom: 10px;
+      @layer yellow {
+        #outer div ul .nav a {
+          padding: 5px;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
       }
-    }
-    @layer purple {
-      div div li a {
-        color: rebeccapurple;
+      @layer purple {
+        div div li a {
+          color: rebeccapurple;
+        }
       }
-    }
-    @layer green {
-      a {
-        color: lightgreen;
+      @layer green {
+        a {
+          color: lightgreen;
+        }
       }
-    }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
       <div id="outer" class="container">
         <div id="inner" class="container">
@@ -43,7 +40,7 @@
         </div>
       </div>
     </section>
-    <textarea class="playable playable-css" style="height: 400px;">
+    <textarea class="playable playable-css" style="height: 400px">
       @layer yellow, purple, green;
 
       @layer yellow {
@@ -65,7 +62,7 @@
       }               
     </textarea>
 
-    <textarea class="playable playable-html" style="height: 170px;">
+    <textarea class="playable playable-html" style="height: 170px">
 <div id="outer" class="container">
   <div id="inner" class="container">
     <ul>
@@ -77,9 +74,8 @@
     </textarea>
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

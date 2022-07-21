@@ -1,29 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>The Cascade Task</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css" />
 
+    <style class="editable">
+      #outer div ul .nav a {
+        background-color: powderblue;
+        padding: 5px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
 
+      div div li a {
+        color: rebeccapurple;
+      }
+    </style>
+  </head>
 
-  <style class="editable">
-    #outer div ul .nav a {
-      background-color: powderblue;
-      padding: 5px;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    div div li a {
-      color: rebeccapurple;
-    }
-  </style>
-
-</head>
-
-<body>
+  <body>
     <section class="preview">
       <div id="outer" class="container">
         <div id="inner" class="container">
@@ -34,7 +30,7 @@
         </div>
       </div>
     </section>
-<textarea class="playable playable-css" style="height: 250px;">
+    <textarea class="playable playable-css" style="height: 250px">
     #outer div ul .nav a {
       background-color: powderblue;
       padding: 5px;
@@ -45,9 +41,10 @@
     div div li a {
       color: rebeccapurple;
     }             
-</textarea>
+</textarea
+    >
 
-    <textarea class="playable playable-html" style="height: 170px;">
+    <textarea class="playable playable-html" style="height: 170px">
 <div id="outer" class="container">
   <div id="inner" class="container">
     <ul>
@@ -59,9 +56,8 @@
     </textarea>
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>
