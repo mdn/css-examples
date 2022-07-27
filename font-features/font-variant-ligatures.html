@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Font feature example - ligatures</title>
+
+  <style>
+    @font-face{
+        font-family: 'Playfair Display';
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        src: url('fonts/playfair-display/playfair-display-regular.woff') format('woff'),
+             url('fonts/playfair-display/playfair-display-regular.woff2') format('woff2');
+    }
+
+
+    html {
+      box-sizing: border-box;
+      font-size: 100%;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font: 1.2em "Playfair Display", "Times New Roman", serif;
+      margin: 20px;
+      padding: 0;
+    }
+    
+    .wrapper {
+      width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+
+    @media screen and (min-width: 35rem) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media screen and (min-width: 52rem) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    textarea {
+      font-family: monospace;
+      display: block;
+      margin-bottom: 10px;
+      height: 160px;
+      background-color: #F4F7F8;
+      border: none;
+      border-left: 6px solid #558ABB;
+      color: #4D4E53;
+      padding: 1rem 0;
+      width: 100%;
+    }
+
+    textarea:nth-of-type(1) {
+      height: 130px;
+    }
+
+    textarea:nth-of-type(2) {
+      height: 100px;
+    }
+
+    .playable-buttons {
+      text-align: right;
+      width: 100%;
+      padding: 0.5rem 0;
+      font-size: 100%;
+    }
+
+    .section {
+      width: 100%;
+      border: 1px solid #4D4E53;
+      border-radius: 2px;
+      padding: 10px 14px 10px 10px;
+      margin-bottom: 10px;
+    }
+
+    .section input {
+      display: block;
+      margin: 5px;
+    }
+
+    .container * {
+      font-size: 4rem;
+      margin: 1.5rem 0;
+    }
+
+  </style>
+  <style class="editable1">
+    .container1 * {
+      font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+    }
+    .inactive .container1 * {
+      font-variant-ligatures: none;
+    }
+  </style>
+  <style class="editable2">
+    /* 'liga', 'dlig', 'hlig', 'calt' */
+    .container2 * {
+      font-feature-settings: 'dlig', 'liga', 'calt';
+    }
+    .inactive .container2 * {
+      font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="demo1">
+      <section class="section section1">
+        <div class="container container1">
+            <p>Puffy Perfect -^ <-></p>
+        </div>
+      </section>
+<textarea class="playable-css1">
+  .container1 * {
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+  }
+  .inactive .container1 * {
+    font-variant-ligatures: none;
+  }
+</textarea>
+<textarea id="code1" class="playable-html1">
+  <div class="container container1">
+    <p>Puffy Perfect -^ <-></p>
+  </div>
+</textarea>
+<input type="checkbox" name="demo1_control" id="demo1_control" value="on" checked /> <label for="demo1_control">Ligatures active</label>
+    </div>
+    <div class="demo2">
+      <section class="section section2">
+        <div class="container container2">
+            <p>Puffy Perfect -^ <-></p>
+        </div>
+      </section>
+<textarea class="playable-css2">
+  /* 'liga', 'dlig', 'hlig', 'calt' */
+  .container2 * {
+    font-feature-settings: 'dlig', 'liga', 'calt';
+  }
+  .inactive .container2 * {
+    font-feature-settings: 'dlig' 0, 'liga' 0, 'calt' 0;
+  }
+</textarea>
+<textarea id="code2" class="playable-html2">
+  <div class="container container2">
+    <p>Puffy Perfect -^ <-></p>
+  </div>
+</textarea>
+<input type="checkbox" name="demo2_control" id="demo2_control" value="on" checked /> <label for="demo2_control">Ligatures active</label>
+    </div>
+  </div>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script>
+  var section1 = document.querySelector('.section1');
+  var editable1 = document.querySelector('.editable1');
+  var textareaHTML1 = document.querySelector('.playable-html1');
+  var textareaCSS1 = document.querySelector('.playable-css1');
+  var section2 = document.querySelector('.section2');
+  var editable2 = document.querySelector('.editable2');
+  var textareaHTML2 = document.querySelector('.playable-html2');
+  var textareaCSS2 = document.querySelector('.playable-css2');
+  var rangeinput = document.querySelector('.controls--slider');
+  var reset = document.getElementById('reset');
+  var htmlCode1 = textareaHTML1.value;
+  var cssCode1 = textareaCSS1.value;
+  var htmlCode2 = textareaHTML2.value;
+  var cssCode2 = textareaCSS2.value;
+  var demo1_active = document.getElementById('demo1_control');
+  var demo2_active = document.getElementById('demo2_control');
+
+  demo1_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
+
+  demo2_active.addEventListener('change', function () {
+    if (this.checked) {
+      this.parentNode.classList.remove('inactive');
+    } else {
+      this.parentNode.classList.add('inactive');
+    }
+  });
+
+  function fillCode() {
+    editable1.innerHTML = textareaCSS1.value;
+    section1.innerHTML = textareaHTML1.value;
+    editable2.innerHTML = textareaCSS2.value;
+    section2.innerHTML = textareaHTML2.value;
+  }
+
+  reset.addEventListener('click', function () {
+    textareaHTML1.value = htmlCode1;
+    textareaCSS1.value = cssCode1;
+    textareaHTML2.value = htmlCode2;
+    textareaCSS2.value = cssCode2;
+    demo1_active.checked = true;
+    demo1_active.parentNode.classList.remove('inactive');
+    demo2_active.checked = true;
+    demo2_active.parentNode.classList.remove('inactive');
+    fillCode();
+  });
+
+  textareaHTML1.addEventListener('input', fillCode);
+  textareaCSS1.addEventListener('input', fillCode);
+  textareaHTML2.addEventListener('input', fillCode);
+  textareaCSS2.addEventListener('input', fillCode);
+  window.addEventListener('load', fillCode);
+
+</script>
+
+</html>

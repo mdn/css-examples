@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The :past pseudo-class</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      video {
+          max-width: 300px;
+      }
+    </style>
+
+    <style class="editable">
+      
+:past(p, span) {
+  background-color: red;
+}
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <video controls preload="metadata">
+            <source src="video.mp4" type="video/mp4" />
+            <source src="video.webm" type="video/webm" />            
+            <track label="English" kind="subtitles" srclang="en" src="subtitles.vtt" default>
+        </video>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 100px;">
+:past(p, span) {
+    background-color: red;
+}
+   </textarea>
+
+    <textarea class="playable playable-html" style="height: 150px;">
+<video controls preload="metadata">
+    <source src="video.mp4" type="video/mp4" />
+    <source src="video.webm" type="video/webm" />            
+    <track label="English" kind="subtitles" srclang="en" src="subtitles.vtt" default>
+</video>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

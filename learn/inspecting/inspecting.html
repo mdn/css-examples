@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Inspecting CSS</title>
+
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px 10px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .box1 {
+          width: 400px;
+          margin: 0 0 40px 0;
+          padding: 20px;
+          border: 5px solid rgb(75, 70, 74);
+          border-radius: .5em;
+        }
+
+        .box2 {
+          box-sizing: border-box;
+          width: 400px;
+          margin: 0 0 40px 0;
+          padding: 20px;
+          border: 5px solid rgb(78, 17, 66);
+          border-radius: .5em;
+        }
+
+        .special {
+          color: orange;
+        }
+
+        em {
+          color: hotpink;
+          font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+          <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi
+            tomatillo
+            melon azuki bean garlic.</p>
+        </div>
+
+        <div class="box2">
+          <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean
+            collard
+            greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        </div>
+
+        <p>Turnip <em class="special">greens</em> yarrow ricebean rutabaga endive cauliflower <em>sea lettuce</em> kohlrabi amaranth water spinach
+            avocado
+            daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish
+            spinach
+            carrot soko.
+        </p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Cookbook: Pagination</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .visuallyhidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: auto;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+        }
+
+        nav {
+            border-top: 1px solid #eee;
+            margin-top: 1em;
+            padding-top: .5em;
+        }
+
+
+        .pagination a {
+            display: block;
+            padding: .5em 1em;
+            border: 1px solid #999;
+            border-radius: .2em;
+            text-decoration: none;
+        }
+
+        .pagination a[aria-current="page"] {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+
+    <style class="editable">
+        nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .pagination li {
+        margin: 0 1px;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <nav aria-label="pagination">
+            <ul class="pagination">
+                <li><a href=""><span aria-hidden="true">&laquo;</span><span class="visuallyhidden">previous set of
+                            pages</span></a></li>
+                <li><a href=""><span class="visuallyhidden">page </span>1</a></li>
+                <li><a href="" aria-current="page"><span class="visuallyhidden">page </span>2</a></li>
+                <li><a href=""><span class="visuallyhidden">page </span>3</a></li>
+                <li><a href=""><span class="visuallyhidden">page </span>4</a></li>
+                <li><a href=""><span class="visuallyhidden">next set of pages</span><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 300px;">
+nav {
+    display: flex;
+    justify-content: center;
+}
+        
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+        
+.pagination li {
+    margin: 0 1px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 250px;">
+<nav aria-label="pagination">
+    <ul class="pagination">
+        <li><a href=""><span aria-hidden="true">&laquo;</span><span class="visuallyhidden">previous set of pages</span></a></li>
+        <li><a href=""><span class="visuallyhidden">page </span>1</a></li>
+        <li><a href="" aria-current="page"><span class="visuallyhidden">page </span>2</a></li>
+        <li><a href=""><span class="visuallyhidden">page </span>3</a></li>
+        <li><a href=""><span class="visuallyhidden">page </span>4</a></li>
+        <li><a href=""><span class="visuallyhidden">next set of pages</span><span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+</nav>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="playable.js"></script>
+
+</html>

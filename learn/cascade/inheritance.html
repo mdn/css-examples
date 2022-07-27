@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Inheritance</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+ .main {
+    color: rebeccapurple;
+    border: 2px solid #ccc;
+    padding: 0 2em;
+} 
+
+.special {
+    color: black;
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <ul class="main">
+            <li>Item One</li>
+            <li>Item Two
+                <ul>
+                    <li>2.1</li>
+                    <li>2.2</li>
+                </ul>
+            </li>
+            <li>Item Three
+                <ul class="special">
+                    <li>3.1
+                        <ul>
+                            <li>3.1.1</li>
+                            <li>3.1.2</li>
+                        </ul>
+                    </li>
+                    <li>3.2</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.main {
+    color: rebeccapurple;
+    border: 2px solid #ccc;
+    padding: 1em;
+}
+
+.special {
+    color: black;
+    font-weight: bold;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 330px;">
+<ul class="main">
+    <li>Item One</li>
+    <li>Item Two
+        <ul>
+            <li>2.1</li>
+            <li>2.2</li>
+        </ul>
+    </li>
+    <li>Item Three
+        <ul class="special">
+            <li>3.1
+                <ul>
+                    <li>3.1.1</li>
+                    <li>3.1.2</li>
+                </ul>
+            </li>
+            <li>3.2</li>
+        </ul>
+    </li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

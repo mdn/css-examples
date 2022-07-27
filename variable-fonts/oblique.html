@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Variable fonts: oblique</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+
+      /*
+      AmstelvarAlpha-VF is created by David Berlow (https://github.com/TypeNetwork/Amstelvar)
+      and is used here under the terms of its license:
+      https://github.com/TypeNetwork/Amstelvar/blob/master/OFL.txt
+      */
+
+    </style>
+
+    <style class="editable">
+ 
+    @font-face {
+    src: url('fonts/AmstelvarAlpha-VF.ttf');
+    font-family:'AmstelvarAlpha';
+    font-style: normal;
+    }
+
+    label {
+    font: 1rem monospace;
+    }
+
+
+    .sample {
+    font: 2rem 'AmstelvarAlpha', sans-serif;
+    font-variation-settings: 'slnt' 14;
+    font-style: oblique 23deg;
+    }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+          <div class="container">
+            <p class="sample">...it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</p>
+          </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+@font-face {
+  src: url('fonts/AmstelvarAlpha-VF.ttf');
+  font-family:'AmstelvarAlpha';
+  font-style: normal;
+}
+
+label {
+  font: 1rem monospace;
+}
+
+.sample {
+  font: 2rem 'AmstelvarAlpha', sans-serif;
+  font-style: oblique 23deg;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="container">
+  <p class="sample">...it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill.</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+
+  <script src="../assets/playable.js"></script>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Cookbook: Breadcrumb Navigation</title>
+
+
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .breadcrumb a,
+        .breadcrumb span {
+            padding: .5em 1em;
+        }
+
+        .breadcrumb li::before {
+            content: "→";
+        }
+
+        .breadcrumb li:first-child::before {
+            content: "";
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Sub-Category</a></li>
+            <li><span aria-current="page">Product</span></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

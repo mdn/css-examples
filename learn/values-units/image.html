@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Values and Units: image</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        height: 150px;
+        width: 300px;
+        margin: 20px auto;
+        border-radius: 0.5em;
+      }
+    </style>
+
+    <style class="editable">
+      .image {
+        background-image: url(star.png);
+      }
+
+      .gradient {
+        background-image: linear-gradient(
+          90deg,
+          rgba(119, 0, 255, 1) 39%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box image"></div>
+      <div class="box gradient"></div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.image {
+  background-image: url(star.png);
+}
+
+.gradient {
+  background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 100px;">
+<div class="box image"></div>
+<div class="box gradient"></div>  
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

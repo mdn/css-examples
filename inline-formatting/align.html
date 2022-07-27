@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Inline Formatting Context - alignment</title>
+
+    <style>
+      body {
+        font: 1.2em Helvetica, Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
+
+      textarea {
+        font-family: monospace;
+        display: block;
+        margin-bottom: 10px;
+        background-color: #f4f7f8;
+        border: none;
+        border-left: 6px solid #558abb;
+        color: #4d4e53;
+        width: 90%;
+        max-width: 700px;
+        padding: 10px 10px 0px;
+        font-size: 90%;
+      }
+
+      textarea:nth-of-type(1) {
+        height: 120px;
+      }
+
+      textarea:nth-of-type(2) {
+        height: 160px;
+      }
+
+      .playable-buttons {
+        text-align: right;
+        width: 90%;
+        max-width: 700px;
+        padding: 5px 10px 5px 26px;
+        font-size: 100%;
+      }
+
+      section {
+        width: 90%;
+        max-width: 700px;
+        border: 1px solid #4d4e53;
+        border-radius: 2px;
+        padding: 10px 14px 10px 10px;
+        margin-bottom: 10px;
+      }
+
+      section input {
+        display: block;
+        margin: 5px;
+      }
+
+      .example {
+        border: 5px solid black;
+        margin: 20px;
+        inline-size: 400px;
+      }
+
+      .horizontal {
+        writing-mode: horizontal-tb;
+      }
+
+      .vertical {
+        writing-mode: vertical-rl;
+      }
+    </style>
+
+    <style class="editable">
+      span {
+        font-size: 200%;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="example horizontal">
+        Before that night—<span>a memorable night</span>, as it was to
+        prove—hundreds of millions of people had watched the rising
+        smoke-wreaths of their fires without drawing any special inspiration
+        from the fact.”
+      </div>
+
+      <div class="example vertical">
+        Before that night—<span>a memorable night</span>, as it was to
+        prove—hundreds of millions of people had watched the rising
+        smoke-wreaths of their fires without drawing any special inspiration
+        from the fact.”
+      </div>
+    </section>
+    <textarea class="playable-css">span {
+  font-size: 200%;
+  vertical-align: top;
+}</textarea>
+
+    <textarea id="code" class="playable-html"><div class="example horizontal">
+    Before that night—<span>a memorable night</span>, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”
+</div>
+
+<div class="example vertical">
+    Before that night—<span>a memorable night</span>, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”
+</div></textarea>
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script>
+    var section = document.querySelector("section");
+    var editable = document.querySelector(".editable");
+    var textareaHTML = document.querySelector(".playable-html");
+    var textareaCSS = document.querySelector(".playable-css");
+    var reset = document.getElementById("reset");
+    var htmlCode = textareaHTML.value;
+    var cssCode = textareaCSS.value;
+
+    function fillCode() {
+      editable.innerHTML = textareaCSS.value;
+      section.innerHTML = textareaHTML.value;
+    }
+
+    reset.addEventListener("click", function() {
+      textareaHTML.value = htmlCode;
+      textareaCSS.value = cssCode;
+      fillCode();
+    });
+
+    textareaHTML.addEventListener("input", fillCode);
+    textareaCSS.addEventListener("input", fillCode);
+    window.addEventListener("load", fillCode);
+  </script>
+</html>

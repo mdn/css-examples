@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Overflow Task 1: Making a scrollable box</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+  .preview {
+    padding-bottom: 200px;
+  }
+    </style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid black;
+        padding: 1em;
+        height: 200px;
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.box {
+  border: 5px solid black;
+  padding: 1em;
+  height: 200px;
+  width: 300px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="box">
+  <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+
+  <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

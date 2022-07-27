@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and other unusual elements: layout</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px;
+        gap: 20px;
+      }
+
+      .wrapper > div {
+        background-color: rebeccapurple;
+        border-radius: .5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <img src="star.png" alt="star">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 220px;">
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 20px;
+}
+
+.wrapper > div {
+  background-color: rebeccapurple;
+  border-radius: .5em;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 150px;">
+<div class="wrapper">
+  <img src="star.png" alt="star">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

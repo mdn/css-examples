@@ -1,0 +1,16 @@
+p {
+	border-style: groove;
+	border-width: 2px;
+	background-color: #8d0019;
+	color: #fcff00;
+	font-size: 14px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+	background-color: #000c6e;
+	color: #ff8100;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: "Zapf Chancery", "Comic Sans MS", cursive;
+}

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Modifying a stylesheet rule with CSSOM</title>
+    <style type="text/css">
+    body {
+     background-color: red;
+    }
+    </style>
+    <script type="text/javascript">
+    var stylesheet = document.styleSheets[0];
+    stylesheet.cssRules[0].style.backgroundColor="blue";
+    </script>
+  </head>
+  <body>
+    <p>The stylesheet declaration for the body's background color is modified via JavaScript.</p>
+  </body>
+</html>

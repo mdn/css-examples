@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Values and Units: calc</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 5px solid rebeccapurple;
+        background-color: lightblue;
+      }
+    </style>
+
+    <style class="editable">
+      .wrapper {
+        width: 400px;
+      }
+
+      .box {
+        width: calc(20% + 100px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box">My width is calculated</div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 140px;">
+.wrapper {
+  width: 400px;
+}
+
+.box {
+  width: calc(20% + 100px);
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="wrapper">
+  <div class="box">My width is calculated.</div> 
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

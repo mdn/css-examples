@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and forms 2: styling form fields</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    .preview .myform input {
+      display: inline;
+      margin: 0;
+    }
+    </style>
+
+    <style class="editable">
+  .myform {
+    border: 2px solid #000;
+    padding: 5px;
+  } 
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+      <form method="post" action="" class="myform">
+        <div><label for="fldSearch">Keywords</label>
+        <input type="search" id="fldSearch" name="keywords">
+        <input type="submit" name="btnSubmit" value="Search"></div>
+      </form>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+.myform {
+  border: 2px solid #000;
+  padding: 5px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+
+<form method="post" action="" class="myform">
+  <div><label for="fldSearch">Keywords</label>
+  <input type="search" id="fldSearch" name="keywords">
+  <input type="submit" name="btnSubmit" value="Search"></div>
+</form>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

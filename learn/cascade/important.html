@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>!important</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+#winning {
+  background-color: red;
+  border: 1px solid black;
+}
+
+.better {
+  background-color: gray;
+  border: none !important;
+}
+
+p {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <p class="better">This is a paragraph.</p>
+        <p class="better" id="winning">One selector to rule them all!</p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+
+#winning {
+    background-color: red;
+    border: 1px solid black;
+}
+    
+.better {
+    background-color: gray;
+    border: none !important;
+}
+    
+p {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+}           
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+<p class="better">This is a paragraph.</p>
+<p class="better" id="winning">One selector to rule them all!</p>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

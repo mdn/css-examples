@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectors: class</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .notebox {
+            margin: 1em 0;
+        }
+    </style>
+
+    <style class="editable">
+    .notebox {
+      border: 4px solid #666;
+      padding: .5em;
+    }
+
+    .notebox.warning {
+      border-color: orange;
+      font-weight: bold;
+    }
+
+    .notebox.danger {
+      border-color: red;
+      font-weight: bold;
+    }
+
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+      <div class="notebox">
+          This is an informational note.
+      </div>
+
+      <div class="notebox warning">
+          This note shows a warning.
+      </div>
+
+      <div class="notebox danger">
+          This note shows danger!
+      </div>
+
+      <div class="danger">
+          This won't get styled — it also needs to have the notebox class.
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.notebox {
+  border: 4px solid #666;
+  padding: .5em;
+}
+
+.notebox.warning {
+  border-color: orange;
+  font-weight: bold;
+}
+
+.notebox.danger {
+  border-color: red;
+  font-weight: bold;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 260px;">
+<div class="notebox">
+    This is an informational note.
+</div>
+
+<div class="notebox warning">
+    This note shows a warning.
+</div>
+
+<div class="notebox danger">
+    This note shows danger!
+</div>
+
+<div class="danger">
+    This won't get styled — it also needs to have the notebox class
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

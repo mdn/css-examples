@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>inset properties for positioning</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            border: 2px dotted grey;
+        }
+
+        .box {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            padding: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+      
+    </style>
+
+    <style class="editable">
+        .inner {
+            writing-mode: horizontal-tb;
+            
+        }
+
+        .physical {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        }
+
+        .logical {
+            position: absolute;
+            inset-block-start: 20px;
+            inset-inline-end: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="inner">
+                <div class="physical box"></div>
+                <div class="inner">
+                    <div class="logical box"></div>
+                </div>
+            </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.inner {
+    writing-mode: horizontal-tb;
+}
+
+.physical {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.logical {
+    position: absolute;
+    inset-block-start: 20px;
+    inset-inline-end: 0;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="container">
+    <div class="inner">
+        <div class="physical box"></div> 
+    </div>
+    <div class="inner">
+        <div class="logical box"></div>
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

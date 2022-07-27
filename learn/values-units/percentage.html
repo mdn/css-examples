@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Values and Units: percentage</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        background-color: lightblue;
+        border: 5px solid darkblue;
+        padding: 10px;
+        margin: 1em 0;
+      }
+    </style>
+
+    <style class="editable">
+      .wrapper {
+        width: 400px;
+        border: 5px solid rebeccapurple;
+      }
+
+      .px {
+        width: 200px;
+      }
+
+      .percent {
+        width: 40%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box px">I am 200px wide</div>
+      <div class="box percent">I am 40% wide</div>
+      <div class="wrapper">
+        <div class="box px">I am 200px wide</div>
+        <div class="box percent">I am 40% wide</div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.wrapper {
+  width: 400px;
+  border: 5px solid rebeccapurple;
+}
+
+.px {
+  width: 200px;
+}
+
+.percent {
+  width: 40%;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="box px">I am 200px wide</div>
+<div class="box percent">I am 40% wide</div>
+<div class="wrapper">
+  <div class="box px">I am 200px wide</div>
+  <div class="box percent">I am 40% wide</div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and forms 1: covering the box with an image</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    .preview {
+      min-height: 450px;
+    }
+    .box {
+      border: 5px solid #000;
+      width: 400px;
+      height: 200px;
+    }
+    </style>
+
+    <style class="editable">
+      img {
+
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+
+      <div class="box">
+        <img src="balloons.jpg" alt="balloons">
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+img {
+ 
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+
+<div class="box">
+  <img src="balloons.jpg" alt="balloons">
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Standard and Alternate Box Models</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+        padding: 40px;
+        margin: 40px;
+        width: 300px;
+        height: 150px;
+      }
+
+      .alternate {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <div class="box">I use the standard box model.</div>
+        <div class="box alternate">I use the alternate box model.</div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+.box {
+  border: 5px solid rebeccapurple;
+  background-color: lightgray;
+  padding: 40px;
+  margin: 40px;
+  width: 300px;
+  height: 150px;
+}
+
+.alternate {
+  box-sizing: border-box;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="box">I use the standard box model.</div>
+<div class="box alternate">I use the alternate box model.</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

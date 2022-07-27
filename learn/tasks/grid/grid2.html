@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Grid: task 2</title>
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        
+
+        .grid > * {
+          border-radius: .5em;
+          color: #fff;
+          padding: .5em;
+        }
+
+        .item1 {
+          background-color: rgba(74,102,112,.7);
+          border: 5px solid rgba(74,102,112,1);
+        }
+
+        .item2 {
+          background-color: rgba(214,162,173,.7);
+          border: 5px solid rgba(214,162,173,1);
+        }
+    </style>
+
+    <style class="editable">
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-rows: 100px 100px 100px;
+          gap: 10px;
+        }
+
+        .item1 {
+
+        }
+
+        .item2 {
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="preview">
+      <div class="grid">
+        <div class="item1">One</div>
+        <div class="item2">Two</div>
+      </div>
+    </section>
+
+<textarea class="playable playable-css" style="min-height:220px;">
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  gap: 10px;
+}
+
+.item1 {
+
+}
+
+.item2 {
+
+}
+</textarea>
+
+<textarea class="playable playable-html">
+<div class="grid">
+  <div class="item1">One</div>
+  <div class="item2">Two</div>
+</div>
+</textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

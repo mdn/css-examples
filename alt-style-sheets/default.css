@@ -1,0 +1,16 @@
+p {
+	background-color: white;
+	color: black;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: serif;
+}
+
+h1 {
+	text-shadow: 2px 2px 2px #747474;
+	text-align: center;
+	font-weight: bold;
+	font-size: 22px;
+	font-family: sans-serif;
+}

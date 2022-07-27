@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Cookbook: template</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS the visitor will not change */
+    </style>
+
+    <style class="editable">
+        /* CSS the visitor can play with */
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <!-- HTML for your component here. -->
+    </section>
+
+    <textarea class="playable playable-css" style="height: 170px;">
+<!-- repeat the second block of CSS here. You can tweak the height to make more room for the content. -->
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 70px;">
+<!-- repeat the HTML for your component here.  You can tweak the height to make more room for the content.  -->
+    </textarea>
+
+    <!-- leave everything below here alone -->
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="playable.js"></script>
+
+</html>

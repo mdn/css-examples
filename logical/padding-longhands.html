@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Padding Longhands</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+        .box {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            margin: 10px;
+            width: 220px;
+            height:220px;
+        }
+
+      
+    </style>
+
+    <style class="editable">
+        .box {
+            writing-mode: horizontal-tb;
+            direction: ltr;
+        }
+
+        .physical {
+            padding-top: 5px;
+            padding-right: 0;
+            padding-bottom: 2em;
+            padding-left: 50px;
+        }
+
+        .logical {
+            padding-block-start: 5px;
+            padding-inline-end: 0;
+            padding-block-end: 2em;
+            padding-inline-start: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="physical box">
+                padding-top: 5px<br>
+                padding-right: 0<br>
+                padding-bottom: 2em<br>
+                padding-left: 50px
+            </div>
+
+            <div class="logical box">
+                padding-block-start: 5px<br>
+                padding-inline-end: 0<br>
+                padding-block-end: 2em<br>
+                padding-inline-start: 50px
+            </div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 320px;">
+.box {
+    writing-mode: horizontal-tb;
+    direction: ltr;
+}
+
+.physical {
+    padding-top: 5px;
+    padding-right: 0;
+    padding-bottom: 2em;
+    padding-left: 50px;
+}
+
+.logical {
+    padding-block-start: 5px;
+    padding-inline-end: 0;
+    padding-block-end: 2em;
+    padding-inline-start: 50px;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 340px;">
+<div class="container">
+    <div class="physical box">
+        padding-top: 5px<br>
+        padding-right: 0<br>
+        padding-bottom: 2em<br>
+        padding-left: 50px
+    </div>
+    
+    <div class="logical box">
+        padding-block-start: 5px<br>
+        padding-inline-end: 0<br>
+        padding-block-end: 2em<br>
+        padding-inline-start: 50px
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: block and inline</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+      }
+
+      .box {
+        border: 1px solid #ccc;
+        padding: .5em;
+        margin: 10px;
+      }
+    </style>
+
+    <style class="editable">
+      .horizontal {
+        writing-mode: horizontal-tb;
+      }
+
+      .vertical {
+        writing-mode: vertical-rl;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box horizontal">
+          <h2>Heading</h2>
+          <p>A paragraph. Demonstrating Writing Modes in CSS.</p>
+        </div>
+        <div class="box vertical">
+          <h2>Heading</h2>
+          <p>A paragraph. Demonstrating Writing Modes in CSS.</p>
+        </div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 200px;">
+.horizontal {
+  writing-mode: horizontal-tb;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 230px;">
+<div class="wrapper">
+  <div class="box horizontal">
+    <h2>Heading</h2>
+    <p>A paragraph. Demonstrating Writing Modes in CSS.</p>
+  </div>
+  <div class="box vertical">
+    <h2>Heading</h2>
+    <p>A paragraph. Demonstrating Writing Modes in CSS.</p>
+  </div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

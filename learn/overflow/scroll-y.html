@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Overflow: scroll-y</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        border: 1px solid #333333;
+        width: 200px;
+        height: 100px;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.</div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+.box {
+  border: 1px solid #333333;
+  width: 200px;
+  height: 100px;
+  overflow-y: scroll;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+<div class="box">This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.</div>
+
+<p>This content is outside of the box.</p>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

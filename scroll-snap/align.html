@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Scroll Snap - scroll-snap-align</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+        .scroller {
+            border: 4px solid #333;
+            width: 300px;
+        }
+
+        .scroller section {
+            min-height: 100%;
+            padding: 10px;
+        }
+
+        .scroller section:nth-child(odd) {
+            background-color: #ccc;
+        }
+    </style>
+
+    <style class="editable">
+        .scroller {
+            height: 200px;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+         .scroller section {
+                scroll-snap-align: start;
+            }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <article class="scroller">
+            <section>
+                <h2>Section one</h2>
+                <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water
+                    spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert
+                    raisin horseradish spinach carrot soko.</p>
+
+                <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard.</p>
+
+            </section>
+            <section>
+                <h2>Section two</h2>
+                <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water
+                    spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert
+                    raisin horseradish spinach carrot soko. </p>
+                <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard.</p>
+
+
+            </section>
+            <section>
+                <h2>Section three</h2>
+                <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water
+                    spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert
+                    raisin horseradish spinach carrot soko.</p>
+                <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard.</p>
+
+
+            </section>
+        </article>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 170px;">.scroller {
+    height: 200px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+    scroll-snap-align: start;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 230px;">
+<article class="scroller">
+    <section>
+        <h2>Section one</h2>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko.</p>
+
+        <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard.</p>
+    </section>
+    <section>
+        <h2>Section two</h2>
+
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko.</p>
+
+        <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard.</p>
+    </section>
+    <section>
+        <h2>Section three</h2>
+        
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko.</p>
+
+        <p>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard.</p>
+    </section>
+</article>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

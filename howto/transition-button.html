@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Solutions: How to transition a button</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .wrapper {
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        button {
+          padding: 5px 10px;
+          border: 0;
+          border-radius: 5px;
+          font-weight: bold;
+          font-size: 140%;
+          cursor: pointer;
+        }
+
+        .fade:focus,
+        .fade:active {
+          background-color: black;
+        }
+    </style>
+
+    <style class="editable">
+        .fade {
+          background-color: #DB1F48;
+          color: #fff;
+          transition: background-color 1s;
+        }
+
+        .fade:hover {
+          background-color: #004369;
+        }
+
+        .fade:focus,
+        .fade:active {
+          background-color: black;
+          transition: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="wrapper">
+          <button class="fade">Hover over me</button>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+.fade {
+  background-color: #DB1F48;
+  color: #fff;
+  transition: background-color 1s;
+}
+
+.fade:hover {
+  background-color: #004369;
+}
+
+.fade:focus,
+.fade:active {
+  background-color: black;
+  transition: none;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 100px;">
+<div class="wrapper">
+  <button class="fade">Hover over me</button>
+</div>            
+    </textarea>
+
+    <!-- leave everything below here alone -->
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="playable.js"></script>
+
+</html>

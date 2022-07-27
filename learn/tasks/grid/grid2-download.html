@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Grid: task 2</title>
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      .grid > * {
+        border-radius: .5em;
+        color: #fff;
+        padding: .5em;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px 100px;
+        gap: 10px;
+      }
+
+      .item1 {
+        background-color: rgba(74,102,112,.7);
+        border: 5px solid rgba(74,102,112,1);
+      }
+
+      .item2 {
+        background-color: rgba(214,162,173,.7);
+        border: 5px solid rgba(214,162,173,1);
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="grid">
+      <div class="item1">One</div>
+      <div class="item2">Two</div>
+    </div>
+
+  </body>
+
+</html>

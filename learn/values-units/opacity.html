@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Values and Units: opacity</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        background-image: url(balloons.jpg);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        padding: 20px;
+      }
+
+      .box {
+        margin: 40px auto;
+        width: 200px;
+        background-color: lightblue;
+        border: 5px solid darkblue;
+        padding: 10px;
+        opacity: 0.6;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box">I am a box with opacity</div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 80px;">
+.box {
+  opacity: 0.6;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 100px;">
+<div class="wrapper">
+  <div class="box">I am a box with opacity</div>
+</div> 
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

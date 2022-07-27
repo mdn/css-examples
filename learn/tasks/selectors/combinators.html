@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Selectors: Combinators</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h2 {
+        margin: 0;
+      }
+    </style>
+
+    <style class="editable">
+      
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="container">
+        <h2>This is a heading</h2>
+        <p>This paragraph comes after the heading.</p>
+        <p>This is the second paragraph.</p>
+
+        <h2>Another heading</h2>
+        <p>This paragraph comes after the heading.</p>
+
+        <ul class="list">
+          <li>One</li>
+          <li>Two
+            <ul>
+              <li>2.1</li>
+              <li>2.2</li>
+            </ul>
+          </li>
+          <li>Three</li>
+        </ul>
+        
+      </div>
+      
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 130px;">
+<div class="container">
+    <h2>This is a heading</h2>
+        <p>This paragraph comes after the heading.</p>
+        <p>This is the second paragraph.</p>
+
+        <h2>Another heading</h2>
+        <p>This paragraph comes after the heading.</p>
+
+        <ul class="list">
+          <li>One</li>
+          <li>Two
+            <ul>
+              <li>2.1</li>
+              <li>2.2</li>
+            </ul>
+          </li>
+          <li>Three</li>
+        </ul>
+
+  </div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

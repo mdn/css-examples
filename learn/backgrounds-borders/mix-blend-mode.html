@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backgrounds and Borders: mix-blend-mode</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .container {
+        width: 280px;
+        height: 180px;
+        margin: 10px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .box {
+        width: 250px;
+        height: 130px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .box:first-child {
+        position: absolute;
+        top: 10px;
+        left: 0;
+      }
+
+      .box:last-child {
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        z-index: -1;
+      }
+    </style>
+
+    <style class="editable">
+    .box:first-child {
+      background: url(https://mdn.mozillademos.org/files/13090/colorful-heart.png) no-repeat center 20px;
+      background-color: green;
+    }
+
+    .box:last-child {
+      background-color: purple;
+    }
+
+    .multiply-mix {
+      mix-blend-mode: multiply;
+    }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="container">
+        No mix blend mode
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      
+      <div class="container">
+        Multiply mix
+        <div class="box multiply-mix"></div>
+        <div class="box"></div>
+      </div>     
+    </section>
+
+    <textarea class="playable playable-css" style="height: 280px;">
+.box:first-child {
+  background: url(https://mdn.mozillademos.org/files/13090/colorful-heart.png) no-repeat center 20px;
+  background-color: green;
+}
+
+.box:last-child {
+  background-color: purple;
+}
+
+.multiply-mix {
+  mix-blend-mode: multiply;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 200px;">
+<div class="container">
+  No mix blend mode
+  <div class="box"></div>
+  <div class="box"></div>
+</div>
+
+<div class="container">
+  Multiply mix
+  <div class="box multiply-mix"></div>
+  <div class="box"></div>
+</div>   
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

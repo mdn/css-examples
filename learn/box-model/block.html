@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Block</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
+
+    <style class="editable">
+      p,
+      ul {
+        border: 2px solid rebeccapurple;
+        padding: 0.5em;
+      }
+
+      .block,
+      li {
+        border: 2px solid blue;
+        padding: 0.5em;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+      }
+
+      .block {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <p>I am a paragraph. A short one.</p>
+      <ul>
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+      </ul>
+      <p>
+        I am another paragraph. Some of the
+        <span class="block">words</span> have been wrapped in a
+        <span>span element</span>.
+      </p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 400px;">
+p, 
+ul {
+  border: 2px solid rebeccapurple;
+  padding: .5em;
+}
+
+.block,
+li {
+  border: 2px solid blue;
+  padding: .5em;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+.block {
+  display: block;
+}      
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<p>I am a paragraph. A short one.</p>
+<ul>
+  <li>Item One</li>
+  <li>Item Two</li>
+  <li>Item Three</li>
+</ul>
+<p>I am another paragraph. Some of the <span class="block">words</span> have been wrapped in a <span>span element</span>.</p>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

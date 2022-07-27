@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Inline block for navigation items</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    ul {
+      display: flex;
+      list-style:  none;
+      margin: 0;
+      padding: 0;
+      border:1px solid #000;
+    }
+
+    li {
+      margin: 5px;
+    }
+    </style>
+
+    <style class="editable">
+      .links-list a {
+        background-color: rgb(179,57,81);
+        color: #fff;
+        padding: 1em 2em;
+      }
+
+      .links-list a:hover {
+        background-color: rgb(66, 28, 40);
+        color: #fff;
+      }
+       
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <nav>
+        <ul class="links-list">
+          <li><a href="">Link one</a></li>
+          <li><a href="">Link two</a></li>
+          <li><a href="">Link three</a></li>
+        </ul>
+      </nav>     
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.links-list a {
+  background-color: rgb(179,57,81);
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+}
+
+.links-list a:hover {
+  background-color: rgb(66, 28, 40);
+  color: #fff;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<nav>
+  <ul class="links-list">
+    <li><a href="">Link one</a></li>
+    <li><a href="">Link two</a></li>
+    <li><a href="">Link three</a></li>
+  </ul>
+</nav>    
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

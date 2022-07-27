@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- this is an example from the MDN Layout Cookbook -->
+    <title>CSS Cookbook: columns with grid</title>
+
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            border: 2px solid rgb(75, 70, 74);
+            border-radius: .5em;
+            padding: 20px;
+            width: 500px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .container>* {
+            padding: 10px;
+            border: 2px solid rgb(95, 97, 110);
+            border-radius: .5em;
+            margin: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi.</p>
+
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean
+            collard greens.</p>
+
+        <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts
+            black-eyed pea prairie turnip leek lentil turnip greens parsnip. .</p>
+    </div>
+
+</body>
+
+</html>

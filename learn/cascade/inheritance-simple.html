@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Inheritance: simple example</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    body {
+        color: blue;
+    }
+
+    span {
+        color: black;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <p>As the body has been set to have a color of blue this is inherited through the descendants.</p>
+        <p>We can change the color by targetting the element with a selector, such as this <span>span</span>.</p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 140px;">
+body {
+    color: blue;
+}
+
+span {
+    color: black;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 100px;">
+<p>As the body has been set to have a color of blue this is inherited through the descendants.</p>
+<p>We can change the color by targetting the element with a selector, such as this <span>span</span>.</p>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

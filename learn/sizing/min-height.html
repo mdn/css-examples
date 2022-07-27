@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sizing: min-height</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .wrapper > * {
+        margin: 20px;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid darkblue;
+        min-height: 150px;
+        width: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box"></div>
+        <div class="box">These boxes both have a min-height set, this box has content in it which will need more space than the assigned height, and so it grows from the minimum.</div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+.box {
+  border: 5px solid darkblue;
+  min-height: 150px;
+  width: 200px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="wrapper">
+  <div class="box"></div>
+  <div class="box">These boxes both have a min-height set, this box has content in it which will need more space than the assigned height, and so it grows from the minimum.</div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

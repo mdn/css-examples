@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>text-align logical values</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+
+        .inner {
+            width: 200px;
+            border: 2px dotted grey;
+            padding: 10px;
+        }     
+    </style>
+
+    <style class="editable">
+        .inner {
+            direction: ltr;
+            
+        }
+
+        .physical {
+            text-align:right;
+        }
+
+        .logical {
+            text-align: end;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="inner physical">
+                Aligned text
+            </div>
+            <div class="inner logical">
+                Aligned text
+            </div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 240px;">
+.inner {
+    direction: ltr;
+}
+
+.physical {
+    text-align:right;
+}
+
+.logical {
+    text-align: end;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="container">
+    <div class="inner physical">
+        Aligned text
+    </div>
+    <div class="inner logical">
+        Aligned text
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

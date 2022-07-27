@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Margin</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .container {
+        border: 5px solid blue;
+        margin: 40px;
+      }
+
+      .box {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+        padding: 10px;
+        height: 150px;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        margin-top: -40px;
+        margin-right: 30px;
+        margin-bottom: 40px;
+        margin-left: 4em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <div class="container">
+          <div class="box">Change my margin.</div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.box {
+  margin-top: -40px;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  margin-left: 4em;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="container">
+  <div class="box">Change my margin.</div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

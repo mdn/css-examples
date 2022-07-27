@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Cookbook: Grid Wrapper</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(20px, 1fr) repeat(6, minmax(0, 60px)) minmax(20px, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+      grid-gap: 10px;
+    }
+
+    .grid > * {
+      border: 2px solid rgb(95, 97, 110);
+      border-radius: .5em;
+      padding: 20px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .wrapper {
+      grid-column: 2 / -2;
+    }
+
+    .left-edge {
+      grid-column: 1 / -2;
+    }
+
+    .right-wrapper {
+      grid-column: 4 / -2;
+    }
+    </style>
+
+  <style class="editable">
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(20px, 1fr) repeat(6, minmax(0, 60px)) minmax(20px, 1fr);
+      grid-gap: 10px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .wrapper {
+      grid-column: 2 / -2;
+    }
+
+    .left-edge {
+      grid-column: 1 / -2;
+    }
+
+    .right-wrapper {
+      grid-column: 4 / -2;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="preview">
+    <div class="grid">
+      <div class="wrapper">
+        <p>This item aligns to a central “wrapper” – columns that have a maximum width.</p>
+      </div>
+      <div class="full-width">
+        <p>This item aligns to the edge of the grid container.</p>
+      </div>
+      <div class="left-edge">
+        <p>This item aligns to the left edge of the grid container and the right edge of the wrapper.</p>
+      </div>
+      <div class="right-wrapper">
+        <p>This item aligns to the right edge of the “wrapper” columns.</p>
+      </div>
+    </div>
+  </section>
+
+  <textarea class="playable playable-css" style="height: 170px;">
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(20px, 1fr) repeat(6, minmax(0, 60px)) minmax(20px, 1fr);
+    grid-gap: 10px;
+  }
+
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .wrapper {
+    grid-column: 2 / -2;
+  }
+
+  .left-edge {
+    grid-column: 1 / -2;
+  }
+
+  .right-wrapper {
+    grid-column: 4 / -2;
+  }
+  </textarea>
+
+  <textarea class="playable playable-html" style="height: 170px;">
+  <div class="grid">
+
+    <div class="wrapper">
+      <p>This item aligns to a central “wrapper” – columns that have a maximum width.</p>
+    </div>
+
+    <div class="full-width">
+      <p>This item aligns to the edge of the grid container.</p>
+    </div>
+
+    <div class="left-edge">
+      <p>This item aligns to the left edge of the grid container and the right edge of the wrapper.</p>
+    </div>
+
+    <div class="right-wrapper">
+      <p>This item aligns to the right edge of the “wrapper” columns.</p>
+    </div>
+
+  </div>
+  </textarea>
+
+  <!-- leave everything below here alone -->
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset">
+  </div>
+</body>
+<script src="playable.js"></script>
+
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Specificity: simple example</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    .main-heading { 
+        color: red; 
+    }
+
+    h1 { 
+        color: blue; 
+    }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <h1 class="main-heading">This is my heading.</h1>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+.main-heading { 
+    color: red; 
+}
+        
+h1 { 
+    color: blue; 
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 40px;">
+<h1 class="main-heading">This is my heading.</h1>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

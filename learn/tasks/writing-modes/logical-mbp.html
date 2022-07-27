@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Writing Modes Task 3: Logical Margin, Border, Padding</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    .vertical {
+        writing-mode: vertical-rl;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        width: 150px;
+        height: 150px;
+        border-top: 5px solid rebeccapurple;
+        border-right: 5px solid grey;
+        border-bottom: 5px dotted red;
+        border-left: 5px dotted blue;
+        padding-top: 40px;
+        margin-bottom: 30px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">Horizontal.</div>
+      <div class="box vertical">Vertical.</div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.box {
+  width: 150px;
+  height: 150px;
+  border-top: 5px solid rebeccapurple;
+  border-right: 5px solid grey;
+  border-bottom: 5px dotted red;
+  border-left: 5px dotted blue;
+  padding-top: 40px;
+  margin-bottom: 30px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="box">Horizontal.</div>
+<div class="box vertical">Vertical.</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

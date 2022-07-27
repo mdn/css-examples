@@ -20,7 +20,7 @@
             code: [
                 '@counter-style circled-digits {\n',
                 '  system: fixed;\n',
-                '  symbols:          ;\n',
+                '  symbols: 😀 👻 👽 👾 🤖 🎃 😹 👋 👀 💋;\n',
                 '  suffix: " ";\n',
                 '}\n\n',
                 'ul {\n',
@@ -33,7 +33,7 @@
             code: [
                 '@counter-style cs-symbolic {\n',
                 '  system: symbolic;\n',
-                "  symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';\n",
+                "  symbols: '*' ⁑ † ‡;\n",
                 '  range: 1 15;\n',
                 '  suffix: " ";\n',
                 '}\n\n',
@@ -74,7 +74,7 @@
                 '@counter-style cs-additive-roman {\n',
                 '  system: additive;\n',
                 "  range: 1 100;\n",
-                '  additive-symbols: 100 C, 90 XC, 50 L, 40 XL, 10 X, 9 IX, 5 V, 4 IV, 1 I;\n',
+                '  additive-symbols: 1000 M, 900 CM, 500 D, 400 CD, 100 C, 90 XC, 50 L, 40 XL, 10 X, 9 IX, 5 V, 4 IV, 1 I;\n',
                 '}\n\n',
                 'ul {\n',
                 '  list-style: cs-additive-roman;\n',

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Grid and writing modes example</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+        }
+
+        .grid > * {
+            border-radius: 5px;
+            border: 2px solid  rgba(96, 139, 168, .4);
+            background-color: rgba(96, 139, 168, .2);
+            padding: 10px;
+        }
+
+        .grid :nth-child(1) {
+            align-self: start;
+        }
+
+        .grid :nth-child(2) {
+            justify-self: end;
+        }
+    </style>
+
+    <style class="editable">
+        .grid {
+            writing-mode: vertical-rl;
+            inline-size: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="grid">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+            <div>Four</div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 170px;">
+.grid {
+    writing-mode: vertical-rl;
+    inline-size: 400px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+<div class="grid">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

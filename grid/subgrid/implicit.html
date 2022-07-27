@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subgrid: columns only means implicit tracks</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .grid {
+        border: 2px solid #f76707;
+        border-radius: 5px;
+        background-color: #fff4e6;
+      }
+
+      .item {
+        border: 2px solid #ffa94d;
+        border-radius: 5px;
+        color: #d9480f;
+      }
+
+      .subitem {
+        background-color: #d9480f;
+        color: #fff;
+        border-radius: 5px;
+      }
+    </style>
+
+    <style class="editable">
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(4, minmax(100px, auto));
+      }
+
+      .item {
+        display: grid;
+        grid-column: 2 / 7;
+        grid-row: 2 / 4;
+        grid-template-columns: subgrid;
+        grid-auto-rows: minmax(100px, auto);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="grid">
+        <div class="item">
+          <div class="subitem">1</div>
+          <div class="subitem">2</div>
+          <div class="subitem">3</div>
+          <div class="subitem">4</div>
+          <div class="subitem">5</div>
+          <div class="subitem">6</div>
+          <div class="subitem">7</div>
+          <div class="subitem">8</div>
+          <div class="subitem">9</div>
+          <div class="subitem">10</div>
+          <div class="subitem">11</div>
+          <div class="subitem">12</div>
+        </div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 350px;">
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, minmax(100px, auto));
+}
+
+.item {
+  display: grid;
+  grid-column: 2 / 7;
+  grid-row: 2 / 4;
+  grid-template-columns: subgrid;
+  grid-auto-rows: minmax(100px, auto);
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 200px;">
+<div class="grid">
+  <div class="item">
+    <div class="subitem">1</div>
+    <div class="subitem">2</div>
+    <div class="subitem">3</div>
+    <div class="subitem">4</div>
+    <div class="subitem">5</div>
+    <div class="subitem">6</div>
+    <div class="subitem">7</div>
+    <div class="subitem">8</div>
+    <div class="subitem">9</div>
+    <div class="subitem">10</div>
+    <div class="subitem">11</div>
+    <div class="subitem">12</div>
+  </div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

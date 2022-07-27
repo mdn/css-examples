@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sizing Task 2: Percentages</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+    .box {
+      border: 5px solid #000;
+      width: 400px;
+      margin-bottom: 1em;
+    }
+
+    .inner {
+      background-color: rebeccapurple;
+      color: white;
+      border-radius: 5px;
+    }
+    </style>
+
+    <style class="editable">
+      * {
+        box-sizing: border-box;
+      }
+
+      .inner {
+
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="box">
+        <div class="inner">Make me 60% of my parent's width.</div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+* {
+  box-sizing: border-box;
+}
+.inner {
+ 
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 140px;">
+<div class="box">
+  <div class="inner">Make me 60% of my parent's width.</div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

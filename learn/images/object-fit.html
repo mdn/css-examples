@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Images and other unusual elements: object-fit</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .wrapper > * {
+        margin: 20px;
+      }
+
+      .box {
+        border: 5px solid darkblue;
+      }
+      
+    </style>
+
+    <style class="editable">
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .cover {
+        object-fit: cover;
+      }
+
+      .contain {
+        object-fit: contain;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+      <div class="wrapper">
+        <div class="box"><img src="balloons.jpg" alt="balloons" class="cover"></div>
+        <div class="box"><img src="balloons.jpg" alt="balloons" class="contain"></div>
+      </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 320px;">
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 120px;">
+<div class="wrapper">
+  <div class="box"><img src="balloons.jpg" alt="balloons" class="cover"></div>
+  <div class="box"><img src="balloons.jpg" alt="balloons" class="contain"></div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

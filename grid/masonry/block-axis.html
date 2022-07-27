@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Masonry in the block axis</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .grid {
+        padding: 10px;
+        border: 2px solid #f76707;
+        border-radius: 5px;
+        background-color: #fff4e6;
+      }
+
+      .item {
+        border: 2px solid #ffa94d;
+        border-radius: 5px;
+        background-color: #ffd8a8;
+        color: #d9480f;
+      }
+    </style>
+
+    <style class="editable">
+      .grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-rows: masonry;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <div class="grid">
+            <div class="item" style="block-size: 2em;"></div>
+            <div class="item" style="block-size: 3em;"></div>
+            <div class="item" style="block-size: 1.6em;"></div>
+            <div class="item" style="block-size: 4em;"></div>
+            <div class="item" style="block-size: 2.2em;"></div>
+            <div class="item" style="block-size: 3em;"></div>
+            <div class="item" style="block-size: 4.5em;"></div>
+            <div class="item" style="block-size: 1em;"></div>
+            <div class="item" style="block-size: 3.5em;"></div>
+            <div class="item" style="block-size: 2.8em;"></div>
+          </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 150px;">
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-rows: masonry;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 250px;">
+<div class="grid">
+  <div class="item" style="block-size: 2em;"></div>
+  <div class="item" style="block-size: 3em;"></div>
+  <div class="item" style="block-size: 1.6em;"></div>
+  <div class="item" style="block-size: 4em;"></div>
+  <div class="item" style="block-size: 2.2em;"></div>
+  <div class="item" style="block-size: 3em;"></div>
+  <div class="item" style="block-size: 4.5em;"></div>
+  <div class="item" style="block-size: 1em;"></div>
+  <div class="item" style="block-size: 3.5em;"></div>
+  <div class="item" style="block-size: 2.8em;"></div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

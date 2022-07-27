@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Border Properties</title>
+    <link rel="stylesheet" href="../css-cookbook/styles.css">
+    <style>
+
+        .container {
+            display: flex;
+        }
+        .box {
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            margin: 10px;
+            width: 220px;
+            height:220px;
+        }
+      
+    </style>
+
+    <style class="editable">
+        .box {
+            writing-mode: horizontal-tb;
+            direction: ltr;
+        }
+
+        .physical {
+            border-top: 2px solid hotpink;
+            border-right-style: dotted;
+            border-right-color: goldenrod;
+            border-right-width: 5px;
+            border-bottom: 4px double black;
+            border-left: none;
+        }
+
+        .logical {
+            border-block-start: 2px solid hotpink;
+            border-inline-end-style: dotted;
+            border-inline-end-color: goldenrod;
+            border-inline-end-width: 5px;
+            border-block-end: 4px double black;
+            border-inline-start: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <div class="container">
+            <div class="physical box">
+                Borders use physical properties.
+            </div>
+
+            <div class="logical box">
+                Borders use logical properties.
+            </div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 30px;">
+.box {
+    writing-mode: horizontal-tb;
+    direction: ltr;
+}
+
+.physical {
+    border-top: 2px solid hotpink;
+    border-right-style: dotted;
+    border-right-color: goldenrod;
+    border-right-width: 5px;
+    border-bottom: 4px double black;
+    border-left: none;
+}
+
+.logical {
+    border-block-start: 2px solid hotpink;
+    border-inline-end-style: dotted;
+    border-inline-end-color: goldenrod;
+    border-inline-end-width: 5px;
+    border-block-end: 4px double black;
+    border-inline-start: none;
+}</textarea>
+
+    <textarea class="playable playable-html" style="height: 180px;">
+<div class="container">
+    <div class="physical box">
+        Borders use physical properties.
+    </div>
+    
+    <div class="logical box">
+        Borders use logical properties.
+    </div>
+</div>
+    </textarea>
+
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../css-cookbook/playable.js"></script>
+
+</html>

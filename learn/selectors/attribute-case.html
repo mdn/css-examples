@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectors: case-insensitivity</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    li[class^="a"] {
+        background-color: yellow;
+    }
+
+    li[class^="a" i] {
+        color: red;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <h1>Case-insensitivity</h1>
+        <ul>
+            <li class="a">Item 1</li>
+            <li class="A">Item 2</li>
+            <li class="Ab">Item 3</li>
+        </ul>
+        
+    </section>
+
+    <textarea class="playable playable-css" style="height: 200px;">
+li[class^="a"] {
+    background-color: yellow;
+}
+
+li[class^="a" i] {
+    color: red;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 160px;">
+<h1>Case-insensitivity</h1>
+<ul>
+    <li class="a">Item 1</li>
+    <li class="A">Item 2</li>
+    <li class="Ab">Item 3</li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

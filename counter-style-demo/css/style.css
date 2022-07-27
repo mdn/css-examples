@@ -45,13 +45,6 @@ body {
     float: left;
 }
 
-.compatibility-warning {
-    color: #E05252;
-    margin-top: 10px;
-    border-radius: 4px;
-    font-size: 0.7em;
-}
-
 /* Demo styles */
 
 @counter-style demo-cyclic {
@@ -66,7 +59,7 @@ body {
 
 @counter-style cs-fixed {
     system: fixed;
-    symbols:          ;
+    symbols: 😀 👻 👽 👾 🤖 🎃 😹 👋 👀 💋;
     suffix: " ";
 }
 
@@ -98,6 +91,7 @@ body {
 @counter-style cs-numeric {
     system: numeric;
     symbols: A B C D E;
+    suffix: " ";
 }
 
 .demo-numeric {
@@ -342,4 +336,3 @@ body {
 .demo-ethiopic-numeric {
     list-style: ethiopic-numeric;
 }
-

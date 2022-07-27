@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Styling based on location</title>
+    <link rel="stylesheet" href="../styles.css">
+
+
+    <style class="editable">
+    li em {
+        color: rebeccapurple;
+    }
+
+    h1 + p {
+        font-size: 200%;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+        <h1>I am a level one heading</h1>
+
+    <p>This is a paragraph of text. In the text is a <span>span element</span> 
+and also a <a href="http://example.com">link</a>.</p>
+
+    <p>This is the second paragraph. It contains an <em>emphasized</em> element.</p>
+
+    <ul>
+        <li>Item <span>one</span></li>
+        <li>Item two</li>
+        <li>Item <em>three</em></li>
+    </ul>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 160px;">
+li em {
+    color: rebeccapurple;
+}
+
+h1 + p {
+    font-size: 200%;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 250px;">
+<h1>I am a level one heading</h1>
+
+<p>This is a paragraph of text. In the text is a <span>span element</span> 
+and also a <a href="http://example.com">link</a>.</p>
+
+<p>This is the second paragraph. It contains an <em>emphasized</em> element.</p>
+
+<ul>
+    <li>Item <span>one</span></li>
+    <li>Item two</li>
+    <li>Item <em>three</em></li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box Model: Padding</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .container {
+        border: 5px solid blue;
+        margin: 40px;
+      }
+
+      .box {
+        border: 5px solid rebeccapurple;
+        background-color: lightgray;
+      }
+    </style>
+
+    <style class="editable">
+      .box {
+        padding-top: 0;
+        padding-right: 30px;
+        padding-bottom: 40px;
+        padding-left: 4em;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview">
+        <div class="container">
+          <div class="box">Change my padding.</div>
+        </div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 180px;">
+.box {
+  padding-top: 0;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  padding-left: 4em;
+}
+
+.container {
+  padding: 20px;
+}
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="container">
+  <div class="box">Change my padding.</div>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
+</html>

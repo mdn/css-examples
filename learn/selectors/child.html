@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selectors: Child combinator</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    ul > li {
+        border-top: 5px solid red;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+    <ul>
+        <li>Unordered item</li>
+        <li>Unordered item
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ol>
+        </li>
+    </ul>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 80px;">
+ul > li {
+    border-top: 5px solid red;
+}  
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 160px;">
+<ul>
+    <li>Unordered item</li>
+    <li>Unordered item
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ol>
+    </li>
+</ul>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>
