@@ -13,6 +13,10 @@
             font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
         }
         
+        .breadcrumb {
+            padding: 0 0.5rem;
+        }
+        
         .breadcrumb ul {
             display: flex;
             flex-wrap: wrap;
@@ -21,6 +25,7 @@
 
         .breadcrumb li:not(:last-child)::after {
             display: inline-block;
+            margin: 0 .25rem;
             content: "→";
         }
     </style>
