@@ -20,7 +20,7 @@ They have a link to [a color conversion tool](https://convertingcolors.com/hex-c
 }
 
 .transparency {
-  background-color: rgba(134, 222, 250, .2);
+  background-color: rgba(134, 222, 250, .6);
 }
 ```
 
