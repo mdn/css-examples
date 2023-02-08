@@ -1,12 +1,12 @@
-<html>
+<html lang="en-us">
   <head>
     <title>Modifying a stylesheet rule with CSSOM</title>
-    <style type="text/css">
+    <style>
     body {
      background-color: red;
     }
     </style>
-    <script type="text/javascript">
+    <script>
     var stylesheet = document.styleSheets[0];
     stylesheet.cssRules[0].style.backgroundColor="blue";
     </script>
