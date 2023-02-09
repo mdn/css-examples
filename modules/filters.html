@@ -102,7 +102,7 @@
           }, false );
       }
       document.querySelector("button").addEventListener( "click", () => {
-          setTimeout(function () {
+          setTimeout(() => {
             changeCSS();
           }, 50);
         },
@@ -123,58 +123,55 @@
             sepia()
         );
       }
-      /* blur()*/
+
       function blur() {
-        let blurValue = document.getElementsByName("blur")[0];
-        return "blur(" + blurValue.value + "rem) ";
+        const blurValue = document.getElementsByName("blur")[0];
+        return `blur(${blurValue.value}rem) `;
       }
-      /* brightness()*/
+
       function brightness() {
-        let brightnessValue = document.getElementsByName("brightness")[0];
-        return "brightness(" + brightnessValue.value + ") ";
+        const brightnessValue = document.getElementsByName("brightness")[0];
+        return `brightness(${brightnessValue.value}) `;
       }
-      /* contrast()*/
+
       function contrast() {
-        let contrastValue = document.getElementsByName("contrast")[0];
-        return "contrast(" + contrastValue.value + ") ";
+        const contrastValue = document.getElementsByName("contrast")[0];
+        return `contrast(${contrastValue.value}) `;
       }
-      /* drop-shadow()*/
+
       function dropShadow() {
-        let dropShadowValue = document.getElementsByName("dropShadow")[0];
-        return (
-          "drop-shadow(" + dropShadowValue.value +
-          "rem " + dropShadowValue.value + "rem " + "0rem orange) "
-        );
+        const dropShadowValue = document.getElementsByName("dropShadow")[0];
+        return `drop-shadow(${dropShadowValue.value}rem ${dropShadowValue.value}rem 0rem orange) `;
       }
-      /* grayscale()*/
+
       function grayscale() {
-        let grayscaleValue = document.getElementsByName("grayscale")[0];
-        return "grayscale(" + grayscaleValue.value + ") ";
+        const grayscaleValue = document.getElementsByName("grayscale")[0];
+        return `grayscale(${grayscaleValue.value}) `;
       }
-      /* hue-rotate()*/
+
       function hueRotate() {
-        let hueRotateValue = document.getElementsByName("hueRotate")[0];
-        return "hue-rotate(" + hueRotateValue.value + "turn) ";
+        const hueRotateValue = document.getElementsByName("hueRotate")[0];
+        return `hue-rotate(${hueRotateValue.value}turn) `;
       }
-      /* invert()*/
+
       function invert() {
-        let invertValue = document.getElementsByName("invert")[0];
-        return "invert(" + invertValue.value + ") ";
+        const invertValue = document.getElementsByName("invert")[0];
+        return `invert(${invertValue.value) `;
       }
-      /* opacity()*/
+
       function opacity() {
-        let opacityValue = document.getElementsByName("opacity")[0];
-        return "opacity(" + opacityValue.value + ") ";
+        const opacityValue = document.getElementsByName("opacity")[0];
+        return `opacity(${opacityValue.value}) `;
       }
-      /* saturate()*/
+
       function saturate() {
-        let saturateValue = document.getElementsByName("saturate")[0];
-        return "saturate(" + saturateValue.value + ") ";
+        const saturateValue = document.getElementsByName("saturate")[0];
+        return `saturate(${saturateValue.value}) `;
       }
-      /* sepia()*/
+
       function sepia() {
-        let sepiaValue = document.getElementsByName("sepia")[0];
-        return "sepia(" + sepiaValue.value + ") ";
+        const sepiaValue = document.getElementsByName("sepia")[0];
+        return `sepia(${sepiaValue.value}) `;
       }
     </script>
     <p>Image by <cite>DigitalNomad</cite></p>
