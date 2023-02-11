@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Two Values of Display: two value syntax</title>
+  <title>Multi-Keyword Values of Display: display: flow-root</title>
 
   <style>
     body {
@@ -49,6 +49,7 @@
       border-radius: 2px;
       padding: 10px 14px 10px 10px;
       margin-bottom: 10px;
+      display: flow-root;
     }
 
     section input {
@@ -56,81 +57,57 @@
       margin: 5px;
     }
 
-    .flex {
-      border: 5px solid #ccc;
-      gap: 10px;
+    .container {
+      background-color: #333;
+      color: #fff;
     }
 
-    .flex > * {
-      border: 2px solid rgb(96, 139, 168);
-      border-radius: 5px;
-      background-color: rgba(96, 139, 168, .2);
+    .item {
+      background-color: #fff;
+      border: 1px solid #999;
+      color: #333;
+      width: 100px;
+      height: 100px;
+      padding: 10px;
     }
 
     
   </style>
   <style class="editable">
-
-    .flex1 {
-      display: block flex;
+    .container {
+      display: flow-root;
     }
 
-    .flex2 {
-      display: inline flex;
+    .item {
+      margin: 10px;
+      float: left;
     }
-
   </style>
 </head>
 
 <body>
   <section>
-<h1>Two values for display</h1>
-
-<div class="flex flex1">
-  <div>Item One</div>
-  <div>Item Two</div>
-  <div>Item Three</div>
-</div>
-
-<p>The first example is a block element with flex children.</p>
-
-<div class="flex flex2">
-  <div>Item One</div>
-  <div>Item Two</div>
-  <div>Item Three</div>
-</div>.
-
-The second example is an inline element with flex children.
+    <div class="container">
+      <div class="item">Floated</div>
+      <p>Text following the float.</p>
+    </div>
 
   </section>
-  <textarea class="playable-css" style="height: 180px;">
-
-.flex1 {
-  display: block flex;
+  <textarea class="playable-css" style="height: 180px">
+.container {
+  display: flow-root;
 }
 
-.flex2 {
-  display: inline flex;
+.item {
+  margin: 10px;
+  float: left;
 }
-
       </textarea>
-  <textarea id="code" class="playable-html" style="height: 280px;">
-<h1>Two values for display</h1>
-
-<div class="flex flex1">
-  <div>Item One</div>
-  <div>Item Two</div>
-  <div>Item Three</div>
+  <textarea id="code" class="playable-html">
+<div class="container">
+  <div class="item">Floated</div>
+  <p>Text following the float.</p>
 </div>
-
-<p>The first example is a block element with flex children.</p>
-
-<div class="flex flex2">
-  <div>Item One</div>
-  <div>Item Two</div>
-  <div>Item Three</div>
-</div>
-The second example is an inline element with flex children.
       </textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">

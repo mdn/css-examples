@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Two Values of Display: a span as a flex container</title>
+  <title>Multi-Keyword Values of Display: display: inline-block</title>
 
   <style>
     body {
@@ -49,6 +49,7 @@
       border-radius: 2px;
       padding: 10px 14px 10px 10px;
       margin-bottom: 10px;
+      display: flow-root;
     }
 
     section input {
@@ -56,35 +57,37 @@
       margin: 5px;
     }
 
+    p {
+      width: 300px;
+    }
+
     
   </style>
   <style class="editable">
-    .flex {
-      border: 5px solid #ccc;
-      display: flex;
-      justify-content: space-between;
+    .ib {
+      background-color: rgba(0,0,0,.4);
+      color: #fff;
+      padding: 10px;
+      display: inline-block;
     }
   </style>
 </head>
 
 <body>
   <section>
-    <span class="flex">
-      Some text <em>emphasized text</em>
-    </span>
+    <p>This paragraph has a span <span class="ib">with padding</span> it is an inline-block so the padding is contained and pushes the other line boxes away.</p>
 
   </section>
-  <textarea class="playable-css">
-.flex {
-  border: 5px solid #ccc;
-  display: flex;
-  justify-content: space-between;
+  <textarea class="playable-css" style="height: 180px">
+.ib {
+  background-color: rgba(0,0,0,.4);
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
 }
       </textarea>
   <textarea id="code" class="playable-html">
-<span class="flex">
-  Some text <em>emphasized text</em>
-</span>
+<p>This paragraph has a span <span class="ib">with padding</span> it is an inline-block so the padding is contained and pushes the other line boxes away.</p>
       </textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">
