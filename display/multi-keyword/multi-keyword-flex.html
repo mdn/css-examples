@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Two Values of Display: display: inline-block</title>
+  <title>Multi-Keyword Values of Display: two value syntax</title>
 
   <style>
     body {
@@ -49,7 +49,6 @@
       border-radius: 2px;
       padding: 10px 14px 10px 10px;
       margin-bottom: 10px;
-      display: flow-root;
     }
 
     section input {
@@ -57,37 +56,81 @@
       margin: 5px;
     }
 
-    p {
-      width: 300px;
+    .flex {
+      border: 5px solid #ccc;
+      gap: 10px;
+    }
+
+    .flex > * {
+      border: 2px solid rgb(96, 139, 168);
+      border-radius: 5px;
+      background-color: rgba(96, 139, 168, .2);
     }
 
     
   </style>
   <style class="editable">
-    .ib {
-      background-color: rgba(0,0,0,.4);
-      color: #fff;
-      padding: 10px;
-      display: inline-block;
+
+    .flex1 {
+      display: block flex;
     }
+
+    .flex2 {
+      display: inline flex;
+    }
+
   </style>
 </head>
 
 <body>
   <section>
-    <p>This paragraph has a span <span class="ib">with padding</span> it is an inline-block so the padding is contained and pushes the other line boxes away.</p>
+<h1>Multiple values for display</h1>
+
+<div class="flex flex1">
+  <div>Item One</div>
+  <div>Item Two</div>
+  <div>Item Three</div>
+</div>
+
+<p>The first example is a block element with flex children.</p>
+
+<div class="flex flex2">
+  <div>Item One</div>
+  <div>Item Two</div>
+  <div>Item Three</div>
+</div>.
+
+The second example is an inline element with flex children.
 
   </section>
-  <textarea class="playable-css" style="height: 180px">
-.ib {
-  background-color: rgba(0,0,0,.4);
-  color: #fff;
-  padding: 10px;
-  display: inline-block;
+  <textarea class="playable-css" style="height: 180px;">
+
+.flex1 {
+  display: block flex;
 }
+
+.flex2 {
+  display: inline flex;
+}
+
       </textarea>
-  <textarea id="code" class="playable-html">
-<p>This paragraph has a span <span class="ib">with padding</span> it is an inline-block so the padding is contained and pushes the other line boxes away.</p>
+  <textarea id="code" class="playable-html" style="height: 280px;">
+<h1>Multiple values for display</h1>
+
+<div class="flex flex1">
+  <div>Item One</div>
+  <div>Item Two</div>
+  <div>Item Three</div>
+</div>
+
+<p>The first example is a block element with flex children.</p>
+
+<div class="flex flex2">
+  <div>Item One</div>
+  <div>Item Two</div>
+  <div>Item Three</div>
+</div>
+The second example is an inline element with flex children.
       </textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">

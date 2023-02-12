@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Two Values of Display: display: flow-root</title>
+  <title>Multi-Keyword Values of Display: a span as a flex container</title>
 
   <style>
     body {
@@ -49,7 +49,6 @@
       border-radius: 2px;
       padding: 10px 14px 10px 10px;
       margin-bottom: 10px;
-      display: flow-root;
     }
 
     section input {
@@ -57,57 +56,35 @@
       margin: 5px;
     }
 
-    .container {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .item {
-      background-color: #fff;
-      border: 1px solid #999;
-      color: #333;
-      width: 100px;
-      height: 100px;
-      padding: 10px;
-    }
-
     
   </style>
   <style class="editable">
-    .container {
-      display: flow-root;
-    }
-
-    .item {
-      margin: 10px;
-      float: left;
+    .flex {
+      border: 5px solid #ccc;
+      display: flex;
+      justify-content: space-between;
     }
   </style>
 </head>
 
 <body>
   <section>
-    <div class="container">
-      <div class="item">Floated</div>
-      <p>Text following the float.</p>
-    </div>
+    <span class="flex">
+      Some text <em>emphasized text</em>
+    </span>
 
   </section>
-  <textarea class="playable-css" style="height: 180px">
-.container {
-  display: flow-root;
-}
-
-.item {
-  margin: 10px;
-  float: left;
+  <textarea class="playable-css">
+.flex {
+  border: 5px solid #ccc;
+  display: flex;
+  justify-content: space-between;
 }
       </textarea>
   <textarea id="code" class="playable-html">
-<div class="container">
-  <div class="item">Floated</div>
-  <p>Text following the float.</p>
-</div>
+<span class="flex">
+  Some text <em>emphasized text</em>
+</span>
       </textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">
