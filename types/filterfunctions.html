@@ -74,51 +74,55 @@
       });
 
       function setSlider(filter) {
-        if (filter === "blur") {
-          slider.value = 0;
-          slider.min = 0;
-          slider.max = 30;
-          slider.step = 1;
-          slider.setAttribute("data-unit", "px");
-        } else if (
-          filter === "brightness" ||
-          filter === "contrast" ||
-          filter === "saturate"
-        ) {
-          slider.value = 1;
-          slider.min = 0;
-          slider.max = 4;
-          slider.step = 0.05;
-          slider.setAttribute("data-unit", "");
-        } else if (filter === "drop-shadow") {
-          slider.value = 0;
-          slider.min = -20;
-          slider.max = 40;
-          slider.step = 1;
-          slider.setAttribute("data-unit", "px");
-        } else if (filter === "opacity") {
-          slider.value = 1;
-          slider.min = 0;
-          slider.max = 1;
-          slider.step = 0.01;
-          slider.setAttribute("data-unit", "");
-        } else if (
-          filter === "grayscale" ||
-          filter === "invert" ||
-          filter === "sepia"
-        ) {
-          slider.value = 0;
-          slider.min = 0;
-          slider.max = 1;
-          slider.step = 0.01;
-          slider.setAttribute("data-unit", "");
-        } else if (filter === "hue-rotate") {
-          slider.value = 0;
-          slider.min = 0;
-          slider.max = 360;
-          slider.step = 1;
-          slider.setAttribute("data-unit", "deg");
-        }
+        switch(filter) {
+          case "blur":
+            slider.value = 0;
+            slider.min = 0;
+            slider.max = 30;
+            slider.step = 1;
+            slider.setAttribute("data-unit", "px");
+            break;
+          case "brightness":
+          case "contrast":
+          case "saturate":
+            slider.value = 1;
+            slider.min = 0;
+            slider.max = 4;
+            slider.step = 0.05;
+            slider.setAttribute("data-unit", "");
+            break;
+          case "drop-shadow":
+            slider.value = 0;
+            slider.min = -20;
+            slider.max = 40;
+            slider.step = 1;
+            slider.setAttribute("data-unit", "px");
+            break;
+          case "opacity":
+            slider.value = 1;
+            slider.min = 0;
+            slider.max = 1;
+            slider.step = 0.01;
+            slider.setAttribute("data-unit", "");
+            break;
+          case "grayscale":
+          case "invert":
+          case "sepia":
+            slider.value = 0;
+            slider.min = 0;
+            slider.max = 1;
+            slider.step = 0.01;
+            slider.setAttribute("data-unit", "");
+            break;
+          case "hue-rotate":
+            slider.value = 0;
+            slider.min = 0;
+            slider.max = 360;
+            slider.step = 1;
+            slider.setAttribute("data-unit", "deg");
+            break;
+          default:
+            console.error("Unknown filter set");
       }
 
       function setDiv(filter) {
