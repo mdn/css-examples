@@ -175,10 +175,10 @@
             ].join('')
         },
 
-        'devanagiri': {
+        'devanagari': {
             code: [
                 'ul {\n',
-                '  list-style: devanagiri;\n',
+                '  list-style: devanagari;\n',
                 '}',
             ].join('')
         },
