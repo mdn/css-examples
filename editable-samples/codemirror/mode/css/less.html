@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <title>CodeMirror: LESS mode</title>
 <meta charset="utf-8"/>
@@ -72,8 +72,6 @@ fieldset span button, fieldset span input[type="file"] {
 
 .rounded-corners (@radius: 5px) {
   border-radius: @radius;
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
 }
 
 @import url("something.css");
@@ -91,7 +89,6 @@ fieldset span button, fieldset span input[type="file"] {
   border-top: 2px solid lighten(@alpha-blue, 20%);
   border-bottom: 2px solid darken(@alpha-blue, 25%);
   .box-shadow(0, 1px, 8px, 0.6);
-  -moz-box-shadow: 0 0 0 #000; // Because firefox sucks.
 
   &.docked {
     background-color: hsla(210, 60%, 40%, 0.4);
