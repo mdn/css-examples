@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Color picker</title>
+    <style>
+dialog {
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgb( 0 0 0 / 0.2);
+  background-color: white;
+  font-family: segue, arial, helvetica, sans-serif;
+  margin-top: 5vh;
+}
+table {
+    width: 100%;
+}
+td, 
+th {
+    padding: 3px 15px;
+}
+th {
+    background-color: #ededed;
+}
+td {
+    background-color: #dedede; 
+    font-family: monospace;
+}
+body {
+ background: linear-gradient(-90deg, transparent 0 50%, white 50% 100%),
+   conic-gradient(black 0 90deg, transparent 90deg 180deg, black 180deg 270deg, transparent 270deg 360deg);
+  background-size:  100% 100%, 20px 20px;
+  padding: 0;
+  margin: 0;
+}
+div {
+    width: 100vw; 
+    height: 100vh;
+}
+    </style>
+  </head>
+<body>
+    <div>
+        <dialog>
+        <table>
+          <caption>Current color values:</caption>
+          <tbody>
+          <tr id="RGB"><th>RGB</th><td></td></tr>
+          <tr id="HEX"><th>HEX</th><td></td></tr>
+          <tr id="HSL"><th>HSL</th><td></td></tr>
+          <tr id="HWB"><th>HWB</th><td></td></tr>
+          </tbody>
+        </table>
+        
+        <p><label for="color">Select a color: </label><input type="color" id="color" value="#bada55"/></p>
+        <p><label for="opacity">Select an opacity: </label><input type="range" id="opacity" value="1" min="0" max="1" step="0.1"/>
+      </dialog>
+    </div>
+<script>
+const colorPicker = document.getElementById( "color" );
+const opacityPicker = document.getElementById( "opacity" );
+
+document.addEventListener( "readystatechange", () => {
+  document.querySelector( "dialog" ).show();
+  createColor();
+});
+
+colorPicker.addEventListener( "change", () => {
+    createColor();
+  });
+
+opacityPicker.addEventListener( "change", () => {
+    createColor();
+  });
+
+const createColor = function() {
+    const currentColor = colorPicker.value;
+    const currentOpacity = opacityPicker.value;
+    setBackgroundColor( currentColor, currentOpacity );
+    createHEX( currentColor, currentOpacity );
+    createRGB( currentColor, currentOpacity );
+}
+
+const createHEX = function ( color, opacity ) {
+  const cell = document.querySelector( "#HEX td" );
+  if ( opacity == 1 ) {
+    cell.innerHTML = color;
+  } else {
+    cell.innerHTML = color + hexOpacity( opacity );
+  }
+}
+
+const createRGB = function ( color, opacity ) {
+  const cell = document.querySelector( "#RGB td" );
+  color = color.substring( 1, 6 );
+  let hexArray = color.match( /.{1,2}/g );
+  let R = parseInt( hexArray[0], 16 ),
+      G = parseInt( hexArray[1], 16 ),
+      B = parseInt( hexArray[2], 16 );
+  
+  if( opacity == 1 ) {  
+    cell.innerHTML = `rgb(${R} ${G} ${B})`;
+  } else {
+    cell.innerHTML = `rgb(${R} ${G} ${B} / ${opacity})`;
+  }
+  createHSL( R, G, B, opacity );
+}
+
+const createHSL = function ( r, g, b, opacity ) {
+  const cell = document.querySelector( "#HSL td" );
+      r = r / 255,
+      g = g / 255,
+      b = b / 255,
+      cmin = Math.min( r, g, b ),
+      cmax = Math.max( r, g, b ),
+      delta = cmax - cmin,
+      h = 0,
+      s = 0,
+      l = 0;
+
+  if ( delta == 0 )
+    h = 0;
+  else if ( cmax == r )
+    h = (( g - b ) / delta ) % 6;
+  else if ( cmax == g )
+    h = ( b - r ) / delta + 2;
+  else
+    h = ( r - g ) / delta + 4;
+
+  h = Math.round( h * 60 );
+
+  if ( h < 0 )
+    h += 360;
+
+  l = ( cmax + cmin ) / 2;
+  s = delta == 0 ? 0 : delta / ( 1 - Math.abs( 2 * l - 1 ));
+  s = +( s * 100 ).toFixed( 1 );
+  l = +( l * 100 ).toFixed( 1 );
+  
+  if( opacity == 1 ) {
+    cell.innerHTML =  `hsl(${h} ${s}% ${l}%)`;
+  } else {
+    cell.innerHTML =  `hsl(${h} ${s}% ${l}% / ${opacity})`
+  }
+  createHWB( h, s, l, opacity );
+}
+
+const createHWB = function ( h, s, l, opacity ) {
+  const cell = document.querySelector( "#HWB td" );
+  const hsv = s * ( l < 50 ? l : 100 - l ) / 100;
+	const W = hsv === 0 ? 0 : 2 * hsv / ( l + hsv ) * 100;
+	const B = l + hsv;
+  if( opacity == 1 ) {
+    cell.innerHTML = `hwb(${h} ${W.toFixed( 1 )}% ${B.toFixed( 1 )}%)`;
+  }
+  else {
+    cell.innerHTML = `hwb(${h} ${W.toFixed( 1 )}% ${B.toFixed( 1 )}% / ${opacity})`;
+  }
+}
+
+const setBackgroundColor = function ( color, opacity ) {
+  const body = document.querySelector( "div" );
+  if( opacity == 1 ) {
+    body.style.backgroundColor = color;
+  } else {
+    body.style.backgroundColor = color + "" + hexOpacity( opacity );
+  }
+}
+
+const hexOpacity = function( opacity ) {
+  if( opacity > 0 ) {
+    return Math.floor( opacity * 255 ).toString( 16 );
+  }
+  else {
+    return "00";
+  }
+}   
+</script>
+</body>
+</html>
