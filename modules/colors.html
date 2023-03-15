@@ -160,11 +160,12 @@ const createHWB = function ( h, s, l, opacity ) {
 
 const setBackgroundColor = function ( color, opacity ) {
   const body = document.querySelector( "div" );
-  if( opacity == 1 ) {
-    body.style.backgroundColor = color;
-  } else {
-    body.style.backgroundColor = color + "" + hexOpacity( opacity );
+  if( opacity != 1 ) {
+    color = color + "" + hexOpacity( opacity );
   }
+    body.style.backgroundColor = color;
+    opacityPicker.style.accentColor = color;
+    colorPicker.style.accentColor = color;
 }
 
 const hexOpacity = function( opacity ) {
