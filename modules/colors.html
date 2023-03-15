@@ -73,7 +73,7 @@ opacityPicker.addEventListener( "change", () => {
     createColor();
   });
 
-const createColor = function() {
+function createColor() {
     const currentColor = colorPicker.value;
     const currentOpacity = opacityPicker.value;
     setBackgroundColor( currentColor, currentOpacity );
@@ -81,32 +81,32 @@ const createColor = function() {
     createRGB( currentColor, currentOpacity );
 }
 
-const createHEX = function ( color, opacity ) {
+function createHEX ( color, opacity ) {
   const cell = document.querySelector( "#HEX td" );
   if ( opacity == 1 ) {
-    cell.innerHTML = color;
+    cell.textContent = color;
   } else {
-    cell.innerHTML = color + hexOpacity( opacity );
+    cell.textContent = color + hexOpacity( opacity );
   }
 }
 
-const createRGB = function ( color, opacity ) {
+function createRGB ( color, opacity ) {
   const cell = document.querySelector( "#RGB td" );
   color = color.substring( 1, 6 );
-  let hexArray = color.match( /.{1,2}/g );
-  let R = parseInt( hexArray[0], 16 ),
-      G = parseInt( hexArray[1], 16 ),
-      B = parseInt( hexArray[2], 16 );
+  const hexArray = color.match( /.{1,2}/g );
+  const R = parseInt( hexArray[0], 16 );
+  const G = parseInt( hexArray[1], 16 );
+  const B = parseInt( hexArray[2], 16 );
   
   if( opacity == 1 ) {  
-    cell.innerHTML = `rgb(${R} ${G} ${B})`;
+    cell.textContent = `rgb(${R} ${G} ${B})`;
   } else {
-    cell.innerHTML = `rgb(${R} ${G} ${B} / ${opacity})`;
+    cell.textContent = `rgb(${R} ${G} ${B} / ${opacity})`;
   }
   createHSL( R, G, B, opacity );
 }
 
-const createHSL = function ( r, g, b, opacity ) {
+function createHSL ( r, g, b, opacity ) {
   const cell = document.querySelector( "#HSL td" );
       r = r / 255,
       g = g / 255,
@@ -138,27 +138,27 @@ const createHSL = function ( r, g, b, opacity ) {
   l = +( l * 100 ).toFixed( 1 );
   
   if( opacity == 1 ) {
-    cell.innerHTML =  `hsl(${h} ${s}% ${l}%)`;
+    cell.textContent =  `hsl(${h} ${s}% ${l}%)`;
   } else {
-    cell.innerHTML =  `hsl(${h} ${s}% ${l}% / ${opacity})`
+    cell.textContent =  `hsl(${h} ${s}% ${l}% / ${opacity})`
   }
   createHWB( h, s, l, opacity );
 }
 
-const createHWB = function ( h, s, l, opacity ) {
+function createHWB ( h, s, l, opacity ) {
   const cell = document.querySelector( "#HWB td" );
   const hsv = s * ( l < 50 ? l : 100 - l ) / 100;
 	const W = hsv === 0 ? 0 : 2 * hsv / ( l + hsv ) * 100;
 	const B = l + hsv;
   if( opacity == 1 ) {
-    cell.innerHTML = `hwb(${h} ${W.toFixed( 1 )}% ${B.toFixed( 1 )}%)`;
+    cell.textContent = `hwb(${h} ${W.toFixed( 1 )}% ${B.toFixed( 1 )}%)`;
   }
   else {
-    cell.innerHTML = `hwb(${h} ${W.toFixed( 1 )}% ${B.toFixed( 1 )}% / ${opacity})`;
+    cell.textContent = `hwb(${h} ${W.toFixed( 1 )}% ${B.toFixed( 1 )}% / ${opacity})`;
   }
 }
 
-const setBackgroundColor = function ( color, opacity ) {
+function setBackgroundColor ( color, opacity ) {
   const body = document.querySelector( "div" );
   if( opacity != 1 ) {
     color = color + "" + hexOpacity( opacity );
@@ -168,14 +168,14 @@ const setBackgroundColor = function ( color, opacity ) {
     colorPicker.style.accentColor = color;
 }
 
-const hexOpacity = function( opacity ) {
-  if( opacity > 0 ) {
+function hexOpacity( opacity ) {
+  if( opacity > 0 ){
     return Math.floor( opacity * 255 ).toString( 16 );
   }
   else {
     return "00";
   }
-}   
+} 
 </script>
 </body>
 </html>
