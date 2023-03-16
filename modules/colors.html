@@ -124,7 +124,7 @@
 
       function createRGB(color, opacity) {
         const cell = document.querySelector("#RGB td");
-        color = color.substring(1, 6);
+        color = color.substring(1, 7);
         const hexArray = color.match(/.{1,2}/g);
         const R = parseInt(hexArray[0], 16);
         const G = parseInt(hexArray[1], 16);
