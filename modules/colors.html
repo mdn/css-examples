@@ -27,7 +27,13 @@
         font-family: monospace;
       }
       body {
-        background: linear-gradient(-90deg, transparent 0 38%, 47%, rgb(0 0 0 / 0.7) 50%, white 50% 100%),
+        background: linear-gradient(
+            -90deg,
+            transparent 0 38%,
+            47%,
+            rgb(0 0 0 / 0.7) 50%,
+            white 50% 100%
+          ),
           conic-gradient(
             black 0 90deg,
             transparent 90deg 180deg,
@@ -195,11 +201,11 @@
       }
 
       function hexOpacity(color, opacity) {
-        let char = "00"
+        let char = "00";
         if (opacity > 0) {
-          char =  Math.floor(opacity * 255).toString(16);
+          char = Math.floor(opacity * 255).toString(16);
         }
-        return `${color}${char}`
+        return `${color}${char}`;
       }
     </script>
   </body>
