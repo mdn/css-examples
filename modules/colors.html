@@ -118,7 +118,7 @@
         if (opacity === 1) {
           cell.textContent = color;
         } else {
-          cell.textContent = `${color}${hexOpacity(opacity)}`;
+          cell.textContent = hexOpacity(color, opacity);
         }
       }
 
@@ -187,19 +187,19 @@
       function setBackgroundColor(color, opacity) {
         const body = document.querySelector("div");
         if (opacity !== 1) {
-          color = color + "" + hexOpacity(opacity);
+          color = hexOpacity(color, opacity);
         }
         body.style.backgroundColor = color;
         opacityPicker.style.accentColor = color;
         colorPicker.style.accentColor = color;
       }
 
-      function hexOpacity(opacity) {
+      function hexOpacity(color, opacity) {
+        let char = "00"
         if (opacity > 0) {
-          return Math.floor(opacity * 255).toString(16);
-        } else {
-          return "00";
+          char =  Math.floor(opacity * 255).toString(16);
         }
+        return `${color}${char}`
       }
     </script>
   </body>
