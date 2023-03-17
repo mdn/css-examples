@@ -179,14 +179,14 @@
       function createHWB(h, s, l, opacity) {
         const cell = document.querySelector("#HWB td");
         const hsv = (s * ((l < 50) ? l : 100 - l)) / 100;
-        const W = (hsv === 0) ? 0 : ((2 * hsv) / (l + hsv)) * 100;
-        const B = l + hsv;
+        let W = (hsv === 0) ? 0 : ((2 * hsv) / (l + hsv)) * 100;
+        let B = l + hsv;
+        W = W.toFixed(1);
+        B = B.toFixed(1);
         if (opacity === 1) {
-          cell.textContent = `hwb(${h} ${W.toFixed(1)}% ${B.toFixed(1)}%)`;
+          cell.textContent = `hwb(${h} ${W}% ${B}%)`;
         } else {
-          cell.textContent = `hwb(${h} ${W.toFixed(1)}% ${B.toFixed(
-            1
-          )}% / ${opacity})`;
+          cell.textContent = `hwb(${h} ${W}% ${B}% / ${opacity})`;
         }
       }
 
