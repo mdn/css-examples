@@ -692,7 +692,7 @@ var BorderImage = (function BorderImage() {
 			width_units		: [0, 0, 0, 0],
 			outset_units	: [0, 0, 0, 0],
 
-			repeat			: [1, 1],
+			repeat			: [0, 0],
 			size			: [300, 200],
 			preview_area	: 400
 		};
@@ -740,7 +740,7 @@ var BorderImage = (function BorderImage() {
 			width_units		: [0, 0, 0, 0],
 			outset_units	: [0, 0, 0, 0],
 
-			repeat			: [0, 0],
+			repeat			: [1, 1],
 			size			: [300, 200],
 			preview_area	: 400
 		};
@@ -756,7 +756,7 @@ var BorderImage = (function BorderImage() {
 			width_units		: [0, 0, 0, 0],
 			outset_units	: [0, 0, 0, 0],
 
-			repeat			: [0, 0],
+			repeat			: [1, 1],
 			size			: [300, 200],
 			preview_area	: 400,
 		};
