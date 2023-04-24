@@ -158,10 +158,12 @@
         } else {
           pre.className = `${val.value}`;
         }
+        scrollExample();
       });
 
       wide.addEventListener("change", () => {
         pre.classList.toggle("wide");
+        scrollExample();
       });
 
       ocm.addEventListener("change", () => {
