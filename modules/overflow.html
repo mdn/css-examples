@@ -17,7 +17,7 @@
 
       pre {
         border: 2px dashed crimson;
-        height: 100px;
+        height: 150px;
         width: 20em;
         margin-bottom: 3em;
         overflow-clip-margin: 1em;
@@ -159,6 +159,7 @@
           pre.className = `${val.value}`;
         }
         scrollExample();
+        clipMargin();
       });
 
       wide.addEventListener("change", () => {
@@ -167,7 +168,7 @@
       });
 
       ocm.addEventListener("change", () => {
-        pre.style.overflowClipMargin = `${ocm.value}em`;
+        clipMargin();
       });
 
       scrollL.addEventListener("change", () => {
@@ -179,10 +180,14 @@
 
       function scrollExample() {
         pre.scrollTo({
-          top: scrollT.value * 26,
+          top: scrollT.value,
           left: scrollL.value * 2,
           behavior: "smooth",
         });
+      }
+
+      function clipMargin() {
+        pre.style.overflowClipMargin = `${ocm.value}em`;
       }
     </script>
   </body>
