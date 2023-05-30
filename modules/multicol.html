@@ -204,4 +204,80 @@
       </div>
     </fieldset>
   </body>
+  <script>
+    const article = document.querySelector("article");
+    const title = document.querySelector(".title");
+    const options = document.querySelector("#options");
+    const legend = document.querySelector("#options > legend");
+    const blockquote = document.getElementsByTagName("blockquote")[0];
+
+    const colCount = document.getElementById("colCount");
+    const colWidth = document.getElementById("colWidth");
+    const gapSize = document.getElementById("gapSize");
+    const colSpan = document.getElementById("colSpan");
+    const blockSpan = document.getElementById("blockSpan");
+    const colFill = document.getElementById("colFill");
+    const breakP = document.getElementById("break");
+
+    // make options visible if js is enabled
+    options.style.display = "revert";
+
+    legend.addEventListener("click", () => {
+      showAndHideMenu();
+    });
+
+    colCount.addEventListener("change", () => {
+      article.style.columnCount = colCount.value;
+    });
+
+    colWidth.addEventListener("change", () => {
+      article.style.columnWidth = `${colWidth.value}em`;
+    });
+
+    gapSize.addEventListener("change", () => {
+      article.style.gap = `${gapSize.value}em`;
+    });
+
+    colSpan.addEventListener("change", () => {
+      setColSpan(colSpan, title);
+    });
+
+    blockSpan.addEventListener("change", () => {
+      setColSpan(blockSpan, blockquote);
+    });
+
+    colFill.addEventListener("change", () => {
+      if (colFill.checked) {
+        article.style.columnFill = "balance";
+      } else {
+        article.style.columnFill = "auto";
+      }
+    });
+
+    breakP.addEventListener("change", () => {
+      if (breakP.checked) {
+        article.classList.add("breakInside");
+      } else {
+        article.classList.remove("breakInside");
+      }
+    });
+
+    function showAndHideMenu() {
+      if (legend.getAttribute("aria-expanded") === "true") {
+        // close it
+        legend.setAttribute("aria-expanded", "false");
+      } else {
+        // open it
+        legend.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    function setColSpan(control, element) {
+      if (control.checked) {
+        element.style.columnSpan = "all";
+      } else {
+        element.style.columnSpan = "none";
+      }
+    }
+  </script>
 </html>
