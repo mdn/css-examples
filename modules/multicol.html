@@ -12,6 +12,7 @@
         orphans: 3;
         gap: 1em;
         column-rule: 2px dashed #666;
+        height: 40em;
       }
       .title {
         column-span: all;
@@ -24,12 +25,18 @@
         margin: 0 0 1em 0;
         line-height: 1.4;
       }
+      .breakInside p {
+        break-inside: avoid;
+      }
       #options {
         position: fixed;
         top: 1rem;
         right: 1rem;
         background: white;
         display: none;
+      }
+      fieldset p {
+        margin-bottom: 0.25em;
       }
       [aria-expanded] {
         position: relative;
@@ -52,7 +59,7 @@
       }
       blockquote {
         border: 2px dashed red;
-        margin: 0;
+        margin: 0 0 0.25em 0;
       }
       blockquote p {
         margin-bottom: 0;
@@ -186,64 +193,15 @@
           <input type="checkbox" id="blockSpan" />
           <label for="blockSpan">Blockquote spans all columns</label>
         </p>
+        <p>
+          <input type="checkbox" id="colFill" />
+          <label for="colFill">Balance columns</label>
+        </p>
+        <p>
+          <input type="checkbox" id="break" />
+          <label for="break">Don't break paragraphs</label>
+        </p>
       </div>
     </fieldset>
-    <script>
-      const article = document.querySelector("article");
-      const title = document.querySelector(".title");
-      const options = document.querySelector("#options");
-      const legend = document.querySelector("#options > legend");
-      const colCount = document.getElementById("colCount");
-      const colWidth = document.getElementById("colWidth");
-      const gapSize = document.getElementById("gapSize");
-      const colSpan = document.getElementById("colSpan");
-      const blockSpan = document.getElementById("blockSpan");
-      const blockquote = document.getElementsByTagName("blockquote")[0];
-
-      // make options visible if js is enabled
-      options.style.display = "revert";
-
-      legend.addEventListener("click", () => {
-        showAndHideMenu();
-      });
-
-      colCount.addEventListener("change", () => {
-        article.style.columnCount = colCount.value;
-      });
-
-      colWidth.addEventListener("change", () => {
-        article.style.columnWidth = `${colWidth.value}em`;
-      });
-
-      gapSize.addEventListener("change", () => {
-        article.style.gap = `${gapSize.value}em`;
-      });
-
-      colSpan.addEventListener("change", () => {
-        if (colSpan.checked) {
-          title.style.columnSpan = "all";
-        } else {
-          title.style.columnSpan = "none";
-        }
-      });
-
-      blockSpan.addEventListener("change", () => {
-        if (blockSpan.checked) {
-          blockquote.style.columnSpan = "all";
-        } else {
-          blockquote.style.columnSpan = "none";
-        }
-      });
-
-      function showAndHideMenu() {
-        if (legend.getAttribute("aria-expanded") === "true") {
-          // close it
-          legend.setAttribute("aria-expanded", "false");
-        } else {
-          // open it
-          legend.setAttribute("aria-expanded", "true");
-        }
-      }
-    </script>
   </body>
 </html>
