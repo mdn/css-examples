@@ -1,4 +1,4 @@
-# Floats Marking Guide
+# Position Marking Guide
 
 The aim of the tasks are to demonstrate an understanding of the properties covered in the [Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning) lesson in Learn Web Development on MDN.
 
