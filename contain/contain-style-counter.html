@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Float interference</title>
+    <style>
+      body {
+        counter-reset: headings;
+      }
+
+      h1::before {
+        counter-increment: headings;
+        content: counter(headings) ": ";
+      }
+
+      .contain {
+        contain: style;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Introduction</h1>
+    <h1>Background</h1>
+    <div class="contain">
+      <h1>Contained counter</h1>
+    </div>
+    <h1>Conclusion</h1>
+  </body>
+</html>

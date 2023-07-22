@@ -1,26 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
     <title>CSS Cookbook: sticky footer with flexbox</title>
 
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        html {
-            height:100%;
+        * {
             box-sizing: border-box;
         }
-
-        * {
-            box-sizing: inherit;
-        }
-
+        html, 
         body {
+            box-sizing: border-box;
             height: 100%;
+            padding: 0;
+            margin: 0;
         }
 
         .page-header,
@@ -28,32 +27,45 @@
             background-color: rgb(75, 70, 74);
             color: #fff;
             padding: 20px;
-            flex-shrink: 0;
         }
 
         .page-body {
             padding: 20px;
-            flex-grow: 1;
         }
 
         .preview {
-            height: 100%;
+            height: 400px;
+            overflow: auto;
+        }
+
+        .playable-css {
+            min-height: 420px;
+            overflow: auto;
+        }
+
+        .playable-html {
+            min-height: 160px;
             overflow: auto;
         }
     </style>
 
     <style class="editable">
+        html, body {
+            box-sizing: border-box;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
         .wrapper {
+            box-sizing: border-box;
             min-height: 100%;
             display: flex;
             flex-direction: column;
         }
-
-        .page-header,
-        .page-footer {
+        .page-header, .page-footer {
+            flex-grow: 0;
             flex-shrink: 0;
         }
-
         .page-body {
             flex-grow: 1;
         }
@@ -72,31 +84,36 @@
         </div>
     </section>
 
-    <textarea class="playable playable-css">
+<textarea class="playable playable-css">
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
 .wrapper {
+    box-sizing: border-box;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
-
-.page-header,
-.page-footer {
+.page-header, .page-footer {
+    flex-grow: 0;
     flex-shrink: 0;
 }
-
 .page-body {
     flex-grow: 1;
 }
 </textarea>
 
-    <textarea class="playable playable-html">
+<textarea class="playable playable-html">
 <div class="wrapper">
     <header class="page-header">This is the header</header>
     <main class="page-body">
         <p>Main page content here, add more if you want to see the footer push down.</p>
     </main>
     <footer class="page-footer">Sticky footer</footer>
-    </div>
+</div>
 </textarea>
 
     <div class="playable-buttons">

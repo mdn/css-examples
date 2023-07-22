@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
   <title>Use cases: input element and button</title>
 
   <style>
@@ -27,11 +27,11 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 170px
+      height: 140px
     }
 
     textarea:nth-of-type(2) {
-      height: 80px
+      height: 125px
     }
 
     .playable-buttons {
@@ -104,16 +104,17 @@
 }
 
 .wrapper input[type="text"] {
-    flex: 1 1 auto;
-  }
-
-
-      </textarea>
+  flex: 1 1 auto;
+}
+</textarea>
   <textarea id="code" class="playable-html">
 <form class="example">
-    <div class="wrapper"><input type="text" id="text"><input type="submit" value="Send"></div>
+  <div class="wrapper">
+    <input type="text" id="text">
+    <input type="submit" value="Send">
+  </div>
 </form>
-      </textarea>
+</textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">
   </div>

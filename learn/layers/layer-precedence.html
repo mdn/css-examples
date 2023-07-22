@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cascade Layers: layer precedence</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+@layer A, B;
+
+h1 { 
+  color: orange;
+  background-color: green; 
+  text-decoration: overline pink !important; 
+  box-shadow: 5px 5px lightgreen !important;
+}
+
+@layer A {
+  h1 {
+    color: grey; 
+    background-color: black !important;
+    text-decoration: line-through grey; 
+    box-shadow: -5px -5px lightblue !important;
+    font-style: normal;
+    font-weight: normal !important;
+  }
+}
+@layer B {
+  h1 { 
+    color: aqua;
+    background: yellow !important;
+    text-decoration: underline aqua;
+    box-shadow: -5px 5px magenta !important;
+    font-style: italic;
+    font-weight: bold !important;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+<div>
+  <h1 style="color: yellow; background-color: maroon  !important;">Inline styles</h1>
+</div>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 300px;">
+@layer A, B; 
+
+  h1 { 
+    color: orange;
+    background-color: green; 
+    text-decoration: overline pink !important; 
+    box-shadow: 5px 5px lightgreen !important;
+  }
+  
+  @layer A {
+    h1 {
+      color: grey; 
+      background-color: black !important;
+      text-decoration: line-through grey; 
+      box-shadow: -5px -5px lightblue !important;
+      font-style: normal;
+      font-weight: normal !important;
+    }
+  }
+  @layer B {
+    h1 { 
+      color: aqua;
+      background: yellow !important;
+      text-decoration: underline aqua;
+      box-shadow: -5px 5px magenta !important;
+      font-style: italic;
+      font-weight: bold !important;
+    }
+  }
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 100px;">
+  <div>
+    <h1 style="color: yellow; background-color: maroon !important;">Inline styles</h1>
+  </div>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

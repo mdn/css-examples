@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS backgrounds and borders sample</title>
+    <style>
+      article {
+        display: flex;
+        gap: 10px;
+      }
+      div {
+        color: #58ade3;
+        height: 320px;
+        width: 240px;
+        padding: 20px;
+        margin: 10px;
+        border: dotted 15px; /* defaults to `currentcolor` */
+        border-radius: 100px 0;
+        background-image: radial-gradient(
+            circle,
+            transparent 60%,
+            currentcolor 60% 70%,
+            transparent 70%
+          ),
+          linear-gradient(45deg, currentcolor, white),
+          linear-gradient(transparent, transparent);
+        /* the third transparent background image was added to provide space for the background color to show through */
+        background-color: currentcolor;
+        background-position: center;
+        background-size: 60px 60px, 120px 120px;
+        background-clip: content-box, content-box, padding-box;
+        box-shadow: 
+          inset 5px 5px 5px rgba(0, 0, 0, 0.4),
+          inset -5px -5px 5px rgba(0, 0, 0, 0.4), 
+          5px 5px 5px rgba(0, 0, 0, 0.4),
+          -5px -5px 5px rgba(0, 0, 0, 0.4);
+      }
+      div:first-of-type {
+        border-radius: 0;
+        border-image-source: repeating-conic-gradient(
+          from 3deg at 25% 25%,
+          currentColor 0 3deg,
+          transparent 3deg 6deg
+        );
+        border-image-slice: 30;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <div></div>
+      <div></div>
+    </article>
+  </body>
+</html>

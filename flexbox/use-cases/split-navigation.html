@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
   <title>Use cases: Split Navigation</title>
 
   <style>
@@ -28,11 +28,11 @@
     }
 
     textarea:nth-of-type(1) {
-      height: 160px
+      height: 230px
     }
 
     textarea:nth-of-type(2) {
-      height: 140px
+      height: 160px
     }
 
     .playable-buttons {
@@ -79,15 +79,12 @@
   </style>
   <style class="editable">
     nav ul {
-        display: flex;
-        margin: 0 -10px;
-      }
-    nav li {
-        margin: 0 10px;
+      display: flex;
+      gap: 20px;
     }
-      .push-right {
-          margin-left: auto;
-      }
+    .push-right {
+      margin-left: auto;
+    }
   </style>
 </head>
 
@@ -107,25 +104,23 @@
   <textarea class="playable-css">
 nav ul {
   display: flex;
-  margin: 0 -10px;
+  gap: 20px;
 }
-nav li {
-    margin: 0 10px;
-}
+
 .push-right {
   margin-left: auto;
 }
-      </textarea>
+</textarea>
   <textarea id="code" class="playable-html">
 <nav>
-    <ul>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3 is longer</a></li>
-        <li class="push-right"><a href="#">Page 4</a></li>
-    </ul>
+  <ul>
+    <li><a href="#">Page 1</a></li>
+    <li><a href="#">Page 2</a></li>
+    <li><a href="#">Page 3 is longer</a></li>
+    <li class="push-right"><a href="#">Page 4</a></li>
+  </ul>
 </nav>
-      </textarea>
+</textarea>
   <div class="playable-buttons">
     <input id="reset" type="button" value="Reset">
   </div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Float interference</title>
+    <style>
+      body {
+        quotes: "«" "»" "‹" "›";
+      }
+      .open-quote:before {
+        content: open-quote;
+      }
+
+      .close-quote:after {
+        content: close-quote;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="open-quote">
+      outer
+      <span style="contain: style">
+        <span class="open-quote"> inner </span>
+      </span>
+    </span>
+    <span class="close-quote"> close </span>
+  </body>
+</html>

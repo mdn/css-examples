@@ -83,7 +83,7 @@ The container will need to be a grid layout, as we have alignment in rows and co
 
 The ul for the tags needs to be a flex container as tags are not lined up in columns, only in rows and they are centered in the space with the alignment property `justify-content` set to `center`.
 
-The student may try to use flexbox on the container and restrict the cards with percentage values. They may also try to make the items into a grid layout in which case you should point out that the items are not aligned in two dimensions so grid isn't the best choice.
+The student may try to use flexbox on the container and restrict the cards with percentage values. They may also try to make the items into a grid layout in which case you should point out that the items are not aligned in two dimensions so flexbox isn't the best choice.
 
 ```
 .container {

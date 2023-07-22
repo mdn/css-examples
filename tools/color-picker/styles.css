@@ -8,10 +8,6 @@
 	border: 1px solid #DDD;
 	background-color: #FFF;
 	display: table;
-
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 }
 
@@ -33,32 +29,25 @@
 .ui-color-picker .picking-area {
 	background: url('picker_mask_200.png') center center;
 
-	background: -moz-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
-				-moz-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
-	background: -webkit-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
-				-webkit-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
-	background: -ms-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
-				-ms-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
-	background: -o-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
-				-o-linear-gradient(left, #FFF 0%, rgba(255, 255, 255, 0) 100%);
-
+	background: linear-gradient(to top, 
+    #000 0%, 
+    rgb(0 0 0 / 0) 100%),
+		linear-gradient(to right, 
+      #FFF 0%, 
+      rgb(255 255 255 / 0) 100%);
 	background-color: #F00;
 }
 
 /* HSL format - Hue-Saturation-Lightness */
 .ui-color-picker[data-mode='HSL'] .picking-area {
-	background: -moz-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
-									hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
-				-moz-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
-	background: -webkit-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
-									hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
-				-webkit-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
-	background: -ms-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
-									hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
-				-ms-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
-	background: -o-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0) 50%,
-									hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 100%),
-				-o-linear-gradient(left, hsl(0, 0%, 50%) 0%, hsla(0, 0%, 50%, 0) 100%);
+	background: linear-gradient(to bottom,
+     hsl(0 0% 100%) 0%,
+     hsl(0 0% 100% / 0) 50%,
+		 hsl(0 0% 0% / 0) 50%,
+      hsl(0 0% 0%) 100%),
+		linear-gradient(to right, 
+      hsl(0 0% 50%) 0%, 
+      hsl(0 0% 50% / 0) 100%);
 	background-color: #F00;
 }
 
@@ -92,19 +81,15 @@
 
 .ui-color-picker .hue {
 	background: url("hue.png") center;
-	background: -moz-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
-				#00F 66.66%, #F0F 83.33%, #F00 100%);
-	background: -webkit-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
-				#00F 66.66%, #F0F 83.33%, #F00 100%);
-	background: -ms-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
-				#00F 66.66%, #F0F 83.33%, #F00 100%);
-	background: -o-linear-gradient(left, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%,
-				#00F 66.66%, #F0F 83.33%, #F00 100%);
+	background: linear-gradient(to right, #F00, #FF0, #0F0, #0FF, #00F, #F0F, #F00);
 }
 
 .ui-color-picker .alpha {
 	border: 1px solid #CCC;
 	background: url("alpha.png");
+
+	background-image: conic-gradient(transparent 90deg, rgb(0 0 0 / 0.1) 90deg 180deg, transparent 180deg 270deg, rgb(0 0 0 / 0.1) 270deg);
+  background-size:  10px 10px;
 }
 
 .ui-color-picker .alpha-mask {
@@ -157,10 +142,7 @@
 	border: 1px solid #DDD;
 	text-align: center;
 	float: right;
-
-	-moz-user-select: text;
-	-webkit-user-select: text;
-	-ms-user-select: text;
+  user-select: text;
 }
 
 .ui-color-picker .input[data-topic="lightness"] {
@@ -202,8 +184,6 @@
 	width: 90px;
 	height: 24px;
 	padding: 2px 0;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -233,7 +213,7 @@
 .ui-color-picker .preview-color {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 0, 0, 0.5);
+	background-color: rgb(255 0 0 / 0.5);
 	position: absolute;
 	z-index: 1;
 }
@@ -262,8 +242,6 @@
 
 .ui-input-slider {
 	height: 20px;
-	font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-	-moz-user-select: none;
 	user-select: none;
 }
 
@@ -280,9 +258,6 @@
 	padding: 0;
 	width: 50px;
 	text-align: center;
-
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -332,18 +307,9 @@
 body {
 	max-width: 1000px;
 	margin: 0 auto;
-
 	font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-
 	box-shadow: 0 0 5px 0 #999;
-
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 
 }
@@ -389,12 +355,9 @@ body {
  */
 #container {
 	width: 100%;
-
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-
-	display: table;
+	display: grid;
+  grid-template-columns: 1fr;
 }
 
 /**
@@ -609,9 +572,6 @@ body {
 	position: absolute;
 	top: 10%;
 	left: 10%;
-
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 
 	transition: all 0.2s;
@@ -684,7 +644,6 @@ body {
 	width: 200px;
 	height: 100%;
 	padding: 0 10px;
-	font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: #777;
 	text-align: center;
@@ -722,23 +681,13 @@ body {
  */
 
 #palette {
-	width: 1000px;
-	padding: 10px 0;
-	background-image: url('grain.png');
-	background-repeat: repeat;
+	display: grid;
+  grid-template-columns: auto auto;
 	background-color: #EEE;
 	color: #777;
-
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 #color-palette {
-	width: 640px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #777;
-	float: left;
 }
 
 #color-palette .container {
@@ -855,7 +804,7 @@ body {
 
 	text-align: right;
 
-	border: 3px dashed rgb(221, 221, 221);
+	border: 3px dashed rgb(221 221 221);
 	border-radius: 15px;
 
 	position: absolute;
@@ -893,8 +842,8 @@ body {
 	min-width: 20px;
 	min-height: 20px;
 	position: absolute;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-}
+	border: 1px solid rgb(255 255 255 / 0.3);
+} 
 
 #canvas .sample:hover {
 	cursor: move;

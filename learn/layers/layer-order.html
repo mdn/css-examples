@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cascade Layers: layer order</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+    @layer page {
+      h1 {
+        text-decoration: overline; 
+        color: red;
+      }
+    }
+
+    @layer site {
+      h1 {
+        text-decoration: underline; 
+        color: green;
+      }
+    }
+    /* this does nothing */
+    @layer site, page;
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+      <h1>Is this heading underlined?</h1>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 300px;">
+    @layer page {
+      h1 {
+        text-decoration: overline; 
+        color: red;
+      }
+    }
+
+    @layer site {
+      h1 {
+        text-decoration: underline; 
+        color: green;
+      }
+    }
+
+    /* this does nothing */
+    @layer site, page;
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 40px;">
+      <h1>Is this heading underlined?</h1>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>
