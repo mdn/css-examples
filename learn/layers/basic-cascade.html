@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cascade Layers: basic cascade origin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        
+    </style>
+
+    <style class="editable">
+      :where(a.author) {
+        text-decoration: overline; 
+        color: red;
+      }
+    </style>
+</head>
+
+<body>
+    <section class="preview">
+      <p><a href="https://example.org">User agent styles</a></p>
+      <p><a href="https://example.org" class="author">Author styles</a></p>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 120px;">
+      :where(a.author) {
+        text-decoration: overline; 
+        color: red;
+      }
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 40px;">
+      <p><a href="https://example.org">User agent styles</a></p>
+      <p><a href="https://example.org" class="author">Author styles</a></p>
+    </textarea>
+
+    <div class="playable-buttons">
+        <input id="reset" type="button" value="Reset">
+    </div>
+</body>
+<script src="../playable.js"></script>
+
+</html>

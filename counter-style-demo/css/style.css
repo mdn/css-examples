@@ -59,7 +59,7 @@ body {
 
 @counter-style cs-fixed {
     system: fixed;
-    symbols:          ;
+    symbols: 😀 👻 👽 👾 🤖 🎃 😹 👋 👀 💋;
     suffix: " ";
 }
 
@@ -91,6 +91,7 @@ body {
 @counter-style cs-numeric {
     system: numeric;
     symbols: A B C D E;
+    suffix: " ";
 }
 
 .demo-numeric {
@@ -160,8 +161,8 @@ body {
     list-style: cjk-decimal;
 }
 
-.demo-devanagiri {
-    list-style: devanagiri;
+.demo-devanagari {
+    list-style: devanagari;
 }
 
 .demo-georgian {

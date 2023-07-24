@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Color syntax converter</title>
+    <style>
+      dialog {
+        border: 1px solid;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px rgb(0 0 0 / 0.2);
+        background-color: white;
+        font-family: segue, arial, helvetica, sans-serif;
+        margin-top: 5vh;
+      }
+      table {
+        width: 100%;
+      }
+      td,
+      th {
+        padding: 3px 15px;
+      }
+      th {
+        background-color: #ededed;
+      }
+      td {
+        background-color: #dedede;
+        font-family: monospace;
+      }
+      body {
+        background: linear-gradient(
+            -90deg,
+            transparent 0 38%,
+            47%,
+            rgb(0 0 0 / 0.7) 50%,
+            white 50% 100%
+          ),
+          conic-gradient(
+            black 0 90deg,
+            transparent 90deg 180deg,
+            black 180deg 270deg,
+            transparent 270deg 360deg
+          );
+        background-size: 100% 100%, 20px 20px;
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <dialog>
+        <table>
+          <caption>
+            Current color values:
+          </caption>
+          <tbody>
+            <tr id="RGB">
+              <th>RGB</th>
+              <td></td>
+            </tr>
+            <tr id="HEX">
+              <th>HEX</th>
+              <td></td>
+            </tr>
+            <tr id="HSL">
+              <th>HSL</th>
+              <td></td>
+            </tr>
+            <tr id="HWB">
+              <th>HWB</th>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <label for="color">Select a color: </label
+          ><input type="color" id="color" value="#bada55" />
+        </p>
+        <p>
+          <label for="opacity">Select an opacity: </label
+          ><input
+            type="range"
+            id="opacity"
+            value="1"
+            min="0"
+            max="1"
+            step="0.1"
+          />
+        </p>
+      </dialog>
+    </div>
+    <script>
+      const colorPicker = document.getElementById("color");
+      const opacityPicker = document.getElementById("opacity");
+
+      document.addEventListener("readystatechange", () => {
+        document.querySelector("dialog").show();
+        createColor();
+      });
+
+      colorPicker.addEventListener("change", () => {
+        createColor();
+      });
+
+      opacityPicker.addEventListener("change", () => {
+        createColor();
+      });
+
+      function createColor() {
+        const currentColor = colorPicker.value;
+        const currentOpacity = Number(opacityPicker.value);
+        setBackgroundColor(currentColor, currentOpacity);
+        createHEX(currentColor, currentOpacity);
+        createRGB(currentColor, currentOpacity);
+      }
+
+      function createHEX(color, opacity) {
+        const cell = document.querySelector("#HEX td");
+        if (opacity === 1) {
+          cell.textContent = color;
+        } else {
+          cell.textContent = hexOpacity(color, opacity);
+        }
+      }
+
+      function createRGB(color, opacity) {
+        const cell = document.querySelector("#RGB td");
+        color = color.substring(1, 7);
+        const hexArray = color.match(/.{1,2}/g);
+        const R = parseInt(hexArray[0], 16);
+        const G = parseInt(hexArray[1], 16);
+        const B = parseInt(hexArray[2], 16);
+
+        if (opacity === 1) {
+          cell.textContent = `rgb(${R} ${G} ${B})`;
+        } else {
+          cell.textContent = `rgb(${R} ${G} ${B} / ${opacity})`;
+        }
+        createHSL(R, G, B, opacity);
+      }
+
+      function createHSL(r, g, b, opacity) {
+        const cell = document.querySelector("#HSL td");
+        // Let's have r, g, b in the range [0, 1]
+        r = r / 255;
+        g = g / 255;
+        b = b / 255;
+        const cmin = Math.min(r, g, b);
+        const cmax = Math.max(r, g, b);
+        const delta = cmax - cmin;
+        let h = 0,
+          s = 0,
+          l = 0;
+
+        if (delta === 0) {
+          h = 0;
+        } else if (cmax === r) {
+          h = ((g - b) / delta) % 6;
+        } else if (cmax === g) {
+          h = (b - r) / delta + 2;
+        }
+        else h = (r - g) / delta + 4;
+
+        h = Math.round(h * 60);
+
+        // We want an angle between 0 and 360°
+        if (h < 0) {
+          h += 360;
+        }
+
+        l = (cmax + cmin) / 2;
+        s = (delta === 0) ? 0 : delta / (1 - Math.abs(2 * l - 1));
+        s = Number((s * 100).toFixed(1));
+        l = Number((l * 100).toFixed(1));
+
+        if (opacity === 1) {
+          cell.textContent = `hsl(${h} ${s}% ${l}%)`;
+        } else {
+          cell.textContent = `hsl(${h} ${s}% ${l}% / ${opacity})`;
+        }
+        createHWB(h, s, l, opacity);
+      }
+
+      function createHWB(h, s, l, opacity) {
+        const cell = document.querySelector("#HWB td");
+        const chroma = s * (1 - Math.abs(l/50 - 1));
+        let W = l - chroma / 2;
+        let B = 100 - l - chroma / 2;
+        W = W.toFixed(1);
+        B = B.toFixed(1);
+        if (opacity === 1) {
+          cell.textContent = `hwb(${h} ${W}% ${B}%)`;
+        } else {
+          cell.textContent = `hwb(${h} ${W}% ${B}% / ${opacity})`;
+        }
+      }
+
+      function setBackgroundColor(color, opacity) {
+        const body = document.querySelector("div");
+        if (opacity !== 1) {
+          color = hexOpacity(color, opacity);
+        }
+        body.style.backgroundColor = color;
+        opacityPicker.style.accentColor = color;
+        colorPicker.style.accentColor = color;
+      }
+
+      function hexOpacity(color, opacity) {
+        let char = "00";
+        if (opacity > 0) {
+          char = Math.floor(opacity * 255).toString(16);
+        }
+        return `${color}${char}`;
+      }
+    </script>
+  </body>
+</html>
