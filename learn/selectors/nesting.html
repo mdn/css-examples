@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Selectors: General Sibling Combinator </title>
+        <link rel="stylesheet" href="../styles.css">
+        <style class="editable">
+            h1 {
+              & ~ p { /* this is parsed by the browser as h1 ~ p */
+                font-weight: bold;
+                background-color: #333;
+                color: #fff;
+                padding: .5em;
+              }
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="preview">
+        <article>
+            <h1>A heading</h1>
+            <p>I am a paragraph.</p>
+            <div>I am a div</div>
+            <p>I am another paragraph.</p>
+        </article>
+        </section>
+
+        <textarea class="playable playable-css" style="height: 150px;">
+h1 {
+    & ~ p { /* this is parsed by the browser as h1 ~ p */
+        font-weight: bold;
+        background-color: #333;
+        color: #fff;
+        padding: .5em;
+    }
+}
+        </textarea>
+
+        <textarea class="playable playable-html" style="height: 130px;">
+<article>
+    <h1>A heading</h1>
+    <p>I am a paragraph.</p>
+    <div>I am a div</div>
+    <p>I am another paragraph.</p>
+</article>
+        </textarea>
+
+        <div class="playable-buttons">
+            <input id="reset" type="button" value="Reset">
+        </div>
+    </body>
+    <script src="../playable.js"></script>
+
+</html>
