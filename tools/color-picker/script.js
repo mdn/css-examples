@@ -12,7 +12,7 @@ var UIColorPicker = (function UIColorPicker() {
 	/**
 	 * RGBA Color class
 	 *
-	 * HSV/HSB and HSL (hue, saturation, value / brightness, lightness)
+	 * HWB/HSB and HSL (hue, saturation, value / brightness, lightness)
 	 * @param hue			0-360
 	 * @param saturation	0-100
 	 * @param value 		0-100
@@ -34,7 +34,7 @@ var UIColorPicker = (function UIColorPicker() {
 		this.saturation = 0;
 		this.value = 0;
 		this.lightness = 0;
-		this.format = 'HSV';
+		this.format = 'HWB';
 	}
 
 	function RGBColor(r, g, b) {
@@ -49,15 +49,15 @@ var UIColorPicker = (function UIColorPicker() {
 		return color;
 	}
 
-	function HSVColor(h, s, v) {
+	function HWBColor(h, s, v) {
 		var color = new Color();
-		color.setHSV(h, s, v);
+		color.setHWB(h, s, v);
 		return color;
 	}
 
-	function HSVAColor(h, s, v, a) {
+	function HWBAColor(h, s, v, a) {
 		var color = new Color();
-		color.setHSV(h, s, v);
+		color.setHWB(h, s, v);
 		color.a = a;
 		return color;
 	}
@@ -93,8 +93,8 @@ var UIColorPicker = (function UIColorPicker() {
 	};
 
 	Color.prototype.setFormat = function setFormat(format) {
-		if (format === 'HSV')
-			this.format = 'HSV';
+		if (format === 'HWB')
+			this.format = 'HWB';
 		if (format === 'HSL')
 			this.format = 'HSL';
 	};
@@ -130,11 +130,11 @@ var UIColorPicker = (function UIColorPicker() {
 		}
 	};
 
-	Color.prototype.setHSV = function setHSV(hue, saturation, value) {
+	Color.prototype.setHWB = function setHWB(hue, saturation, value) {
 		this.hue = hue;
 		this.saturation = saturation;
 		this.value = value;
-		this.HSVtoRGB();
+		this.HWBtoRGB();
 	};
 
 	Color.prototype.setHSL = function setHSL(hue, saturation, lightness) {
@@ -165,7 +165,7 @@ var UIColorPicker = (function UIColorPicker() {
 			value < 0 || value > 100)
 			return;
 		this.value = value;
-		this.HSVtoRGB();
+		this.HWBtoRGB();
 	};
 
 	Color.prototype.setLightness = function setLightness(value) {
@@ -193,7 +193,7 @@ var UIColorPicker = (function UIColorPicker() {
 		this.b = parseInt(value.substr(4, 2), 16);
 
 		this.alpha	= 1;
-		this.RGBtoHSV();
+		this.updateHSX();
 	};
 
 	/*========== Conversion Methods ==========*/
@@ -206,19 +206,19 @@ var UIColorPicker = (function UIColorPicker() {
 		this.RGBtoHSL();
 	};
 
-	Color.prototype.convertToHSV = function convertToHSV() {
-		if (this.format === 'HSV')
+	Color.prototype.convertToHWB = function convertToHWB() {
+		if (this.format === 'HWB')
 			return;
 
-		this.setFormat('HSV');
-		this.RGBtoHSV();
+		this.setFormat('HWB');
+		this.RGBtoHWB();
 	};
 
 	/*========== Update Methods ==========*/
 
 	Color.prototype.updateRGB = function updateRGB() {
-		if (this.format === 'HSV') {
-			this.HSVtoRGB();
+		if (this.format === 'HWB') {
+			this.HWBtoRGB();
 			return;
 		}
 
@@ -229,8 +229,8 @@ var UIColorPicker = (function UIColorPicker() {
 	};
 
 	Color.prototype.updateHSX = function updateHSX() {
-		if (this.format === 'HSV') {
-			this.RGBtoHSV();
+		if (this.format === 'HWB') {
+			this.RGBtoHWB();
 			return;
 		}
 
@@ -240,7 +240,7 @@ var UIColorPicker = (function UIColorPicker() {
 		}
 	};
 
-	Color.prototype.HSVtoRGB = function HSVtoRGB() {
+	Color.prototype.HWBtoRGB = function HWBtoRGB() {
 		var sat = this.saturation / 100;
 		var value = this.value / 100;
 		var C = sat * value;
@@ -282,7 +282,7 @@ var UIColorPicker = (function UIColorPicker() {
 		if (H >= 5 && H < 6) {	this.setRGBA(C, m, X);	return; }
 	};
 
-	Color.prototype.RGBtoHSV = function RGBtoHSV() {
+	Color.prototype.RGBtoHWB = function RGBtoHWB() {
 		var red		= this.r / 255;
 		var green	= this.g / 255;
 		var blue	= this.b / 255;
@@ -347,13 +347,13 @@ var UIColorPicker = (function UIColorPicker() {
 
 	Color.prototype.getRGBA = function getRGBA() {
 
-		var rgb = '(' + this.r + ', ' + this.g + ', ' + this.b;
+		var rgb = '(' + this.r + ' ' + this.g + ' ' + this.b;
 		var a = '';
 		var v = '';
 		var x = parseFloat(this.a);
 		if (x !== 1) {
-			a = 'a';
-			v = ', ' + x;
+			a = '';
+			v = ' / ' + x;
 		}
 
 		var value = 'rgb' + a + rgb + v + ')';
@@ -361,7 +361,7 @@ var UIColorPicker = (function UIColorPicker() {
 	};
 
 	Color.prototype.getHSLA = function getHSLA() {
-		if (this.format === 'HSV') {
+		if (this.format === 'HWB') {
 			var color = new Color(this);
 			color.setFormat('HSL');
 			color.updateHSX();
@@ -370,11 +370,11 @@ var UIColorPicker = (function UIColorPicker() {
 
 		var a = '';
 		var v = '';
-		var hsl = '(' + this.hue + ', ' + this.saturation + '%, ' + this.lightness +'%';
+		var hsl = '(' + this.hue + ' ' + this.saturation + '% ' + this.lightness +'%';
 		var x = parseFloat(this.a);
 		if (x !== 1) {
-			a = 'a';
-			v = ', ' + x;
+			a = '';
+			v = ' / ' + x;
 		}
 
 		var value = 'hsl' + a + hsl + v + ')';
@@ -416,7 +416,7 @@ var UIColorPicker = (function UIColorPicker() {
 		var topic = this.node.getAttribute('data-topic');
 
 		this.topic = topic;
-		this.picker_mode = (type === 'HSL') ? 'HSL' : 'HSV';
+		this.picker_mode = (type === 'HSL') ? 'HSL' : 'HWB';
 		this.color.setFormat(this.picker_mode);
 
 		this.createPickingArea();
@@ -539,10 +539,10 @@ var UIColorPicker = (function UIColorPicker() {
 		var button = document.createElement('div');
 		button.className = 'switch_mode';
 		button.addEventListener('click', function() {
-			if (this.picker_mode === 'HSV')
+			if (this.picker_mode === 'HWB')
 				this.setPickerMode('HSL');
 			else
-				this.setPickerMode('HSV');
+				this.setPickerMode('HWB');
 
 		}.bind(this));
 
@@ -569,8 +569,8 @@ var UIColorPicker = (function UIColorPicker() {
 		var value = 100 - (y * 100 / size) | 0;
 		var saturation = x * 100 / size | 0;
 
-		if (this.picker_mode === 'HSV')
-			this.color.setHSV(this.color.hue, saturation, value);
+		if (this.picker_mode === 'HWB')
+			this.color.setHWB(this.color.hue, saturation, value);
 		if (this.picker_mode === 'HSL')
 			this.color.setHSL(this.color.hue, saturation, value);
 
@@ -662,7 +662,7 @@ var UIColorPicker = (function UIColorPicker() {
 		var value = 0;
 		var offset = 5;
 
-		if (this.picker_mode === 'HSV')
+		if (this.picker_mode === 'HWB')
 			value = this.color.value;
 		if (this.picker_mode === 'HSL')
 			value = this.color.lightness;
@@ -698,7 +698,7 @@ var UIColorPicker = (function UIColorPicker() {
 
 	ColorPicker.prototype.updatePickerBackground = function updatePickerBackground() {
 		var nc = new Color(this.color);
-		nc.setHSV(nc.hue, 100, 100);
+		nc.setHWB(nc.hue, 100, 100);
 		this.picking_area.style.backgroundColor = nc.getHexa();
 	};
 
@@ -830,7 +830,7 @@ var UIColorPicker = (function UIColorPicker() {
 	};
 
 	ColorPicker.prototype.setPickerMode = function setPickerMode(mode) {
-		if (mode !== 'HSV' && mode !== 'HSL')
+		if (mode !== 'HWB' && mode !== 'HSL')
 			return;
 
 		this.picker_mode = mode;
@@ -890,8 +890,8 @@ var UIColorPicker = (function UIColorPicker() {
 		Color : Color,
 		RGBColor : RGBColor,
 		RGBAColor : RGBAColor,
-		HSVColor : HSVColor,
-		HSVAColor : HSVAColor,
+		HWBColor : HWBColor,
+		HWBAColor : HWBAColor,
 		HSLColor : HSLColor,
 		HSLAColor : HSLAColor,
 		setColor : setColor,
@@ -1541,14 +1541,9 @@ var ColorPickerTool = (function ColorPickerTool() {
 		var HSLA;
 
 		var updateInfo = function updateInfo(color) {
-			if (color.a | 0 === 1) {
-				RGBA.info.textContent = 'RGB';
-				HSLA.info.textContent = 'HSL';
-			}
-			else {
-				RGBA.info.textContent = 'RGBA';
-				HSLA.info.textContent = 'HSLA';
-			}
+      RGBA.info.textContent = 'RGB';
+      HSLA.info.textContent = 'HSL';
+      HEXA.info.textContent = 'HEX';
 
 			RGBA.value.value = color.getRGBA();
 			HSLA.value.value = color.getHSLA();
@@ -2028,16 +2023,16 @@ var ColorPickerTool = (function ColorPickerTool() {
 			var parent = getElemById('controls');
 			var icon = document.createElement('div');
 			var button = document.createElement('div');
-			var hsv = document.createElement('div');
+			var HWB = document.createElement('div');
 			var hsl = document.createElement('div');
 			var active = null;
 
 			icon.className = 'icon picker-icon';
 			button.className = 'switch';
-			button.appendChild(hsv);
+			button.appendChild(HWB);
 			button.appendChild(hsl);
 
-			hsv.textContent = 'HSV';
+			HWB.textContent = 'HWB';
 			hsl.textContent = 'HSL';
 
 			active = hsl;
@@ -2052,14 +2047,14 @@ var ColorPickerTool = (function ColorPickerTool() {
 
 			var picker_sw = new StateButton(icon);
 			picker_sw.subscribe(function() {
-				if (active === hsv)
+				if (active === HWB)
 					switchPickingModeTo(hsl);
 				else
-					switchPickingModeTo(hsv);
+					switchPickingModeTo(HWB);
 			});
 
-			hsv.addEventListener('click', function() {
-				switchPickingModeTo(hsv);
+			HWB.addEventListener('click', function() {
+				switchPickingModeTo(HWB);
 			});
 			hsl.addEventListener('click', function() {
 				switchPickingModeTo(hsl);
