@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
@@ -7,7 +7,10 @@
 
     <style>
       body {
-        font: 1.2em Helvetica, Arial, sans-serif;
+        font:
+          1.2em Helvetica,
+          Arial,
+          sans-serif;
         margin: 20px;
         padding: 0;
       }
@@ -76,9 +79,14 @@
   <body>
     <section>
       <div class="float"></div>
-      <p class="following">This text is following the float, the line boxes are shortened to make room for the float but the box of the element still takes position in normal flow.</p>
+      <p class="following">
+        This text is following the float, the line boxes are shortened to make
+        room for the float but the box of the element still takes position in
+        normal flow.
+      </p>
     </section>
-    <textarea class="playable-css">.float {
+    <textarea class="playable-css">
+.float {
   float: left;
   width: 200px;
   height: 200px;
@@ -88,10 +96,13 @@
 
 .following {
   background-color: #ccc;
-}</textarea>
+}</textarea
+    >
 
-    <textarea id="code" class="playable-html"><div class="float"></div>
-      <p class="following">This text is following the float, the line boxes are shortened to make room for the float but the box of the element still takes position in normal flow.</p></textarea>
+    <textarea id="code" class="playable-html">
+<div class="float"></div>
+<p class="following">This text is following the float, the line boxes are shortened to make room for the float but the box of the element still takes position in normal flow.</p></textarea
+    >
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />
     </div>
@@ -110,7 +121,7 @@
       section.innerHTML = textareaHTML.value;
     }
 
-    reset.addEventListener("click", function() {
+    reset.addEventListener("click", function () {
       textareaHTML.value = htmlCode;
       textareaCSS.value = cssCode;
       fillCode();

@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Float interference</title>
     <style>
-    img {
-      float: left;
-      border: 3px solid black;
-    }
+      img {
+        float: left;
+        border: 3px solid black;
+      }
 
-    article {
-      border: 1px solid black;
-      contain: content;
-    }
+      article {
+        border: 1px solid black;
+        contain: content;
+      }
     </style>
   </head>
   <body>
@@ -21,11 +21,11 @@
     <article>
       <h2>Heading of a nice article</h2>
       <p>Content here.</p>
-      <img src="placeholder-2.jpg" alt="I just showed up">
+      <img src="placeholder-2.jpg" alt="I just showed up" />
     </article>
     <article>
       <h2>Another heading of another article</h2>
-      <img src="placeholder-1.jpg" alt="placeholder">
+      <img src="placeholder-1.jpg" alt="placeholder" />
       <p>More content here.</p>
     </article>
   </body>

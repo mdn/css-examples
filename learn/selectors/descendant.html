@@ -1,43 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Selectors: Descendant combinator</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-    .box p {
+      .box p {
         color: red;
-    }
-        
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-    <div class="box"><p>Text in .box</p></div>
-    <p>Text not in .box</p>
+      <div class="box"><p>Text in .box</p></div>
+      <p>Text not in .box</p>
     </section>
 
-    <textarea class="playable playable-css" style="height: 100px;">
+    <textarea class="playable playable-css" style="height: 100px">
 .box p {
-    color: red;
-}  
-    </textarea>
+  color: red;
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 60px;">
+    <textarea class="playable playable-html" style="height: 60px">
 <div class="box"><p>Text in .box</p></div>
-<p>Text not in .box</p>
-    </textarea>
+<p>Text not in .box</p></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

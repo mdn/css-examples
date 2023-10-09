@@ -1,41 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Selectors: ::before</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-    .box::before {
+      .box::before {
         content: "This should show before the other content. ";
-    }
-        
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-    <p class="box">Content in the box in my HTML page.</p>
+      <p class="box">Content in the box in my HTML page.</p>
     </section>
 
-    <textarea class="playable playable-css" style="height: 80px;">
+    <textarea class="playable playable-css" style="height: 80px">
 .box::before {
-    content: "This should show before the other content. ";
-}   
-    </textarea>
+  content: "This should show before the other content. ";
+}</textarea
+    >
 
-    <textarea class="playable playable-html" style="height: 60px;">
-<p class="box">Content in the box in my HTML page.</p>
-    </textarea>
+    <textarea class="playable playable-html" style="height: 60px">
+<p class="box">Content in the box in my HTML page.</p></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

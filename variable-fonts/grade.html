@@ -1,214 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Variable Font example - grade</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Variable Font example - grade</title>
 
-  <style>
-    @font-face {
-      font-family: 'Amstelvar VF';
-      src: url('fonts/AmstelvarAlpha-VF.woff2') format('woff2-variations');
-      font-weight: 100 900;
-      font-stretch: 75% 100%;
-      font-style: normal;
-      font-display: swap;
-    }
+    <style>
+      @font-face {
+        font-family: "Amstelvar VF";
+        src: url("fonts/AmstelvarAlpha-VF.woff2") format("woff2-variations");
+        font-weight: 100 900;
+        font-stretch: 75% 100%;
+        font-style: normal;
+        font-display: swap;
+      }
 
-    html {
-      box-sizing: border-box;
-      font-size: 100%;
-    }
-    
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
+      html {
+        box-sizing: border-box;
+        font-size: 100%;
+      }
 
-    body {
-      font: 1.2em "Amstelvar VF", Georgia, serif;
-      margin: 20px;
-      padding: 0;
-    }
-    
-    .wrapper {
-      width: 100%;
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font:
+          1.2em "Amstelvar VF",
+          Georgia,
+          serif;
+        margin: 20px;
+        padding: 0;
+      }
+
+      .wrapper {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 1rem;
-    }
-
-    @media screen and (min-width: 42rem) {
-      .wrapper {
-        grid-template-columns: 1fr 1fr;
       }
-    }
 
-    textarea {
-      font-family: monospace;
-      display: block;
-      margin-bottom: 10px;
-      height: 160px;
-      background-color: #F4F7F8;
-      border: none;
-      border-left: 6px solid #558ABB;
-      color: #4D4E53;
-      padding: 1rem 0;
-      width: 100%;
-    }
+      @media screen and (min-width: 42rem) {
+        .wrapper {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
 
-    textarea:nth-of-type(1) {
-      height: 130px;
-    }
+      textarea {
+        font-family: monospace;
+        display: block;
+        margin-bottom: 10px;
+        height: 160px;
+        background-color: #f4f7f8;
+        border: none;
+        border-left: 6px solid #558abb;
+        color: #4d4e53;
+        padding: 1rem 0;
+        width: 100%;
+      }
 
-    textarea:nth-of-type(2) {
-      height: 100px;
-    }
+      textarea:nth-of-type(1) {
+        height: 130px;
+      }
 
-    .playable-buttons {
-      text-align: right;
-      width: 100%;
-      padding: 0.5rem 0;
-      font-size: 100%;
-    }
+      textarea:nth-of-type(2) {
+        height: 100px;
+      }
 
-    .section {
-      width: 100%;
-      border: 1px solid #4D4E53;
-      border-radius: 2px;
-      padding: 10px 14px 10px 10px;
-      margin-bottom: 10px;
-    }
+      .playable-buttons {
+        text-align: right;
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 100%;
+      }
 
-    .section input {
-      display: block;
-      margin: 5px;
-    }
+      .section {
+        width: 100%;
+        border: 1px solid #4d4e53;
+        border-radius: 2px;
+        padding: 10px 14px 10px 10px;
+        margin-bottom: 10px;
+      }
 
-    .container * {
-      margin: 1.5rem 0;
-    }
+      .section input {
+        display: block;
+        margin: 5px;
+      }
 
-    .demo2 {
-      --text-axis: 88;
-    }
-  </style>
-  <style class="editable1">
-    /* grade range is 88 to 150 */
-    .container1 * {
-      font-size: 64px;
-      font-variation-settings: 'GRAD' 88;
-    }
-  </style>
-  <style class="editable2">
-    /* Adjust with slider & custom property */
-    .container2 * {
-      font-size: 64px;
-      font-variation-settings: 'GRAD' var(--text-axis);
-    }
-  </style>
-</head>
+      .container * {
+        margin: 1.5rem 0;
+      }
 
-<body>
-  <div class="wrapper">
-    <div class="demo1">
-      <section class="section section1">
-        <div class="container container1">
+      .demo2 {
+        --text-axis: 88;
+      }
+    </style>
+    <style class="editable1">
+      /* grade range is 88 to 150 */
+      .container1 * {
+        font-size: 64px;
+        font-variation-settings: "GRAD" 88;
+      }
+    </style>
+    <style class="editable2">
+      /* Adjust with slider & custom property */
+      .container2 * {
+        font-size: 64px;
+        font-variation-settings: "GRAD" var(--text-axis);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="demo1">
+        <section class="section section1">
+          <div class="container container1">
             <p>Grade</p>
-        </div>
-      </section>
-<textarea class="playable-css1">
-  /* grade (GRAD) range is 88 (default) up to 150 */
-  .container1 * {
-    font-size: 64px;
-    font-variation-settings: 'GRAD' 88;
-  }
-</textarea>
-<textarea id="code1" class="playable-html1">
-  <div class="container container1">
-    <p>Grade</p>
-  </div>
-      </textarea>
-    </div>
-    <div class="demo2">
-      <section class="section section2">
-        <div class="container container2">
+          </div>
+        </section>
+        <textarea class="playable-css1">
+/* grade (GRAD) range is 88 (default) up to 150 */
+.container1 * {
+  font-size: 64px;
+  font-variation-settings: 'GRAD' 88;
+}</textarea
+        >
+        <textarea id="code1" class="playable-html1">
+<div class="container container1">
+  <p>Grade</p>
+</div></textarea
+        >
+      </div>
+      <div class="demo2">
+        <section class="section section2">
+          <div class="container container2">
             <p>Grade</p>
+          </div>
+        </section>
+        <textarea class="playable-css2">
+/* Adjust with slider & custom property */
+.container2 * {
+  font-size: 64px;
+  font-variation-settings: 'GRAD' var(--text-axis);
+}</textarea
+        >
+        <textarea id="code2" class="playable-html2">
+<div class="container container2">
+  <p>Grade</p>
+</div></textarea
+        >
+        <div class="controls range-slider">
+          <label for="controls__slider">Adjust Grade: </label
+          ><input
+            type="range"
+            name="range-slider"
+            value="88"
+            id="text-axis"
+            class="controls--slider"
+            min="88"
+            max="150"
+          />
         </div>
-      </section>
-<textarea class="playable-css2">
-  /* Adjust with slider & custom property */
-  .container2 * {
-    font-size: 64px;
-    font-variation-settings: 'GRAD' var(--text-axis);
-  }
-</textarea>
-<textarea id="code2" class="playable-html2">
-  <div class="container container2">
-    <p>Grade</p>
-  </div>
-</textarea>
-      <div class="controls range-slider">
-        <label for="controls__slider">Adjust Grade: </label><input type="range" name="range-slider" value="88" id="text-axis" class="controls--slider" min="88" max="150"> 
       </div>
     </div>
-  </div>
-  <div class="playable-buttons">
-    <input id="reset" type="button" value="Reset">
-  </div>
-</body>
-<script>
-  var section1 = document.querySelector('.section1');
-  var editable1 = document.querySelector('.editable1');
-  var textareaHTML1 = document.querySelector('.playable-html1');
-  var textareaCSS1 = document.querySelector('.playable-css1');
-  var section2 = document.querySelector('.section2');
-  var editable2 = document.querySelector('.editable2');
-  var textareaHTML2 = document.querySelector('.playable-html2');
-  var textareaCSS2 = document.querySelector('.playable-css2');
-  var rangeinput = document.querySelector('.controls--slider');
-  var reset = document.getElementById('reset');
-  var htmlCode1 = textareaHTML1.value;
-  var cssCode1 = textareaCSS1.value;
-  var htmlCode2 = textareaHTML2.value;
-  var cssCode2 = textareaCSS2.value;
-  var rangeValue = rangeinput.value;
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script>
+    var section1 = document.querySelector(".section1");
+    var editable1 = document.querySelector(".editable1");
+    var textareaHTML1 = document.querySelector(".playable-html1");
+    var textareaCSS1 = document.querySelector(".playable-css1");
+    var section2 = document.querySelector(".section2");
+    var editable2 = document.querySelector(".editable2");
+    var textareaHTML2 = document.querySelector(".playable-html2");
+    var textareaCSS2 = document.querySelector(".playable-css2");
+    var rangeinput = document.querySelector(".controls--slider");
+    var reset = document.getElementById("reset");
+    var htmlCode1 = textareaHTML1.value;
+    var cssCode1 = textareaCSS1.value;
+    var htmlCode2 = textareaHTML2.value;
+    var cssCode2 = textareaCSS2.value;
+    var rangeValue = rangeinput.value;
 
-  function fillCode() {
-    editable1.innerHTML = textareaCSS1.value;
-    section1.innerHTML = textareaHTML1.value;
-    editable2.innerHTML = textareaCSS2.value;
-    section2.innerHTML = textareaHTML2.value;
-    rangeinput.value = 88;
-    document.querySelector('.demo2').style.setProperty('--text-axis', 88);
-  }
+    function fillCode() {
+      editable1.innerHTML = textareaCSS1.value;
+      section1.innerHTML = textareaHTML1.value;
+      editable2.innerHTML = textareaCSS2.value;
+      section2.innerHTML = textareaHTML2.value;
+      rangeinput.value = 88;
+      document.querySelector(".demo2").style.setProperty("--text-axis", 88);
+    }
 
-  reset.addEventListener('click', function () {
-    textareaHTML1.value = htmlCode1;
-    textareaCSS1.value = cssCode1;
-    textareaHTML2.value = htmlCode2;
-    textareaCSS2.value = cssCode2;
-    fillCode();
-  });
+    reset.addEventListener("click", function () {
+      textareaHTML1.value = htmlCode1;
+      textareaCSS1.value = cssCode1;
+      textareaHTML2.value = htmlCode2;
+      textareaCSS2.value = cssCode2;
+      fillCode();
+    });
 
-  textareaHTML1.addEventListener('input', fillCode);
-  textareaCSS1.addEventListener('input', fillCode);
-  textareaHTML2.addEventListener('input', fillCode);
-  textareaCSS2.addEventListener('input', fillCode);
-  window.addEventListener('load', fillCode);
+    textareaHTML1.addEventListener("input", fillCode);
+    textareaCSS1.addEventListener("input", fillCode);
+    textareaHTML2.addEventListener("input", fillCode);
+    textareaCSS2.addEventListener("input", fillCode);
+    window.addEventListener("load", fillCode);
 
-  // get the inputs
-  const inputs = [].slice.call(document.querySelectorAll('.demo2 .controls input'));
+    // get the inputs
+    const inputs = [].slice.call(
+      document.querySelectorAll(".demo2 .controls input"),
+    );
 
-  // listen for changes
-  inputs.forEach(input => input.addEventListener('change', handleUpdate));
-  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    // listen for changes
+    inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+    inputs.forEach((input) =>
+      input.addEventListener("mousemove", handleUpdate),
+    );
 
-  function handleUpdate(e) {
-    document.querySelector('.demo2').style.setProperty(`--${this.id}`, this.value);
-  }
-
-</script>
-
+    function handleUpdate(e) {
+      document
+        .querySelector(".demo2")
+        .style.setProperty(`--${this.id}`, this.value);
+    }
+  </script>
 </html>

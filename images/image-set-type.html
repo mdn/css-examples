@@ -1,37 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>image-set() type()</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        .box {
-            width: 400px;
-            height: 200px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+      .box {
+        width: 400px;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     </style>
 
     <style class="editable">
-       .box {
-          background-image: -webkit-image-set(
-            url("large-balloons.avif"),
-            url("large-balloons.jpg"));
-          background-image: image-set(
-            url("large-balloons.avif") type("image/avif"),
-            url("large-balloons.jpg") type("image/jpeg"));
-        }
+      .box {
+        background-image: -webkit-image-set(
+          url("large-balloons.avif"),
+          url("large-balloons.jpg")
+        );
+        background-image: image-set(
+          url("large-balloons.avif") type("image/avif"),
+          url("large-balloons.jpg") type("image/jpeg")
+        );
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="box"></div>
+      <div class="box"></div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 155px;">
+    <textarea class="playable playable-css" style="height: 155px">
 .box {
   background-image: -webkit-image-set(
     url("large-balloons.avif"),
@@ -39,17 +41,15 @@
   background-image: image-set(
     url("large-balloons.avif") type("image/avif"),
     url("large-balloons.jpg") type("image/jpeg"));
-}
-    </textarea>
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 70px;">
-<div class="box"></div>
-    </textarea>
+    <textarea class="playable playable-html" style="height: 70px">
+<div class="box"></div></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

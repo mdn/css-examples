@@ -16,7 +16,7 @@ One possible solution is as follows:
 }
 ```
 
-There are two things you need to do in this task. First, you need to write a selector for the `a` element which is more specific than the selector used to turn the background blue. I have achieved this by using the `id` selector which has very high specificity. 
+There are two things you need to do in this task. First, you need to write a selector for the `a` element which is more specific than the selector used to turn the background blue. I have achieved this by using the `id` selector which has very high specificity.
 
 Then you need to remember that there are special keyword values for all properties. In this case I am using `initial` to set the background back to be the same as the default style of your browser, which is white.
 
@@ -40,7 +40,7 @@ There are two things we want to match here, the href value "/contact" and also "
 
 ```
 a[href*="contact"] {
-  border-color: orange;  
+  border-color: orange;
 }
 ```
 
@@ -49,7 +49,7 @@ Target the `<a>` element with an href value starting with https and give it a gr
 Here we can look for an href value which starts with "https" and so use `^=`, this will only select the first link.
 
 ```
-a[href^="https"] { 
+a[href^="https"] {
   border-color: green;
 }
 ```

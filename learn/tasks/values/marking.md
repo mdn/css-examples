@@ -43,7 +43,7 @@ p {
 
 h1+p {
  font-size: 120%;
-}   
+}
 ```
 
 ## Task 3 position

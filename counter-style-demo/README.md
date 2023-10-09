@@ -1,5 +1,4 @@
-CSS @counter-style Demo
-=======================
+# CSS @counter-style Demo
 
 Demo for the [@counter-style documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style) on Mozilla Developer Network.
 
