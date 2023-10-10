@@ -1,58 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Generated content</title>
     <style>
-body {
-  background-image: linear-gradient(#3a67ab, #e8f6ff 100%); height: 100vh; 
-  width: 100vw;
-}
+      body {
+        background-image: linear-gradient(#3a67ab, #e8f6ff 100%);
+        height: 100vh;
+        width: 100vw;
+      }
 
-div {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 400px;
-  height: 400px;
-  background-image: 
-    linear-gradient(115deg, transparent 48%, brown, #996600, brown, transparent 52%), 
-    linear-gradient(60deg, transparent 48%, brown, #996600, brown, transparent 52%), 
-    radial-gradient(circle 10px at 50% 50%, #333333 30%, #999999 50%, transparent 50%), 
-    radial-gradient(circle 10px at 50% 50%, #333333 30%, #999999 50%, transparent 50%), 
-    radial-gradient(circle at 50% 50%, white 30%, #eeeeee 50%, transparent 50%), 
-    radial-gradient(circle at 50% 50%, white 30%, #eeeeee 50%, transparent 50%), 
-    radial-gradient(circle at 50% 50%, white 30%, #eeeeee 50%, transparent 50%);
-  background-repeat: no-repeat;
-  background-size: 
-    100px 100px, 100px 100px, 
-    15px 15px, 15px 15px, 
-    200px 200px, 300px 300px, 400px 400px;
-  background-position: 
-    95% 120px, 5% 120px,
-    46% 80px, 54% 80px, 
-    50% 0, 50% 90px, 50% 220px;
-}
+      div {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 400px;
+        height: 400px;
+        background-image: linear-gradient(
+            115deg,
+            transparent 48%,
+            brown,
+            #996600,
+            brown,
+            transparent 52%
+          ),
+          linear-gradient(
+            60deg,
+            transparent 48%,
+            brown,
+            #996600,
+            brown,
+            transparent 52%
+          ),
+          radial-gradient(
+            circle 10px at 50% 50%,
+            #333333 30%,
+            #999999 50%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle 10px at 50% 50%,
+            #333333 30%,
+            #999999 50%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            white 30%,
+            #eeeeee 50%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            white 30%,
+            #eeeeee 50%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            white 30%,
+            #eeeeee 50%,
+            transparent 50%
+          );
+        background-repeat: no-repeat;
+        background-size:
+          100px 100px,
+          100px 100px,
+          15px 15px,
+          15px 15px,
+          200px 200px,
+          300px 300px,
+          400px 400px;
+        background-position:
+          95% 120px,
+          5% 120px,
+          46% 80px,
+          54% 80px,
+          50% 0,
+          50% 90px,
+          50% 220px;
+      }
 
-div::after {
-  content: "";
-  border: transparent solid 4px;
-  border-left: orange 30px solid;
-  height: 1px;
-  width: 1px;
-  position: absolute;
-  left: 50%;
-  top: 100px;
-}
+      div::after {
+        content: "";
+        border: transparent solid 4px;
+        border-left: orange 30px solid;
+        height: 1px;
+        width: 1px;
+        position: absolute;
+        left: 50%;
+        top: 100px;
+      }
 
-div::before {
-  content: "Only one <div>";
-  font-size: min(6vh, 2rem);
-  justify-content: center;
-  display: flex;
-  font-family: comic-sans, papyrus, sans-serif;
-}
+      div::before {
+        content: "Only one <div>";
+        font-size: min(6vh, 2rem);
+        justify-content: center;
+        display: flex;
+        font-family: comic-sans, papyrus, sans-serif;
+      }
     </style>
   </head>
   <body>

@@ -1,55 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>CSS Solutions: How to highlight a paragraph right after an h1</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <style></style>
 
     <style class="editable">
-        .wrapper h1+p {
-          font-weight: bold;
-          font-size: 130%;
-          color: rebeccapurple;
-        }
+      .wrapper h1 + p {
+        font-weight: bold;
+        font-size: 130%;
+        color: rebeccapurple;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="wrapper">
-          <h1>A heading</h1>
-          <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+      <div class="wrapper">
+        <h1>A heading</h1>
+        <p>
+          Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+          onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+        </p>
 
-          <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-        </div>
+        <p>
+          Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+          courgette tatsoi pea sprouts fava bean collard greens dandelion okra
+          wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+        </p>
+      </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 120px;">
+    <textarea class="playable playable-css" style="height: 120px">
 .wrapper h1+p {
   font-weight: bold;
   font-size: 130%;
   color: rebeccapurple;
-}
-    </textarea>
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 200px;">
+    <textarea class="playable playable-html" style="height: 200px">
 <div class="wrapper">
   <h1>A heading</h1>
   <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-  
+
   <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-</div>            
-    </textarea>
+</div></textarea
+    >
 
     <!-- leave everything below here alone -->
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

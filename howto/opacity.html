@@ -1,77 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>CSS Solutions: How to make a background color semi-transparent</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>
+      CSS Solutions: How to make a background color semi-transparent
+    </title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        .wrapper {
-            height: 200px;
-            display: flex;
-            gap: 20px;
-            background-image: url('balloon.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding: 20px;
-        }
+      .wrapper {
+        height: 200px;
+        display: flex;
+        gap: 20px;
+        background-image: url("balloon.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
+      }
 
-        .box {
-            flex: 1;
-            border: 5px solid #000;
-            border-radius: .5em;
-            font-size: 140%;
-            padding: 20px;
-        }
+      .box {
+        flex: 1;
+        border: 5px solid #000;
+        border-radius: 0.5em;
+        font-size: 140%;
+        padding: 20px;
+      }
     </style>
 
     <style class="editable">
-        .box1 {
-            background-color: #000;
-            color: #fff;
-            opacity: .5;
-        }
+      .box1 {
+        background-color: #000;
+        color: #fff;
+        opacity: 0.5;
+      }
 
-        .box2 {
-            background-color: rgba(0,0,0,.5);
-            color: #fff;
-        }
+      .box2 {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="wrapper">
-          <div class="box box1">This box uses opacity</div>
-          <div class="box box2">This box has a background color with an alpha channel</div>
+      <div class="wrapper">
+        <div class="box box1">This box uses opacity</div>
+        <div class="box box2">
+          This box has a background color with an alpha channel
         </div>
+      </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 200px;">
+    <textarea class="playable playable-css" style="height: 200px">
 .box1 {
-    background-color: #000;
-    color: #fff;
-    opacity: .5;
+  background-color: #000;
+  color: #fff;
+  opacity: .5;
 }
 
 .box2 {
-    background-color: rgba(0,0,0,.5);
-    color: #fff;
-}
-    </textarea>
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 100px;">
+    <textarea class="playable playable-html" style="height: 100px">
 <div class="wrapper">
-    <div class="box box1">This box uses opacity</div>
-    <div class="box box2">This box has a background color with an alpha channel</div>
-</div>            
-    </textarea>
+  <div class="box box1">This box uses opacity</div>
+  <div class="box box2">This box has a background color with an alpha channel</div>
+</div></textarea
+    >
 
     <!-- leave everything below here alone -->
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

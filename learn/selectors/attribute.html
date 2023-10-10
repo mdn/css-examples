@@ -1,70 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Selectors: attribute presence and value selectors</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-    li[class] {
+      li[class] {
         font-size: 200%;
-    }
+      }
 
-    li[class="a"] {
+      li[class="a"] {
         background-color: yellow;
-    }
+      }
 
-    li[class~="a"] {
+      li[class~="a"] {
         color: red;
-    }
-        
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <h1>Attribute presence and value selectors</h1>
-        <ul>
-            <li>Item 1</li>
-            <li class="a">Item 2</li>
-            <li class="a b">Item 3</li>
-            <li class="ab">Item 4</li>
-        </ul>
-        
+      <h1>Attribute presence and value selectors</h1>
+      <ul>
+        <li>Item 1</li>
+        <li class="a">Item 2</li>
+        <li class="a b">Item 3</li>
+        <li class="ab">Item 4</li>
+      </ul>
     </section>
 
-    <textarea class="playable playable-css" style="height: 200px;">
+    <textarea class="playable playable-css" style="height: 200px">
 li[class] {
-    font-size: 200%;
+  font-size: 200%;
 }
 
 li[class="a"] {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 li[class~="a"] {
-    color: red;
-}
-    </textarea>
+  color: red;
+}</textarea
+    >
 
-    <textarea class="playable playable-html" style="height: 160px;">
+    <textarea class="playable playable-html" style="height: 160px">
 <h1>Attribute presence and value selectors</h1>
 <ul>
-    <li>Item 1</li>
+  <li>Item 1</li>
     <li class="a">Item 2</li>
     <li class="a b">Item 3</li>
     <li class="ab">Item 4</li>
-</ul>
-    </textarea>
+</ul></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

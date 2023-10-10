@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
@@ -7,7 +7,10 @@
 
     <style>
       body {
-        font: 1.2em Helvetica, Arial, sans-serif;
+        font:
+          1.2em Helvetica,
+          Arial,
+          sans-serif;
         margin: 20px;
         padding: 0;
       }
@@ -72,25 +75,29 @@
   <body>
     <section>
       <div class="flex">
-        I am wrapped in an anonymous box 
+        I am wrapped in an anonymous box
         <p>I am in the paragraph</p>
         I am wrapped in an anonymous box.
       </div>
     </section>
-    <textarea class="playable-css">.flex {
+    <textarea class="playable-css">
+.flex {
   display: flex;
 }
 
 .flex > * {
   background-color: rebeccapurple;
   color: white;
-}</textarea>
+}</textarea
+    >
 
-    <textarea id="code" class="playable-html"><div class="flex">
-I am wrapped in an anonymous box 
+    <textarea id="code" class="playable-html">
+<div class="flex">
+I am wrapped in an anonymous box
 <p>I am in the paragraph</p>
 I am wrapped in an anonymous box.
-</div></textarea>
+</div></textarea
+    >
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />
     </div>
@@ -109,7 +116,7 @@ I am wrapped in an anonymous box.
       section.innerHTML = textareaHTML.value;
     }
 
-    reset.addEventListener("click", function() {
+    reset.addEventListener("click", function () {
       textareaHTML.value = htmlCode;
       textareaCSS.value = cssCode;
       fillCode();

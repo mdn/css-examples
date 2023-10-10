@@ -15,7 +15,7 @@ This task covers understanding of `position: relative` and `position: absolute` 
   position: absolute;
   top: 0;
   right: 0;
-} 
+}
 ```
 
 A likely issue will be that the student adds `position: absolute` to the child but does not apply `position: relative` to the container. In that case the target will end up being positioned according to the viewport.

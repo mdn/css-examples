@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
@@ -171,7 +171,7 @@
             /* do function */
             changeCSS();
           },
-          false
+          false,
         );
       }
       document.querySelector("button").addEventListener(
@@ -181,7 +181,7 @@
             changeCSS();
           }, 50);
         },
-        false
+        false,
       );
 
       function changeCSS() {
@@ -227,9 +227,7 @@
       }
       function hueRotate() {
         let hueRotateValue = document.getElementsByName("hueRotate")[0].value;
-        return hueRotateValue == 0
-          ? ""
-          : `hue-rotate(${hueRotateValue}turn) `;
+        return hueRotateValue == 0 ? "" : `hue-rotate(${hueRotateValue}turn) `;
       }
       function invert() {
         let invertValue = document.getElementsByName("invert")[0].value;

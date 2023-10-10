@@ -14,7 +14,8 @@ html {
 
 /* Styling of contacts */
 
-header, footer {
+header,
+footer {
   background-color: #a60000;
   color: white;
   text-align: center;
@@ -23,7 +24,8 @@ header, footer {
   text-shadow: 2px 2px 1px black;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -89,7 +91,8 @@ body > header {
   display: flex;
 }
 
-form input, form button {
+form input,
+form button {
   display: block;
 }
 

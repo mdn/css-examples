@@ -26,7 +26,7 @@ span {
 This tests that the student understands he different between these and also how to target multiple classes on an item.
 
 ```
-#special { 
+#special {
   background-color: yellow;
 }
 
@@ -105,11 +105,11 @@ a[title] {
 
 Target the <a> element with an href attribute which contains the word contact anywhere in its value and make the border orange (border-color: orange).
 
-There are two things we want to match here, the href value "/contact" and also "../contact". So we need to match the string "contact" anywhere in the value using *=. This will select the third and fourth links.
+There are two things we want to match here, the href value "/contact" and also "../contact". So we need to match the string "contact" anywhere in the value using \*=. This will select the third and fourth links.
 
 ```
 a[href*="contact"] {
-  border-color: orange;  
+  border-color: orange;
 }
 ```
 
@@ -118,8 +118,7 @@ Target the <a> element with an href value starting with https and give it a gree
 Here we can look for an href value which starts with "https" and so use ^=, this will only select the first link.
 
 ```
-a[href^="https"] { 
+a[href^="https"] {
   border-color: green;
 }
 ```
-

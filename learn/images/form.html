@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -16,7 +16,6 @@
       .buttons {
         justify-content: center;
       }
-      
     </style>
 
     <style class="editable">
@@ -36,7 +35,8 @@
         color: #fff;
       }
 
-      input[type="submit"]:hover, input[type="submit"]:focus {
+      input[type="submit"]:hover,
+      input[type="submit"]:focus {
         background-color: #333;
       }
     </style>
@@ -45,16 +45,18 @@
   <body>
     <section class="preview">
       <form>
-        <div><label for="name">Name</label>
-        <input type="text" id="name"></div>
-        <div><label for="email">Email</label>
-        <input type="email" id="email"></div>
+        <div>
+          <label for="name">Name</label> <input type="text" id="name" />
+        </div>
+        <div>
+          <label for="email">Email</label> <input type="email" id="email" />
+        </div>
 
-        <div class="buttons"><input type="submit" value="Submit"></div>
+        <div class="buttons"><input type="submit" value="Submit" /></div>
       </form>
     </section>
 
-    <textarea class="playable playable-css" style="height: 420px;">
+    <textarea class="playable playable-css" style="height: 420px">
 input[type="text"],
 input[type="email"] {
   border: 2px solid #000;
@@ -74,11 +76,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover, input[type="submit"]:focus {
   background-color: #333;
-}
+}</textarea
+    >
 
-    </textarea>
-
-    <textarea class="playable playable-html" style="height: 200px;">
+    <textarea class="playable playable-html" style="height: 200px">
 <form>
   <div><label for="name">Name</label>
   <input type="text" id="name"></div>
@@ -86,8 +87,8 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   <input type="email" id="email"></div>
 
   <div class="buttons"><input type="submit" value="Submit"></div>
-</form>
-    </textarea>
+</form></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />

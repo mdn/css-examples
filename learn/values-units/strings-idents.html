@@ -1,37 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Values and Units: strings and idents</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css" />
     <style>
-        * {
-            box-sizing: border-box;
-        }      
+      * {
+        box-sizing: border-box;
+      }
     </style>
 
     <style class="editable">
-        .box {
-            width:400px;
-            padding: 1em;
-            border-radius: .5em;
-            border: 5px solid rebeccapurple;
-            background-color: lightblue;
-       }
+      .box {
+        width: 400px;
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 5px solid rebeccapurple;
+        background-color: lightblue;
+      }
 
-       .box::after {
-           content: "This is a string. It is quoted in the CSS."
-       }
+      .box::after {
+        content: "This is a string. It is quoted in the CSS.";
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="box"></div>
+      <div class="box"></div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 240px;">
+    <textarea class="playable playable-css" style="height: 240px">
 .box {
   width:400px;
   padding: 1em;
@@ -42,17 +42,15 @@
 
 .box::after {
   content: "This is a string. I know because it is quoted in the CSS."
-}
-    </textarea>
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 60px;">
-<div class="box"></div> 
-    </textarea>
+    <textarea class="playable playable-html" style="height: 60px">
+<div class="box"></div></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

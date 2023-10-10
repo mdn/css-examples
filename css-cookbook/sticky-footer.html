@@ -1,89 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
     <title>CSS Cookbook: sticky footer</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 
     <style>
-        html {
-            height:100%;
-            box-sizing: border-box;
-        }
+      html {
+        height: 100%;
+        box-sizing: border-box;
+      }
 
-        * {
-            box-sizing: inherit;
-        }
+      * {
+        box-sizing: inherit;
+      }
 
-        body {
-            height: 100%;
-        }
+      body {
+        height: 100%;
+      }
 
-        .page-header,
-        .page-footer {
-            background-color: rgb(75, 70, 74);
-            color: #fff;
-            padding: 20px;
-        }
+      .page-header,
+      .page-footer {
+        background-color: rgb(75, 70, 74);
+        color: #fff;
+        padding: 20px;
+      }
 
-        .page-body {
-            padding: 20px;
-        }
+      .page-body {
+        padding: 20px;
+      }
 
-        .preview {
-            height: 100%;
-            overflow: auto;
-        }
+      .preview {
+        height: 100%;
+        overflow: auto;
+      }
     </style>
 
     <style class="editable">
-        .wrapper {
-            min-height: 100%;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-        }
+      .wrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <section class="preview">
-        <div class="wrapper">
-            <header class="page-header">This is the header</header>
-            <main class="page-body">
-                <p>Main page content here, add more if you want to see the footer push down.</p>
-            </main>
-            <footer class="page-footer">Sticky footer</footer>
-        </div>
+      <div class="wrapper">
+        <header class="page-header">This is the header</header>
+        <main class="page-body">
+          <p>
+            Main page content here, add more if you want to see the footer push
+            down.
+          </p>
+        </main>
+        <footer class="page-footer">Sticky footer</footer>
+      </div>
     </section>
 
     <textarea class="playable playable-css">
 .wrapper {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-</textarea>
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}</textarea
+    >
 
     <textarea class="playable playable-html">
 <div class="wrapper">
-    <header class="page-header">This is the header</header>
-    <article class="page-body">
-        <p>Main page content here, add more if you want to see the footer push down.</p>
-    </article>
-    <footer class="page-footer">Sticky footer</footer>
-</div>
-</textarea>
+  <header class="page-header">This is the header</header>
+  <article class="page-body">
+    <p>Main page content here, add more if you want to see the footer push down.</p>
+  </article>
+  <footer class="page-footer">Sticky footer</footer>
+</div></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

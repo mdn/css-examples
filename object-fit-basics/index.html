@@ -1,70 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Object-fit basics</title>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <h1>Object fit basics</h1>
 
-    <p>This page illustrates different object-fit settings. It is part of the <a href="http://hacks.mozilla.org/2015/01/exploring-object-fit/">Exploring object-fit</a> Mozilla Hacks post.</p>
+    <p>
+      This page illustrates different object-fit settings. It is part of the
+      <a href="http://hacks.mozilla.org/2015/01/exploring-object-fit/"
+        >Exploring object-fit</a
+      >
+      Mozilla Hacks post.
+    </p>
 
     <h2 id="contain">object-fit: contain</h2>
 
-    <p>with <code>object-fit: contain</code>, the image is letterboxed inside the image element, retaining its aspect ratio.</p>
+    <p>
+      with <code>object-fit: contain</code>, the image is letterboxed inside the
+      image element, retaining its aspect ratio.
+    </p>
 
-    <img src="flowers.jpg" class="contain" alt="with object-fit contain, the image is trapped inside the image element, retaining aspect ratio.">
+    <img
+      src="flowers.jpg"
+      class="contain"
+      alt="with object-fit contain, the image is trapped inside the image element, retaining aspect ratio."
+    />
 
     <h2 id="cover">object-fit: cover</h2>
 
-    <p>with <code>object-fit: cover</code>, the image completely covers the image element — it is shown completely along the shortest dimension, and will be cut off in the other direction.</p>
+    <p>
+      with <code>object-fit: cover</code>, the image completely covers the image
+      element — it is shown completely along the shortest dimension, and will be
+      cut off in the other direction.
+    </p>
 
-    <img src="flowers.jpg" class="cover" alt="with object-fit cover, the image completely covers the image element and is cropped along the longest dimension">
+    <img
+      src="flowers.jpg"
+      class="cover"
+      alt="with object-fit cover, the image completely covers the image element and is cropped along the longest dimension"
+    />
 
     <h2 id="fill">object-fit: fill</h2>
 
-    <p><code>Object-fill: fill</code> can override a video’s intrinsic aspect ratio, forcing it to completely fill the <code>&lt;video&gt;</code> element. This is good for correcting videos with broken aspect ratios.</p>
+    <p>
+      <code>Object-fill: fill</code> can override a video’s intrinsic aspect
+      ratio, forcing it to completely fill the
+      <code>&lt;video&gt;</code> element. This is good for correcting videos
+      with broken aspect ratios.
+    </p>
 
-    <video controls="controls" src="windowsill.webm"
-	width="426" height="240" class="fill">
-	  <p>HTML5 video not supported?</p>
+    <video
+      controls="controls"
+      src="windowsill.webm"
+      width="426"
+      height="240"
+      class="fill"
+    >
+      <p>HTML5 video not supported?</p>
     </video>
 
     <p><button>Turn object-fit: fill off</button></p>
 
     <h2 id="none">object-fit: none</h2>
 
-    <p>Combining <code>object-fit</code> and <code>object-position</code> with CSS transitions can lead to some pretty interesting effects for image or video galleries.</p>
+    <p>
+      Combining <code>object-fit</code> and <code>object-position</code> with
+      CSS transitions can lead to some pretty interesting effects for image or
+      video galleries.
+    </p>
 
-    <img src="flowers.jpg" class="none" alt="when hovered over the image element expands to reveal more of the image" tabindex="0">
+    <img
+      src="flowers.jpg"
+      class="none"
+      alt="when hovered over the image element expands to reveal more of the image"
+      tabindex="0"
+    />
 
     <h2 id="position">object-position</h2>
 
-    <p>The three images below have <code>object-fit: cover</code>, and three different <code>object-position</code> values set on them: <code>0 0</code>, <code>bottom</code>, and <code>100px 100px</code> respectively.</p>
+    <p>
+      The three images below have <code>object-fit: cover</code>, and three
+      different <code>object-position</code> values set on them:
+      <code>0 0</code>, <code>bottom</code>, and
+      <code>100px 100px</code> respectively.
+    </p>
 
-    <img src="flowers.jpg" class="objpos pos1" alt="when hovered over the image element expands to reveal more of the image">
+    <img
+      src="flowers.jpg"
+      class="objpos pos1"
+      alt="when hovered over the image element expands to reveal more of the image"
+    />
 
-    <img src="flowers.jpg" class="objpos pos2" alt="when hovered over the image element expands to reveal more of the image">
+    <img
+      src="flowers.jpg"
+      class="objpos pos2"
+      alt="when hovered over the image element expands to reveal more of the image"
+    />
 
-    <img src="flowers.jpg" class="objpos pos3" alt="when hovered over the image element expands to reveal more of the image">
-
-
+    <img
+      src="flowers.jpg"
+      class="objpos pos3"
+      alt="when hovered over the image element expands to reveal more of the image"
+    />
   </body>
   <script>
-    var button = document.querySelector('button');
-    var video = document.querySelector('video');
-    button.onclick = function() {
-    	if(video.className === 'fill') {
-          video.className = '';
-          button.textContent = 'Turn object-fit: fill on';
-    	} else {
-          video.className = 'fill';
-          button.textContent = 'Turn object-fit: fill off';
-    	}
-    }
+    var button = document.querySelector("button");
+    var video = document.querySelector("video");
+    button.onclick = function () {
+      if (video.className === "fill") {
+        video.className = "";
+        button.textContent = "Turn object-fit: fill on";
+      } else {
+        video.className = "fill";
+        button.textContent = "Turn object-fit: fill off";
+      }
+    };
   </script>
 </html>
