@@ -4,11 +4,17 @@
 window.addEventListener("load", doStartup, false);
 
 function doStartup(event) {
-  document.fullscreenElement = document.fullscreenElement || document.mozFullscreenElement
-            || document.msFullscreenElement || document.webkitFullscreenDocument;
-  document.exitFullscreen = document.exitFullscreen || document.mozExitFullscreen
-            || document.msExitFullscreen || document.webkitExitFullscreen;
-  
+  document.fullscreenElement =
+    document.fullscreenElement ||
+    document.mozFullscreenElement ||
+    document.msFullscreenElement ||
+    document.webkitFullscreenDocument;
+  document.exitFullscreen =
+    document.exitFullscreen ||
+    document.mozExitFullscreen ||
+    document.msExitFullscreen ||
+    document.webkitExitFullscreen;
+
   document.addEventListener("keypress", handleKeypress, false);
 }
 
@@ -18,17 +24,24 @@ function handleKeypress(event) {
   }
 }
 
-
 function toggleFullscreen() {
   let elem = document.querySelector("video");
 
-  elem.requestFullscreen = elem.requestFullscreen || elem.mozRequestFullscreen
-          || elem.msRequestFullscreen || elem.webkitRequestFullscreen;
+  elem.requestFullscreen =
+    elem.requestFullscreen ||
+    elem.mozRequestFullscreen ||
+    elem.msRequestFullscreen ||
+    elem.webkitRequestFullscreen;
 
   if (!document.fullscreenElement) {
-    elem.requestFullscreen().then({}).catch(err => {
-      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-    });
+    elem
+      .requestFullscreen()
+      .then({})
+      .catch((err) => {
+        alert(
+          `Error attempting to enable full-screen mode: ${err.message} (${err.name})`,
+        );
+      });
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();

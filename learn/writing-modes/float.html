@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,7 +15,7 @@
 
       .box {
         margin: 10px;
-        padding: .5em;
+        padding: 0.5em;
         border: 1px solid #ccc;
       }
     </style>
@@ -26,12 +26,11 @@
         writing-mode: horizontal-tb;
       }
 
-      img{
+      img {
         float: inline-start;
         margin-inline-end: 10px;
         margin-block-end: 10px;
       }
-
     </style>
   </head>
 
@@ -39,13 +38,16 @@
     <section class="preview">
       <div class="wrapper">
         <div class="box">
-          <img src="big-star.png" alt="star">
-          <p>This box uses logical properties. The star image has been floated inline-start, it also has a margin on the inline-end and block-end.</p>
+          <img src="big-star.png" alt="star" />
+          <p>
+            This box uses logical properties. The star image has been floated
+            inline-start, it also has a margin on the inline-end and block-end.
+          </p>
         </div>
       </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 200px;">
+    <textarea class="playable playable-css" style="height: 200px">
 .box {
   inline-size: 200px;
   writing-mode: horizontal-tb;
@@ -55,17 +57,17 @@ img{
   float: inline-start;
   margin-inline-end: 10px;
   margin-block-end: 10px;
-}
-    </textarea>
+}</textarea
+    >
 
-    <textarea class="playable playable-html" style="height: 230px;">
+    <textarea class="playable playable-html" style="height: 230px">
 <div class="wrapper">
   <div class="box logical">
     <img src="big-star.png" alt="star">
     <p>This box uses logical properties. The star image has been floated inline-start, it also has a margin on the inline-end and block-end.</p>
   </div>
-</div>
-    </textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />

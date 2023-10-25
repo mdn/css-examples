@@ -1,96 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Fallbacks: inline-block items</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Fallbacks: inline-block items</title>
 
-  <style>
-    body {
-      font: 1.2em Helvetica, Arial, sans-serif;
-      margin: 20px;
-      padding: 0;
-    }
+    <style>
+      body {
+        font:
+          1.2em Helvetica,
+          Arial,
+          sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
 
-    textarea {
-      font-family: monospace;
-      display: block;
-      margin-bottom: 10px;
-      background-color: #F4F7F8;
-      border: none;
-      border-left: 6px solid #558ABB;
-      color: #4D4E53;
-      width: 90%;
-      max-width: 700px;
-      padding: 10px 10px 0px;
-      font-size: 90%;
-    }
+      textarea {
+        font-family: monospace;
+        display: block;
+        margin-bottom: 10px;
+        background-color: #f4f7f8;
+        border: none;
+        border-left: 6px solid #558abb;
+        color: #4d4e53;
+        width: 90%;
+        max-width: 700px;
+        padding: 10px 10px 0px;
+        font-size: 90%;
+      }
 
-    textarea:nth-of-type(1) {
-      height: 170px
-    }
+      textarea:nth-of-type(1) {
+        height: 170px;
+      }
 
-    textarea:nth-of-type(2) {
-      height: 110px
-    }
+      textarea:nth-of-type(2) {
+        height: 110px;
+      }
 
-    .playable-buttons {
-      text-align: right;
-      width: 90%;
-      max-width: 700px;
-      padding: 5px 10px 5px 26px;
-      font-size: 100%;
-    }
+      .playable-buttons {
+        text-align: right;
+        width: 90%;
+        max-width: 700px;
+        padding: 5px 10px 5px 26px;
+        font-size: 100%;
+      }
 
-    section {
-      width: 90%;
-      max-width: 700px;
-      border: 1px solid #4D4E53;
-      border-radius: 2px;
-      padding: 10px 14px 10px 10px;
-      margin-bottom: 10px;
-    }
+      section {
+        width: 90%;
+        max-width: 700px;
+        border: 1px solid #4d4e53;
+        border-radius: 2px;
+        padding: 10px 14px 10px 10px;
+        margin-bottom: 10px;
+      }
 
-    section input {
-      display: block;
-      margin: 5px;
-    }
+      section input {
+        display: block;
+        margin: 5px;
+      }
 
-    .box {
-      width: 500px;
-      border: 2px dotted rgb(96, 139, 168);
-    }
+      .box {
+        width: 500px;
+        border: 2px dotted rgb(96, 139, 168);
+      }
 
+      .box > * {
+        border: 2px solid rgb(96, 139, 168);
+        border-radius: 5px;
+        background-color: rgba(96, 139, 168, 0.2);
+      }
+    </style>
+    <style class="editable">
+      .box {
+        display: flex;
+      }
 
-
-    .box>* {
-      border: 2px solid rgb(96, 139, 168);
-      border-radius: 5px;
-      background-color: rgba(96, 139, 168, .2);
-    }
-  </style>
-  <style class="editable">
-    .box {
-      display: flex;
-    }
-
-    .item {
+      .item {
         display: inline-block;
         width: 150px;
         flex: 1;
-    }
-  </style>
-</head>
+      }
+    </style>
+  </head>
 
-<body>
-  <section>
-    <div class="box">
+  <body>
+    <section>
+      <div class="box">
         <div class="item">Item 1</div>
-        <div class="item">Item 2 has more text in it and therefore will be taller than item one. In the flex version both should stretch to the same height.</div>
+        <div class="item">
+          Item 2 has more text in it and therefore will be taller than item one.
+          In the flex version both should stretch to the same height.
+        </div>
       </div>
-
-  </section>
-  <textarea class="playable-css">
+    </section>
+    <textarea class="playable-css">
 .box {
   display: flex;
 }
@@ -99,41 +102,40 @@
   display: inline-block;
   width: 150px;
   flex: 1;
-}
-      </textarea>
-  <textarea id="code" class="playable-html">
+}</textarea
+    >
+    <textarea id="code" class="playable-html">
 <div class="box">
   <div class="item">Item 1</div>
   <div class="item">Item 2 has more text in it and therefore will be taller than item one. In the flex version both should stretch to the same height.</div>
-</div>
-      </textarea>
-  <div class="playable-buttons">
-    <input id="reset" type="button" value="Reset">
-  </div>
-</body>
-<script>
-  var section = document.querySelector('section');
-  var editable = document.querySelector('.editable');
-  var textareaHTML = document.querySelector('.playable-html');
-  var textareaCSS = document.querySelector('.playable-css');
-  var reset = document.getElementById('reset');
-  var htmlCode = textareaHTML.value;
-  var cssCode = textareaCSS.value;
+</div></textarea
+    >
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script>
+    var section = document.querySelector("section");
+    var editable = document.querySelector(".editable");
+    var textareaHTML = document.querySelector(".playable-html");
+    var textareaCSS = document.querySelector(".playable-css");
+    var reset = document.getElementById("reset");
+    var htmlCode = textareaHTML.value;
+    var cssCode = textareaCSS.value;
 
-  function fillCode() {
-    editable.innerHTML = textareaCSS.value;
-    section.innerHTML = textareaHTML.value;
-  }
+    function fillCode() {
+      editable.innerHTML = textareaCSS.value;
+      section.innerHTML = textareaHTML.value;
+    }
 
-  reset.addEventListener('click', function () {
-    textareaHTML.value = htmlCode;
-    textareaCSS.value = cssCode;
-    fillCode();
-  });
+    reset.addEventListener("click", function () {
+      textareaHTML.value = htmlCode;
+      textareaCSS.value = cssCode;
+      fillCode();
+    });
 
-  textareaHTML.addEventListener('input', fillCode);
-  textareaCSS.addEventListener('input', fillCode);
-  window.addEventListener('load', fillCode);
-</script>
-
+    textareaHTML.addEventListener("input", fillCode);
+    textareaCSS.addEventListener("input", fillCode);
+    window.addEventListener("load", fillCode);
+  </script>
 </html>

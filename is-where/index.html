@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
@@ -6,58 +6,73 @@
     <title>:is() and :where(), examples and differences</title>
 
     <style>
-     html {
-       font-family: sans-serif;
-       font-size: 200%;
-     }
+      html {
+        font-family: sans-serif;
+        font-size: 200%;
+      }
 
-     :is(section.is-styling, aside.is-styling, footer.is-styling) a {
-       color: red;
-     }
+      :is(section.is-styling, aside.is-styling, footer.is-styling) a {
+        color: red;
+      }
 
-     :where(section.where-styling, aside.where-styling, footer.where-styling) a {
-       color: orange;
-     }
+      :where(section.where-styling, aside.where-styling, footer.where-styling)
+        a {
+        color: orange;
+      }
 
-     footer a {
-       color: blue;
-     }
-
-
+      footer a {
+        color: blue;
+      }
     </style>
   </head>
 
   <body>
-<article>
-  <h2>:is()-styled links</h2>
-  <section class="is-styling">
-    <p>Here is my main content. This <a href="https://mozilla.org">contains a link</a>.
-  </section>
+    <article>
+      <h2>:is()-styled links</h2>
+      <section class="is-styling">
+        <p>
+          Here is my main content. This
+          <a href="https://mozilla.org">contains a link</a>.
+        </p>
+      </section>
 
-  <aside class="is-styling">
-    <p>Here is my aside content. This <a href="https://developer.mozilla.org">also contains a link</a>.
-  </aside>
+      <aside class="is-styling">
+        <p>
+          Here is my aside content. This
+          <a href="https://developer.mozilla.org">also contains a link</a>.
+        </p>
+      </aside>
 
-  <footer class="is-styling">
-    <p>This is my footer, also containing <a href="https://github.com/mdn">a link</a>.
-  </footer>
-</article>
+      <footer class="is-styling">
+        <p>
+          This is my footer, also containing
+          <a href="https://github.com/mdn">a link</a>.
+        </p>
+      </footer>
+    </article>
 
-<article>
-  <h2>:where()-styled links</h2>
-  <section class="where-styling">
-    <p>Here is my main content. This <a href="https://mozilla.org">contains a link</a>.
-  </section>
+    <article>
+      <h2>:where()-styled links</h2>
+      <section class="where-styling">
+        <p>
+          Here is my main content. This
+          <a href="https://mozilla.org">contains a link</a>.
+        </p>
+      </section>
 
-  <aside class="where-styling">
-    <p>Here is my aside content. This <a href="https://developer.mozilla.org">also contains a link</a>.
-  </aside>
+      <aside class="where-styling">
+        <p>
+          Here is my aside content. This
+          <a href="https://developer.mozilla.org">also contains a link</a>.
+        </p>
+      </aside>
 
-  <footer class="where-styling">
-    <p>This is my footer, also containing <a href="https://github.com/mdn">a link</a>.
-  </footer>
-</article>
-
+      <footer class="where-styling">
+        <p>
+          This is my footer, also containing
+          <a href="https://github.com/mdn">a link</a>.
+        </p>
+      </footer>
+    </article>
   </body>
-
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -10,20 +10,20 @@
       }
 
       .preview input[type="checkbox"] {
-          display: inline;
+        display: inline;
       }
 
       .field {
-          inline-size: 150px;
-          border: 1px solid #ccc;
-          margin-block-end: 1em;
-          padding: 10px;
+        inline-size: 150px;
+        border: 1px solid #ccc;
+        margin-block-end: 1em;
+        padding: 10px;
       }
     </style>
 
     <style class="editable">
       .field-br {
-        word-break: break-all; 
+        word-break: break-all;
       }
     </style>
   </head>
@@ -31,29 +31,32 @@
   <body>
     <section class="preview">
       <div class="field">
-        <input type="checkbox" id="one"><label for="one">LongWordThatHasNoBreakingPossibilities</label>
+        <input type="checkbox" id="one" /><label for="one"
+          >LongWordThatHasNoBreakingPossibilities</label
+        >
       </div>
 
       <div class="field field-br">
-        <input type="checkbox" id="two"><label for="two">LongWordThatHasNoBreakingPossibilities</label>
+        <input type="checkbox" id="two" /><label for="two"
+          >LongWordThatHasNoBreakingPossibilities</label
+        >
       </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 100px;">
+    <textarea class="playable playable-css" style="height: 100px">
 .field-br {
-  word-break: break-all; 
-}
-    </textarea>
+  word-break: break-all;
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 180px;">
+    <textarea class="playable playable-html" style="height: 180px">
 <div class="field">
   <input type="checkbox" id="one"><label for="one">LongWordThatHasNoBreakingPossibilities</label>
 </div>
 
 <div class="field field-br">
   <input type="checkbox" id="two"><label for="two">LongWordThatHasNoBreakingPossibilities</label>
-</div>
-    </textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />

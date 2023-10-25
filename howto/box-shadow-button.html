@@ -1,61 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>CSS Solutions: How to add a shadow to an element</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        .wrapper {
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      .wrapper {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        button {
-            padding: 5px 10px;
-            border: 0;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 140%;
-            background-color: #DB1F48;
-            color: #fff;
-        }
+      button {
+        padding: 5px 10px;
+        border: 0;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 140%;
+        background-color: #db1f48;
+        color: #fff;
+      }
     </style>
 
     <style class="editable">
-        .shadow {
-            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-        }
-
+      .shadow {
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="wrapper">
-          <button class="shadow">box-shadow</button>
-        </div>
+      <div class="wrapper">
+        <button class="shadow">box-shadow</button>
+      </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 100px;">
+    <textarea class="playable playable-css" style="height: 100px">
 .shadow {
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-}
-    </textarea>
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 100px;">
+    <textarea class="playable playable-html" style="height: 100px">
 <div class="wrapper">
   <button class="shadow">box-shadow</button>
-</div>            
-    </textarea>
+</div></textarea
+    >
 
     <!-- leave everything below here alone -->
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

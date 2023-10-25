@@ -1,57 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Selectors: Child combinator</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-    ul > li {
+      ul > li {
         border-top: 5px solid red;
-    }
-        
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-    <ul>
+      <ul>
         <li>Unordered item</li>
-        <li>Unordered item
-            <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
-            </ol>
-        </li>
-    </ul>
-    </section>
-
-    <textarea class="playable playable-css" style="height: 80px;">
-ul > li {
-    border-top: 5px solid red;
-}  
-    </textarea>
-
-    <textarea class="playable playable-html" style="height: 160px;">
-<ul>
-    <li>Unordered item</li>
-    <li>Unordered item
-        <ol>
+        <li>
+          Unordered item
+          <ol>
             <li>Item 1</li>
             <li>Item 2</li>
-        </ol>
-    </li>
-</ul>
-    </textarea>
+          </ol>
+        </li>
+      </ul>
+    </section>
+
+    <textarea class="playable playable-css" style="height: 80px">
+ul > li {
+  border-top: 5px solid red;
+}</textarea
+    >
+
+    <textarea class="playable playable-html" style="height: 160px">
+<ul>
+  <li>Unordered item</li>
+  <li>Unordered item
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ol>
+  </li>
+</ul></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

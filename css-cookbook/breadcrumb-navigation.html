@@ -1,80 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>CSS Cookbook: Breadcrumb Navigation</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style class="editable">
-        .breadcrumb {
-            padding: 0 .5rem;
-        }
+      .breadcrumb {
+        padding: 0 0.5rem;
+      }
 
-        .breadcrumb ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+      .breadcrumb ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-        .breadcrumb li:not(:last-child)::after {
-            display: inline-block;
-            margin: 0 .25rem;
-            content: "→";
-        }
+      .breadcrumb li:not(:last-child)::after {
+        display: inline-block;
+        margin: 0 0.25rem;
+        content: "→";
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <nav aria-label="Breadcrumb" class="breadcrumb">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Category</a></li>
-                <li><a href="#">Sub Category</a></li>
-                <li><a href="#">Type</a></li>
-                <li><span aria-current="page">Product</span></li>
-            </ul>
-        </nav>
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Category</a></li>
+          <li><a href="#">Sub Category</a></li>
+          <li><a href="#">Type</a></li>
+          <li><span aria-current="page">Product</span></li>
+        </ul>
+      </nav>
     </section>
 
-    <textarea class="playable playable-css" style="height: 300px;">
+    <textarea class="playable playable-css" style="height: 300px">
 .breadcrumb {
-    padding: 0 .5rem;
+  padding: 0 .5rem;
 }
 
 .breadcrumb ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-    
-.breadcrumb li:not(:last-child)::after {
-    display: inline-block;
-    margin: 0 .25rem;
-    content: "→";
-}
-    </textarea>
 
-    <textarea class="playable playable-html" style="height: 160px;">
+.breadcrumb li:not(:last-child)::after {
+  display: inline-block;
+  margin: 0 .25rem;
+  content: "→";
+}</textarea
+    >
+
+    <textarea class="playable playable-html" style="height: 160px">
 <nav aria-label="Breadcrumb" class="breadcrumb">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Category</a></li>
-        <li><a href="#">Sub Category</a></li>
-        <li><a href="#">Type</a></li>
-        <li><span aria-current="page">Product</span></li>
-    </ul>
-</nav>
-    </textarea>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Category</a></li>
+    <li><a href="#">Sub Category</a></li>
+    <li><a href="#">Type</a></li>
+    <li><span aria-current="page">Product</span></li>
+  </ul>
+</nav></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

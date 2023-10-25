@@ -14,7 +14,7 @@ This task covers understanding of the basic float property, and the values `left
 .float2 {
   float: right;
 }
-  
+
 ```
 
 ## Task 2

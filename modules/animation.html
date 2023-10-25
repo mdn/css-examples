@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
@@ -138,11 +138,12 @@
         height: 150px;
         background: #ffffff;
         border-radius: 0 0 90px 33% / 0 0 45px 50px;
-        box-shadow: 
-            5px 15px 15px white, 
-            -5px 15px 15px white,
-            0 20px 20px rgba(125 125 125 / 0.5);
-        animation: clouds ease 5s alternate infinite 0.2s,
+        box-shadow:
+          5px 15px 15px white,
+          -5px 15px 15px white,
+          0 20px 20px rgba(125 125 125 / 0.5);
+        animation:
+          clouds ease 5s alternate infinite 0.2s,
           wind ease-out 4s alternate infinite;
       }
       .ground {
@@ -196,7 +197,7 @@
       div[class] {
         animation-play-state: paused;
       }
-      /* When the div is hovered, the animation plays. Also, 
+      /* When the div is hovered, the animation plays. Also,
 when the input is checked, the animation coming after the checked checkbox plays */
       div:hover *,
       input:checked ~ div * {

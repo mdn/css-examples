@@ -1,52 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>CSS Cookbook: Breadcrumb Navigation</title>
 
     <style>
-        body {
-            background-color: #fff;
-            color: #333;
-            font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
-            padding: 0;
-            margin: 0;
-        }
+      body {
+        background-color: #fff;
+        color: #333;
+        font:
+          1.2em / 1.5 Helvetica Neue,
+          Helvetica,
+          Arial,
+          sans-serif;
+        padding: 0;
+        margin: 0;
+      }
 
-        .breadcrumb {
-            padding: 0 .5rem;
-        }
+      .breadcrumb {
+        padding: 0 0.5rem;
+      }
 
-        .breadcrumb ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+      .breadcrumb ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-        .breadcrumb li:not(:last-child)::after {
-            display: inline-block;
-            margin: 0 .25rem;
-            content: "→";
-        }
+      .breadcrumb li:not(:last-child)::after {
+        display: inline-block;
+        margin: 0 0.25rem;
+        content: "→";
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <nav aria-label="Breadcrumb" class="breadcrumb">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Category</a></li>
-            <li><a href="#">Sub Category</a></li>
-            <li><a href="#">Type</a></li>
-            <li><span aria-current="page">Product</span></li>
-        </ul>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Category</a></li>
+        <li><a href="#">Sub Category</a></li>
+        <li><a href="#">Type</a></li>
+        <li><span aria-current="page">Product</span></li>
+      </ul>
     </nav>
-
-</body>
-
+  </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -34,27 +34,26 @@
         grid-template-rows: masonry;
         align-tracks: end, start, end, space-between;
       }
-
     </style>
   </head>
 
   <body>
     <section class="preview">
-        <div class="grid">
-            <div class="item" style="block-size: 2em;"></div>
-            <div class="item" style="block-size: 3em;"></div>
-            <div class="item" style="block-size: 1.6em;"></div>
-            <div class="item" style="block-size: 4em;"></div>
-            <div class="item" style="block-size: 3.2em;"></div>
-            <div class="item" style="block-size: 3em;"></div>
-            <div class="item" style="block-size: 4.5em;"></div>
-            <div class="item" style="block-size: 1em;"></div>
-            <div class="item" style="block-size: 3.5em;"></div>
-            <div class="item" style="block-size: 2.8em;"></div>
-          </div>
+      <div class="grid">
+        <div class="item" style="block-size: 2em"></div>
+        <div class="item" style="block-size: 3em"></div>
+        <div class="item" style="block-size: 1.6em"></div>
+        <div class="item" style="block-size: 4em"></div>
+        <div class="item" style="block-size: 3.2em"></div>
+        <div class="item" style="block-size: 3em"></div>
+        <div class="item" style="block-size: 4.5em"></div>
+        <div class="item" style="block-size: 1em"></div>
+        <div class="item" style="block-size: 3.5em"></div>
+        <div class="item" style="block-size: 2.8em"></div>
+      </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 200px;">
+    <textarea class="playable playable-css" style="height: 200px">
 .grid {
   display: grid;
   block-size: 250px;
@@ -62,11 +61,10 @@
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-template-rows: masonry;
   align-tracks: end, start, end, space-between;
-}
+}</textarea
+    >
 
-  </textarea>
-
-    <textarea class="playable playable-html" style="height: 250px;">
+    <textarea class="playable playable-html" style="height: 250px">
 <div class="grid">
   <div class="item" style="block-size: 2em;"></div>
   <div class="item" style="block-size: 3em;"></div>
@@ -78,8 +76,8 @@
   <div class="item" style="block-size: 1em;"></div>
   <div class="item" style="block-size: 3.5em;"></div>
   <div class="item" style="block-size: 2.8em;"></div>
-</div>
-    </textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />
