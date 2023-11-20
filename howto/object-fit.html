@@ -7,7 +7,7 @@
       CSS Solutions: How to fill a box with an image without distorting it
     </title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
+    <style class="editable">
       .wrapper {
         height: 200px;
         display: flex;
@@ -15,17 +15,14 @@
       }
 
       .box {
-        flex: 1;
         border: 5px solid #000;
-        border-radius: 0.5em;
       }
-    </style>
 
-    <style class="editable">
       .box img {
         width: 100%;
         height: 100%;
       }
+
       .box1 img {
         object-fit: cover;
       }
@@ -50,6 +47,16 @@
     </section>
 
     <textarea class="playable playable-css" style="height: 300px">
+.wrapper {
+  height: 200px;
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  border: 5px solid #000;
+}
+
 .box img {
   width: 100%;
   height: 100%;
