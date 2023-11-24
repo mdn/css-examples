@@ -12,15 +12,15 @@ They have a link to [a color conversion tool](https://convertingcolors.com/hex-c
 }
 
 .rgb {
-  background-color: rgb(134, 222, 250);
+  background-color: rgb(134 222 250);
 }
 
 .hsl {
-  background-color: hsl(194, 92%, 75%);
+  background-color: hsl(194 92% 75%);
 }
 
 .transparency {
-  background-color: rgba(134, 222, 250, .6);
+  background-color: rgb(134 222 250 / 60%);
 }
 ```
 

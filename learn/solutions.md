@@ -83,11 +83,11 @@ To style the box we add a border, using the `border` property. Round the corners
 }
 ```
 
-I used rgba colors to add a background color to the heading which is semi-transparent.
+We've used {{CSSXref("color_value/rgb", "rgb()")}} colors to add a background color to the heading which is semi-transparent.
 
 ```
 h2 {
-  background-color: rgba(0,0,0,.5);
+  background-color: rgb(0 0 0 50%);
   color: white;
 }
 ```

@@ -4,7 +4,7 @@ The aim of the tasks are to demonstrate an understanding of the properties cover
 
 ## Task 1
 
-This task covers understanding of `border`, `border-radius`, `background-image`, and `background-size`. Also, it checks that the student understands how to use RGBa colors to make a background color partly transparent.
+This task covers understanding of `border`, `border-radius`, `background-image`, and `background-size`. Also, it checks that the student understands how to use RGB colors to make a background color partly transparent.
 
 ```
 .box {
@@ -15,7 +15,7 @@ This task covers understanding of `border`, `border-radius`, `background-image`,
 }
 
 h2 {
-  background-color: rgba(0,0,0,.5);
+  background-color: rgb(0 0 0 / 50%);
   color: #fff;
 }
 ```

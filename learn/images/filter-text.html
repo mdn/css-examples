@@ -1,63 +1,65 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Images and other unusual elements: filters</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      p {
-        margin: 1em 2em;
-        padding: 20px;
-        width: 100px;
-        display: inline-block;
-      }
-    </style>
 
-    <style class="editable">
-      p {
-        border: 5px dashed red;
-      }
-      .filter {
-        filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.7));
-      }
+<head>
+  <meta charset="utf-8" />
+  <title>Images and other unusual elements: filters</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      .box-shadow {
-        box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.7);
-      }
-    </style>
-  </head>
+    p {
+      margin: 1em 2em;
+      padding: 20px;
+      width: 100px;
+      display: inline-block;
+    }
+  </style>
 
-  <body>
-    <section class="preview">
-      <p class="filter">Filter</p>
-      <p class="box-shadow">Box shadow</p>
-    </section>
+  <style class="editable">
+    p {
+      border: 5px dashed red;
+    }
 
-    <textarea class="playable playable-css" style="height: 220px">
+    .filter {
+      filter: drop-shadow(5px 5px 1px rgb(0 0 0 / 70%));
+    }
+
+    .box-shadow {
+      box-shadow: 5px 5px 1px rgb(0 0 0 / 70%);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="preview">
+    <p class="filter">Filter</p>
+    <p class="box-shadow">Box shadow</p>
+  </section>
+
+  <textarea class="playable playable-css" style="height: 220px">
 p {
   border: 5px dashed red;
 }
 
 .filter {
-  filter: drop-shadow(5px 5px 1px rgba(0,0,0,0.7));
+  filter: drop-shadow(5px 5px 1px rgb(0 0 0 / 70%));
 }
 
 .box-shadow {
-  box-shadow: 5px 5px 1px rgba(0,0,0,0.7);
-}</textarea
-    >
+  box-shadow: 5px 5px 1px rgb(0 0 0 / 70%);
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 120px">
+  <textarea class="playable playable-html" style="height: 120px">
 <p class="filter">Filter</p>
-<p class="box-shadow">Box shadow</p></textarea
-    >
+<p class="box-shadow">Box shadow</p></textarea>
 
-    <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
-    </div>
-  </body>
-  <script src="../playable.js"></script>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset" />
+  </div>
+</body>
+<script src="../playable.js"></script>
+
 </html>
