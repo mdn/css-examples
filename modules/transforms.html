@@ -40,6 +40,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: clip;
         }
 
         #outputContainer {
@@ -73,12 +74,10 @@
             height: 100px;
             transform-style: preserve-3d;
             transition: all 0.075s ease-out;
-            pointer-events: none;
             position: absolute;
         }
 
         .face {
-            pointer-events: none;
             display: flex;
             align-items: center;
             justify-content: center;
