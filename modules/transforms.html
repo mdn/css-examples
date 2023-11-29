@@ -6,40 +6,66 @@
     <meta name="viewport" content="width=device-width" />
     <title>CSS Transforms</title>
     <style>
-        #transformFieldset>div {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-        }
-
-        p {
-            margin: 0;
-        }
-
-        legend {
-            font-size: large;
-            font-weight: bold;
+        #allTransformFieldset {
+            border: none;
             padding: 0;
+            margin-bottom: 4px;
         }
 
-        #fieldsetContainer {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        #allTransformFieldset>legend {
+            margin-bottom: 4px;
         }
 
         fieldset {
             margin: 0;
         }
 
-        #cubeContainer {
+        legend {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        #fieldsetSection {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: start;
+            gap: 8px;
+        }
+
+        #outputSection {
             width: 100%;
             min-height: 400px;
-            perspective: 200px;
             background: linear-gradient(skyblue, khaki);
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        #outputContainer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            perspective: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        #z0 {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right bottom, rgb(223, 223, 223), rgb(190, 190, 190));
+            transform: translateZ(0px);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: black;
+            border-radius: 100%;
+            outline: 1px solid rgba(0, 0, 0, 0.35);
         }
 
         #cube {
@@ -47,6 +73,8 @@
             height: 100px;
             transform-style: preserve-3d;
             transition: all 0.075s ease-out;
+            pointer-events: none;
+            position: absolute;
         }
 
         .face {
@@ -92,25 +120,60 @@
             transform: rotateX(-90deg) translateZ(50px);
         }
 
-        fieldset,
-        fieldset>div {
+        .transformFieldset {
+            margin: 0;
+        }
+
+        .controlsContainer {
             display: flex;
             flex-direction: column;
             align-items: start;
             gap: 4px;
         }
 
-        fieldset>div>div,
-        fieldset>div>div>label {
+        .controlsContainer {
+            width: 100%;
+        }
+
+        .controlsContainer>div {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 4px;
         }
 
-        fieldset>div>div>label>span {
+        @supports selector(:has(*)) {
+
+            .showCheckbox,
+            label:has(input.showCheckbox) {
+                cursor: pointer;
+            }
+
+            .transformFieldset>div {
+                display: none;
+            }
+
+            .transformFieldset:has(>legend>label>input.showCheckbox:checked)>div {
+                display: block;
+            }
+        }
+
+        @supports not selector(:has(*)) {
+            .showCheckbox {
+                display: none;
+            }
+        }
+
+        .controlsContainer>div>label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .controlsContainer>div>label>span {
             width: 12px;
-            font-size: large;
+            font-weight: bold;
         }
 
         #resetAllButton,
@@ -135,16 +198,20 @@
 
 <body>
     <article>
-        <fieldset id="transformFieldset">
+        <fieldset id="allTransformFieldset">
             <legend>Transform settings
                 <button id="resetAllButton" aria-label="Reset">↻</button>
             </legend>
-            <section id="fieldsetContainer">
-                <fieldset>
-                    <legend>Translation (px)
+            <section id="fieldsetSection">
+                <fieldset class="transformFieldset">
+                    <legend>
+                        <label>
+                            <input class="showCheckbox" type="checkbox" checked />
+                            <span>Translation (px)</span>
+                        </label>
                         <button id="translateSectionReset" class="resetSectionButton" aria-label="Reset">↻</button>
                     </legend>
-                    <div>
+                    <div class="controlsContainer">
                         <div>
                             <label>
                                 <span>X</span>
@@ -172,11 +239,15 @@
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Rotation (deg)
+                <fieldset class="transformFieldset">
+                    <legend>
+                        <label>
+                            <input class="showCheckbox" type="checkbox" />
+                            <span>Rotation (deg)</span>
+                        </label>
                         <button id="rotateSectionReset" class="resetSectionButton" aria-label="Reset">↻</button>
                     </legend>
-                    <div>
+                    <div class="controlsContainer">
                         <div>
                             <label>
                                 <span>X</span>
@@ -204,11 +275,15 @@
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Scale (factor)
+                <fieldset class="transformFieldset">
+                    <legend>
+                        <label>
+                            <input class="showCheckbox" type="checkbox" />
+                            <span>Scale (factor)</span>
+                        </label>
                         <button id="scaleSectionReset" class="resetSectionButton" aria-label="Reset">↻</button>
                     </legend>
-                    <div>
+                    <div class="controlsContainer">
                         <div>
                             <label>
                                 <span>X</span>
@@ -236,11 +311,15 @@
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Skew (deg)
+                <fieldset class="transformFieldset">
+                    <legend>
+                        <label>
+                            <input class="showCheckbox" type="checkbox" />
+                            <span>Skew (deg)</span>
+                        </label>
                         <button id="skewSectionReset" class="resetSectionButton" aria-label="Reset">↻</button>
                     </legend>
-                    <div>
+                    <div class="controlsContainer">
                         <div>
                             <label>
                                 <span>X</span>
@@ -261,56 +340,55 @@
                 </fieldset>
             </section>
         </fieldset>
-        <section id="cubeContainer">
-            <div id="cube">
-                <div class="face front">1</div>
-                <div class="face back">2</div>
-                <div class="face right">3</div>
-                <div class="face left">4</div>
-                <div class="face top">5</div>
-                <div class="face bottom">6</div>
+        <section id="outputSection">
+            <div id="outputContainer">
+                <div id="cube">
+                    <div class="face front">1</div>
+                    <div class="face back">2</div>
+                    <div class="face right">3</div>
+                    <div class="face left">4</div>
+                    <div class="face top">5</div>
+                    <div class="face bottom">6</div>
+                </div>
+                <div id="z0"><code>z:0px</code></div>
             </div>
         </section>
     </article>
     <script>
-        const cube = document.querySelector("#cube");
-
-        const transformFieldset = document.querySelector("#transformFieldset");
-
-        transformFieldset.querySelectorAll("input[type='range']").forEach((rangeInput) => {
+        allTransformFieldset.querySelectorAll("input[type='range']").forEach((rangeInput) => {
             // Event listeners for when the range inputs change
             rangeInput.addEventListener("input", (el) => {
-                transformFieldset.querySelector(`#${el.target.id.replace("Range", "Num")}`).value = el.target.value;
+                allTransformFieldset.querySelector(`#${el.target.id.replace("Range", "Num")}`).value = el.target.value;
                 updateTransform();
             });
 
             // Reset the relevant transform setting when the range input is double clicked
             rangeInput.addEventListener("dblclick", (el) => {
                 resetInput(el.target);
-                transformFieldset.querySelector(`#${el.target.id.replace("Range", "Num")}`).value = el.target.value;
+                allTransformFieldset.querySelector(`#${el.target.id.replace("Range", "Num")}`).value = el.target.value;
                 updateTransform();
             });
         });
 
         // Event listeners for when the number inputs change
-        transformFieldset.querySelectorAll("input[type='number']").forEach((numInput) => {
+        allTransformFieldset.querySelectorAll("input[type='number']").forEach((numInput) => {
             numInput.addEventListener("input", (el) => {
-                transformFieldset.querySelector(`#${el.target.id.replace("Num", "Range")}`).value = el.target.value;
+                allTransformFieldset.querySelector(`#${el.target.id.replace("Num", "Range")}`).value = el.target.value;
                 updateTransform();
             });
         });
 
         // Individual reset button event listeners
-        transformFieldset.querySelectorAll(".resetButton").forEach((resetButton) => {
+        allTransformFieldset.querySelectorAll(".resetButton").forEach((resetButton) => {
             resetButton.addEventListener("click", (el) => {
-                resetInput(transformFieldset.querySelector(`#${el.target.id.replace("Reset", "Range")}`));
-                resetInput(transformFieldset.querySelector(`#${el.target.id.replace("Reset", "Num")}`));
+                resetInput(allTransformFieldset.querySelector(`#${el.target.id.replace("Reset", "Range")}`));
+                resetInput(allTransformFieldset.querySelector(`#${el.target.id.replace("Reset", "Num")}`));
                 updateTransform();
             });
         });
 
         // Section reset button event listeners
-        transformFieldset.querySelectorAll(".resetSectionButton").forEach((resetSectionButton) => {
+        allTransformFieldset.querySelectorAll(".resetSectionButton").forEach((resetSectionButton) => {
             resetSectionButton.addEventListener("click", (el) => {
                 let allRanges = el.target.parentElement.parentElement.querySelectorAll("input[type='range']");
                 allRanges.forEach((range) => {
@@ -332,35 +410,23 @@
             }
         }
 
-        const resetAllButton = document.querySelector("#resetAllButton");
         resetAllButton.addEventListener("click", () => {
-            transformFieldset.querySelectorAll('input').forEach((input) => {
+            allTransformFieldset.querySelectorAll('input').forEach((input) => {
                 resetInput(input);
             });
             updateTransform();
         });
 
-        const translateXRange = document.querySelector("#translateXRange");
-        const translateYRange = document.querySelector("#translateYRange");
-        const translateZRange = document.querySelector("#translateZRange");
-        const rotateXRange = document.querySelector("#rotateXRange");
-        const rotateYRange = document.querySelector("#rotateYRange");
-        const rotateZRange = document.querySelector("#rotateZRange");
-        const scaleXRange = document.querySelector("#scaleXRange");
-        const scaleYRange = document.querySelector("#scaleYRange");
-        const scaleZRange = document.querySelector("#scaleZRange");
-        const skewXRange = document.querySelector("#skewXRange");
-        const skewYRange = document.querySelector("#skewYRange");
         const updateTransform = () => {
-            cube.style.transform = `translateX(${translateXRange.value}px)
-                translateY(${translateYRange.value}px)
-                translateZ(${translateZRange.value}px)
+            cube.style.transform = `translate3d(${translateXRange.value}px,
+                ${translateYRange.value}px,
+                ${translateZRange.value}px)
                 rotateX(${rotateXRange.value}deg)
                 rotateY(${rotateYRange.value}deg)
                 rotateZ(${rotateZRange.value}deg)
-                scaleX(${scaleXRange.value})
-                scaleY(${scaleYRange.value})
-                scaleZ(${scaleZRange.value})
+                scale3d(${scaleXRange.value},
+                ${scaleYRange.value},
+                ${scaleZRange.value})
                 skewX(${skewXRange.value}deg)
                 skewY(${skewYRange.value}deg)`;
         }
