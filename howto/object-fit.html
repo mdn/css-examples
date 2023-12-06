@@ -1,85 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>CSS Solutions: How to fill a box with an image without distorting it</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .wrapper {
-            height: 200px;
-            display: flex;
-            gap: 20px
-        }
-
-        .box {
-            flex: 1;
-            border: 5px solid #000;
-            border-radius: .5em;
-        }
-    </style>
-
+    <title>
+      CSS Solutions: How to fill a box with an image without distorting it
+    </title>
+    <link rel="stylesheet" href="styles.css" />
     <style class="editable">
-        .box img {
-            width: 100%;
-            height: 100%;
-        }
-        .box1 img {
-            object-fit: cover;
-        }
+      .wrapper {
+        height: 200px;
+        display: flex;
+        gap: 20px;
+      }
 
-        .box2 img {
-            object-fit: contain;
-        }
+      .box {
+        border: 5px solid #000;
+      }
 
-        .box3 img{
-            object-fit: fill;
-        }
+      .box img {
+        width: 100%;
+        height: 100%;
+      }
 
+      .box1 img {
+        object-fit: cover;
+      }
+
+      .box2 img {
+        object-fit: contain;
+      }
+
+      .box3 img {
+        object-fit: fill;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <div class="wrapper">
-          <div class="box box1"><img src="balloon.jpg" alt="a balloon"></div>
-          <div class="box box2"><img src="balloon.jpg" alt="a balloon"></div>
-          <div class="box box3"><img src="balloon.jpg" alt="a balloon"></div>
-        </div>
+      <div class="wrapper">
+        <div class="box box1"><img src="balloon.jpg" alt="a balloon" /></div>
+        <div class="box box2"><img src="balloon.jpg" alt="a balloon" /></div>
+        <div class="box box3"><img src="balloon.jpg" alt="a balloon" /></div>
+      </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 300px;">
+    <textarea class="playable playable-css" style="height: 300px">
+.wrapper {
+  height: 200px;
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  border: 5px solid #000;
+}
+
 .box img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .box1 img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .box2 img {
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .box3 img {
-    object-fit: fill;
-}
-    </textarea>
+  object-fit: fill;
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 100px;">
+    <textarea class="playable playable-html" style="height: 100px">
 <div class="wrapper">
-    <div class="box box1"><img src="balloon.jpg" alt="a balloon"></div>
-    <div class="box box2"><img src="balloon.jpg" alt="a balloon"></div>
-    <div class="box box3"><img src="balloon.jpg" alt="a balloon"></div>
-</div>            
-    </textarea>
+  <div class="box box1"><img src="balloon.jpg" alt="a balloon"></div>
+  <div class="box box2"><img src="balloon.jpg" alt="a balloon"></div>
+  <div class="box box3"><img src="balloon.jpg" alt="a balloon"></div>
+</div></textarea
+    >
 
     <!-- leave everything below here alone -->
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="playable.js"></script>
-
+  </body>
+  <script src="playable.js"></script>
 </html>

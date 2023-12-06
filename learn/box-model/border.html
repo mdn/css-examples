@@ -1,49 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Box Model: Borders</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-      .container {
-        margin: 40px;
-        padding: 20px;
-      }
 
-      .box {
-        padding: 20px;
-        background-color: lightgray;
-      }
-    </style>
+<head>
+  <meta charset="utf-8" />
+  <title>Box Model: Borders</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .container {
+      margin: 40px;
+      padding: 20px;
+    }
 
-    <style class="editable">
-      .container {
-        border-top: 5px dotted green;
-        border-right: 1px solid black;
-        border-bottom: 20px double rgb(23,45,145);
-      }
+    .box {
+      padding: 20px;
+      background-color: lightgray;
+    }
+  </style>
 
-      .box {
-        border: 1px solid #333333;
-        border-top-style: dotted;
-        border-right-width: 20px;
-        border-bottom-color: hotpink;
-      }
-    </style>
-  </head>
+  <style class="editable">
+    .container {
+      border-top: 5px dotted green;
+      border-right: 1px solid black;
+      border-bottom: 20px double rgb(23 45 145);
+    }
 
-  <body>
-    <section class="preview">
-        <div class="container">
-          <div class="box">Change my borders.</div>
-        </div>
-    </section>
+    .box {
+      border: 1px solid #333333;
+      border-top-style: dotted;
+      border-right-width: 20px;
+      border-bottom-color: hotpink;
+    }
+  </style>
+</head>
 
-    <textarea class="playable playable-css" style="height: 220px;">
+<body>
+  <section class="preview">
+    <div class="container">
+      <div class="box">Change my borders.</div>
+    </div>
+  </section>
+
+  <textarea class="playable playable-css" style="height: 220px">
 .container {
   border-top: 5px dotted green;
   border-right: 1px solid black;
-  border-bottom: 20px double rgb(23,45,145);
+  border-bottom: 20px double rgb(23 45 145);
 }
 
 .box {
@@ -51,18 +52,17 @@
   border-top-style: dotted;
   border-right-width: 20px;
   border-bottom-color: hotpink;
-}
-    </textarea>
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 80px;">
+  <textarea class="playable playable-html" style="height: 80px">
 <div class="container">
   <div class="box">Change my borders.</div>
-</div>
-    </textarea>
+</div></textarea>
 
-    <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
-    </div>
-  </body>
-  <script src="../playable.js"></script>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset" />
+  </div>
+</body>
+<script src="../playable.js"></script>
+
 </html>

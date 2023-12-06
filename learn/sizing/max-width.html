@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -18,10 +18,10 @@
         margin: 20px;
       }
 
-      .box, .minibox {
+      .box,
+      .minibox {
         border: 5px solid darkblue;
       }
-      
     </style>
 
     <style class="editable">
@@ -43,13 +43,13 @@
   <body>
     <section class="preview">
       <div class="wrapper">
-        <div class="box"><img src="star.png" alt="star" class="width"></div>
-        <div class="box"><img src="star.png" alt="star" class="max"></div>
-        <div class="minibox"><img src="star.png" alt="star" class="max"></div>
+        <div class="box"><img src="star.png" alt="star" class="width" /></div>
+        <div class="box"><img src="star.png" alt="star" class="max" /></div>
+        <div class="minibox"><img src="star.png" alt="star" class="max" /></div>
       </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 240px;">
+    <textarea class="playable playable-css" style="height: 240px">
 .box {
   width: 200px;
 }
@@ -61,16 +61,15 @@
 }
 .max {
   max-width: 100%;
-}
-    </textarea>
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 120px;">
+    <textarea class="playable playable-html" style="height: 120px">
 <div class="wrapper">
   <div class="box"><img src="star.png" alt="star" class="width"></div>
   <div class="box"><img src="star.png" alt="star" class="max"></div>
   <div class="minibox"><img src="star.png" alt="star" class="max"></div>
-</div>
-    </textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />

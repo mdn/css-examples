@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -21,7 +21,6 @@
       .box {
         border: 5px solid darkblue;
       }
-      
     </style>
 
     <style class="editable">
@@ -48,12 +47,16 @@
   <body>
     <section class="preview">
       <div class="wrapper">
-        <div class="box"><img src="balloons.jpg" alt="balloons" class="cover"></div>
-        <div class="box"><img src="balloons.jpg" alt="balloons" class="contain"></div>
+        <div class="box">
+          <img src="balloons.jpg" alt="balloons" class="cover" />
+        </div>
+        <div class="box">
+          <img src="balloons.jpg" alt="balloons" class="contain" />
+        </div>
       </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 320px;">
+    <textarea class="playable playable-css" style="height: 320px">
 .box {
   width: 200px;
   height: 200px;
@@ -70,15 +73,15 @@ img {
 
 .contain {
   object-fit: contain;
-}
-    </textarea>
+}</textarea
+    >
 
-    <textarea class="playable playable-html" style="height: 120px;">
+    <textarea class="playable playable-html" style="height: 120px">
 <div class="wrapper">
   <div class="box"><img src="balloons.jpg" alt="balloons" class="cover"></div>
   <div class="box"><img src="balloons.jpg" alt="balloons" class="contain"></div>
-</div>
-    </textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />

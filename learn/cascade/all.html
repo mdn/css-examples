@@ -1,62 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>all</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
+    <style></style>
 
     <style class="editable">
-blockquote {
-    background-color: orange;
-    border: 2px solid blue;
-}
+      blockquote {
+        background-color: orange;
+        border: 2px solid blue;
+      }
 
-.fix-this {
-    all: unset;
-}
+      .fix-this {
+        all: unset;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="preview">
-        <blockquote>
-            <p>This blockquote is styled</p>
-        </blockquote>
+      <blockquote>
+        <p>This blockquote is styled</p>
+      </blockquote>
 
-        <blockquote class="fix-this">
-            <p>This blockquote is not styled</p>
-        </blockquote>
+      <blockquote class="fix-this">
+        <p>This blockquote is not styled</p>
+      </blockquote>
     </section>
 
-    <textarea class="playable playable-css" style="height: 280px;">
+    <textarea class="playable playable-css" style="height: 280px">
 blockquote {
-    background-color: orange;
-    border: 2px solid blue;
+  background-color: orange;
+  border: 2px solid blue;
 }
-        
+
 .fix-this {
-    all: unset;
-}
-    </textarea>
+  all: unset;
+}</textarea
+    >
 
-    <textarea class="playable playable-html" style="height: 140px;">
-        <blockquote>
-            <p>This blockquote is styled</p>
-        </blockquote>
+    <textarea class="playable playable-html" style="height: 140px">
+<blockquote>
+  <p>This blockquote is styled</p>
+</blockquote>
 
-        <blockquote class="fix-this">
-            <p>This blockquote is not styled</p>
-        </blockquote>
-    </textarea>
+<blockquote class="fix-this">
+  <p>This blockquote is not styled</p>
+</blockquote></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

@@ -1,38 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
     <title>Grid: task 3</title>
 
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css" />
 
     <style>
-        .grid > * {
-          background-color: #4D7298;
-          border: 2px solid #77A6B6;
-          border-radius: .5em;
-          color: #fff;
-          padding: .5em;
-        }
-
-
+      .grid > * {
+        background-color: #4d7298;
+        border: 2px solid #77a6b6;
+        border-radius: 0.5em;
+        color: #fff;
+        padding: 0.5em;
+      }
     </style>
 
     <style class="editable">
-        .grid {
-          display: grid;
-          grid-template-columns: 1fr 2fr;
-          gap: 10px;
-        }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <section class="preview">
       <div class="grid">
         <div class="one">One</div>
@@ -42,27 +38,26 @@
       </div>
     </section>
 
-<textarea class="playable playable-css" style="min-height:220px;">
+    <textarea class="playable playable-css" style="min-height: 220px">
 .grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
-}
-</textarea>
+}</textarea
+    >
 
-<textarea class="playable playable-html">
+    <textarea class="playable playable-html">
 <div class="grid">
   <div class="one">One</div>
   <div class="two">Two</div>
   <div class="three">Three</div>
   <div class="four">Four</div>
-</div>
-</textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
-        <input id="reset" type="button" value="Reset">
+      <input id="reset" type="button" value="Reset" />
     </div>
-</body>
-<script src="../playable.js"></script>
-
+  </body>
+  <script src="../playable.js"></script>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -16,7 +16,6 @@
       .wrapper > * {
         margin: 20px;
       }
-      
     </style>
 
     <style class="editable">
@@ -32,24 +31,26 @@
     <section class="preview">
       <div class="wrapper">
         <div class="box"></div>
-        <div class="box">These boxes both have a height set, this box has content in it which will need more space than the assigned height, and so we get overflow.</div>
+        <div class="box">
+          These boxes both have a height set, this box has content in it which
+          will need more space than the assigned height, and so we get overflow.
+        </div>
       </div>
     </section>
 
-    <textarea class="playable playable-css" style="height: 120px;">
+    <textarea class="playable playable-css" style="height: 120px">
 .box {
   border: 5px solid darkblue;
   height: 150px;
   width: 200px;
-}
-    </textarea>
+}</textarea>
 
-    <textarea class="playable playable-html" style="height: 120px;">
+    <textarea class="playable playable-html" style="height: 120px">
 <div class="wrapper">
   <div class="box"></div>
   <div class="box">These boxes both have a height set, this box has content in it which will need more space than the assigned height, and so we get overflow. </div>
-</div>
-    </textarea>
+</div></textarea
+    >
 
     <div class="playable-buttons">
       <input id="reset" type="button" value="Reset" />
