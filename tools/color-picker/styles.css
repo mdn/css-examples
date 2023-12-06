@@ -27,8 +27,6 @@
 
 /* HSV format - Hue-Saturation-Value(Brightness) */
 .ui-color-picker .picking-area {
-  background: url("picker_mask_200.png") center center;
-
   background: linear-gradient(to top, #000 0%, rgb(0 0 0 / 0) 100%),
     linear-gradient(to right, #fff 0%, rgb(255 255 255 / 0) 100%);
   background-color: #f00;
@@ -76,7 +74,6 @@
 }
 
 .ui-color-picker .hue {
-  background: url("hue.png") center;
   background: linear-gradient(
     to right,
     #f00,
