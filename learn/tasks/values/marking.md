@@ -6,21 +6,21 @@ The student needs to take a color which is a hex code and add the same color to 
 
 They have a link to [a color conversion tool](https://convertingcolors.com/hex-color-86DEFA.html), so they just need to know what the different values look like.
 
-```
+```css
 .hex {
   background-color: #86DEFA;
 }
 
 .rgb {
-  background-color: rgb(134, 222, 250);
+  background-color: rgb(134 222 250);
 }
 
 .hsl {
-  background-color: hsl(194, 92%, 75%);
+  background-color: hsl(194 92% 75%);
 }
 
 .transparency {
-  background-color: rgba(134, 222, 250, .6);
+  background-color: rgb(134 222 250 / 60%);
 }
 ```
 
@@ -28,7 +28,7 @@ They have a link to [a color conversion tool](https://convertingcolors.com/hex-c
 
 The student is asked to use a variety of length units to size some boxes.
 
-```
+```css
 h1 {
  font-size: 50px;
 }
@@ -50,7 +50,7 @@ h1+p {
 
 In this task the students needs to use a keyword and a percentage to change the position of the background image.
 
-```
+```css
 .box {
   background-image: url(star.png);
   background-repeat: no-repeat;

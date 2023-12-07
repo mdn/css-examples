@@ -36,7 +36,7 @@ function toggleFullscreen() {
   if (!document.fullscreenElement) {
     elem
       .requestFullscreen()
-      .then({})
+      .then(() => {})
       .catch((err) => {
         alert(
           `Error attempting to enable full-screen mode: ${err.message} (${err.name})`,

@@ -6,100 +6,102 @@
     <title>Variable Font example - slant</title>
 
     <style>
-          @font-face {
-            font-family: 'Roboto VF';
-            src: url('fonts/Roboto-VF.woff2') format('woff2-variations');
-            font-weight: 100 900;
-            font-stretch: 75% 100%;
-            font-style: oblique 0deg 12deg;
-            font-display: swap;
-          }
+      @font-face {
+        font-family: "Roboto VF";
+        src: url("fonts/Roboto-VF.woff2") format("woff2-variations");
+        font-weight: 100 900;
+        font-stretch: 75% 100%;
+        font-style: oblique 0deg 12deg;
+        font-display: swap;
+      }
 
-          html {
-            box-sizing: border-box;
-            font-size: 100%;
-          }
+      html {
+        box-sizing: border-box;
+        font-size: 100%;
+      }
 
-          *,
-          *::before,
-          *::after {
-            box-sizing: inherit;
-          }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
 
-          body {
-            font: 1.2em "Roboto VF", Helvetica, sans-serif;
-            margin: 20px;
-            padding: 0;
-          }
+      body {
+        font:
+          1.2em "Roboto VF",
+          Helvetica,
+          sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
 
-          .wrapper {
-            width: 100%;
-              display: grid;
-              grid-template-columns: 1fr;
-              grid-gap: 1rem;
-          }
+      .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+      }
 
-          @media screen and (min-width: 35rem) {
-            .wrapper {
-              grid-template-columns: 1fr 1fr;
-            }
-          }
+      @media screen and (min-width: 35rem) {
+        .wrapper {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
 
-          @media screen and (min-width: 52rem) {
-            .wrapper {
-              grid-template-columns: 1fr 1fr 1fr;
-            }
-          }
+      @media screen and (min-width: 52rem) {
+        .wrapper {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
 
-          textarea {
-            font-family: monospace;
-            display: block;
-            margin-bottom: 10px;
-            height: 160px;
-            background-color: #F4F7F8;
-            border: none;
-            border-left: 6px solid #558ABB;
-            color: #4D4E53;
-            padding: 1rem 0;
-            width: 100%;
-          }
+      textarea {
+        font-family: monospace;
+        display: block;
+        margin-bottom: 10px;
+        height: 160px;
+        background-color: #f4f7f8;
+        border: none;
+        border-left: 6px solid #558abb;
+        color: #4d4e53;
+        padding: 1rem 0;
+        width: 100%;
+      }
 
-          textarea:nth-of-type(1) {
-            height: 130px;
-          }
+      textarea:nth-of-type(1) {
+        height: 130px;
+      }
 
-          textarea:nth-of-type(2) {
-            height: 100px;
-          }
+      textarea:nth-of-type(2) {
+        height: 100px;
+      }
 
-          .playable-buttons {
-            text-align: right;
-            width: 100%;
-            padding: 0.5rem 0;
-            font-size: 100%;
-          }
+      .playable-buttons {
+        text-align: right;
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 100%;
+      }
 
-          .section {
-            width: 100%;
-            border: 1px solid #4D4E53;
-            border-radius: 2px;
-            padding: 10px 14px 10px 10px;
-            margin-bottom: 10px;
-          }
+      .section {
+        width: 100%;
+        border: 1px solid #4d4e53;
+        border-radius: 2px;
+        padding: 10px 14px 10px 10px;
+        margin-bottom: 10px;
+      }
 
-          .section input {
-            display: block;
-            margin: 5px;
-          }
+      .section input {
+        display: block;
+        margin: 5px;
+      }
 
-          .container * {
-            font-size: 4rem;
-            margin: 1.5rem 0;
-          }
+      .container * {
+        font-size: 4rem;
+        margin: 1.5rem 0;
+      }
 
-          .demo3 {
-            --text-axis: 0;
-          }
+      .demo3 {
+        --text-axis: 0;
       }
     </style>
     <style class="editable1">
@@ -178,7 +180,7 @@
 </div></textarea
         >
         <div class="controls range-slider">
-          <label for="controls__slider">Adjust Slant: </label
+          <label for="text-axis">Adjust Slant: </label
           ><input
             type="range"
             name="range-slider"
@@ -186,8 +188,7 @@
             id="text-axis"
             class="controls--slider"
             min="0"
-            max="12"
-          />
+            max="12" />
         </div>
       </div>
     </div>

@@ -4,9 +4,9 @@ The aim of the tasks are to demonstrate an understanding of the properties cover
 
 ## Task 1
 
-This task covers understanding of `border`, `border-radius`, `background-image`, and `background-size`. Also, it checks that the student understands how to use RGBa colors to make a background color partly transparent.
+This task covers understanding of `border`, `border-radius`, `background-image`, and `background-size`. Also, it checks that the student understands how to use RGB colors to make a background color partly transparent.
 
-```
+```css
 .box {
   border: 5px solid #000;
   border-radius: 10px;
@@ -15,7 +15,7 @@ This task covers understanding of `border`, `border-radius`, `background-image`,
 }
 
 h2 {
-  background-color: rgba(0,0,0,.5);
+  background-color: rgb(0 0 0 / 50%);
   color: #fff;
 }
 ```
@@ -33,7 +33,7 @@ There are also some elements which link back to earlier lessons:
 - They need to add padding to the heading in order that it doesn't overlay the star image - this links back to learning from the earlier Box Model lesson.
 - The text with be aligned with the `text-align` property.
 
-```
+```css
 .box {
   border: 5px solid lightblue;
   border-top-left-radius: 20px;

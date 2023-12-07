@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #EAEFF2;
+  background-color: #eaeff2;
   padding: 0;
   margin: 0;
 }
@@ -13,7 +13,7 @@ body {
   height: 200px;
   background-color: white;
   padding: 1em 0;
-  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.1);
 }
 
 #example-element {
@@ -29,12 +29,12 @@ body {
 
 #example-element {
   display: block;
-  color: #C13832;
+  color: #c13832;
 }
 
 .example-choice {
   font-size: 14px;
-  transition: background-color .2s ease-out;
+  transition: background-color 0.2s ease-out;
   cursor: pointer;
   padding: 0.25em;
   display: inline-block;
@@ -48,12 +48,12 @@ body {
 
 .example-choice.selected {
   background-color: white;
-  transition: background-color .2s ease-in;
-  box-shadow: inset 0px 2px 2px -2px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease-in;
+  box-shadow: inset 0px 2px 2px -2px rgba(0, 0, 0, 0.2);
   cursor: text;
 }
 
-.example-choice>code {
+.example-choice > code {
   width: 90%;
   display: inline-block;
 }
@@ -61,18 +61,18 @@ body {
 .reset {
   display: none;
   position: absolute;
-  top: .75em;
+  top: 0.75em;
   right: 1em;
 }
 
-.example-choice.selected>.reset {
+.example-choice.selected > .reset {
   display: unset;
 }
 
 .error {
   max-height: 1em;
   position: absolute;
-  top: .75em;
+  top: 0.75em;
   right: 5.5em;
   cursor: pointer;
 }

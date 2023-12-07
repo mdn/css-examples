@@ -28,7 +28,7 @@ body {
 .header h1 {
   margin: 0;
   padding: 0;
-  font-family: Ubuntu, Arial, Tahoma, "Sans Serif";
+  font-family: Ubuntu, Arial, Tahoma, sans-serif;
 }
 
 .header {
@@ -41,7 +41,7 @@ body {
 .notes-section {
   margin: 10px;
   color: #4d4e53;
-  font-family: Ubuntu, Arial, Tahoma, "Sans Serif";
+  font-family: Ubuntu, Arial, Tahoma, sans-serif;
   float: left;
 }
 
