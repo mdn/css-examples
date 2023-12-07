@@ -194,9 +194,7 @@
   margin: 0;
   padding: 0 0.3em;
 
-  border: 3px solid #3490d2;
-  border-color: #208b20;
-  background: #666;
+  border: 3px solid #208b20;
   background-color: #eef1f5;
   color: #000;
 
@@ -889,7 +887,6 @@ body[data-move="Y"] {
   text-align: center;
   color: #555;
 
-  position: absolute;
   z-index: 1000;
 
   box-shadow: 0 0 3px 0 #bababa;
