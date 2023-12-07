@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #EAEFF2;
+  background-color: #eaeff2;
   padding: 0;
   margin: 0;
 }
@@ -13,10 +13,10 @@ body {
 }
 
 .CodeMirror {
-  box-shadow: inset 0px 2px 2px -2px rgba(0,0,0,0.2);
-  border: 1px solid rgba(0,0,0,0.2);
-  border-top: 1px solid rgba(0,0,0,0.3);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: inset 0px 2px 2px -2px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #editor {
@@ -24,14 +24,14 @@ body {
   margin-bottom: 1em;
 }
 
-#editor>input {
+#editor > input {
   position: absolute;
   z-index: 10;
   top: 10px;
   right: 10px;
 }
 
-#editor>input.hidden {
+#editor > input.hidden {
   display: none;
 }
 
@@ -41,5 +41,5 @@ body {
   background-color: white;
   padding: 1em;
   box-sizing: border-box;
-  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.1);
 }

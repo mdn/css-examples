@@ -1,56 +1,57 @@
 <!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+    <title>Grid: task 2</title>
 
-  <title>Grid: task 2</title>
+    <link rel="stylesheet" href="../styles.css" />
 
-  <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .grid > * {
+        border-radius: 0.5em;
+        color: #fff;
+        padding: 0.5em;
+      }
 
-  <style>
-    .grid>* {
-      border-radius: 0.5em;
-      color: #fff;
-      padding: 0.5em;
-    }
+      .item1 {
+        background-color: rgb(74 102 112 / 70%);
+        border: 5px solid rgb(74 102 112 / 100%);
+      }
 
-    .item1 {
-      background-color: rgb(74 102 112 / 70%);
-      border: 5px solid rgb(74 102 112 / 100%);
-    }
+      .item2 {
+        background-color: rgb(214 162 173 / 70%);
+        border: 5px solid rgb(214 162 173 / 100%);
+      }
+    </style>
 
-    .item2 {
-      background-color: rgb(214 162 173 / 70%);
-      border: 5px solid rgb(214 162 173 / 100%);
-    }
-  </style>
+    <style class="editable">
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px 100px;
+        gap: 10px;
+      }
 
-  <style class="editable">
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 100px 100px 100px;
-      gap: 10px;
-    }
+      .item1 {
+      }
 
-    .item1 {}
+      .item2 {
+      }
+    </style>
+  </head>
 
-    .item2 {}
-  </style>
-</head>
+  <body>
+    <section class="preview">
+      <div class="grid">
+        <div class="item1">One</div>
+        <div class="item2">Two</div>
+      </div>
+    </section>
 
-<body>
-  <section class="preview">
-    <div class="grid">
-      <div class="item1">One</div>
-      <div class="item2">Two</div>
-    </div>
-  </section>
-
-  <textarea class="playable playable-css" style="min-height: 220px">
+    <textarea class="playable playable-css" style="min-height: 220px">
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -65,18 +66,19 @@
 .item2 {
 
 }
-</textarea>
+</textarea
+    >
 
-  <textarea class="playable playable-html">
+    <textarea class="playable playable-html">
 <div class="grid">
   <div class="item1">One</div>
   <div class="item2">Two</div>
-</div></textarea>
+</div></textarea
+    >
 
-  <div class="playable-buttons">
-    <input id="reset" type="button" value="Reset" />
-  </div>
-</body>
-<script src="../playable.js"></script>
-
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="../playable.js"></script>
 </html>

@@ -6,14 +6,13 @@
     <title>Font feature example - East Asian</title>
 
     <style>
-      @font-face{
-          font-family: 'Kokoro';
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          src: url('fonts/kokoro/Kokoro.woff2') format('woff2');
+      @font-face {
+        font-family: "Kokoro";
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        src: url("fonts/kokoro/Kokoro.woff2") format("woff2");
       }
-
 
       html {
         box-sizing: border-box;
@@ -27,16 +26,19 @@
       }
 
       body {
-        font: 1.2em "Kokoro", "Times New Roman", serif;
+        font:
+          1.2em "Kokoro",
+          "Times New Roman",
+          serif;
         margin: 20px;
         padding: 0;
       }
 
       .wrapper {
         width: 100%;
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-gap: 1rem;oro
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
       }
 
       @media screen and (min-width: 35rem) {
@@ -56,10 +58,10 @@
         display: block;
         margin-bottom: 10px;
         height: 160px;
-        background-color: #F4F7F8;
+        background-color: #f4f7f8;
         border: none;
-        border-left: 6px solid #558ABB;
-        color: #4D4E53;
+        border-left: 6px solid #558abb;
+        color: #4d4e53;
         padding: 1rem 0;
         width: 100%;
       }
@@ -81,7 +83,7 @@
 
       .section {
         width: 100%;
-        border: 1px solid #4D4E53;
+        border: 1px solid #4d4e53;
         border-radius: 2px;
         padding: 10px 14px 10px 10px;
         margin-bottom: 10px;
@@ -142,8 +144,7 @@
           name="demo1_control"
           id="demo1_control"
           value="on"
-          checked
-        />
+          checked />
         <label for="demo1_control">Features active</label>
       </div>
       <div class="demo2">
@@ -170,8 +171,7 @@
           name="demo2_control"
           id="demo2_control"
           value="on"
-          checked
-        />
+          checked />
         <label for="demo2_control">Features active</label>
       </div>
     </div>
