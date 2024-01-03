@@ -12,7 +12,7 @@
         border: 4px solid blue;
         color: blue;
       }
-      @supports (font-smooth: always) or (-webkit-font-smoothing: always) {
+      @supports (font-smooth: always) or (-webkit-font-smoothing: antialiased) {
         .box {
           border: 4px dashed darkgreen;
           color: darkgreen;
@@ -24,8 +24,7 @@
   <body>
     <section class="preview">
       <div class="box">
-        If your browser supports font smoothing, the text
-        and border will be green.
+        The text and border will be green if your browser supports font smoothing.
       </div>
     </section>
 
@@ -34,7 +33,7 @@
   border: 4px solid blue;
   color: blue;
 }
-@supports (font-smooth: always) or (-webkit-font-smoothing: always) {
+@supports (font-smooth: always) or (-webkit-font-smoothing: antialiased) {
   .box {
     border: 4px dashed darkgreen;
     color: darkgreen;
@@ -44,7 +43,7 @@
 
     <textarea class="playable playable-html" style="height: 120px">
 <div class="box">
-  If your browser supports font smoothing, the text and border will be green.
+  The text and border will be green if your browser supports font smoothing.
 </div></textarea
     >
 
