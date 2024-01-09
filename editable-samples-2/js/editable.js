@@ -1,10 +1,10 @@
-var element = document.getElementById("example-element");
-var originalChoices = [];
-var initialChoice = 0;
+let element = document.getElementById("example-element");
+let originalChoices = [];
+let initialChoice = 0;
 
 function applyCode(code, choice) {
   element.style.cssText = code;
-  var errorIcon = choice.querySelector(".error");
+  let errorIcon = choice.querySelector(".error");
   if (!element.style.cssText) {
     errorIcon.classList.remove("hidden");
   } else {
@@ -12,10 +12,10 @@ function applyCode(code, choice) {
   }
 }
 
-var exampleChoices = document.querySelectorAll(".example-choice");
+let exampleChoices = document.querySelectorAll(".example-choice");
 
 function indexOf(exampleChoices, choice) {
-  for (var i = 0; i < exampleChoices.length; i++) {
+  for (let i = 0; i < exampleChoices.length; i++) {
     if (exampleChoices[i] === choice) {
       return i;
     }
@@ -33,16 +33,16 @@ function choose(choice) {
 
 function onChoose(e) {
   // highlght the code we are leaving
-  var selected = document.querySelector(".selected");
+  let selected = document.querySelector(".selected");
   if (selected && e.currentTarget != selected) {
-    var highlighted = Prism.highlight(
+    let highlighted = Prism.highlight(
       selected.firstChild.textContent,
       Prism.languages.css,
     );
     selected.firstChild.innerHTML = highlighted;
   }
   if (selected) {
-    var errorIcon = selected.querySelector(".error");
+    let errorIcon = selected.querySelector(".error");
     if (errorIcon) {
       errorIcon.classList.add("hidden");
     }
@@ -58,8 +58,8 @@ function onEdit(e) {
 }
 
 function copyTextOnly(e) {
-  var selection = window.getSelection();
-  var range = selection.getRangeAt(0);
+  let selection = window.getSelection();
+  let range = selection.getRangeAt(0);
 
   e.clipboardData.setData("text/plain", range.toString());
   e.clipboardData.setData("text/html", range.toString());
@@ -78,9 +78,9 @@ for (exampleChoice of exampleChoices) {
   exampleChoice.addEventListener("click", onChoose);
   exampleChoice.firstChild.addEventListener("keyup", onEdit);
   exampleChoice.querySelector(".reset").addEventListener("click", function (e) {
-    var choice = e.target.parentNode;
-    var replacementText = originalChoices[indexOf(exampleChoices, choice)];
-    var highlighted = Prism.highlight(replacementText, Prism.languages.css);
+    let choice = e.target.parentNode;
+    let replacementText = originalChoices[indexOf(exampleChoices, choice)];
+    let highlighted = Prism.highlight(replacementText, Prism.languages.css);
     choice.firstChild.innerHTML = highlighted;
   });
 }

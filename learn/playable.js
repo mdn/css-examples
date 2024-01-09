@@ -1,10 +1,10 @@
-var section = document.querySelector("section");
-var editable = document.querySelector(".editable");
-var textareaHTML = document.querySelector(".playable-html");
-var textareaCSS = document.querySelector(".playable-css");
-var reset = document.getElementById("reset");
-var htmlCode = textareaHTML.value;
-var cssCode = textareaCSS.value;
+let section = document.querySelector("section");
+let editable = document.querySelector(".editable");
+let textareaHTML = document.querySelector(".playable-html");
+let textareaCSS = document.querySelector(".playable-css");
+let reset = document.getElementById("reset");
+let htmlCode = textareaHTML.value;
+let cssCode = textareaCSS.value;
 
 let editorHeading = document.createElement("h4");
 editorHeading.innerHTML = "Interactive editor";

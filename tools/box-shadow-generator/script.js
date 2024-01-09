@@ -4,17 +4,17 @@
  * UI-SlidersManager
  */
 
-var SliderManager = (function SliderManager() {
-  var subscribers = {};
-  var sliders = [];
+let SliderManager = (function SliderManager() {
+  let subscribers = {};
+  let sliders = [];
 
-  var Slider = function (node) {
-    var min = node.getAttribute("data-min") | 0;
-    var max = node.getAttribute("data-max") | 0;
-    var step = node.getAttribute("data-step") | 0;
-    var value = node.getAttribute("data-value") | 0;
-    var snap = node.getAttribute("data-snap");
-    var topic = node.getAttribute("data-topic");
+  let Slider = function (node) {
+    let min = node.getAttribute("data-min") | 0;
+    let max = node.getAttribute("data-max") | 0;
+    let step = node.getAttribute("data-step") | 0;
+    let value = node.getAttribute("data-value") | 0;
+    let snap = node.getAttribute("data-snap");
+    let topic = node.getAttribute("data-topic");
 
     this.min = min;
     this.max = max > 0 ? max : 100;
@@ -24,7 +24,7 @@ var SliderManager = (function SliderManager() {
     this.topic = topic;
     this.node = node;
 
-    var pointer = document.createElement("div");
+    let pointer = document.createElement("div");
     pointer.className = "ui-slider-pointer";
     node.appendChild(pointer);
     this.pointer = pointer;
@@ -35,9 +35,9 @@ var SliderManager = (function SliderManager() {
     setValue(topic, this.value);
   };
 
-  var setButtonComponent = function setButtonComponent(node) {
-    var type = node.getAttribute("data-type");
-    var topic = node.getAttribute("data-topic");
+  let setButtonComponent = function setButtonComponent(node) {
+    let type = node.getAttribute("data-type");
+    let topic = node.getAttribute("data-topic");
     if (type === "sub") {
       node.textContent = "-";
       node.addEventListener("click", function () {
@@ -52,12 +52,12 @@ var SliderManager = (function SliderManager() {
     }
   };
 
-  var setInputComponent = function setInputComponent(node) {
-    var topic = node.getAttribute("data-topic");
-    var unit_type = node.getAttribute("data-unit");
+  let setInputComponent = function setInputComponent(node) {
+    let topic = node.getAttribute("data-topic");
+    let unit_type = node.getAttribute("data-unit");
 
-    var input = document.createElement("input");
-    var unit = document.createElement("span");
+    let input = document.createElement("input");
+    let unit = document.createElement("span");
     unit.textContent = unit_type;
 
     input.setAttribute("type", "text");
@@ -77,8 +77,8 @@ var SliderManager = (function SliderManager() {
     });
   };
 
-  var increment = function increment(topic) {
-    var slider = sliders[topic];
+  let increment = function increment(topic) {
+    let slider = sliders[topic];
     if (slider === null || slider === undefined) return;
 
     if (slider.value + slider.step <= slider.max) {
@@ -88,8 +88,8 @@ var SliderManager = (function SliderManager() {
     }
   };
 
-  var decrement = function decrement(topic) {
-    var slider = sliders[topic];
+  let decrement = function decrement(topic) {
+    let slider = sliders[topic];
     if (slider === null || slider === undefined) return;
 
     if (slider.value - slider.step >= slider.min) {
@@ -100,18 +100,18 @@ var SliderManager = (function SliderManager() {
   };
 
   // this = Slider object
-  var updateSlider = function updateSlider(e) {
-    var node = this.node;
-    var pos = e.pageX - node.offsetLeft;
-    var width = node.clientWidth;
-    var delta = this.max - this.min;
-    var offset = this.pointer.clientWidth + 4; // border width * 2
+  let updateSlider = function updateSlider(e) {
+    let node = this.node;
+    let pos = e.pageX - node.offsetLeft;
+    let width = node.clientWidth;
+    let delta = this.max - this.min;
+    let offset = this.pointer.clientWidth + 4; // border width * 2
 
-    if (pos < 0) pos = 0;
-    if (pos > width) pos = width;
+  if (pos < 0) pos = 0;
+  if (pos > width) pos = width;
 
-    var value = ((pos * delta) / width) | 0;
-    var precision = value % this.step;
+    let value = ((pos * delta) / width) | 0;
+    let precision = value % this.step;
     value = value - precision + this.min;
     if (precision > this.step / 2) value = value + this.step;
 
@@ -123,22 +123,22 @@ var SliderManager = (function SliderManager() {
     notify.call(this);
   };
 
-  var setValue = function setValue(topic, value) {
-    var slider = sliders[topic];
+  let setValue = function setValue(topic, value) {
+    let slider = sliders[topic];
 
     if (value > slider.max || value < slider.min) return;
 
-    var delta = slider.max - slider.min;
-    var width = slider.node.clientWidth;
-    var offset = slider.pointer.clientWidth;
-    var pos = ((value - slider.min) * width) / delta;
+    let delta = slider.max - slider.min;
+    let width = slider.node.clientWidth;
+    let offset = slider.pointer.clientWidth;
+    let pos = ((value - slider.min) * width) / delta;
     slider.value = value;
     slider.pointer.style.left = pos - offset / 2 + "px";
     slider.node.setAttribute("data-value", value);
     notify.call(slider);
   };
 
-  var setMouseTracking = function setMouseTracking(elem, callback) {
+  let setMouseTracking = function setMouseTracking(elem, callback) {
     elem.addEventListener("mousedown", function (e) {
       callback(e);
       document.addEventListener("mousemove", callback);
@@ -149,38 +149,38 @@ var SliderManager = (function SliderManager() {
     });
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
+  let unsubscribe = function unsubscribe(topic, callback) {
     subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
+  let notify = function notify() {
     if (subscribers[this.topic] === undefined) return;
 
-    for (var i in subscribers[this.topic]) {
+    for (let i in subscribers[this.topic]) {
       subscribers[this.topic][i](this.value);
     }
   };
 
-  var init = function init() {
-    var elem, size;
+  let init = function init() {
+    let elem, size;
 
     elem = document.querySelectorAll(".ui-slider-btn-set");
     size = elem.length;
-    for (var i = 0; i < size; i++) setButtonComponent(elem[i]);
+    for (let i = 0; i < size; i++) setButtonComponent(elem[i]);
 
     elem = document.querySelectorAll(".ui-slider-input");
     size = elem.length;
-    for (var i = 0; i < size; i++) setInputComponent(elem[i]);
+    for (let i = 0; i < size; i++) setInputComponent(elem[i]);
 
     elem = document.querySelectorAll(".ui-slider");
     size = elem.length;
-    for (var i = 0; i < size; i++) new Slider(elem[i]);
+    for (let i = 0; i < size; i++) new Slider(elem[i]);
   };
 
   return {
@@ -195,22 +195,22 @@ var SliderManager = (function SliderManager() {
  * UI-ButtonManager
  */
 
-var ButtonManager = (function CheckBoxManager() {
-  var subscribers = [];
-  var buttons = [];
+let ButtonManager = (function CheckBoxManager() {
+  let subscribers = [];
+  let buttons = [];
 
-  var CheckBox = function CheckBox(node) {
-    var topic = node.getAttribute("data-topic");
-    var state = node.getAttribute("data-state");
-    var name = node.getAttribute("data-label");
-    var align = node.getAttribute("data-text-on");
+  let CheckBox = function CheckBox(node) {
+    let topic = node.getAttribute("data-topic");
+    let state = node.getAttribute("data-state");
+    let name = node.getAttribute("data-label");
+    let align = node.getAttribute("data-text-on");
 
     state = state === "true";
 
-    var checkbox = document.createElement("input");
-    var label = document.createElement("label");
+    let checkbox = document.createElement("input");
+    let label = document.createElement("label");
 
-    var id = "checkbox-" + topic;
+    let id = "checkbox-" + topic;
     checkbox.id = id;
     checkbox.setAttribute("type", "checkbox");
     checkbox.checked = state;
@@ -239,11 +239,11 @@ var ButtonManager = (function CheckBoxManager() {
     buttons[topic] = this;
   };
 
-  var getNode = function getNode(topic) {
+  let getNode = function getNode(topic) {
     return buttons[topic].node;
   };
 
-  var setValue = function setValue(topic, value) {
+  let setValue = function setValue(topic, value) {
     try {
       buttons[topic].checkbox.checked = value;
       notify.call(buttons[topic]);
@@ -252,27 +252,27 @@ var ButtonManager = (function CheckBoxManager() {
     }
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
 
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
+  let unsubscribe = function unsubscribe(topic, callback) {
     subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
+  let notify = function notify() {
     if (subscribers[this.topic] === undefined) return;
-    for (var i = 0; i < subscribers[this.topic].length; i++)
+    for (let i = 0; i < subscribers[this.topic].length; i++)
       subscribers[this.topic][i](this.checkbox.checked);
   };
 
-  var init = function init() {
-    var elem = document.querySelectorAll(".ui-checkbox");
-    var size = elem.length;
-    for (var i = 0; i < size; i++) new CheckBox(elem[i]);
+  let init = function init() {
+    let elem = document.querySelectorAll(".ui-checkbox");
+    let size = elem.length;
+    for (let i = 0; i < size; i++) new CheckBox(elem[i]);
   };
 
   return {
@@ -287,7 +287,7 @@ window.addEventListener("load", function () {
   BoxShadow.init();
 });
 
-var BoxShadow = (function BoxShadow() {
+let BoxShadow = (function BoxShadow() {
   function getElemById(id) {
     return document.getElementById(id);
   }
@@ -342,13 +342,13 @@ var BoxShadow = (function BoxShadow() {
   };
 
   Color.prototype.updateRGB = function updateRGB() {
-    var sat = this.saturation / 100;
-    var value = this.value / 100;
-    var C = sat * value;
-    var H = this.hue / 60;
-    var X = C * (1 - Math.abs((H % 2) - 1));
-    var m = value - C;
-    var precision = 255;
+    let sat = this.saturation / 100;
+    let value = this.value / 100;
+    let C = sat * value;
+    let H = this.hue / 60;
+    let X = C * (1 - Math.abs((H % 2) - 1));
+    let m = value - C;
+    let precision = 255;
 
     C = (C + m) * precision;
     X = (X + m) * precision;
@@ -381,15 +381,15 @@ var BoxShadow = (function BoxShadow() {
   };
 
   Color.prototype.updateHSV = function updateHSV() {
-    var red = this.r / 255;
-    var green = this.g / 255;
-    var blue = this.b / 255;
+    let red = this.r / 255;
+    let green = this.g / 255;
+    let blue = this.b / 255;
 
-    var cmax = Math.max(red, green, blue);
-    var cmin = Math.min(red, green, blue);
-    var delta = cmax - cmin;
-    var hue = 0;
-    var saturation = 0;
+    let cmax = Math.max(red, green, blue);
+    let cmin = Math.min(red, green, blue);
+    let delta = cmax - cmin;
+    let hue = 0;
+    let saturation = 0;
 
     if (delta) {
       if (cmax === red) {
@@ -411,7 +411,7 @@ var BoxShadow = (function BoxShadow() {
   };
 
   Color.prototype.setHexa = function setHexa(value) {
-    var valid = /(^#{0,1}[0-9A-F]{6}$)|(^#{0,1}[0-9A-F]{3}$)/i.test(value);
+    let valid = /(^#{0,1}[0-9A-F]{6}$)|(^#{0,1}[0-9A-F]{3}$)/i.test(value);
     if (valid !== true) return;
 
     if (value[0] === "#") value = value.slice(1, value.length);
@@ -427,26 +427,26 @@ var BoxShadow = (function BoxShadow() {
   };
 
   Color.prototype.getHexa = function getHexa() {
-    var r = this.r.toString(16);
-    var g = this.g.toString(16);
-    var b = this.b.toString(16);
+    let r = this.r.toString(16);
+    let g = this.g.toString(16);
+    let b = this.b.toString(16);
     if (this.r < 16) r = "0" + r;
     if (this.g < 16) g = "0" + g;
     if (this.b < 16) b = "0" + b;
-    var value = "#" + r + g + b;
+    let value = "#" + r + g + b;
     return value.toUpperCase();
   };
 
   Color.prototype.getRGBA = function getRGBA() {
-    var rgb = "(" + this.r + ", " + this.g + ", " + this.b;
-    var a = "";
-    var v = "";
+    let rgb = "(" + this.r + ", " + this.g + ", " + this.b;
+    let a = "";
+    let v = "";
     if (this.a !== 1) {
       a = "a";
       v = ", " + this.a;
     }
 
-    var value = "rgb" + a + rgb + v + ")";
+    let value = "rgb" + a + rgb + v + ")";
     return value;
   };
 
@@ -466,14 +466,14 @@ var BoxShadow = (function BoxShadow() {
     this.spread = 0;
     this.color = new Color();
 
-    var hue = (Math.random() * 360) | 0;
-    var saturation = (Math.random() * 75) | 0;
-    var value = (Math.random() * 50 + 50) | 0;
+    let hue = (Math.random() * 360) | 0;
+    let saturation = (Math.random() * 75) | 0;
+    let value = (Math.random() * 50 + 50) | 0;
     this.color.setHSV(hue, saturation, value, 1);
   }
 
   Shadow.prototype.computeCSS = function computeCSS() {
-    var value = "";
+    let value = "";
     if (this.inset === true) value += "inset ";
     value += this.posX + "px ";
     value += this.posY + "px ";
@@ -506,28 +506,28 @@ var BoxShadow = (function BoxShadow() {
   /**
    * Color Picker
    */
-  var ColoPicker = (function ColoPicker() {
-    var colorpicker;
-    var hue_area;
-    var gradient_area;
-    var alpha_area;
-    var gradient_picker;
-    var hue_selector;
-    var alpha_selector;
-    var pick_object;
-    var info_rgb;
-    var info_hsv;
-    var info_hexa;
-    var output_color;
-    var color = new Color();
-    var subscribers = [];
+  let ColoPicker = (function ColoPicker() {
+    let colorpicker;
+    let hue_area;
+    let gradient_area;
+    let alpha_area;
+    let gradient_picker;
+    let hue_selector;
+    let alpha_selector;
+    let pick_object;
+    let info_rgb;
+    let info_hsv;
+    let info_hexa;
+    let output_color;
+    let color = new Color();
+    let subscribers = [];
 
-    var updateColor = function updateColor(e) {
-      var x = e.pageX - gradient_area.offsetLeft;
-      var y = e.pageY - gradient_area.offsetTop;
+    let updateColor = function updateColor(e) {
+      let x = e.pageX - gradient_area.offsetLeft;
+      let y = e.pageY - gradient_area.offsetTop;
 
       // width and height should be the same
-      var size = gradient_area.clientWidth;
+      let size = gradient_area.clientWidth;
 
       if (x > size) x = size;
       if (y > size) y = size;
@@ -535,8 +535,8 @@ var BoxShadow = (function BoxShadow() {
       if (x < 0) x = 0;
       if (y < 0) y = 0;
 
-      var value = (100 - (y * 100) / size) | 0;
-      var saturation = ((x * 100) / size) | 0;
+      let value = (100 - (y * 100) / size) | 0;
+      let saturation = ((x * 100) / size) | 0;
 
       color.setHSV(color.hue, saturation, value);
       // should update just
@@ -545,14 +545,14 @@ var BoxShadow = (function BoxShadow() {
       notify("color", color);
     };
 
-    var updateHue = function updateHue(e) {
-      var x = e.pageX - hue_area.offsetLeft;
-      var width = hue_area.clientWidth;
+    let updateHue = function updateHue(e) {
+      let x = e.pageX - hue_area.offsetLeft;
+      let width = hue_area.clientWidth;
 
       if (x < 0) x = 0;
       if (x > width) x = width;
 
-      var hue = ((360 * x) / width) | 0;
+      let hue = ((360 * x) / width) | 0;
       if (hue === 360) hue = 359;
 
       color.setHSV(hue, color.saturation, color.value);
@@ -565,9 +565,9 @@ var BoxShadow = (function BoxShadow() {
       notify("color", color);
     };
 
-    var updateAlpha = function updateAlpha(e) {
-      var x = e.pageX - alpha_area.offsetLeft;
-      var width = alpha_area.clientWidth;
+    let updateAlpha = function updateAlpha(e) {
+      let x = e.pageX - alpha_area.offsetLeft;
+      let width = alpha_area.clientWidth;
 
       if (x < 0) x = 0;
       if (x > width) x = width;
@@ -580,29 +580,29 @@ var BoxShadow = (function BoxShadow() {
       notify("color", color);
     };
 
-    var setHueGfx = function setHueGfx(hue) {
-      var sat = color.saturation;
-      var val = color.value;
-      var alpha = color.a;
+    let setHueGfx = function setHueGfx(hue) {
+      let sat = color.saturation;
+      let val = color.value;
+      let alpha = color.a;
 
       color.setHSV(hue, 100, 100);
       gradient_area.style.backgroundColor = color.getHexa();
 
       color.a = 0;
-      var start = color.getRGBA();
+      let start = color.getRGBA();
       color.a = 1;
-      var end = color.getRGBA();
+      let end = color.getRGBA();
       color.a = alpha;
 
-      var gradient =
+      let gradient =
         "-moz-linear-gradient(left, " + start + "0%, " + end + " 100%)";
       alpha_area.style.background = gradient;
     };
 
-    var updateUI = function updateUI() {
-      var x, y; // coordinates
-      var size; // size of the area
-      var offset; // pointer graphic selector offset
+    let updateUI = function updateUI() {
+      let x, y; // coordinates
+      let size; // size of the area
+      let offset; // pointer graphic selector offset
 
       // Set color pointer location
       size = gradient_area.clientWidth;
@@ -627,7 +627,7 @@ var BoxShadow = (function BoxShadow() {
       alpha_selector.style.left = x - offset + "px";
 
       // Set picker area background
-      var nc = new Color();
+      let nc = new Color();
       nc.copy(color);
       if (nc.hue === 360) nc.hue = 0;
       nc.setHSV(nc.hue, 100, 100);
@@ -636,10 +636,10 @@ var BoxShadow = (function BoxShadow() {
       // Set alpha area background
       nc.copy(color);
       nc.a = 0;
-      var start = nc.getRGBA();
+      let start = nc.getRGBA();
       nc.a = 1;
-      var end = nc.getRGBA();
-      var gradient =
+      let end = nc.getRGBA();
+      let gradient =
         "-moz-linear-gradient(left, " + start + "0%, " + end + " 100%)";
       alpha_area.style.background = gradient;
 
@@ -656,14 +656,14 @@ var BoxShadow = (function BoxShadow() {
       output_color.style.backgroundColor = color.getRGBA();
     };
 
-    var setInputComponent = function setInputComponent(node) {
-      var topic = node.getAttribute("data-topic");
-      var title = node.getAttribute("data-title");
-      var action = node.getAttribute("data-action");
+    let setInputComponent = function setInputComponent(node) {
+      let topic = node.getAttribute("data-topic");
+      let title = node.getAttribute("data-title");
+      let action = node.getAttribute("data-action");
       title = title === null ? "" : title;
 
-      var input = document.createElement("input");
-      var info = document.createElement("span");
+      let input = document.createElement("input");
+      let info = document.createElement("span");
       info.textContent = title;
 
       input.setAttribute("type", "text");
@@ -687,10 +687,10 @@ var BoxShadow = (function BoxShadow() {
       });
     };
 
-    var inputChangeHSV = function actionHSV(topic) {
-      var selector = "[data-action='set-HSV-" + topic + "']";
-      var node = document.querySelector("#colorpicker " + selector);
-      var value = parseInt(node.value);
+    let inputChangeHSV = function actionHSV(topic) {
+      let selector = "[data-action='set-HSV-" + topic + "']";
+      let node = document.querySelector("#colorpicker " + selector);
+      let value = parseInt(node.value);
 
       if (
         typeof value === "number" &&
@@ -704,10 +704,10 @@ var BoxShadow = (function BoxShadow() {
       updateUI();
     };
 
-    var inputChangeRGB = function inputChangeRGB(topic) {
-      var selector = "[data-action='set-RGB-" + topic + "']";
-      var node = document.querySelector("#colorpicker " + selector);
-      var value = parseInt(node.value);
+    let inputChangeRGB = function inputChangeRGB(topic) {
+      let selector = "[data-action='set-RGB-" + topic + "']";
+      let node = document.querySelector("#colorpicker " + selector);
+      let value = parseInt(node.value);
 
       if (
         typeof value === "number" &&
@@ -721,10 +721,10 @@ var BoxShadow = (function BoxShadow() {
       updateUI();
     };
 
-    var inputChangeAlpha = function inputChangeAlpha(topic) {
-      var selector = "[data-action='set-alpha-" + topic + "']";
-      var node = document.querySelector("#colorpicker " + selector);
-      var value = parseFloat(node.value);
+    let inputChangeAlpha = function inputChangeAlpha(topic) {
+      let selector = "[data-action='set-alpha-" + topic + "']";
+      let node = document.querySelector("#colorpicker " + selector);
+      let value = parseFloat(node.value);
 
       if (
         typeof value === "number" &&
@@ -737,16 +737,16 @@ var BoxShadow = (function BoxShadow() {
       updateUI();
     };
 
-    var inputChangeHexa = function inputChangeHexa(topic) {
-      var selector = "[data-action='set-hexa-" + topic + "']";
-      var node = document.querySelector("#colorpicker " + selector);
-      var value = node.value;
+    let inputChangeHexa = function inputChangeHexa(topic) {
+      let selector = "[data-action='set-hexa-" + topic + "']";
+      let node = document.querySelector("#colorpicker " + selector);
+      let value = node.value;
       color.setHexa(value);
       color.updateHSV();
       updateUI();
     };
 
-    var setMouseTracking = function setMouseTracking(elem, callback) {
+    let setMouseTracking = function setMouseTracking(elem, callback) {
       elem.addEventListener("mousedown", function (e) {
         callback(e);
         document.addEventListener("mousemove", callback);
@@ -760,7 +760,7 @@ var BoxShadow = (function BoxShadow() {
     /*
      * Observer
      */
-    var setColor = function setColor(obj) {
+    let setColor = function setColor(obj) {
       if (obj instanceof Color !== true) {
         console.log("Typeof instance not Color");
         return;
@@ -769,22 +769,22 @@ var BoxShadow = (function BoxShadow() {
       updateUI();
     };
 
-    var subscribe = function subscribe(topic, callback) {
+    let subscribe = function subscribe(topic, callback) {
       if (subscribers[topic] === undefined) subscribers[topic] = [];
 
       subscribers[topic].push(callback);
     };
 
-    var unsubscribe = function unsubscribe(callback) {
+    let unsubscribe = function unsubscribe(callback) {
       subscribers.indexOf(callback);
       subscribers.splice(index, 1);
     };
 
-    var notify = function notify(topic, value) {
-      for (var i in subscribers[topic]) subscribers[topic][i](value);
+    let notify = function notify(topic, value) {
+      for (let i in subscribers[topic]) subscribers[topic][i](value);
     };
 
-    var init = function init() {
+    let init = function init() {
       colorpicker = getElemById("colorpicker");
       hue_area = getElemById("hue");
       gradient_area = getElemById("gradient");
@@ -794,9 +794,9 @@ var BoxShadow = (function BoxShadow() {
       alpha_selector = getElemById("alpha_selector");
       output_color = getElemById("output_color");
 
-      var elem = document.querySelectorAll("#colorpicker .input");
-      var size = elem.length;
-      for (var i = 0; i < size; i++) setInputComponent(elem[i]);
+      let elem = document.querySelectorAll("#colorpicker .input");
+      let size = elem.length;
+      for (let i = 0; i < size; i++) setInputComponent(elem[i]);
 
       setMouseTracking(gradient_area, updateColor);
       setMouseTracking(hue_area, updateHue);
@@ -814,19 +814,19 @@ var BoxShadow = (function BoxShadow() {
   /**
    * Shadow dragging
    */
-  var PreviewMouseTracking = (function Drag() {
-    var active = false;
-    var lastX = 0;
-    var lastY = 0;
-    var subscribers = [];
+  let PreviewMouseTracking = (function Drag() {
+    let active = false;
+    let lastX = 0;
+    let lastY = 0;
+    let subscribers = [];
 
-    var init = function init(id) {
-      var elem = getElemById(id);
+    let init = function init(id) {
+      let elem = getElemById(id);
       elem.addEventListener("mousedown", dragStart, false);
       document.addEventListener("mouseup", dragEnd, false);
     };
 
-    var dragStart = function dragStart(e) {
+    let dragStart = function dragStart(e) {
       if (e.button !== 0) return;
 
       active = true;
@@ -835,7 +835,7 @@ var BoxShadow = (function BoxShadow() {
       document.addEventListener("mousemove", mouseDrag, false);
     };
 
-    var dragEnd = function dragEnd(e) {
+    let dragEnd = function dragEnd(e) {
       if (e.button !== 0) return;
 
       if (active === true) {
@@ -844,23 +844,23 @@ var BoxShadow = (function BoxShadow() {
       }
     };
 
-    var mouseDrag = function mouseDrag(e) {
+    let mouseDrag = function mouseDrag(e) {
       notify(e.clientX - lastX, e.clientY - lastY);
       lastX = e.clientX;
       lastY = e.clientY;
     };
 
-    var subscribe = function subscribe(callback) {
+    let subscribe = function subscribe(callback) {
       subscribers.push(callback);
     };
 
-    var unsubscribe = function unsubscribe(callback) {
-      var index = subscribers.indexOf(callback);
+    let unsubscribe = function unsubscribe(callback) {
+      let index = subscribers.indexOf(callback);
       subscribers.splice(index, 1);
     };
 
-    var notify = function notify(deltaX, deltaY) {
-      for (var i in subscribers) subscribers[i](deltaX, deltaY);
+    let notify = function notify(deltaX, deltaY) {
+      for (let i in subscribers) subscribers[i](deltaX, deltaY);
     };
 
     return {
@@ -873,7 +873,7 @@ var BoxShadow = (function BoxShadow() {
   /*
    * Element Class
    */
-  var CssClass = function CssClass(id) {
+  let CssClass = function CssClass(id) {
     this.left = 0;
     this.top = 0;
     this.rotate = 0;
@@ -941,7 +941,7 @@ var BoxShadow = (function BoxShadow() {
 
   // Browser support
   CssClass.prototype.setRotate = function setRotate(value) {
-    var cssvalue = "rotate(" + value + "deg)";
+    let cssvalue = "rotate(" + value + "deg)";
 
     this.node.style.transform = cssvalue;
     this.node.style.webkitTransform = cssvalue;
@@ -975,7 +975,7 @@ var BoxShadow = (function BoxShadow() {
     if (typeof value !== "boolean" || this.display === value) return;
 
     this.display = value;
-    var display = this.display === true ? "block" : "none";
+    let display = this.display === true ? "block" : "none";
     this.node.style.display = display;
     this.object.style.display = display;
   };
@@ -984,7 +984,7 @@ var BoxShadow = (function BoxShadow() {
     if (typeof value !== "boolean" || this.border === value) return;
 
     this.border = value;
-    var border = this.border === true ? "1px solid #CCC" : "none";
+    let border = this.border === true ? "1px solid #CCC" : "none";
     this.node.style.border = border;
   };
 
@@ -1011,20 +1011,20 @@ var BoxShadow = (function BoxShadow() {
   /**
    * Tool Manager
    */
-  var Tool = (function Tool() {
-    var preview;
-    var classes = [];
-    var active = null;
-    var animate = false;
+  let Tool = (function Tool() {
+    let preview;
+    let classes = [];
+    let active = null;
+    let animate = false;
 
     /*
      * Toll actions
      */
-    var addCssClass = function addCssClass(id) {
+    let addCssClass = function addCssClass(id) {
       classes[id] = new CssClass(id);
     };
 
-    var setActiveClass = function setActiveClass(id) {
+    let setActiveClass = function setActiveClass(id) {
       active = classes[id];
       active.shadowID = null;
       ColoPicker.setColor(classes[id].bgcolor);
@@ -1038,33 +1038,33 @@ var BoxShadow = (function BoxShadow() {
       active.updateShadows();
     };
 
-    var disableClass = function disableClass(topic) {
+    let disableClass = function disableClass(topic) {
       classes[topic].toggleDisplay(false);
       ButtonManager.setValue(topic, false);
     };
 
-    var addShadow = function addShadow(position) {
+    let addShadow = function addShadow(position) {
       if (animate === true) return -1;
 
       active.shadows.splice(position, 0, new Shadow());
       active.render.splice(position, 0, null);
     };
 
-    var swapShadow = function swapShadow(id1, id2) {
-      var x = active.shadows[id1];
+    let swapShadow = function swapShadow(id1, id2) {
+      let x = active.shadows[id1];
       active.shadows[id1] = active.shadows[id2];
       active.shadows[id2] = x;
       updateShadowCSS(id1);
       updateShadowCSS(id2);
     };
 
-    var deleteShadow = function deleteShadow(position) {
+    let deleteShadow = function deleteShadow(position) {
       active.shadows.splice(position, 1);
       active.render.splice(position, 1);
       active.updateShadows();
     };
 
-    var setActiveShadow = function setActiveShadow(id, glow) {
+    let setActiveShadow = function setActiveShadow(id, glow) {
       active.shadowID = id;
       ColoPicker.setColor(active.shadows[id].color);
       ButtonManager.setValue("inset", active.shadows[id].inset);
@@ -1075,12 +1075,12 @@ var BoxShadow = (function BoxShadow() {
       if (glow === true) addGlowEffect(id);
     };
 
-    var addGlowEffect = function addGlowEffect(id) {
+    let addGlowEffect = function addGlowEffect(id) {
       if (animate === true) return;
 
       animate = true;
-      var store = new Shadow();
-      var shadow = active.shadows[id];
+      let store = new Shadow();
+      let shadow = active.shadows[id];
 
       store.copy(shadow);
       shadow.color.setRGBA(40, 125, 200, 1);
@@ -1100,7 +1100,7 @@ var BoxShadow = (function BoxShadow() {
       }, 200);
     };
 
-    var updateActivePos = function updateActivePos(deltaX, deltaY) {
+    let updateActivePos = function updateActivePos(deltaX, deltaY) {
       if (active.shadowID === null) active.updatePos(deltaX, deltaY);
       else updateShadowPos(deltaX, deltaY);
     };
@@ -1108,19 +1108,19 @@ var BoxShadow = (function BoxShadow() {
     /*
      * Shadow properties
      */
-    var updateShadowCSS = function updateShadowCSS(id) {
+    let updateShadowCSS = function updateShadowCSS(id) {
       active.render[id] = active.shadows[id].computeCSS();
       active.updateShadows();
     };
 
-    var toggleShadowInset = function toggleShadowInset(value) {
+    let toggleShadowInset = function toggleShadowInset(value) {
       if (active.shadowID === null) return;
       active.shadows[active.shadowID].toggleInset(value);
       updateShadowCSS(active.shadowID);
     };
 
-    var updateShadowPos = function updateShadowPos(deltaX, deltaY) {
-      var shadow = active.shadows[active.shadowID];
+    let updateShadowPos = function updateShadowPos(deltaX, deltaY) {
+      let shadow = active.shadows[active.shadowID];
       shadow.posX += deltaX;
       shadow.posY += deltaY;
       SliderManager.setValue("posX", shadow.posX);
@@ -1128,31 +1128,31 @@ var BoxShadow = (function BoxShadow() {
       updateShadowCSS(active.shadowID);
     };
 
-    var setShadowPosX = function setShadowPosX(value) {
+    let setShadowPosX = function setShadowPosX(value) {
       if (active.shadowID === null) return;
       active.shadows[active.shadowID].posX = value;
       updateShadowCSS(active.shadowID);
     };
 
-    var setShadowPosY = function setShadowPosY(value) {
+    let setShadowPosY = function setShadowPosY(value) {
       if (active.shadowID === null) return;
       active.shadows[active.shadowID].posY = value;
       updateShadowCSS(active.shadowID);
     };
 
-    var setShadowBlur = function setShadowBlur(value) {
+    let setShadowBlur = function setShadowBlur(value) {
       if (active.shadowID === null) return;
       active.shadows[active.shadowID].blur = value;
       updateShadowCSS(active.shadowID);
     };
 
-    var setShadowSpread = function setShadowSpread(value) {
+    let setShadowSpread = function setShadowSpread(value) {
       if (active.shadowID === null) return;
       active.shadows[active.shadowID].spread = value;
       updateShadowCSS(active.shadowID);
     };
 
-    var updateShadowColor = function updateShadowColor(color) {
+    let updateShadowColor = function updateShadowColor(color) {
       active.shadows[active.shadowID].color.copy(color);
       updateShadowCSS(active.shadowID);
     };
@@ -1160,12 +1160,12 @@ var BoxShadow = (function BoxShadow() {
     /*
      * Element Properties
      */
-    var updateColor = function updateColor(color) {
+    let updateColor = function updateColor(color) {
       if (active.shadowID === null) active.updateBgColor(color);
       else updateShadowColor(color);
     };
 
-    var init = function init() {
+    let init = function init() {
       preview = getElemById("preview");
 
       ColoPicker.subscribe("color", updateColor);
@@ -1242,17 +1242,17 @@ var BoxShadow = (function BoxShadow() {
   /**
    * Layer Manager
    */
-  var LayerManager = (function LayerManager() {
-    var stacks = [];
-    var active = {
+  let LayerManager = (function LayerManager() {
+    let stacks = [];
+    let active = {
       node: null,
       stack: null,
     };
-    var elements = {};
+    let elements = {};
 
-    var mouseEvents = function mouseEvents(e) {
-      var node = e.target;
-      var type = node.getAttribute("data-type");
+    let mouseEvents = function mouseEvents(e) {
+      let node = e.target;
+      let type = node.getAttribute("data-type");
 
       if (type === "subject") setActiveStack(stacks[node.id]);
 
@@ -1272,7 +1272,7 @@ var BoxShadow = (function BoxShadow() {
       if (type === "move-down") active.stack.moveLayer(-1);
     };
 
-    var setActiveStack = function setActiveStack(stackObj) {
+    let setActiveStack = function setActiveStack(stackObj) {
       active.stack.hide();
       active.stack = stackObj;
       active.stack.show();
@@ -1281,10 +1281,10 @@ var BoxShadow = (function BoxShadow() {
     /*
      * Stack object
      */
-    var Stack = function Stack(subject) {
-      var S = document.createElement("div");
-      var title = document.createElement("div");
-      var stack = document.createElement("div");
+    let Stack = function Stack(subject) {
+      let S = document.createElement("div");
+      let title = document.createElement("div");
+      let stack = document.createElement("div");
 
       S.className = "container";
       stack.className = "stack";
@@ -1307,8 +1307,8 @@ var BoxShadow = (function BoxShadow() {
     Stack.prototype.addLayer = function addLayer() {
       if (Tool.addShadow(this.layerID) == -1) return;
 
-      var uid = this.getUID();
-      var layer = this.createLayer(uid);
+      let uid = this.getUID();
+      let layer = this.createLayer(uid);
 
       if (this.layer === null && this.stack.children.length >= 1)
         this.layer = this.stack.children[0];
@@ -1320,8 +1320,8 @@ var BoxShadow = (function BoxShadow() {
     };
 
     Stack.prototype.createLayer = function createLayer(uid) {
-      var layer = document.createElement("div");
-      var del = document.createElement("span");
+      let layer = document.createElement("div");
+      let del = document.createElement("span");
 
       layer.className = "node";
       layer.setAttribute("data-shid", uid);
@@ -1346,7 +1346,7 @@ var BoxShadow = (function BoxShadow() {
       if (direction === 1 && this.layerID === 0) return;
 
       if (direction === -1) {
-        var before = null;
+        let before = null;
         Tool.swapShadow(this.layerID, this.layerID + 1);
         this.swapOrder(this.layerID, this.layerID + 1);
         this.layerID += 1;
@@ -1368,14 +1368,14 @@ var BoxShadow = (function BoxShadow() {
     };
 
     Stack.prototype.swapOrder = function swapOrder(pos1, pos2) {
-      var x = this.order[pos1];
+      let x = this.order[pos1];
       this.order[pos1] = this.order[pos2];
       this.order[pos2] = x;
     };
 
     Stack.prototype.deleteLayer = function deleteLayer(node) {
-      var shadowID = node.getAttribute("data-shid") | 0;
-      var index = this.order.indexOf(shadowID);
+      let shadowID = node.getAttribute("data-shid") | 0;
+      let index = this.order.indexOf(shadowID);
       this.stack.removeChild(this.stack.children[index]);
       this.order.splice(index, 1);
       this.count--;
@@ -1409,7 +1409,7 @@ var BoxShadow = (function BoxShadow() {
       this.layer = node;
       this.layer.setAttribute("data-active", "layer");
 
-      var shadowID = node.getAttribute("data-shid") | 0;
+      let shadowID = node.getAttribute("data-shid") | 0;
       this.layerID = this.order.indexOf(shadowID);
       Tool.setActiveShadow(this.layerID, true);
     };
@@ -1424,7 +1424,7 @@ var BoxShadow = (function BoxShadow() {
     Stack.prototype.hide = function hide() {
       this.unsetActiveLayer();
       this.subject.removeAttribute("data-active");
-      var style = this.container.style;
+      let style = this.container.style;
       style.left = "100%";
       style.zIndex = "0";
     };
@@ -1442,17 +1442,17 @@ var BoxShadow = (function BoxShadow() {
       }
 
       this.subject.setAttribute("data-active", "subject");
-      var style = this.container.style;
+      let style = this.container.style;
       style.left = "0";
       style.zIndex = "10";
       Tool.setActiveClass(this.id);
     };
 
     function init() {
-      var elem, size;
-      var layerManager = getElemById("layer_manager");
-      var layerMenu = getElemById("layer_menu");
-      var container = getElemById("stack_container");
+      let elem, size;
+      let layerManager = getElemById("layer_manager");
+      let layerMenu = getElemById("layer_menu");
+      let container = getElemById("stack_container");
 
       elements.shadow_properties = getElemById("shadow_properties");
       elements.element_properties = getElemById("element_properties");
@@ -1462,8 +1462,8 @@ var BoxShadow = (function BoxShadow() {
       elem = document.querySelectorAll('#layer_menu [data-type="subject"]');
       size = elem.length;
 
-      for (var i = 0; i < size; i++) {
-        var S = new Stack(elem[i]);
+      for (let i = 0; i < size; i++) {
+        let S = new Stack(elem[i]);
         stacks[elem[i].id] = S;
         container.appendChild(S.container);
         Tool.addCssClass(elem[i].id);
@@ -1498,19 +1498,19 @@ var BoxShadow = (function BoxShadow() {
   /*
    * OutputManager
    */
-  var OutputManager = (function OutputManager() {
-    var classes = [];
-    var buttons = [];
-    var active = null;
-    var menu = null;
-    var button_offset = 0;
+  let OutputManager = (function OutputManager() {
+    let classes = [];
+    let buttons = [];
+    let active = null;
+    let menu = null;
+    let button_offset = 0;
 
-    var crateOutputNode = function (topic, property) {
-      var prop = document.createElement("div");
-      var name = document.createElement("span");
-      var value = document.createElement("span");
+    let crateOutputNode = function (topic, property) {
+      let prop = document.createElement("div");
+      let name = document.createElement("span");
+      let value = document.createElement("span");
 
-      var pmatch = property.match(
+      let pmatch = property.match(
         /(^([a-z0-9\-]*)=\[([a-z0-9\-\"]*)\])|^([a-z0-9\-]*)/i,
       );
 
@@ -1533,11 +1533,11 @@ var BoxShadow = (function BoxShadow() {
       classes[topic].prop[property] = value;
     };
 
-    var OutputClass = function OutputClass(node) {
-      var topic = node.getAttribute("data-topic");
-      var prop = node.getAttribute("data-prop");
-      var name = node.getAttribute("data-name");
-      var properties = prop.split(" ");
+    let OutputClass = function OutputClass(node) {
+      let topic = node.getAttribute("data-topic");
+      let prop = node.getAttribute("data-prop");
+      let name = node.getAttribute("data-name");
+      let properties = prop.split(" ");
 
       classes[topic] = {};
       classes[topic].node = node;
@@ -1545,20 +1545,20 @@ var BoxShadow = (function BoxShadow() {
       classes[topic].line = [];
       classes[topic].button = new Button(topic);
 
-      var open_decl = document.createElement("div");
-      var end_decl = document.createElement("div");
+      let open_decl = document.createElement("div");
+      let end_decl = document.createElement("div");
 
       open_decl.textContent = name + " {";
       end_decl.textContent = "}";
       node.appendChild(open_decl);
 
-      for (var i in properties) crateOutputNode(topic, properties[i]);
+      for (let i in properties) crateOutputNode(topic, properties[i]);
 
       node.appendChild(end_decl);
     };
 
-    var Button = function Button(topic) {
-      var button = document.createElement("div");
+    let Button = function Button(topic) {
+      let button = document.createElement("div");
 
       button.className = "button";
       button.textContent = topic;
@@ -1573,7 +1573,7 @@ var BoxShadow = (function BoxShadow() {
       return button;
     };
 
-    var toggleDisplay = function toggleDisplay(topic) {
+    let toggleDisplay = function toggleDisplay(topic) {
       active.button.removeAttribute("data-active");
       active.node.style.display = "none";
       active = classes[topic];
@@ -1581,15 +1581,15 @@ var BoxShadow = (function BoxShadow() {
       active.button.setAttribute("data-active", "true");
     };
 
-    var toggleButton = function toggleButton(topic, value) {
-      var display = value === true ? "block" : "none";
+    let toggleButton = function toggleButton(topic, value) {
+      let display = value === true ? "block" : "none";
       classes[topic].button.style.display = display;
 
       if (value === true) toggleDisplay(topic);
       else toggleDisplay("element");
     };
 
-    var updateProperty = function updateProperty(topic, property, data) {
+    let updateProperty = function updateProperty(topic, property, data) {
       try {
         classes[topic].prop[property].textContent = data + ";";
       } catch (error) {
@@ -1597,8 +1597,8 @@ var BoxShadow = (function BoxShadow() {
       }
     };
 
-    var toggleProperty = function toggleProperty(topic, property, value) {
-      var display = value === true ? "block" : "none";
+    let toggleProperty = function toggleProperty(topic, property, value) {
+      let display = value === true ? "block" : "none";
       try {
         classes[topic].line[property].style.display = display;
       } catch (error) {
@@ -1606,12 +1606,12 @@ var BoxShadow = (function BoxShadow() {
       }
     };
 
-    var init = function init() {
+    let init = function init() {
       menu = getElemById("menu");
 
-      var elem = document.querySelectorAll("#output .output");
-      var size = elem.length;
-      for (var i = 0; i < size; i++) OutputClass(elem[i]);
+      let elem = document.querySelectorAll("#output .output");
+      let size = elem.length;
+      for (let i = 0; i < size; i++) OutputClass(elem[i]);
 
       active = classes["element"];
       toggleDisplay("element");
@@ -1635,7 +1635,7 @@ var BoxShadow = (function BoxShadow() {
   /**
    * Init Tool
    */
-  var init = function init() {
+  let init = function init() {
     ButtonManager.init();
     OutputManager.init();
     ColoPicker.init();

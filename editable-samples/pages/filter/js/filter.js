@@ -1,1 +1,1 @@
-var cmInitContent = "filter: hue-rotate(180deg);\n\n";
+let cmInitContent = "filter: hue-rotate(180deg);\n\n";

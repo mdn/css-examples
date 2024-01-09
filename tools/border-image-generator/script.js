@@ -2,12 +2,12 @@
  * UI-SlidersManager
  */
 
-var InputSliderManager = (function InputSliderManager() {
-  var subscribers = {};
-  var sliders = [];
+let InputSliderManager = (function InputSliderManager() {
+  let subscribers = {};
+  let sliders = [];
 
-  var InputComponent = function InputComponent(obj) {
-    var input = document.createElement("input");
+  let InputComponent = function InputComponent(obj) {
+    let input = document.createElement("input");
     input.setAttribute("type", "text");
     input.style.width = 50 + obj.precision * 10 + "px";
 
@@ -16,7 +16,7 @@ var InputSliderManager = (function InputSliderManager() {
     });
 
     input.addEventListener("change", function (e) {
-      var value = parseFloat(e.target.value);
+      let value = parseFloat(e.target.value);
 
       if (isNaN(value) === true) setValue(obj.topic, obj.value);
       else setValue(obj.topic, value);
@@ -25,10 +25,10 @@ var InputSliderManager = (function InputSliderManager() {
     return input;
   };
 
-  var SliderComponent = function SliderComponent(obj, sign) {
-    var slider = document.createElement("div");
-    var startX = null;
-    var start_value = 0;
+  let SliderComponent = function SliderComponent(obj, sign) {
+    let slider = document.createElement("div");
+    let startX = null;
+    let start_value = 0;
 
     slider.addEventListener("click", function (e) {
       document.removeEventListener("mousemove", sliderMotion);
@@ -44,32 +44,32 @@ var InputSliderManager = (function InputSliderManager() {
       document.addEventListener("mousemove", sliderMotion);
     });
 
-    var slideEnd = function slideEnd(e) {
+    let slideEnd = function slideEnd(e) {
       document.removeEventListener("mousemove", sliderMotion);
       document.body.style.cursor = "auto";
       slider.style.cursor = "pointer";
     };
 
-    var sliderMotion = function sliderMotion(e) {
+    let sliderMotion = function sliderMotion(e) {
       slider.style.cursor = "e-resize";
-      var delta = ((e.clientX - startX) / obj.sensitivity) | 0;
-      var value = delta * obj.step + start_value;
+      let delta = ((e.clientX - startX) / obj.sensitivity) | 0;
+      let value = delta * obj.step + start_value;
       setValue(obj.topic, value);
     };
 
     return slider;
   };
 
-  var InputSlider = function (node) {
-    var min = parseFloat(node.getAttribute("data-min"));
-    var max = parseFloat(node.getAttribute("data-max"));
-    var step = parseFloat(node.getAttribute("data-step"));
-    var value = parseFloat(node.getAttribute("data-value"));
-    var topic = node.getAttribute("data-topic");
-    var unit = node.getAttribute("data-unit");
-    var name = node.getAttribute("data-info");
-    var sensitivity = node.getAttribute("data-sensitivity") | 0;
-    var precision = node.getAttribute("data-precision") | 0;
+  let InputSlider = function (node) {
+    let min = parseFloat(node.getAttribute("data-min"));
+    let max = parseFloat(node.getAttribute("data-max"));
+    let step = parseFloat(node.getAttribute("data-step"));
+    let value = parseFloat(node.getAttribute("data-value"));
+    let topic = node.getAttribute("data-topic");
+    let unit = node.getAttribute("data-unit");
+    let name = node.getAttribute("data-info");
+    let sensitivity = node.getAttribute("data-sensitivity") | 0;
+    let precision = node.getAttribute("data-precision") | 0;
 
     this.min = isNaN(min) ? 0 : min;
     this.max = isNaN(max) ? 100 : max;
@@ -81,15 +81,15 @@ var InputSliderManager = (function InputSliderManager() {
     this.sensitivity = sensitivity > 0 ? sensitivity : 5;
     value = isNaN(value) ? this.min : value;
 
-    var input = new InputComponent(this);
-    var slider_left = new SliderComponent(this, -1);
-    var slider_right = new SliderComponent(this, 1);
+    let input = new InputComponent(this);
+    let slider_left = new SliderComponent(this, -1);
+    let slider_right = new SliderComponent(this, 1);
 
     slider_left.className = "ui-input-slider-left";
     slider_right.className = "ui-input-slider-right";
 
     if (name) {
-      var info = document.createElement("span");
+      let info = document.createElement("span");
       info.className = "ui-input-slider-info";
       info.textContent = name;
       node.appendChild(info);
@@ -108,8 +108,8 @@ var InputSliderManager = (function InputSliderManager() {
     this.input.value = this.value.toFixed(this.precision) + this.unit;
   };
 
-  var setValue = function setValue(topic, value, send_notify) {
-    var slider = sliders[topic];
+  let setValue = function setValue(topic, value, send_notify) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     value = parseFloat(value.toFixed(slider.precision));
@@ -127,53 +127,53 @@ var InputSliderManager = (function InputSliderManager() {
     notify.call(slider);
   };
 
-  var setMax = function setMax(topic, value) {
-    var slider = sliders[topic];
+  let setMax = function setMax(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.max = value;
     setValue(topic, slider.value);
   };
 
-  var setMin = function setMin(topic, value) {
-    var slider = sliders[topic];
+  let setMin = function setMin(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.min = value;
     setValue(topic, slider.value);
   };
 
-  var setUnit = function setUnit(topic, unit) {
-    var slider = sliders[topic];
+  let setUnit = function setUnit(topic, unit) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.unit = unit;
     setValue(topic, slider.value);
   };
 
-  var setStep = function setStep(topic, value) {
-    var slider = sliders[topic];
+  let setStep = function setStep(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.step = parseFloat(value);
     setValue(topic, slider.value);
   };
 
-  var setPrecision = function setPrecision(topic, value) {
-    var slider = sliders[topic];
+  let setPrecision = function setPrecision(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     value = value | 0;
     slider.precision = value;
 
-    var step = parseFloat(slider.step.toFixed(value));
+    let step = parseFloat(slider.step.toFixed(value));
     if (step === 0) slider.step = 1 / Math.pow(10, value);
 
     setValue(topic, slider.value);
   };
 
-  var setSensitivity = function setSensitivity(topic, value) {
-    var slider = sliders[topic];
+  let setSensitivity = function setSensitivity(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     value = value | 0;
@@ -181,36 +181,36 @@ var InputSliderManager = (function InputSliderManager() {
     slider.sensitivity = value > 0 ? value : 5;
   };
 
-  var getNode = function getNode(topic) {
+  let getNode = function getNode(topic) {
     return sliders[topic].node;
   };
 
-  var getPrecision = function getPrecision(topic) {
+  let getPrecision = function getPrecision(topic) {
     return sliders[topic].precision;
   };
 
-  var getStep = function getStep(topic) {
+  let getStep = function getStep(topic) {
     return sliders[topic].step;
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
+  let unsubscribe = function unsubscribe(topic, callback) {
     subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
+  let notify = function notify() {
     if (subscribers[this.topic] === undefined) return;
-    for (var i = 0; i < subscribers[this.topic].length; i++)
+    for (let i = 0; i < subscribers[this.topic].length; i++)
       subscribers[this.topic][i](this.value);
   };
 
-  var createSlider = function createSlider(topic, label) {
-    var slider = document.createElement("div");
+  let createSlider = function createSlider(topic, label) {
+    let slider = document.createElement("div");
     slider.className = "ui-input-slider";
     slider.setAttribute("data-topic", topic);
 
@@ -220,10 +220,10 @@ var InputSliderManager = (function InputSliderManager() {
     return slider;
   };
 
-  var init = function init() {
-    var elem = document.querySelectorAll(".ui-input-slider");
-    var size = elem.length;
-    for (var i = 0; i < size; i++) new InputSlider(elem[i]);
+  let init = function init() {
+    let elem = document.querySelectorAll(".ui-input-slider");
+    let size = elem.length;
+    for (let i = 0; i < size; i++) new InputSlider(elem[i]);
   };
 
   return {
@@ -248,23 +248,23 @@ var InputSliderManager = (function InputSliderManager() {
  * UI-DropDown Select
  */
 
-var DropDownManager = (function DropdownManager() {
-  var subscribers = {};
-  var dropdowns = [];
-  var active = null;
+let DropDownManager = (function DropdownManager() {
+  let subscribers = {};
+  let dropdowns = [];
+  let active = null;
 
-  var visibility = ["hidden", "visible"];
+  let visibility = ["hidden", "visible"];
 
-  var DropDown = function DropDown(node) {
-    var topic = node.getAttribute("data-topic");
-    var label = node.getAttribute("data-label");
-    var selected = node.getAttribute("data-selected") | 0;
+  let DropDown = function DropDown(node) {
+    let topic = node.getAttribute("data-topic");
+    let label = node.getAttribute("data-label");
+    let selected = node.getAttribute("data-selected") | 0;
 
-    var select = document.createElement("div");
-    var list = document.createElement("div");
-    var uval = 0;
-    var option = null;
-    var option_value = null;
+    let select = document.createElement("div");
+    let list = document.createElement("div");
+    let uval = 0;
+    let option = null;
+    let option_value = null;
 
     list.className = "ui-dropdown-list";
     select.className = "ui-dropdown-select";
@@ -313,7 +313,7 @@ var DropDownManager = (function DropdownManager() {
     else this.dropmenu.removeAttribute("data-hidden");
   };
 
-  var clickOut = function clickOut(e) {
+  let clickOut = function clickOut(e) {
     if (
       active.state === 0 ||
       e.target === active.dropmenu ||
@@ -345,13 +345,13 @@ var DropDownManager = (function DropdownManager() {
     notify.call(this);
   };
 
-  var createDropDown = function createDropDown(topic, options) {
-    var dropdown = document.createElement("div");
+  let createDropDown = function createDropDown(topic, options) {
+    let dropdown = document.createElement("div");
     dropdown.setAttribute("data-topic", topic);
     dropdown.className = "ui-dropdown";
 
-    for (var i in options) {
-      var x = document.createElement("div");
+    for (let i in options) {
+      let x = document.createElement("div");
       x.setAttribute("data-value", i);
       x.textContent = options[i];
       dropdown.appendChild(x);
@@ -362,7 +362,7 @@ var DropDownManager = (function DropdownManager() {
     return dropdown;
   };
 
-  var setValue = function setValue(topic, index) {
+  let setValue = function setValue(topic, index) {
     if (
       dropdowns[topic] === undefined ||
       index >= dropdowns[topic].dropmenu.children.length
@@ -372,30 +372,30 @@ var DropDownManager = (function DropdownManager() {
     dropdowns[topic].setNodeValue(dropdowns[topic].dropmenu.children[index]);
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
-    var index = subscribers[topic].indexOf(callback);
+  let unsubscribe = function unsubscribe(topic, callback) {
+    let index = subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
+  let notify = function notify() {
     if (subscribers[this.topic] === undefined) return;
 
-    for (var i in subscribers[this.topic]) {
+    for (let i in subscribers[this.topic]) {
       subscribers[this.topic][i](this.value);
     }
   };
 
-  var init = function init() {
-    var elem, size;
+  let init = function init() {
+    let elem, size;
 
     elem = document.querySelectorAll(".ui-dropdown");
     size = elem.length;
-    for (var i = 0; i < size; i++) new DropDown(elem[i]);
+    for (let i = 0; i < size; i++) new DropDown(elem[i]);
   };
 
   return {
@@ -411,22 +411,22 @@ var DropDownManager = (function DropdownManager() {
  * UI-ButtonManager
  */
 
-var ButtonManager = (function CheckBoxManager() {
-  var subscribers = [];
-  var buttons = [];
+let ButtonManager = (function CheckBoxManager() {
+  let subscribers = [];
+  let buttons = [];
 
-  var CheckBox = function CheckBox(node) {
-    var topic = node.getAttribute("data-topic");
-    var state = node.getAttribute("data-state");
-    var name = node.getAttribute("data-label");
-    var align = node.getAttribute("data-text-on");
+  let CheckBox = function CheckBox(node) {
+    let topic = node.getAttribute("data-topic");
+    let state = node.getAttribute("data-state");
+    let name = node.getAttribute("data-label");
+    let align = node.getAttribute("data-text-on");
 
     state = state === "true";
 
-    var checkbox = document.createElement("input");
-    var label = document.createElement("label");
+    let checkbox = document.createElement("input");
+    let label = document.createElement("label");
 
-    var id = "checkbox-" + topic;
+    let id = "checkbox-" + topic;
     checkbox.id = id;
     checkbox.setAttribute("type", "checkbox");
     checkbox.checked = state;
@@ -455,39 +455,39 @@ var ButtonManager = (function CheckBoxManager() {
     buttons[topic] = this;
   };
 
-  var getNode = function getNode(topic) {
+  let getNode = function getNode(topic) {
     return buttons[topic].node;
   };
 
-  var setValue = function setValue(topic, value) {
-    var obj = buttons[topic];
+  let setValue = function setValue(topic, value) {
+    let obj = buttons[topic];
     if (obj === undefined) return;
 
     obj.checkbox.checked = value;
     notify.call(obj);
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
 
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
+  let unsubscribe = function unsubscribe(topic, callback) {
     subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
+  let notify = function notify() {
     if (subscribers[this.topic] === undefined) return;
-    for (var i = 0; i < subscribers[this.topic].length; i++)
+    for (let i = 0; i < subscribers[this.topic].length; i++)
       subscribers[this.topic][i](this.checkbox.checked);
   };
 
-  var init = function init() {
-    var elem = document.querySelectorAll(".ui-checkbox");
-    var size = elem.length;
-    for (var i = 0; i < size; i++) new CheckBox(elem[i]);
+  let init = function init() {
+    let elem = document.querySelectorAll(".ui-checkbox");
+    let size = elem.length;
+    for (let i = 0; i < size; i++) new CheckBox(elem[i]);
   };
 
   return {
@@ -502,21 +502,21 @@ window.addEventListener("load", function () {
   BorderImage.init();
 });
 
-var BorderImage = (function BorderImage() {
-  var getElemById = document.getElementById.bind(document);
+let BorderImage = (function BorderImage() {
+  let getElemById = document.getElementById.bind(document);
 
-  var subject;
-  var preview;
-  var guidelines = [];
-  var positions = ["top", "right", "bottom", "left"];
+  let subject;
+  let preview;
+  let guidelines = [];
+  let positions = ["top", "right", "bottom", "left"];
 
-  var makeDraggable = function makeDraggable(elem) {
-    var offsetTop;
-    var offsetLeft;
+  let makeDraggable = function makeDraggable(elem) {
+    let offsetTop;
+    let offsetLeft;
 
     elem.setAttribute("data-draggable", "true");
 
-    var dragStart = function dragStart(e) {
+    let dragStart = function dragStart(e) {
       if (
         e.target.getAttribute("data-draggable") !== "true" ||
         e.target !== elem ||
@@ -531,14 +531,14 @@ var BorderImage = (function BorderImage() {
       document.addEventListener("mouseup", dragEnd);
     };
 
-    var dragEnd = function dragEnd(e) {
+    let dragEnd = function dragEnd(e) {
       if (e.button !== 0) return;
 
       document.removeEventListener("mousemove", mouseDrag);
       document.removeEventListener("mouseup", dragEnd);
     };
 
-    var mouseDrag = function mouseDrag(e) {
+    let mouseDrag = function mouseDrag(e) {
       elem.style.left = e.clientX - offsetLeft + "px";
       elem.style.top = e.clientY - offsetTop + "px";
     };
@@ -546,12 +546,12 @@ var BorderImage = (function BorderImage() {
     elem.addEventListener("mousedown", dragStart, false);
   };
 
-  var PreviewControl = (function PreviewControl() {
-    var dragging = false;
-    var valueX = null;
-    var valueY = null;
+  let PreviewControl = (function PreviewControl() {
+    let dragging = false;
+    let valueX = null;
+    let valueY = null;
 
-    var dragStart = function dragStart(e) {
+    let dragStart = function dragStart(e) {
       if (e.button !== 0) return;
 
       valueX = e.clientX - preview.clientWidth;
@@ -561,23 +561,23 @@ var BorderImage = (function BorderImage() {
       document.addEventListener("mousemove", mouseDrag);
     };
 
-    var dragEnd = function dragEnd(e) {
+    let dragEnd = function dragEnd(e) {
       if (e.button !== 0 || dragging === false) return;
 
       document.removeEventListener("mousemove", mouseDrag);
       dragging = false;
     };
 
-    var mouseDrag = function mouseDrag(e) {
+    let mouseDrag = function mouseDrag(e) {
       InputSliderManager.setValue("preview-width", e.clientX - valueX);
       InputSliderManager.setValue("preview-height", e.clientY - valueY);
     };
 
-    var init = function init() {
+    let init = function init() {
       makeDraggable(preview);
       makeDraggable(subject);
 
-      var handle = document.createElement("div");
+      let handle = document.createElement("div");
       handle.className = "resize-handle";
 
       handle.addEventListener("mousedown", dragStart);
@@ -591,14 +591,14 @@ var BorderImage = (function BorderImage() {
     };
   })();
 
-  var ImageReader = (function ImageReader() {
-    var fReader = new FileReader();
-    var browse = document.createElement("input");
+  let ImageReader = (function ImageReader() {
+    let fReader = new FileReader();
+    let browse = document.createElement("input");
 
-    var loadImage = function loadImage(e) {
+    let loadImage = function loadImage(e) {
       if (browse.files.length === 0) return;
 
-      var file = browse.files[0];
+      let file = browse.files[0];
 
       if (file.type.slice(0, 5) !== "image") return;
 
@@ -611,7 +611,7 @@ var BorderImage = (function BorderImage() {
       ImageControl.loadRemoteImage(e.target.result);
     };
 
-    var load = function load() {
+    let load = function load() {
       browse.click();
     };
 
@@ -624,14 +624,14 @@ var BorderImage = (function BorderImage() {
     };
   })();
 
-  var ImageControl = (function ImageControl() {
-    var scale = 0.5;
-    var imgSource = new Image();
-    var imgState = null;
-    var selected = null;
+  let ImageControl = (function ImageControl() {
+    let scale = 0.5;
+    let imgSource = new Image();
+    let imgState = null;
+    let selected = null;
 
-    var topics = ["slice", "width", "outset"];
-    var properties = {};
+    let topics = ["slice", "width", "outset"];
+    let properties = {};
     properties["border1"] = {
       fill: false,
 
@@ -728,18 +728,18 @@ var BorderImage = (function BorderImage() {
       preview_area: 500,
     };
 
-    var loadLocalImage = function loadLocalImage(source) {
-      var location = "images/" + source;
+    let loadLocalImage = function loadLocalImage(source) {
+      let location = "images/" + source;
       imgSource.src = location;
     };
 
-    var loadRemoteImage = function loadRemoteImage(source) {
+    let loadRemoteImage = function loadRemoteImage(source) {
       imgSource.src = source;
       if (selected) selected.removeAttribute("selected");
       Tool.setOutputCSS("source", 'url("' + source + '")');
     };
 
-    var pickImage = function pickImage(e) {
+    let pickImage = function pickImage(e) {
       if (e.target.className === "image") {
         selected = e.target;
         selected.setAttribute("selected", "true");
@@ -748,16 +748,16 @@ var BorderImage = (function BorderImage() {
       }
     };
 
-    var loadImageState = function loadImageState(stateID) {
+    let loadImageState = function loadImageState(stateID) {
       if (properties[stateID] === undefined) return;
 
-      var prop = properties[stateID];
-      var topic;
-      var unit_array;
-      var value_array;
+      let prop = properties[stateID];
+      let topic;
+      let unit_array;
+      let value_array;
 
-      for (var i in topics) {
-        for (var j = 0; j < 4; j++) {
+      for (let i in topics) {
+        for (let j = 0; j < 4; j++) {
           topic = topics[i] + "-" + positions[j];
           unit_array = topics[i] + "_units";
           value_array = topics[i] + "_values";
@@ -774,7 +774,7 @@ var BorderImage = (function BorderImage() {
       InputSliderManager.setValue("preview-area-height", prop["preview_area"]);
     };
 
-    var update = function update() {
+    let update = function update() {
       scale = Math.min(300, (30000 / this.width) | 0);
       setScale(scale);
       InputSliderManager.setValue("scale", scale, false);
@@ -790,25 +790,25 @@ var BorderImage = (function BorderImage() {
       if (imgState) loadImageState(imgState);
     };
 
-    var setScale = function setScale(value) {
+    let setScale = function setScale(value) {
       scale = value;
-      var w = ((imgSource.width * scale) / 100) | 0;
-      var h = ((imgSource.height * scale) / 100) | 0;
+      let w = ((imgSource.width * scale) / 100) | 0;
+      let h = ((imgSource.height * scale) / 100) | 0;
       subject.style.width = w + "px";
       subject.style.height = h + "px";
 
-      for (var i = 0; i < positions.length; i++)
+      for (let i = 0; i < positions.length; i++)
         guidelines["slice-" + positions[i]].updateGuidelinePos();
     };
 
-    var getScale = function getScale() {
+    let getScale = function getScale() {
       return scale / 100;
     };
 
-    var toggleGallery = function toggleGallery() {
-      var gallery = getElemById("image-gallery");
-      var button = getElemById("toggle-gallery");
-      var state = 1;
+    let toggleGallery = function toggleGallery() {
+      let gallery = getElemById("image-gallery");
+      let button = getElemById("toggle-gallery");
+      let state = 1;
       button.addEventListener("click", function () {
         state = 1 ^ state;
         if (state === 0) {
@@ -821,11 +821,11 @@ var BorderImage = (function BorderImage() {
       });
     };
 
-    var init = function init() {
-      var gallery = getElemById("image-gallery");
-      var browse = getElemById("load-image");
-      var remote = getElemById("remote-url");
-      var load_remote = getElemById("load-remote");
+    let init = function init() {
+      let gallery = getElemById("image-gallery");
+      let browse = getElemById("load-image");
+      let remote = getElemById("remote-url");
+      let load_remote = getElemById("load-remote");
 
       remote.addEventListener("change", function () {
         loadRemoteImage(this.value);
@@ -853,9 +853,9 @@ var BorderImage = (function BorderImage() {
     };
   })();
 
-  var GuideLine = function GuideLine(node) {
-    var topic = node.getAttribute("data-topic");
-    var axis = node.getAttribute("data-axis");
+  let GuideLine = function GuideLine(node) {
+    let topic = node.getAttribute("data-topic");
+    let axis = node.getAttribute("data-axis");
 
     this.node = node;
     this.topic = topic;
@@ -870,9 +870,9 @@ var BorderImage = (function BorderImage() {
 
     guidelines[topic] = this;
 
-    var relative_container = document.createElement("div");
-    var tooltip = document.createElement("div");
-    var tooltip2 = document.createElement("div");
+    let relative_container = document.createElement("div");
+    let tooltip = document.createElement("div");
+    let tooltip2 = document.createElement("div");
 
     tooltip.className = "tooltip";
     tooltip.setAttribute("data-info", this.info);
@@ -887,11 +887,10 @@ var BorderImage = (function BorderImage() {
     relative_container.appendChild(tooltip2);
     node.appendChild(relative_container);
 
-    var startX = 0;
-    var startY = 0;
-    var start = 0;
-
-    var startDrag = function startDrag(e) {
+    let startX = 0;
+    let startY = 0;
+    let start = let
+    let startDrag = function startDrag(e) {
       startX = e.clientX;
       startY = e.clientY;
       start = guidelines[topic].position;
@@ -903,7 +902,7 @@ var BorderImage = (function BorderImage() {
       document.addEventListener("mouseup", endDrag);
     };
 
-    var endDrag = function endDrag() {
+    let endDrag = function endDrag() {
       document.body.removeAttribute("data-move");
       relative_container.removeAttribute("data-active");
       node.removeAttribute("data-active");
@@ -911,8 +910,8 @@ var BorderImage = (function BorderImage() {
       document.removeEventListener("mousemove", updateGuideline);
     };
 
-    var updateGuideline = function updateGuideline(e) {
-      var value;
+    let updateGuideline = function updateGuideline(e) {
+      let value;
       if (topic === "slice-top") value = e.clientY - startY + start;
 
       if (topic === "slice-right") value = startX - e.clientX + start;
@@ -976,15 +975,15 @@ var BorderImage = (function BorderImage() {
   /*
    * Unit panel
    */
-  var UnitPanel = (function UnitPanel() {
-    var panel;
-    var title;
-    var precision;
-    var step;
-    var unit_topic = null; // settings are made for this topic
-    var step_option = [1, 0.1, 0.01];
+  let UnitPanel = (function UnitPanel() {
+    let panel;
+    let title;
+    let precision;
+    let step;
+    let unit_topic = null; // settings are made for this topic
+    let step_option = [1, 0.1, 0.01];
 
-    var updatePrecision = function updatePrecision(value) {
+    let updatePrecision = function updatePrecision(value) {
       InputSliderManager.setPrecision("unit-step", value);
       InputSliderManager.setStep("unit-step", step_option[value]);
       InputSliderManager.setMin("unit-step", step_option[value]);
@@ -992,14 +991,14 @@ var BorderImage = (function BorderImage() {
       if (unit_topic) InputSliderManager.setPrecision(unit_topic, value);
     };
 
-    var updateUnitSettings = function updateUnitSettings(value) {
+    let updateUnitSettings = function updateUnitSettings(value) {
       if (unit_topic) InputSliderManager.setStep(unit_topic, value);
     };
 
-    var show = function show(e) {
-      var topic = e.target.getAttribute("data-topic");
-      var precision = InputSliderManager.getPrecision(topic);
-      var step = InputSliderManager.getStep(topic);
+    let show = function show(e) {
+      let topic = e.target.getAttribute("data-topic");
+      let precision = InputSliderManager.getPrecision(topic);
+      let step = InputSliderManager.getStep(topic);
 
       unit_topic = topic;
       title.textContent = topic;
@@ -1012,10 +1011,10 @@ var BorderImage = (function BorderImage() {
       InputSliderManager.setValue("unit-step", step);
     };
 
-    var init = function init() {
+    let init = function init() {
       panel = document.createElement("div");
       title = document.createElement("div");
-      var close = document.createElement("div");
+      let close = document.createElement("div");
 
       step = InputSliderManager.createSlider("unit-step", "step");
       precision = InputSliderManager.createSlider(
@@ -1060,29 +1059,29 @@ var BorderImage = (function BorderImage() {
   /**
    * Tool Manager
    */
-  var Tool = (function Tool() {
-    var preview_area;
-    var dropdown_unit_options = [
+  let Tool = (function Tool() {
+    let preview_area;
+    let dropdown_unit_options = [
       { "": "--", "%": "%" },
       { px: "px", "%": "%", em: "em" },
       { px: "px", em: "em" },
     ];
 
-    var border_slice = [];
-    var border_width = [];
-    var border_outset = [];
+    let border_slice = [];
+    let border_width = [];
+    let border_outset = [];
 
-    var border_slice_values = [];
-    var border_width_values = [];
-    var border_outset_values = [];
+    let border_slice_values = [];
+    let border_width_values = [];
+    let border_outset_values = [];
 
-    var border_slice_units = ["", "", "", ""];
-    var border_width_units = ["px", "px", "px", "px"];
-    var border_outset_units = ["px", "px", "px", "px"];
+    let border_slice_units = ["", "", "", ""];
+    let border_width_units = ["px", "px", "px", "px"];
+    let border_outset_units = ["px", "px", "px", "px"];
 
-    var border_fill = false;
-    var border_repeat = ["round", "round"];
-    var CSS_code = {
+    let border_fill = false;
+    let border_repeat = ["round", "round"];
+    let CSS_code = {
       source: null,
       slice: null,
       width: null,
@@ -1090,74 +1089,74 @@ var BorderImage = (function BorderImage() {
       repeat: null,
     };
 
-    var setBorderSlice = function setBorderSlice(positionID, value) {
+    let setBorderSlice = function setBorderSlice(positionID, value) {
       border_slice[positionID] = value + border_slice_units[positionID];
       updateBorderSlice();
     };
 
-    var updateBorderSlice = function updateBorderSlice() {
-      var value = border_slice.join(" ");
+    let updateBorderSlice = function updateBorderSlice() {
+      let value = border_slice.join(" ");
       if (border_fill === true) value += " fill";
 
       preview.style.borderImageSlice = value;
       setOutputCSS("slice", value);
     };
 
-    var setBorderFill = function setBorderFill(value) {
+    let setBorderFill = function setBorderFill(value) {
       border_fill = value;
-      var bimgslice = border_slice.join(" ");
+      let bimgslice = border_slice.join(" ");
       if (value === true) bimgslice += " fill";
 
       preview.style.borderImageSlice = bimgslice;
     };
 
-    var updateBorderWidth = function updateBorderWidth() {
-      var value = border_width.join(" ");
+    let updateBorderWidth = function updateBorderWidth() {
+      let value = border_width.join(" ");
       preview.style.borderImageWidth = value;
       setOutputCSS("width", value);
     };
 
-    var updateBorderOutset = function updateBorderOutset() {
-      var value = border_outset.join(" ");
+    let updateBorderOutset = function updateBorderOutset() {
+      let value = border_outset.join(" ");
       preview.style.borderImageOutset = border_outset.join(" ");
       setOutputCSS("outset", value);
     };
 
-    var setBorderRepeat = function setBorderRepeat(obj) {
+    let setBorderRepeat = function setBorderRepeat(obj) {
       border_repeat[obj.value] = obj.name;
-      var value = border_repeat.join(" ");
+      let value = border_repeat.join(" ");
       preview.style.borderImageRepeat = value;
       setOutputCSS("repeat", value);
     };
 
-    var setOutputCSS = function setOutputCSS(topic, value) {
+    let setOutputCSS = function setOutputCSS(topic, value) {
       CSS_code[topic].textContent = value + ";";
     };
 
-    var setPreviewFontSize = function setPreviewFontSize(value) {
+    let setPreviewFontSize = function setPreviewFontSize(value) {
       preview.style.fontSize = value + "px";
     };
 
-    var setPreviewWidth = function setPreviewWidth(value) {
+    let setPreviewWidth = function setPreviewWidth(value) {
       preview.style.width = value + "px";
     };
 
-    var setPreviewHeight = function setPreviewHeight(value) {
+    let setPreviewHeight = function setPreviewHeight(value) {
       preview.style.height = value + "px";
     };
 
-    var setPreviewAreaHeight = function setPreviewAreaHeight(value) {
+    let setPreviewAreaHeight = function setPreviewAreaHeight(value) {
       preview_area.style.height = value + "px";
     };
 
-    var updateDragOption = function updateDragOption(value) {
+    let updateDragOption = function updateDragOption(value) {
       if (value === true) subject.setAttribute("data-draggable", "true");
       else subject.removeAttribute("data-draggable");
     };
 
-    var createProperty = function createProperty(topic, labelID, optionsID) {
-      var slider = InputSliderManager.createSlider(topic, positions[labelID]);
-      var dropdown = DropDownManager.createDropDown(
+    let createProperty = function createProperty(topic, labelID, optionsID) {
+      let slider = InputSliderManager.createSlider(topic, positions[labelID]);
+      let dropdown = DropDownManager.createDropDown(
         topic,
         dropdown_unit_options[optionsID],
       );
@@ -1165,8 +1164,8 @@ var BorderImage = (function BorderImage() {
       InputSliderManager.setSensitivity(topic, 3);
       InputSliderManager.setPrecision(topic, 1);
 
-      var property = document.createElement("div");
-      var config = document.createElement("div");
+      let property = document.createElement("div");
+      let config = document.createElement("div");
 
       property.className = "property";
       config.className = "config";
@@ -1180,10 +1179,10 @@ var BorderImage = (function BorderImage() {
       return property;
     };
 
-    var initBorderSliceControls = function initBorderSliceControls() {
-      var container = getElemById("border-slice-control");
+    let initBorderSliceControls = function initBorderSliceControls() {
+      let container = getElemById("border-slice-control");
 
-      var listenForChanges = function listenForChanges(topic, id) {
+      let listenForChanges = function listenForChanges(topic, id) {
         InputSliderManager.subscribe(topic, function (value) {
           border_slice_values[id] = value;
           border_slice[id] = value + border_slice_units[id];
@@ -1198,9 +1197,9 @@ var BorderImage = (function BorderImage() {
         });
       };
 
-      for (var i = 0; i < positions.length; i++) {
-        var topic = "slice-" + positions[i];
-        var property = createProperty(topic, i, 0);
+      for (let i = 0; i < positions.length; i++) {
+        let topic = "slice-" + positions[i];
+        let property = createProperty(topic, i, 0);
         listenForChanges(topic, i);
 
         container.appendChild(property);
@@ -1209,10 +1208,10 @@ var BorderImage = (function BorderImage() {
       container.appendChild(container.children[1]);
     };
 
-    var initBorderWidthControls = function initBorderWidthControls() {
-      var container = getElemById("border-width-control");
+    let initBorderWidthControls = function initBorderWidthControls() {
+      let container = getElemById("border-width-control");
 
-      var listenForChanges = function listenForChanges(topic, id) {
+      let listenForChanges = function listenForChanges(topic, id) {
         InputSliderManager.subscribe(topic, function (value) {
           border_width_values[id] = value;
           border_width[id] = value + border_width_units[id];
@@ -1229,9 +1228,9 @@ var BorderImage = (function BorderImage() {
         });
       };
 
-      for (var i = 0; i < positions.length; i++) {
-        var topic = "width-" + positions[i];
-        var property = createProperty(topic, i, 1);
+      for (let i = 0; i < positions.length; i++) {
+        let topic = "width-" + positions[i];
+        let property = createProperty(topic, i, 1);
         InputSliderManager.setMax(topic, 1000);
         listenForChanges(topic, i);
 
@@ -1239,10 +1238,10 @@ var BorderImage = (function BorderImage() {
       }
     };
 
-    var initBorderOutsetControls = function initBorderOutsetControls() {
-      var container = getElemById("border-outset-control");
+    let initBorderOutsetControls = function initBorderOutsetControls() {
+      let container = getElemById("border-outset-control");
 
-      var listenForChanges = function listenForChanges(topic, id) {
+      let listenForChanges = function listenForChanges(topic, id) {
         InputSliderManager.subscribe(topic, function (value) {
           border_outset_values[id] = value;
           border_outset[id] = value + border_outset_units[id];
@@ -1256,9 +1255,9 @@ var BorderImage = (function BorderImage() {
         });
       };
 
-      for (var i = 0; i < positions.length; i++) {
-        var topic = "outset-" + positions[i];
-        var property = createProperty(topic, i, 2);
+      for (let i = 0; i < positions.length; i++) {
+        let topic = "outset-" + positions[i];
+        let property = createProperty(topic, i, 2);
         InputSliderManager.setMax(topic, 1000);
         listenForChanges(topic, i);
 
@@ -1266,8 +1265,8 @@ var BorderImage = (function BorderImage() {
       }
     };
 
-    var init = function init() {
-      var gallery = (subject = getElemById("subject"));
+    let init = function init() {
+      let gallery = (subject = getElemById("subject"));
       preview = getElemById("preview");
       preview_area = getElemById("preview_section");
 
@@ -1281,9 +1280,9 @@ var BorderImage = (function BorderImage() {
       initBorderWidthControls();
       initBorderOutsetControls();
 
-      var elem = document.querySelectorAll(".guideline");
-      var size = elem.length;
-      for (var i = 0; i < size; i++) new GuideLine(elem[i]);
+      let elem = document.querySelectorAll(".guideline");
+      let size = elem.length;
+      for (let i = 0; i < size; i++) new GuideLine(elem[i]);
 
       PreviewControl.init();
 
@@ -1312,7 +1311,7 @@ var BorderImage = (function BorderImage() {
   /**
    * Init Tool
    */
-  var init = function init() {
+  let init = function init() {
     InputSliderManager.init();
     DropDownManager.init();
     ButtonManager.init();
