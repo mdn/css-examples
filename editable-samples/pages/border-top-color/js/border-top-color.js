@@ -1,1 +1,1 @@
-var cmInitContent = "border-top-color: red;\n\n";
+let cmInitContent = "border-top-color: red;\n\n";

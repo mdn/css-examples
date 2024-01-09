@@ -1,19 +1,19 @@
-var thumbs = document.querySelectorAll(".thumb");
-var mainImg = document.querySelector(".main");
+let thumbs = document.querySelectorAll(".thumb");
+let mainImg = document.querySelector(".main");
 
 for (i = 1; i <= thumbs.length; i++) {
-  var requestObj = "images/pic" + i + ".jpg";
+  let requestObj = "images/pic" + i + ".jpg";
   retrieveImage(requestObj, i - 1);
 }
 
 function retrieveImage(requestObj, imageNo) {
-  var request = new XMLHttpRequest();
+  let request = new XMLHttpRequest();
   request.open("GET", requestObj, true);
   request.responseType = "blob";
   request.send();
 
   request.onload = function () {
-    var objectURL = URL.createObjectURL(request.response);
+    let objectURL = URL.createObjectURL(request.response);
     thumbs[imageNo].setAttribute("src", objectURL);
     thumbs[imageNo].onclick = function () {
       mainImg.setAttribute("src", objectURL);

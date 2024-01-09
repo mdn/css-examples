@@ -2,7 +2,7 @@
 
 let mainElem = document.querySelector("main");
 
-for (var i = 1; i < 51; i++) {
+for (let i = 1; i < 51; i++) {
   let divElem = document.createElement("div");
   let pElem = document.createElement("p");
 

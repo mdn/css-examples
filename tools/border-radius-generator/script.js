@@ -4,12 +4,12 @@
  * UI-InputSliderManager
  */
 
-var InputSliderManager = (function InputSliderManager() {
-  var subscribers = {};
-  var sliders = [];
+let InputSliderManager = (function InputSliderManager() {
+  let subscribers = {};
+  let sliders = [];
 
-  var InputComponent = function InputComponent(obj) {
-    var input = document.createElement("input");
+  let InputComponent = function InputComponent(obj) {
+    let input = document.createElement("input");
     input.setAttribute("type", "text");
 
     input.addEventListener("click", function (e) {
@@ -17,7 +17,7 @@ var InputSliderManager = (function InputSliderManager() {
     });
 
     input.addEventListener("change", function (e) {
-      var value = parseInt(e.target.value);
+      let value = parseInt(e.target.value);
 
       if (isNaN(value) === true) setValue(obj.topic, obj.value);
       else setValue(obj.topic, value);
@@ -30,10 +30,10 @@ var InputSliderManager = (function InputSliderManager() {
     return input;
   };
 
-  var SliderComponent = function SliderComponent(obj, sign) {
-    var slider = document.createElement("div");
-    var startX = null;
-    var start_value = 0;
+  let SliderComponent = function SliderComponent(obj, sign) {
+    let slider = document.createElement("div");
+    let startX = null;
+    let start_value = 0;
 
     slider.addEventListener("click", function (e) {
       setValue(obj.topic, obj.value + obj.step * sign);
@@ -52,25 +52,25 @@ var InputSliderManager = (function InputSliderManager() {
       slider.style.cursor = "pointer";
     });
 
-    var sliderMotion = function sliderMotion(e) {
+    let sliderMotion = function sliderMotion(e) {
       slider.style.cursor = "e-resize";
-      var delta = ((e.clientX - startX) / obj.sensitivity) | 0;
-      var value = delta * obj.step + start_value;
+      let delta = ((e.clientX - startX) / obj.sensitivity) | 0;
+      let value = delta * obj.step + start_value;
       setValue(obj.topic, value);
     };
 
     return slider;
   };
 
-  var InputSlider = function (node) {
-    var min = node.getAttribute("data-min") | 0;
-    var max = node.getAttribute("data-max") | 0;
-    var step = node.getAttribute("data-step") | 0;
-    var value = node.getAttribute("data-value") | 0;
-    var topic = node.getAttribute("data-topic");
-    var unit = node.getAttribute("data-unit");
-    var name = node.getAttribute("data-info");
-    var sensitivity = node.getAttribute("data-sensitivity") | 0;
+  let InputSlider = function (node) {
+    let min = node.getAttribute("data-min") | 0;
+    let max = node.getAttribute("data-max") | 0;
+    let step = node.getAttribute("data-step") | 0;
+    let value = node.getAttribute("data-value") | 0;
+    let topic = node.getAttribute("data-topic");
+    let unit = node.getAttribute("data-unit");
+    let name = node.getAttribute("data-info");
+    let sensitivity = node.getAttribute("data-sensitivity") | 0;
 
     this.min = min;
     this.max = max > 0 ? max : 100;
@@ -80,15 +80,15 @@ var InputSliderManager = (function InputSliderManager() {
     this.unit = unit;
     this.sensitivity = sensitivity > 0 ? sensitivity : 5;
 
-    var input = new InputComponent(this);
-    var slider_left = new SliderComponent(this, -1);
-    var slider_right = new SliderComponent(this, 1);
+    let input = new InputComponent(this);
+    let slider_left = new SliderComponent(this, -1);
+    let slider_right = new SliderComponent(this, 1);
 
     slider_left.className = "ui-input-slider-left";
     slider_right.className = "ui-input-slider-right";
 
     if (name) {
-      var info = document.createElement("span");
+      let info = document.createElement("span");
       info.className = "ui-input-slider-info";
       info.textContent = name;
       node.appendChild(info);
@@ -104,8 +104,8 @@ var InputSliderManager = (function InputSliderManager() {
     setValue(topic, value);
   };
 
-  var setValue = function setValue(topic, value, send_notify) {
-    var slider = sliders[topic];
+  let setValue = function setValue(topic, value, send_notify) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     if (value > slider.max) value = slider.max;
@@ -122,54 +122,54 @@ var InputSliderManager = (function InputSliderManager() {
     notify.call(slider);
   };
 
-  var setMax = function setMax(topic, value) {
-    var slider = sliders[topic];
+  let setMax = function setMax(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.max = value;
     setValue(topic, slider.value);
   };
 
-  var setMin = function setMin(topic, value) {
-    var slider = sliders[topic];
+  let setMin = function setMin(topic, value) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.min = value;
     setValue(topic, slider.value);
   };
 
-  var setUnit = function setUnit(topic, unit) {
-    var slider = sliders[topic];
+  let setUnit = function setUnit(topic, unit) {
+    let slider = sliders[topic];
     if (slider === undefined) return;
 
     slider.unit = unit;
     setValue(topic, slider.value);
   };
 
-  var getNode = function getNode(topic) {
+  let getNode = function getNode(topic) {
     return sliders[topic].node;
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
+  let unsubscribe = function unsubscribe(topic, callback) {
     subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
-    for (var i in subscribers[this.topic]) {
+  let notify = function notify() {
+    for (let i in subscribers[this.topic]) {
       subscribers[this.topic][i](this.value);
     }
   };
 
-  var init = function init() {
-    var elem = document.querySelectorAll(".ui-input-slider");
-    var size = elem.length;
-    for (var i = 0; i < size; i++) new InputSlider(elem[i]);
+  let init = function init() {
+    let elem = document.querySelectorAll(".ui-input-slider");
+    let size = elem.length;
+    for (let i = 0; i < size; i++) new InputSlider(elem[i]);
   };
 
   return {
@@ -188,22 +188,22 @@ var InputSliderManager = (function InputSliderManager() {
  * UI-ButtonManager
  */
 
-var ButtonManager = (function CheckBoxManager() {
-  var subscribers = [];
-  var buttons = [];
+let ButtonManager = (function CheckBoxManager() {
+  let subscribers = [];
+  let buttons = [];
 
-  var CheckBox = function CheckBox(node) {
-    var topic = node.getAttribute("data-topic");
-    var state = node.getAttribute("data-state");
-    var name = node.getAttribute("data-label");
-    var align = node.getAttribute("data-text-on");
+  let CheckBox = function CheckBox(node) {
+    let topic = node.getAttribute("data-topic");
+    let state = node.getAttribute("data-state");
+    let name = node.getAttribute("data-label");
+    let align = node.getAttribute("data-text-on");
 
     state = state === "true";
 
-    var checkbox = document.createElement("input");
-    var label = document.createElement("label");
+    let checkbox = document.createElement("input");
+    let label = document.createElement("label");
 
-    var id = "checkbox-" + topic;
+    let id = "checkbox-" + topic;
     checkbox.id = id;
     checkbox.setAttribute("type", "checkbox");
     checkbox.checked = state;
@@ -232,11 +232,11 @@ var ButtonManager = (function CheckBoxManager() {
     buttons[topic] = this;
   };
 
-  var getNode = function getNode(topic) {
+  let getNode = function getNode(topic) {
     return buttons[topic].node;
   };
 
-  var setValue = function setValue(topic, value) {
+  let setValue = function setValue(topic, value) {
     try {
       buttons[topic].checkbox.checked = value;
     } catch (error) {
@@ -244,26 +244,26 @@ var ButtonManager = (function CheckBoxManager() {
     }
   };
 
-  var subscribe = function subscribe(topic, callback) {
+  let subscribe = function subscribe(topic, callback) {
     if (subscribers[topic] === undefined) subscribers[topic] = [];
 
     subscribers[topic].push(callback);
   };
 
-  var unsubscribe = function unsubscribe(topic, callback) {
+  let unsubscribe = function unsubscribe(topic, callback) {
     subscribers[topic].indexOf(callback);
     subscribers[topic].splice(index, 1);
   };
 
-  var notify = function notify() {
-    for (var i = 0; i < subscribers[this.topic].length; i++)
+  let notify = function notify() {
+    for (let i = 0; i < subscribers[this.topic].length; i++)
       subscribers[this.topic][i](this.checkbox.checked);
   };
 
-  var init = function init() {
-    var elem = document.querySelectorAll(".ui-checkbox");
-    var size = elem.length;
-    for (var i = 0; i < size; i++) new CheckBox(elem[i]);
+  let init = function init() {
+    let elem = document.querySelectorAll(".ui-checkbox");
+    let size = elem.length;
+    for (let i = 0; i < size; i++) new CheckBox(elem[i]);
   };
 
   return {
@@ -278,7 +278,7 @@ window.addEventListener("load", function () {
   BorderRadius.init();
 });
 
-var BorderRadius = (function BorderRadius() {
+let BorderRadius = (function BorderRadius() {
   function getElemById(id) {
     return document.getElementById(id);
   }
@@ -286,19 +286,19 @@ var BorderRadius = (function BorderRadius() {
   /**
    * Shadow dragging
    */
-  var PreviewMouseTracking = (function Drag() {
-    var active = false;
-    var lastX = 0;
-    var lastY = 0;
-    var subscribers = [];
+  let PreviewMouseTracking = (function Drag() {
+    let active = false;
+    let lastX = 0;
+    let lastY = 0;
+    let subscribers = [];
 
-    var init = function init(id) {
-      var elem = getElemById(id);
+    let init = function init(id) {
+      let elem = getElemById(id);
       elem.addEventListener("mousedown", dragStart, false);
       document.addEventListener("mouseup", dragEnd, false);
     };
 
-    var dragStart = function dragStart(e) {
+    let dragStart = function dragStart(e) {
       if (e.button !== 0) return;
 
       active = true;
@@ -307,7 +307,7 @@ var BorderRadius = (function BorderRadius() {
       document.addEventListener("mousemove", mouseDrag, false);
     };
 
-    var dragEnd = function dragEnd(e) {
+    let dragEnd = function dragEnd(e) {
       if (e.button !== 0) return;
 
       if (active === true) {
@@ -316,23 +316,23 @@ var BorderRadius = (function BorderRadius() {
       }
     };
 
-    var mouseDrag = function mouseDrag(e) {
+    let mouseDrag = function mouseDrag(e) {
       notify(e.clientX - lastX, e.clientY - lastY);
       lastX = e.clientX;
       lastY = e.clientY;
     };
 
-    var subscribe = function subscribe(callback) {
+    let subscribe = function subscribe(callback) {
       subscribers.push(callback);
     };
 
-    var unsubscribe = function unsubscribe(callback) {
-      var index = subscribers.indexOf(callback);
+    let unsubscribe = function unsubscribe(callback) {
+      let index = subscribers.indexOf(callback);
       subscribers.splice(index, 1);
     };
 
-    var notify = function notify(deltaX, deltaY) {
-      for (var i in subscribers) subscribers[i](deltaX, deltaY);
+    let notify = function notify(deltaX, deltaY) {
+      for (let i in subscribers) subscribers[i](deltaX, deltaY);
     };
 
     return {
@@ -342,15 +342,15 @@ var BorderRadius = (function BorderRadius() {
     };
   })();
 
-  var subject;
-  var units = ["px", "%"];
-  var output = null;
+  let subject;
+  let units = ["px", "%"];
+  let output = null;
 
-  var UnitSelector = function UnitSelector(topic) {
+  let UnitSelector = function UnitSelector(topic) {
     this.container = document.createElement("div");
     this.select = document.createElement("select");
-    for (var i in units) {
-      var option = document.createElement("option");
+    for (let i in units) {
+      let option = document.createElement("option");
       option.value = i;
       option.textContent = units[i];
       this.select.appendChild(option);
@@ -364,12 +364,12 @@ var BorderRadius = (function BorderRadius() {
     this.select.value = value;
   };
 
-  var RadiusContainer = function RadiusContainer(node) {
-    var radius = document.createElement("div");
-    var handle = document.createElement("div");
-    var x = node.getAttribute("data-x");
-    var y = node.getAttribute("data-y");
-    var active = false;
+  let RadiusContainer = function RadiusContainer(node) {
+    let radius = document.createElement("div");
+    let handle = document.createElement("div");
+    let x = node.getAttribute("data-x");
+    let y = node.getAttribute("data-y");
+    let active = false;
 
     this.id = node.id;
     this.node = node;
@@ -390,9 +390,9 @@ var BorderRadius = (function BorderRadius() {
 
     this.topic = y + "-" + x;
 
-    var sliderW = InputSliderManager.getNode(this.topic + "-w");
-    var sliderH = InputSliderManager.getNode(this.topic + "-h");
-    var sliderR = InputSliderManager.getNode(this.topic);
+    let sliderW = InputSliderManager.getNode(this.topic + "-w");
+    let sliderH = InputSliderManager.getNode(this.topic + "-h");
+    let sliderR = InputSliderManager.getNode(this.topic);
 
     this.setUnitX(this.unitX);
     this.setUnitY(this.unitY);
@@ -409,10 +409,10 @@ var BorderRadius = (function BorderRadius() {
 
     radius.className = "radius";
 
-    var unit_selector = document.getElementById("unit-selection");
-    var unitW = new UnitSelector(this.topic + "-w");
-    var unitH = new UnitSelector(this.topic + "-h");
-    var unitR = new UnitSelector(this.topic);
+    let unit_selector = document.getElementById("unit-selection");
+    let unitW = new UnitSelector(this.topic + "-w");
+    let unitH = new UnitSelector(this.topic + "-h");
+    let unitR = new UnitSelector(this.topic);
 
     unit_selector.appendChild(unitW.container);
     unit_selector.appendChild(unitH.container);
@@ -508,18 +508,18 @@ var BorderRadius = (function BorderRadius() {
 
   RadiusContainer.prototype.updateWidth = function updateWidth() {
     this.node.style.width = this.width + units[this.unitX];
-    var value = Math.round(this.width / 2);
+    let value = Math.round(this.width / 2);
     InputSliderManager.setValue(this.topic + "-w", value, false);
   };
 
   RadiusContainer.prototype.updateHeight = function updateHeight() {
     this.node.style.height = this.height + units[this.unitY];
-    var value = Math.round(this.height / 2);
+    let value = Math.round(this.height / 2);
     InputSliderManager.setValue(this.topic + "-h", value, false);
   };
 
   RadiusContainer.prototype.updateRadius = function updateRadius() {
-    var value = Math.round(this.size / 2);
+    let value = Math.round(this.size / 2);
     this.node.style.width = this.size + units[this.unitR];
     this.node.style.height = this.size + units[this.unitR];
     InputSliderManager.setValue(this.topic, value, false);
@@ -589,15 +589,15 @@ var BorderRadius = (function BorderRadius() {
   RadiusContainer.prototype.composeBorderRadius =
     function composeBorderRadius() {
       if (this.rounded === true) {
-        var unit = units[this.unitR];
-        var value = Math.round(this.size / 2);
+        let unit = units[this.unitR];
+        let value = Math.round(this.size / 2);
         return value + unit;
       }
 
-      var unitX = units[this.unitX];
-      var unitY = units[this.unitY];
-      var valueX = Math.round(this.width / 2);
-      var valueY = Math.round(this.height / 2);
+      let unitX = units[this.unitX];
+      let unitY = units[this.unitY];
+      let valueX = Math.round(this.width / 2);
+      let valueY = Math.round(this.height / 2);
 
       if (valueX === valueY && this.unitX === this.unitY) return valueX + unitX;
 
@@ -605,8 +605,8 @@ var BorderRadius = (function BorderRadius() {
     };
 
   RadiusContainer.prototype.updateBorderRadius = function updateBorderRadius() {
-    var radius = this.composeBorderRadius();
-    var corner = 0;
+    let radius = this.composeBorderRadius();
+    let corner = 0;
 
     if (this.topic === "top-left") {
       subject.style.borderTopLeftRadius = radius;
@@ -664,56 +664,56 @@ var BorderRadius = (function BorderRadius() {
   /**
    * Tool Manager
    */
-  var Tool = (function Tool() {
-    var preview;
-    var preview_ui;
-    var radius_containers = [];
-    var border_width = 3;
-    var borders1 = [null, null, null, null];
-    var borders2 = [0, 0, 0, 0];
+  let Tool = (function Tool() {
+    let preview;
+    let preview_ui;
+    let radius_containers = [];
+    let border_width = 3;
+    let borders1 = [null, null, null, null];
+    let borders2 = [0, 0, 0, 0];
 
-    var updateUIWidth = function updateUIWidth(value) {
-      var pwidth = subject.parentElement.clientWidth;
-      var left = (pwidth - value) / 2;
+    let updateUIWidth = function updateUIWidth(value) {
+      let pwidth = subject.parentElement.clientWidth;
+      let left = (pwidth - value) / 2;
       subject.style.width = value + "px";
 
-      for (var i = 0; i < 4; i++) radius_containers[i].updateUnits(0);
+      for (let i = 0; i < 4; i++) radius_containers[i].updateUnits(0);
     };
 
-    var updateUIHeight = function updateUIHeight(value) {
-      var pheight = subject.parentElement.clientHeight;
-      var top = (pheight - value) / 2;
+    let updateUIHeight = function updateUIHeight(value) {
+      let pheight = subject.parentElement.clientHeight;
+      let top = (pheight - value) / 2;
       subject.style.height = value + "px";
       subject.style.top = top - border_width + "px";
 
-      for (var i = 0; i < 4; i++) radius_containers[i].updateUnits(1);
+      for (let i = 0; i < 4; i++) radius_containers[i].updateUnits(1);
     };
 
-    var updatePreviewUIWidth = function updatePreviewUIWidth() {
-      var p = subject.parentElement.clientWidth;
-      var v = preview_ui.clientWidth;
+    let updatePreviewUIWidth = function updatePreviewUIWidth() {
+      let p = subject.parentElement.clientWidth;
+      let v = preview_ui.clientWidth;
       console.log(p, v, (p - v) / 2);
       preview_ui.style.left = (p - v) / 2 + "px";
     };
 
-    var updatePreviewUIHeight = function updatePreviewUIHeight() {
-      var p = subject.parentElement.clientHeight;
-      var v = preview_ui.clientHeight;
+    let updatePreviewUIHeight = function updatePreviewUIHeight() {
+      let p = subject.parentElement.clientHeight;
+      let v = preview_ui.clientHeight;
       console.log(p, v, (p - v) / 2);
       preview_ui.style.top = (p - v) / 2 + "px";
     };
 
-    var updateOutput = function updateOutput(corner, radius) {
-      var values = radius.split(" ");
+    let updateOutput = function updateOutput(corner, radius) {
+      let values = radius.split(" ");
 
       borders1[corner] = values[0];
       borders2[corner] = values[0];
 
       if (values.length === 2) borders2[corner] = values[1];
 
-      var border_1_value = borders1.join(" ");
-      var border_2_value = borders2.join(" ");
-      var border_radius = "border-radius: " + border_1_value;
+      let border_1_value = borders1.join(" ");
+      let border_2_value = borders2.join(" ");
+      let border_radius = "border-radius: " + border_1_value;
 
       if (border_2_value !== border_1_value)
         border_radius += " / " + border_2_value;
@@ -722,15 +722,15 @@ var BorderRadius = (function BorderRadius() {
       output.textContent = border_radius;
     };
 
-    var init = function init() {
+    let init = function init() {
       preview = getElemById("preview");
       subject = getElemById("subject");
       output = getElemById("output");
       preview_ui = getElemById("radius-ui-sliders");
 
-      var elem = document.querySelectorAll(".radius-container");
-      var size = elem.length;
-      for (var i = 0; i < size; i++)
+      let elem = document.querySelectorAll(".radius-container");
+      let size = elem.length;
+      for (let i = 0; i < size; i++)
         radius_containers[i] = new RadiusContainer(elem[i]);
 
       InputSliderManager.subscribe("width", updateUIWidth);
@@ -749,7 +749,7 @@ var BorderRadius = (function BorderRadius() {
   /**
    * Init Tool
    */
-  var init = function init() {
+  let init = function init() {
     ButtonManager.init();
     InputSliderManager.init();
     PreviewMouseTracking.init("preview");
