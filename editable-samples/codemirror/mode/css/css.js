@@ -12,10 +12,10 @@
 "use strict";
 
 CodeMirror.defineMode("css", function(config, parserConfig) {
-  var inline = parserConfig.inline
+  let inline = parserConfig.inline
   if (!parserConfig.propertyKeywords) parserConfig = CodeMirror.resolveMode("text/css");
 
-  var indentUnit = config.indentUnit,
+  let indentUnit = config.indentUnit,
       tokenHooks = parserConfig.tokenHooks,
       documentTypes = parserConfig.documentTypes || {},
       mediaTypes = parserConfig.mediaTypes || {},
@@ -30,15 +30,15 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
       allowNested = parserConfig.allowNested,
       supportsAtComponent = parserConfig.supportsAtComponent === true;
 
-  var type, override;
+  let type, override;
   function ret(style, tp) { type = tp; return style; }
 
   // Tokenizers
 
   function tokenBase(stream, state) {
-    var ch = stream.next();
+    let ch = stream.next();
     if (tokenHooks[ch]) {
-      var result = tokenHooks[ch](stream, state);
+      let result = tokenHooks[ch](stream, state);
       if (result !== false) return result;
     }
     if (ch == "@") {
@@ -92,7 +92,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
 
   function tokenString(quote) {
     return function(stream, state) {
-      var escaped = false, ch;
+      let escaped = false, ch;
       while ((ch = stream.next()) != null) {
         if (ch == quote && !escaped) {
           if (quote == ")") stream.backUp(1);
@@ -137,7 +137,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     return states[state.context.type](type, stream, state);
   }
   function popAndPass(type, stream, state, n) {
-    for (var i = n || 1; i > 0; i--)
+    for (let i = n || 1; i > 0; i--)
       state.context = state.context.prev;
     return pass(type, stream, state);
   }
@@ -145,7 +145,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
   // Parser
 
   function wordAsValue(stream) {
-    var word = stream.current().toLowerCase();
+    let word = stream.current().toLowerCase();
     if (valueKeywords.hasOwnProperty(word))
       override = "atom";
     else if (colorKeywords.hasOwnProperty(word))
@@ -154,7 +154,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
       override = "variable";
   }
 
-  var states = {};
+  let states = {};
 
   states.top = function(type, stream, state) {
     if (type == "{") {
@@ -192,7 +192,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
 
   states.block = function(type, stream, state) {
     if (type == "word") {
-      var word = stream.current().toLowerCase();
+      let word = stream.current().toLowerCase();
       if (propertyKeywords.hasOwnProperty(word)) {
         override = "property";
         return "maybeprop";
@@ -277,7 +277,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     if (type == "interpolation") return pushContext(state, stream, "interpolation");
 
     if (type == "word") {
-      var word = stream.current().toLowerCase();
+      let word = stream.current().toLowerCase();
       if (word == "only" || word == "not" || word == "and" || word == "or")
         override = "keyword";
       else if (mediaTypes.hasOwnProperty(word))
@@ -374,7 +374,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
 
     token: function(stream, state) {
       if (!state.tokenize && stream.eatSpace()) return null;
-      var style = (state.tokenize || tokenBase)(stream, state);
+      let style = (state.tokenize || tokenBase)(stream, state);
       if (style && typeof style == "object") {
         type = style[1];
         style = style[0];
@@ -385,8 +385,8 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     },
 
     indent: function(state, textAfter) {
-      var cx = state.context, ch = textAfter && textAfter.charAt(0);
-      var indent = cx.indent;
+      let cx = state.context, ch = textAfter && textAfter.charAt(0);
+      let indent = cx.indent;
       if (cx.type == "prop" && (ch == "}" || ch == ")")) cx = cx.prev;
       if (cx.prev) {
         if (ch == "}" && (cx.type == "block" || cx.type == "top" ||
@@ -412,23 +412,23 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
 });
 
   function keySet(array) {
-    var keys = {};
-    for (var i = 0; i < array.length; ++i) {
+    let keys = {};
+    for (let i = 0; i < array.length; ++i) {
       keys[array[i].toLowerCase()] = true;
     }
     return keys;
   }
 
-  var documentTypes_ = [
+  let documentTypes_ = [
     "domain", "regexp", "url", "url-prefix"
   ], documentTypes = keySet(documentTypes_);
 
-  var mediaTypes_ = [
+  let mediaTypes_ = [
     "all", "aural", "braille", "handheld", "print", "projection", "screen",
     "tty", "tv", "embossed"
   ], mediaTypes = keySet(mediaTypes_);
 
-  var mediaFeatures_ = [
+  let mediaFeatures_ = [
     "width", "min-width", "max-width", "height", "min-height", "max-height",
     "device-width", "min-device-width", "max-device-width", "device-height",
     "min-device-height", "max-device-height", "aspect-ratio",
@@ -441,12 +441,12 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "pointer", "any-pointer", "hover", "any-hover"
   ], mediaFeatures = keySet(mediaFeatures_);
 
-  var mediaValueKeywords_ = [
+  let mediaValueKeywords_ = [
     "landscape", "portrait", "none", "coarse", "fine", "on-demand", "hover",
     "interlace", "progressive"
   ], mediaValueKeywords = keySet(mediaValueKeywords_);
 
-  var propertyKeywords_ = [
+  let propertyKeywords_ = [
     "align-content", "align-items", "align-self", "alignment-adjust",
     "alignment-baseline", "anchor-point", "animation", "animation-delay",
     "animation-direction", "animation-duration", "animation-fill-mode",
@@ -538,7 +538,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "glyph-orientation-vertical", "text-anchor", "writing-mode"
   ], propertyKeywords = keySet(propertyKeywords_);
 
-  var nonStandardPropertyKeywords_ = [
+  let nonStandardPropertyKeywords_ = [
     "scrollbar-arrow-color", "scrollbar-base-color", "scrollbar-dark-shadow-color",
     "scrollbar-face-color", "scrollbar-highlight-color", "scrollbar-shadow-color",
     "scrollbar-3d-light-color", "scrollbar-track-color", "shape-inside",
@@ -546,17 +546,17 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "searchfield-results-decoration", "zoom"
   ], nonStandardPropertyKeywords = keySet(nonStandardPropertyKeywords_);
 
-  var fontProperties_ = [
+  let fontProperties_ = [
     "font-family", "src", "unicode-range", "font-variant", "font-feature-settings",
     "font-stretch", "font-weight", "font-style"
   ], fontProperties = keySet(fontProperties_);
 
-  var counterDescriptors_ = [
+  let counterDescriptors_ = [
     "additive-symbols", "fallback", "negative", "pad", "prefix", "range",
     "speak-as", "suffix", "symbols", "system"
   ], counterDescriptors = keySet(counterDescriptors_);
 
-  var colorKeywords_ = [
+  let colorKeywords_ = [
     "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige",
     "bisque", "black", "blanchedalmond", "blue", "blueviolet", "brown",
     "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue",
@@ -585,7 +585,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "whitesmoke", "yellow", "yellowgreen"
   ], colorKeywords = keySet(colorKeywords_);
 
-  var valueKeywords_ = [
+  let valueKeywords_ = [
     "above", "absolute", "activeborder", "additive", "activecaption", "afar",
     "after-white-space", "ahead", "alias", "all", "all-scroll", "alphabetic", "alternate",
     "always", "amharic", "amharic-abegede", "antialiased", "appworkspace",
@@ -682,13 +682,13 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "xx-large", "xx-small"
   ], valueKeywords = keySet(valueKeywords_);
 
-  var allWords = documentTypes_.concat(mediaTypes_).concat(mediaFeatures_).concat(mediaValueKeywords_)
+  let allWords = documentTypes_.concat(mediaTypes_).concat(mediaFeatures_).concat(mediaValueKeywords_)
     .concat(propertyKeywords_).concat(nonStandardPropertyKeywords_).concat(colorKeywords_)
     .concat(valueKeywords_);
   CodeMirror.registerHelper("hintWords", "css", allWords);
 
   function tokenCComment(stream, state) {
-    var maybeEnd = false, ch;
+    let maybeEnd = false, ch;
     while ((ch = stream.next()) != null) {
       if (maybeEnd && ch == "/") {
         state.tokenize = null;
