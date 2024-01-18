@@ -23,7 +23,7 @@ span {
 
 ## Task 2: class and id selectors
 
-This tests that the student understands he different between these and also how to target multiple classes on an item.
+This tests that the student understands the difference between these and also how to target multiple classes on an item.
 
 ```
 #special {
@@ -78,7 +78,7 @@ tr:nth-child(even) {
 
 ## Task 4: Combinators
 
-This task checks that the student understands how to use the different combinators. They are asked to make paragraphs that dirctly follow an `h2` red, and to remove the list bullets and add a bottom border only for the direct children of the ul with a class of `.list`.
+This task checks that the student understands how to use the different combinators. They are asked to make paragraphs that directly follow an `h2` red, and to remove the list bullets and add a bottom border only for the direct children of the ul with a class of `.list`.
 
 ```
 h2 + p {
