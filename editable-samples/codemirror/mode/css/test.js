@@ -2,7 +2,7 @@
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
 (function() {
-  var mode = CodeMirror.getMode({indentUnit: 2}, "css");
+  let mode = CodeMirror.getMode({indentUnit: 2}, "css");
   function MT(name) { test.mode(name, mode, Array.prototype.slice.call(arguments, 1)); }
 
   // Error, because "foobarhello" is neither a known type or property, but

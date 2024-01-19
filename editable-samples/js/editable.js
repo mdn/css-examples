@@ -1,17 +1,17 @@
-var element = document.getElementById("example-element");
-var input = document.getElementById("input");
-var editor = document.getElementById("editor");
-var editorContent = document.getElementById("editor-content");
-var reset = document.getElementById("reset");
+let element = document.getElementById("example-element");
+let input = document.getElementById("input");
+let editor = document.getElementById("editor");
+let editorContent = document.getElementById("editor-content");
+let reset = document.getElementById("reset");
 
-var cmOptions = {
+let cmOptions = {
   mode: "css",
   theme: "eclipse",
   lineNumbers: true,
   showCursorWhenSelecting: true,
 };
 
-var cmEditor = CodeMirror.fromTextArea(editorContent, cmOptions);
+let cmEditor = CodeMirror.fromTextArea(editorContent, cmOptions);
 cmEditor.setSize("100%", 50);
 cmEditor.focus();
 cmEditor.doc.setCursor({ line: 0, pos: -1 });

@@ -7,7 +7,7 @@
 
     <style>
       @font-face {
-        font-family: "Amstelvar VF";
+        font-family: "Amstellet VF";
         src: url("fonts/AmstelvarAlpha-VF.woff2") format("woff2-variations");
         font-weight: 300 900;
         font-stretch: 75% 150%;
@@ -28,7 +28,7 @@
 
       body {
         font:
-          1.2em "Amstelvar VF",
+          1.2em "Amstellet VF",
           Georgia,
           serif;
         margin: 20px;
@@ -222,32 +222,32 @@
     </div>
   </body>
   <script>
-    var section0 = document.querySelector(".section0");
-    var editable0 = document.querySelector(".editable0");
-    var textareaHTML0 = document.querySelector(".playable-html0");
-    var textareaCSS0 = document.querySelector(".playable-css0");
-    var section1 = document.querySelector(".section1");
-    var editable1 = document.querySelector(".editable1");
-    var textareaHTML1 = document.querySelector(".playable-html1");
-    var textareaCSS1 = document.querySelector(".playable-css1");
-    var section2 = document.querySelector(".section2");
-    var editable2 = document.querySelector(".editable2");
-    var textareaHTML2 = document.querySelector(".playable-html2");
-    var textareaCSS2 = document.querySelector(".playable-css2");
-    var section3 = document.querySelector(".section3");
-    var editable3 = document.querySelector(".editable3");
-    var textareaHTML3 = document.querySelector(".playable-html3");
-    var textareaCSS3 = document.querySelector(".playable-css3");
-    var rangeinput = document.querySelector(".controls--slider");
-    var reset = document.getElementById("reset");
-    var htmlCode0 = textareaHTML0.value;
-    var cssCode0 = textareaCSS0.value;
-    var htmlCode1 = textareaHTML1.value;
-    var cssCode1 = textareaCSS1.value;
-    var htmlCode2 = textareaHTML2.value;
-    var cssCode2 = textareaCSS2.value;
-    var htmlCode3 = textareaHTML3.value;
-    var cssCode3 = textareaCSS3.value;
+    let section0 = document.querySelector(".section0");
+    let editable0 = document.querySelector(".editable0");
+    let textareaHTML0 = document.querySelector(".playable-html0");
+    let textareaCSS0 = document.querySelector(".playable-css0");
+    let section1 = document.querySelector(".section1");
+    let editable1 = document.querySelector(".editable1");
+    let textareaHTML1 = document.querySelector(".playable-html1");
+    let textareaCSS1 = document.querySelector(".playable-css1");
+    let section2 = document.querySelector(".section2");
+    let editable2 = document.querySelector(".editable2");
+    let textareaHTML2 = document.querySelector(".playable-html2");
+    let textareaCSS2 = document.querySelector(".playable-css2");
+    let section3 = document.querySelector(".section3");
+    let editable3 = document.querySelector(".editable3");
+    let textareaHTML3 = document.querySelector(".playable-html3");
+    let textareaCSS3 = document.querySelector(".playable-css3");
+    let rangeinput = document.querySelector(".controls--slider");
+    let reset = document.getElementById("reset");
+    let htmlCode0 = textareaHTML0.value;
+    let cssCode0 = textareaCSS0.value;
+    let htmlCode1 = textareaHTML1.value;
+    let cssCode1 = textareaCSS1.value;
+    let htmlCode2 = textareaHTML2.value;
+    let cssCode2 = textareaCSS2.value;
+    let htmlCode3 = textareaHTML3.value;
+    let cssCode3 = textareaCSS3.value;
 
     function fillCode() {
       editable0.innerHTML = textareaCSS0.value;

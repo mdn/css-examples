@@ -1,22 +1,22 @@
-var element = document.getElementById("example-element");
-var input = document.getElementById("input");
-var reset = document.getElementById("reset");
-var edit = document.getElementById("edit");
+let element = document.getElementById("example-element");
+let input = document.getElementById("input");
+let reset = document.getElementById("reset");
+let edit = document.getElementById("edit");
 
-var cmOptions = {
+let cmOptions = {
   mode: "css",
   theme: "mdn-like",
 };
 
-var cmEditor = CodeMirror(document.body, cmOptions);
+let cmEditor = CodeMirror(document.body, cmOptions);
 cmEditor.setSize("100%", 50);
 cmEditor.doc.setValue(cmInitContent);
 
 CodeMirror.hint.css = function (cm) {
-  var inner = { from: cm.getCursor(), to: cm.getCursor(), list: [] };
+  let inner = { from: cm.getCursor(), to: cm.getCursor(), list: [] };
 
-  var currentPos = cm.getCursor();
-  var preceding = cm.getRange({ line: currentPos.line, ch: 0 }, currentPos);
+  let currentPos = cm.getCursor();
+  let preceding = cm.getRange({ line: currentPos.line, ch: 0 }, currentPos);
   if (preceding == cmMatchToShowCompletions) {
     inner.list = cmCompletionChoices;
   }
@@ -33,13 +33,13 @@ reset.addEventListener("click", function () {
 });
 
 function selectValue() {
-  var value = cmEditor.doc.getValue();
-  var start = value.indexOf(":") + 1;
+  let value = cmEditor.doc.getValue();
+  let start = value.indexOf(":") + 1;
   if (value.length > start && value[start] === " ") {
     start++;
   }
 
-  var end = value.length - 1;
+  let end = value.length - 1;
   if (value.length > 0 && value[end - 1] === ";") {
     end--;
   }
@@ -56,7 +56,7 @@ cmEditor.on("change", applyCode);
 window.addEventListener("load", applyCode);
 
 function showCompletions(cm, event) {
-  var popupKeyCodes = {
+  let popupKeyCodes = {
     9: "tab",
     13: "enter",
     27: "escape",

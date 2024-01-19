@@ -1,8 +1,8 @@
 (function () {
-  var $styleSelect = document.querySelector("#style-select"),
+  let $styleSelect = document.querySelector("#style-select"),
     $demoList = document.querySelector("#demo-list"),
     $codeContainer = document.querySelector("#code");
-  var examples = {
+  let examples = {
     cyclic: {
       code: [
         "@counter-style blacknwhite {\n",
@@ -315,7 +315,7 @@
   $styleSelect.value = "cyclic";
 
   $styleSelect.addEventListener("change", function (e) {
-    var selectedKey = $styleSelect.value;
+    let selectedKey = $styleSelect.value;
     $codeContainer.innerHTML = examples[selectedKey].code;
     $demoList.className = "demo-" + selectedKey;
   });

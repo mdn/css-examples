@@ -87,7 +87,7 @@ body {
 }
 </textarea></form>
     <script>
-      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      let editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         extraKeys: {"Ctrl-Space": "autocomplete"},
         lineNumbers: true,
         matchBrackets: "text/x-less",

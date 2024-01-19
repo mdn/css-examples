@@ -40,16 +40,16 @@
     </div>
 
     <script>
-      var easingFunctions = ["steps(5)", "steps(10)", "ease-in"];
+      let easingFunctions = ["steps(5)", "steps(10)", "ease-in"];
 
-      var keyFrames = [
+      let keyFrames = [
         { width: "0%", background: "red" },
         { width: "100%", background: "blue" },
       ];
 
-      var divs = document.querySelectorAll("div");
+      let divs = document.querySelectorAll("div");
 
-      for (var i = 0; i < divs.length; i++) {
+      for (let i = 0; i < divs.length; i++) {
         divs[i].animate(keyFrames, {
           easing: easingFunctions[i],
           duration: 5000,

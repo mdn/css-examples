@@ -7,7 +7,7 @@
 
     <style>
       @font-face {
-        font-family: "Amstelvar VF";
+        font-family: "Amstellet VF";
         src: url("fonts/AmstelvarAlpha-VF.woff2") format("woff2-variations");
         font-weight: 300 900;
         font-stretch: 75% 150%;
@@ -28,7 +28,7 @@
 
       body {
         font:
-          1.2em "Amstelvar VF",
+          1.2em "Amstellet VF",
           Georgia,
           serif;
         margin: 20px;
@@ -313,19 +313,19 @@
     </div>
   </body>
   <script>
-    var section1 = document.querySelector(".section1");
-    var editable1 = document.querySelector(".editable1");
-    var textareaHTML1 = document.querySelector(".playable-html1");
-    var textareaCSS1 = document.querySelector(".playable-css1");
-    var section2 = document.querySelector(".section2");
-    var editable2 = document.querySelector(".editable2");
-    var textareaHTML2 = document.querySelector(".playable-html2");
-    var textareaCSS2 = document.querySelector(".playable-css2");
-    var reset = document.getElementById("reset");
-    var htmlCode1 = textareaHTML1.value;
-    var cssCode1 = textareaCSS1.value;
-    var htmlCode2 = textareaHTML2.value;
-    var cssCode2 = textareaCSS2.value;
+    let section1 = document.querySelector(".section1");
+    let editable1 = document.querySelector(".editable1");
+    let textareaHTML1 = document.querySelector(".playable-html1");
+    let textareaCSS1 = document.querySelector(".playable-css1");
+    let section2 = document.querySelector(".section2");
+    let editable2 = document.querySelector(".editable2");
+    let textareaHTML2 = document.querySelector(".playable-html2");
+    let textareaCSS2 = document.querySelector(".playable-css2");
+    let reset = document.getElementById("reset");
+    let htmlCode1 = textareaHTML1.value;
+    let cssCode1 = textareaCSS1.value;
+    let htmlCode2 = textareaHTML2.value;
+    let cssCode2 = textareaCSS2.value;
 
     function fillCode() {
       editable1.innerHTML = textareaCSS1.value;

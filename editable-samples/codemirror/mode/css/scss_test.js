@@ -2,7 +2,7 @@
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
 (function() {
-  var mode = CodeMirror.getMode({indentUnit: 2}, "text/x-scss");
+  let mode = CodeMirror.getMode({indentUnit: 2}, "text/x-scss");
   function MT(name) { test.mode(name, mode, Array.prototype.slice.call(arguments, 1), "scss"); }
 
   MT('url_with_quotation',
