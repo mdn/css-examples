@@ -4,7 +4,7 @@
 
 In this task the student needs to know that when using the alternate box model, the width is the size of the total of content, padding and border. Therefore to make it match the standard box model example they need to set the width to 390px.
 
-```
+```css
 .alternate {
   box-sizing: border-box;
   width: 390px;
@@ -15,7 +15,7 @@ In this task the student needs to know that when using the alternate box model, 
 
 This task involves the student using the margin, border and padding properties correctly. They might choose to use the longhand properties instead however in particular when setting the padding to all sides, the shorthand is probably the better choice.
 
-```
+```css
 .box {
   border: 5px dotted black;
   margin: 20px 1em 40px 2em;
@@ -27,7 +27,7 @@ This task involves the student using the margin, border and padding properties c
 
 In this task the student needs to know that by using `display: inline-block` the block direction margin, border and padding will cause the other lines to be pushed away from the element.
 
-```
+```css
 .box span {
   background-color: pink;
   border: 5px solid black;

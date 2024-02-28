@@ -1,0 +1,12 @@
+{
+  "config": {
+    "extends": "./.markdownlint.jsonc"
+  },
+  "ignores": [
+    "node_modules",
+    ".git",
+    ".github",
+    "tests",
+    "editable-samples/codemirror"
+  ]
+}
