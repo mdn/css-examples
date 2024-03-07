@@ -14,8 +14,8 @@
       }
       @supports not (row-gap: 10px) {
         .box {
-          border: 4px solid red;
-          color: red;
+          border: 4px dashed darkgreen;
+          color: darkgreen;
         }
       }
     </style>
@@ -24,8 +24,8 @@
   <body>
     <section class="preview">
       <div class="box">
-        If your browser does not support row-gap, the text and border will be
-        red.
+        If your browser does not support row-gap, the content will be darkgreen
+        with a dashed border.
       </div>
     </section>
 
@@ -36,14 +36,15 @@
 }
 @supports not (row-gap: 10px) {
   .box {
-    border: 4px solid red;
-    color: red;
+    border: 4px dashed darkgreen;
+    color: darkgreen;
   }
-}</textarea>
+}</textarea
+    >
 
     <textarea class="playable playable-html" style="height: 120px">
 <div class="box">
-If your browser does not support row-gap, the text and border will be red.
+If your browser does not support row-gap, the content will be darkgreen with a dashed border.
 </div></textarea
     >
 

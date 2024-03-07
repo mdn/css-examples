@@ -34,8 +34,11 @@ function choose(choice) {
 function onChoose(e) {
   // highlght the code we are leaving
   var selected = document.querySelector(".selected");
-  if (selected && (e.currentTarget != selected)) {
-    var highlighted = Prism.highlight(selected.firstChild.textContent, Prism.languages.css);
+  if (selected && e.currentTarget != selected) {
+    var highlighted = Prism.highlight(
+      selected.firstChild.textContent,
+      Prism.languages.css,
+    );
     selected.firstChild.innerHTML = highlighted;
   }
   if (selected) {
@@ -51,22 +54,21 @@ function onChoose(e) {
 }
 
 function onEdit(e) {
-  applyCode(e.currentTarget.textContent, e.currentTarget.parentNode); 
+  applyCode(e.currentTarget.textContent, e.currentTarget.parentNode);
 }
-
 
 function copyTextOnly(e) {
   var selection = window.getSelection();
   var range = selection.getRangeAt(0);
 
-  e.clipboardData.setData('text/plain', range.toString());
-  e.clipboardData.setData('text/html', range.toString());
+  e.clipboardData.setData("text/plain", range.toString());
+  e.clipboardData.setData("text/html", range.toString());
   e.preventDefault();
   e.stopPropagation();
 }
 
-document.addEventListener('cut', copyTextOnly);
-document.addEventListener('copy', copyTextOnly);
+document.addEventListener("cut", copyTextOnly);
+document.addEventListener("copy", copyTextOnly);
 
 for (exampleChoice of exampleChoices) {
   originalChoices.push(exampleChoice.textContent);
@@ -75,7 +77,7 @@ for (exampleChoice of exampleChoices) {
   }
   exampleChoice.addEventListener("click", onChoose);
   exampleChoice.firstChild.addEventListener("keyup", onEdit);
-  exampleChoice.querySelector(".reset").addEventListener("click", function(e) {
+  exampleChoice.querySelector(".reset").addEventListener("click", function (e) {
     var choice = e.target.parentNode;
     var replacementText = originalChoices[indexOf(exampleChoices, choice)];
     var highlighted = Prism.highlight(replacementText, Prism.languages.css);

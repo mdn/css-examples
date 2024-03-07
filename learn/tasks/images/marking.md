@@ -4,11 +4,11 @@
 
 The student has been asked to make the image fill the box, retaining aspect ratio. It has been explained that it is ok if some parts of the image are therefore cropped. Using `object-fit: cover` is the correct choice, they also need to set the width and height to 100%;
 
-```
+```css
 img {
- height: 100%;
- width: 100%;
- object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 ```
 
@@ -22,7 +22,7 @@ The student has been asked to perform various tasks to style a form field and su
 - Make the button also use the same font size as the rest of the form.
 - Give the button a purple background, white foreground, no border and rounded corners of 5px.
 
-```
+```css
 .myform {
   border: 2px solid #000;
   padding: 5px;

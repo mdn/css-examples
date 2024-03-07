@@ -1,0 +1,8 @@
+// This file defines our configuration for Markdownlint. See
+// https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+// for more details on each rule.
+
+{
+  "first-line-heading": false,
+  "line-length": false
+}

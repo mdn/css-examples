@@ -1,12 +1,12 @@
 # Selectors Marking Guide
 
-This marking guide is for the tasks on the Selectors pages and subpages in the CSS Building Blocks section of Learn.
+This marking guide is for the tasks on the Selectors pages and sub-pages in the CSS Building Blocks section of Learn.
 
 ## Task 1: Type selectors
 
 The student needs to target the h1, h2 and span selectors to change their color or size.
 
-```
+```css
 h1 {
   color: blue;
 }
@@ -23,9 +23,9 @@ span {
 
 ## Task 2: class and id selectors
 
-This tests that the student understands he different between these and also how to target multiple classes on an item.
+This tests that the student understands the difference between these and also how to target multiple classes on an item.
 
-```
+```css
 #special {
   background-color: yellow;
 }
@@ -35,7 +35,7 @@ This tests that the student understands he different between these and also how 
 }
 
 .alert.stop {
- background-color: red;
+  background-color: red;
 }
 
 .alert.go {
@@ -49,7 +49,7 @@ Here we ask the student to apply a pseudo-class (:first-child) and pseudo-elemen
 
 We also ask them to style the `:link`, `:visited`, and `:hover` states of the `a` element, and the created striped table rows using the `:nth-child` pseudo-class.
 
-```
+```css
 .container p:first-child {
   font-size: 150%;
 }
@@ -78,9 +78,9 @@ tr:nth-child(even) {
 
 ## Task 4: Combinators
 
-This task checks that the student understands how to use the different combinators. They are asked to make paragraphs that dirctly follow an `h2` red, and to remove the list bullets and add a bottom border only for the direct children of the ul with a class of `.list`.
+This task checks that the student understands how to use the different combinators. They are asked to make paragraphs that directly follow an `h2` red, and to remove the list bullets and add a bottom border only for the direct children of the ul with a class of `.list`.
 
-```
+```css
 h2 + p {
   color: red;
 }
@@ -97,27 +97,27 @@ The student is asked to target the `<a>` element with a title attribute and make
 
 To select elements with a title attribute we can add title inside the square brackets, which will select the second link, which is the only one with a title attribute.
 
-```
+```css
 a[title] {
   border-color: pink;
 }
 ```
 
-Target the <a> element with an href attribute which contains the word contact anywhere in its value and make the border orange (border-color: orange).
+Target the `<a>` element with an href attribute which contains the word contact anywhere in its value and make the border orange (border-color: orange).
 
 There are two things we want to match here, the href value "/contact" and also "../contact". So we need to match the string "contact" anywhere in the value using \*=. This will select the third and fourth links.
 
-```
+```css
 a[href*="contact"] {
   border-color: orange;
 }
 ```
 
-Target the <a> element with an href value starting with https and give it a green border (border-color: green).
+Target the `<a>` element with an href value starting with https and give it a green border (border-color: green).
 
 Here we can look for an href value which starts with "https" and so use ^=, this will only select the first link.
 
-```
+```css
 a[href^="https"] {
   border-color: green;
 }

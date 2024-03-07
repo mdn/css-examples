@@ -8,7 +8,7 @@ They have a link to [a color conversion tool](https://convertingcolors.com/hex-c
 
 ```css
 .hex {
-  background-color: #86DEFA;
+  background-color: #86defa;
 }
 
 .rgb {
@@ -30,7 +30,7 @@ The student is asked to use a variety of length units to size some boxes.
 
 ```css
 h1 {
- font-size: 50px;
+  font-size: 50px;
 }
 
 h2 {
@@ -38,11 +38,11 @@ h2 {
 }
 
 p {
- font-size: 16px;
+  font-size: 16px;
 }
 
-h1+p {
- font-size: 120%;
+h1 + p {
+  font-size: 120%;
 }
 ```
 

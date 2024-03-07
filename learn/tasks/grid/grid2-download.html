@@ -1,58 +1,56 @@
 <!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+    <title>Grid: task 2</title>
 
-  <title>Grid: task 2</title>
+    <link rel="stylesheet" href="../styles.css" />
 
-  <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font:
+          1.2em / 1.5 Helvetica Neue,
+          Helvetica,
+          Arial,
+          sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
 
-  <style>
-    body {
-      background-color: #fff;
-      color: #333;
-      font:
-        1.2em / 1.5 Helvetica Neue,
-        Helvetica,
-        Arial,
-        sans-serif;
-      padding: 1em;
-      margin: 0;
-    }
+      .grid > * {
+        border-radius: 0.5em;
+        color: #fff;
+        padding: 0.5em;
+      }
 
-    .grid>* {
-      border-radius: 0.5em;
-      color: #fff;
-      padding: 0.5em;
-    }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px 100px;
+        gap: 10px;
+      }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 100px 100px 100px;
-      gap: 10px;
-    }
+      .item1 {
+        background-color: rgb(74 102 112 / 70%);
+        border: 5px solid rgb(74 102 112 / 100%);
+      }
 
-    .item1 {
-      background-color: rgb(74 102 112 / 70%);
-      border: 5px solid rgb(74 102 112 / 100%);
-    }
+      .item2 {
+        background-color: rgb(214 162 173 / 70%);
+        border: 5px solid rgb(214 162 173 / 100%);
+      }
+    </style>
+  </head>
 
-    .item2 {
-      background-color: rgb(214 162 173 / 70%);
-      border: 5px solid rgb(214 162 173 / 100%);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="grid">
-    <div class="item1">One</div>
-    <div class="item2">Two</div>
-  </div>
-</body>
-
+  <body>
+    <div class="grid">
+      <div class="item1">One</div>
+      <div class="item2">Two</div>
+    </div>
+  </body>
 </html>

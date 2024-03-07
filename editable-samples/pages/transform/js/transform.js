@@ -1,1 +1,1 @@
-var cmInitContent = 'transform: skew(30deg, 20deg);\n\n';
+var cmInitContent = "transform: skew(30deg, 20deg);\n\n";
