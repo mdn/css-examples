@@ -20,7 +20,7 @@ h2 {
 }
 ```
 
-The student could use the individual border longhands however this is unecessarily verbose as all borders are set to the same color, style and size.
+The student could use the individual border longhands however this is unnecessarily verbose as all borders are set to the same color, style and size.
 
 ## Task 2
 
@@ -43,7 +43,8 @@ There are also some elements which link back to earlier lessons:
 h2 {
   padding: 0 40px;
   text-align: center;
-  background: url(star.png) no-repeat left center,
+  background:
+    url(star.png) no-repeat left center,
     url(star.png) repeat-y right center;
 }
 ```

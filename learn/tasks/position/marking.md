@@ -6,7 +6,7 @@ The aim of the tasks are to demonstrate an understanding of the properties cover
 
 This task covers understanding of `position: relative` and `position: absolute` and how they relate to each other in terms of relative positioning creating a new positioning context.
 
-```
+```css
 .container {
   position: relative;
 }
@@ -26,7 +26,7 @@ For the extra task, the student needs to add a negative `z-index` to the target,
 
 In task 2 we check understanding of `position: fixed` with a slightly different example to that in the materials using a sidebar.
 
-```
+```css
 .sidebar {
   position: fixed;
 }

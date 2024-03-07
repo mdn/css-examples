@@ -1,4 +1,4 @@
-# Multicol Marking Guide
+# Multi-column Marking Guide
 
 The aim of the tasks are to demonstrate an understanding of the properties covered in the [Multiple-column Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout) lesson in Learn Web Development on MDN.
 
@@ -6,7 +6,7 @@ The aim of the tasks are to demonstrate an understanding of the properties cover
 
 This task covers understanding of `column-count` and `column-gap`.
 
-```
+```css
 .container {
   column-count: 3;
   column-gap: 50px;
@@ -17,7 +17,7 @@ This task covers understanding of `column-count` and `column-gap`.
 
 In this task we test for understanding of `column-width`, `column-rule`, and the fact that a rule does not change the size of the gap.
 
-```
+```css
 .container {
   column-width: 200px;
   column-rule: 5px solid #ccc;
@@ -37,8 +37,8 @@ In this task we test for understanding of the `column-span` property.
 
 All the student needs to do is set the element with a class of `.box` to `column-span: all`. This is mostly a task of checking that they select the right element.
 
-```
+```css
 .box {
- column-span: all;
+  column-span: all;
 }
 ```

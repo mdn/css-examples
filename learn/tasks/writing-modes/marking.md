@@ -4,7 +4,7 @@
 
 The student needs to understand to use the `writing-mode` property with a value of `vertical-rl`. Vertical right to left script.
 
-```
+```css
 .box {
   border: 5px solid rebeccapurple;
   background-color: lightgray;
@@ -18,7 +18,7 @@ The student needs to understand to use the `writing-mode` property with a value 
 
 The student needs to apply the `inline-size` and `block-size` properties to replace `width` and `height`.
 
-```
+```css
 .box {
   border: 5px solid rebeccapurple;
   background-color: lightgray;
@@ -33,7 +33,7 @@ The student needs to apply the `inline-size` and `block-size` properties to repl
 
 This task checks understanding of the logical, flow relative mappings for margin, border and padding physical properties.
 
-```
+```css
 .box {
   width: 150px;
   height: 150px;

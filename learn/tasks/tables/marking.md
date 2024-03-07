@@ -1,10 +1,10 @@
 # Marking Guide for Tables tasks
 
-The lesson on styling tables takes a plain table and styles it in a garish way. In the task we ask the student to create a far more subtle version of the table using some best practices for table readability from https://alistapart.com/article/web-typography-tables/.
+The lesson on styling tables takes a plain table and styles it in a garish way. In the task we ask the student to create a far more subtle version of the table using some best practices for table readability from <https://alistapart.com/article/web-typography-tables/>.
 
 The below is a sample of how the end result could be achieved, using similar techniques to the lesson. However there are a number of ways that would be perfectly correct, perhaps slightly more verbose.
 
-```
+```css
 table {
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
@@ -12,9 +12,10 @@ table {
   table-layout: fixed;
 }
 
-th, td {
+th,
+td {
   vertical-align: top;
-  padding: .3em;
+  padding: 0.3em;
 }
 
 tr :nth-child(2),

@@ -4,7 +4,7 @@
 
 One possible solution is as follows:
 
-```
+```css
 #outer #inner a {
   background-color: initial;
 }
@@ -18,8 +18,8 @@ Then the student needs to remember there are special keyword values for all prop
 
 One possible solution is as follows:
 
-```
- @layer yellow, green, purple;
+```css
+@layer yellow, green, purple;
 ```
 
 There is one thing the student needs to do in this task: change the order of precedence so the declaration for the desired color is in the last declared layer, which is what his solution shows.

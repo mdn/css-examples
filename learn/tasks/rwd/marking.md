@@ -4,9 +4,9 @@ The aim of the tasks are to demonstrate an understanding of the properties cover
 
 This task not only asks the student to implement media queries correctly, they will also need to use the things they have learned about CSS Layout.
 
-There is no one right answer however the following code demontrates how simply the task can be achieved, and this is really what we are looking for as it is easy to complicate this task. Using modern layout methods of flexbox and grid means that we only need one media query.
+There is no one right answer however the following code demonstrates how simply the task can be achieved, and this is really what we are looking for as it is easy to complicate this task. Using modern layout methods of flexbox and grid means that we only need one media query.
 
-```
+```css
 @media screen and (min-width: 60em) {
   header {
     display: flex; /* separate the nav and title */
@@ -27,10 +27,10 @@ There is no one right answer however the following code demontrates how simply t
   }
 
   main {
-  display: grid; /* a two column grid layout for the main content and sidebar */
-  grid-template-columns: 3fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
+    display: grid; /* a two column grid layout for the main content and sidebar */
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
   }
 
   .cards {
