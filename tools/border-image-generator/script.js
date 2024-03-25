@@ -1282,7 +1282,7 @@ var BorderImage = (function BorderImage() {
         navigator.clipboard.writeText(output)
       };
 
-      copyButton.addEventListener("mousedown", copy);
+      copyButton.addEventListener("onclick", copy);
     };
 
     var init = function init() {
