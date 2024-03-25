@@ -1109,6 +1109,7 @@ var BorderImage = (function BorderImage() {
       if (value === true) bimgslice += " fill";
 
       preview.style.borderImageSlice = bimgslice;
+      setOutputCSS("slice", bimgslice);
     };
 
     var updateBorderWidth = function updateBorderWidth() {
