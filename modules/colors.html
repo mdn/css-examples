@@ -77,6 +77,10 @@
               <th>HWB</th>
               <td></td>
             </tr>
+            <tr id="colorfunc">
+              <th>color()</th>
+              <td></td>
+            </tr>
           </tbody>
         </table>
 
@@ -144,6 +148,19 @@
           cell.textContent = `rgb(${R} ${G} ${B} / ${opacity})`;
         }
         createHSL(R, G, B, opacity);
+        createColorFunc(R, G, B, opacity);
+      }
+
+      function createColorFunc(r, g, b, opacity) {
+        const cell = document.querySelector("#colorfunc td");
+        const R = Number((r / 255).toFixed(2));
+        const G = Number((g / 255).toFixed(2));
+        const B = Number((b / 255).toFixed(2));
+        if (opacity === 1) {
+          cell.textContent = `color(srgb ${R} ${G} ${B})`;
+        } else {
+          cell.textContent = `color(srgb ${R} ${G} ${B} / ${opacity})`;
+        }
       }
 
       function createHSL(r, g, b, opacity) {
