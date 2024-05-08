@@ -1270,16 +1270,16 @@ var BorderImage = (function BorderImage() {
       var copyButton = getElemById("copy-css");
 
       var copy = function copy() {
-        let output = ""
+        let output = "";
 
         for (const property of document.querySelectorAll(".css-property")) {
           const name = property.querySelector(".name").innerText;
           const value = property.querySelector(".value").innerText;
 
-          output += name+" "+value+"\n"
+          output += name + " " + value + "\n";
         }
 
-        navigator.clipboard.writeText(output)
+        navigator.clipboard.writeText(output);
       };
 
       copyButton.addEventListener("click", copy);
