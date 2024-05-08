@@ -1267,6 +1267,25 @@ var BorderImage = (function BorderImage() {
       }
     };
 
+    var initCodeOutput = function initCodeOutput() {
+      var copyButton = getElemById("copy-css");
+
+      var copy = function copy() {
+        let output = "";
+
+        for (const property of document.querySelectorAll(".css-property")) {
+          const name = property.querySelector(".name").innerText;
+          const value = property.querySelector(".value").innerText;
+
+          output += name + " " + value + "\n";
+        }
+
+        navigator.clipboard.writeText(output);
+      };
+
+      copyButton.addEventListener("click", copy);
+    };
+
     var init = function init() {
       var gallery = (subject = getElemById("subject"));
       preview = getElemById("preview");
@@ -1281,6 +1300,7 @@ var BorderImage = (function BorderImage() {
       initBorderSliceControls();
       initBorderWidthControls();
       initBorderOutsetControls();
+      initCodeOutput();
 
       var elem = document.querySelectorAll(".guideline");
       var size = elem.length;

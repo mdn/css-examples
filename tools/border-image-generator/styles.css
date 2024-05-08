@@ -972,6 +972,25 @@ body[data-move="Y"] {
   color: #aaa;
 }
 
+#output .title #copy-css {
+  float: right;
+
+  background-color: unset;
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 0 3px 0 #bababa;
+}
+
+#controls .category:hover #copy-css:not(:hover) {
+  color: #aaa;
+}
+
+#output .title #copy-css:hover {
+  cursor: pointer;
+  color: #777;
+}
+
 #output .css-property {
   width: 100%;
   margin: 0;
