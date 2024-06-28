@@ -7,6 +7,7 @@
     <style>
       #color-mixer {
         display: grid;
+        grid-template-columns: 150px 1fr 1fr 150px;
         grid-template-areas:
           "header            header          header              header"
           "text              text            text                text"
@@ -15,7 +16,6 @@
           "mix-output-text   mix-output-text mix-output-text     mix-output-text"
           "percent-one       percent-one     percent-two         percent-two"
           "color-space-label color-space     interpolation-label interpolation";
-        min-width: 500px;
       }
 
       #color-mixer > * {
@@ -70,6 +70,7 @@
         grid-area: mix-output-text;
         margin-bottom: 2rem;
         font-weight: bold;
+        font-size: 0.8rem;
       }
 
       #color-mixer > :nth-child(10) {
