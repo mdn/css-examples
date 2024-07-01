@@ -6,6 +6,7 @@
     <title>Color mixer: Utility to test color-mix() function</title>
     <style>
       #color-mixer {
+        font-family: sans-serif;
         display: grid;
         grid-template-columns: 150px 1fr 1fr 150px;
         grid-template-areas:
@@ -68,7 +69,7 @@
 
       #color-mixer > :nth-child(9) {
         grid-area: mix-output-text;
-        margin-bottom: 2rem;
+        margin: 1rem auto;
         font-weight: bold;
         font-size: 0.8rem;
       }
@@ -76,11 +77,13 @@
       #color-mixer > :nth-child(10) {
         grid-area: percent-one;
         width: 100%;
+        display: flex;
       }
 
       #color-mixer > :nth-child(11) {
         grid-area: percent-two;
         width: 100%;
+        display: flex;
       }
 
       #color-mixer > :nth-child(12) {
@@ -90,7 +93,7 @@
 
       #color-mixer > :nth-child(13) {
         grid-area: color-space;
-        margin: 0 auto 0 0;
+        margin: 0 auto 0 1rem;
       }
 
       #color-mixer > :nth-child(14) {
@@ -100,11 +103,16 @@
 
       #color-mixer > :nth-child(15) {
         grid-area: interpolation;
-        margin: 0 auto 0 0;
+        margin: 0 auto 0 1rem;
       }
 
       input[type="range"] {
         width: 80%;
+      }
+
+      label {
+        font-family: monospace;
+        margin: 1rem;
       }
     </style>
   </head>
@@ -125,12 +133,12 @@
       <label id="mix-output-text"></label>
 
       <div>
-        <label id="percentage-one-label">50%</label
-        ><input id="percentage-one" type="range" name="percent1" />
+        <label id="percentage-one-label">50%</label>
+        <input id="percentage-one" type="range" name="percent1" />
       </div>
       <div>
-        <label id="percentage-two-label">50%</label
-        ><input id="percentage-two" type="range" name="percent2" />
+        <label id="percentage-two-label">50%</label>
+        <input id="percentage-two" type="range" name="percent2" />
       </div>
 
       <label>color space: </label>
@@ -244,11 +252,11 @@
           updateColorMix();
         });
 
-        percentageOne.addEventListener("change", (e) => {
+        percentageOne.addEventListener("input", (e) => {
           percentageOneLabel.innerText = e.target.value + "%";
           updateColorMix();
         });
-        percentageTwo.addEventListener("change", (e) => {
+        percentageTwo.addEventListener("input", (e) => {
           percentageTwoLabel.innerText = e.target.value + "%";
           updateColorMix();
         });
@@ -291,7 +299,6 @@
           colorOne.style.getPropertyValue("background-color")
         );
         root.style.setProperty("--percentage-one", percentageOne.value + "%");
-        console.log(pickerOne);
         colorMixFunction += `${pickerOne.getColor().toHEXA().toString()} ${
           percentageOne.value
         }%, `;
