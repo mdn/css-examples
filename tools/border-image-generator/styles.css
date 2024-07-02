@@ -189,7 +189,6 @@
 
 .ui-dropdown-list {
   width: 100%;
-  height: 150px;
   max-height: 150px;
   margin: 0;
   padding: 0 0.3em;
@@ -842,27 +841,8 @@ body[data-move="Y"] {
 }
 
 #controls .border-repeat .ui-dropdown-list {
-  height: 8.2em;
   border-width: 1px;
   text-align: center;
-}
-
-/* border-image-slice */
-
-#border-slice-control .ui-dropdown-list {
-  height: 4.3em;
-}
-
-/* border-image-width */
-
-#border-width-control .ui-dropdown-list {
-  height: 6.2em;
-}
-
-/* border-image-outset */
-
-#border-outset-control .ui-dropdown-list {
-  height: 4.3em;
 }
 
 #additional-properties .property {

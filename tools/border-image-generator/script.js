@@ -1064,8 +1064,8 @@ var BorderImage = (function BorderImage() {
     var preview_area;
     var dropdown_unit_options = [
       { "": "--", "%": "%" },
-      { px: "px", "%": "%", em: "em" },
-      { px: "px", em: "em" },
+      { px: "px", "%": "%", em: "em", "": "--", auto: "auto" },
+      { px: "px", em: "em", "": "--" },
     ];
 
     var border_slice = [];
@@ -1225,7 +1225,18 @@ var BorderImage = (function BorderImage() {
           else InputSliderManager.setMax(topic, 1000);
 
           border_width_units[id] = obj.value;
-          border_width[id] = border_width_values[id] + obj.value;
+          var thisInput = document.querySelector(".ui-input-slider[data-topic='" + topic + "']");
+          if (obj.value === "auto") {
+            thisInput.querySelector("input").style.visibility = "hidden";
+            thisInput.querySelector(".ui-input-slider-left").style.visibility = "hidden";
+            thisInput.querySelector(".ui-input-slider-right").style.visibility = "hidden";
+            border_width[id] = "auto";
+          } else {
+            thisInput.querySelector("input").style.visibility = "visible";
+            thisInput.querySelector(".ui-input-slider-left").style.visibility = "visible";
+            thisInput.querySelector(".ui-input-slider-right").style.visibility = "visible";
+            border_width[id] = border_width_values[id] + obj.value;
+          }
           updateBorderWidth();
         });
       };
