@@ -51,6 +51,9 @@
         height: 100px !important;
         border-radius: 20% 0 0 20%;
         cursor: pointer;
+        border: none;
+        z-index: 1;
+        box-shadow: -5px 5px 5px grey;
       }
 
       #color-mixer > :nth-child(7) {
@@ -65,11 +68,14 @@
         height: 100px;
         border-radius: 0 20% 20% 0;
         cursor: pointer;
+        border: none;
+        z-index: 1;
+        box-shadow: 5px 5px 5px grey;
       }
 
       #color-mixer > :nth-child(9) {
         grid-area: mix-output-text;
-        margin: 1rem auto;
+        margin: 1rem auto auto 1rem;
         font-weight: bold;
         font-size: 0.8rem;
         height: 2.5rem;
@@ -81,6 +87,12 @@
         display: flex;
       }
 
+      #percentage-one-label,
+      #percentage-two-label {
+        width: 2rem;
+        text-align: end;
+      }
+
       #color-mixer > :nth-child(11) {
         grid-area: percent-two;
         width: 100%;
@@ -89,22 +101,22 @@
 
       #color-mixer > :nth-child(12) {
         grid-area: color-space-label;
-        margin: 0 0 0 auto;
+        margin: 0.5rem 0 0 auto;
       }
 
       #color-mixer > :nth-child(13) {
         grid-area: color-space;
-        margin: 0 auto 0 1rem;
+        margin: 0.5rem auto 0 1rem;
       }
 
       #color-mixer > :nth-child(14) {
         grid-area: interpolation-label;
-        margin: 0 0 0 auto;
+        margin: 0.5rem 0 0 auto;
       }
 
       #color-mixer > :nth-child(15) {
         grid-area: interpolation;
-        margin: 0 auto 0 1rem;
+        margin: 0.5rem auto 0 1rem;
       }
 
       input[type="range"] {
@@ -115,6 +127,11 @@
         font-family: monospace;
         margin: 1rem;
       }
+
+      *:focus {
+        outline: 2px dashed purple;
+        outline-offset: 1px;
+      }
     </style>
   </head>
 
@@ -123,13 +140,25 @@
       <h3>Color mixer</h3>
       <p>Click on 'color-one' and 'color-two' to select colors.</p>
 
-      <div>color-one</div>
+      <label>color-one</label>
       <div>mixed-color</div>
-      <div>color-two</div>
+      <label>color-two</label>
 
-      <div id="color-one" class="color-one"></div>
+      <button
+        id="color-one"
+        type="button"
+        class="color-one"
+        role="button"
+        aria-label="toggle color picker dialog"
+        tabindex="0"></button>
       <div id="mixed-color"></div>
-      <div id="color-two" class="color-two"></div>
+      <button
+        id="color-two"
+        type="button"
+        class="color-two"
+        role="button"
+        aria-label="toggle color picker dialog"
+        tabindex="0"></button>
 
       <label id="mix-output-text"></label>
 
@@ -238,9 +267,25 @@
         pickerOne = Pickr.create(pickerOptions);
         pickerOne.setColor("#ff7f50");
         colorOne.style.setProperty("background-color", "#ff7f50");
-        pickerOne.on("change", (color, source, instance) => {
+        pickerOne.on("change", (color) => {
           colorOne.style.setProperty("background-color", color.toRGBA());
           updateColorMix();
+        });
+        pickerOne.on("cancel", (instance) => {
+          colorOne.style.setProperty(
+            "background-color",
+            instance.getColor().toRGBA()
+          );
+          updateColorMix();
+        });
+        pickerOne.on("show", (_, instance) => {
+          instance
+            .getRoot()
+            .app.querySelector(":is(button, [tabindex])")
+            .focus();
+        });
+        pickerOne.on("hide", (instance) => {
+          colorOne.focus();
         });
 
         pickerOptions.el = ".color-two";
@@ -251,6 +296,22 @@
         pickerTwo.on("change", (color, source, instance) => {
           colorTwo.style.setProperty("background-color", color.toRGBA());
           updateColorMix();
+        });
+        pickerTwo.on("cancel", (instance) => {
+          colorTwo.style.setProperty(
+            "background-color",
+            instance.getColor().toRGBA()
+          );
+          updateColorMix();
+        });
+        pickerTwo.on("show", (_, instance) => {
+          instance
+            .getRoot()
+            .app.querySelector(":is(button, [tabindex])")
+            .focus();
+        });
+        pickerTwo.on("hide", (instance) => {
+          colorTwo.focus();
         });
 
         percentageOne.addEventListener("input", (e) => {
