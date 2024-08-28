@@ -477,7 +477,7 @@ body[data-move="Y"] {
 
 #remote-url:focus {
   box-shadow: 0px 0px 3px -1px #379b4a; /*#68ACE8; */
-  border-color: rgba(55, 155, 74, 0.5);
+  border-color: rgb(55 155 74 / 0.5);
   width: 450px;
 }
 
@@ -511,8 +511,8 @@ body[data-move="Y"] {
 }
 
 #subject .guideline {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgb(255 255 255 / 0.7);
+  border: 1px solid rgb(0 0 0 / 0.3);
   position: absolute;
 }
 

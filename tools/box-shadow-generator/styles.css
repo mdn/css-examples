@@ -672,10 +672,10 @@ body {
   background: url("picker_mask_200.png");
   background:
     -moz-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
-    -moz-linear-gradient(left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    -moz-linear-gradient(left, #fff 0%, rgb(255 255 255 / 0) 100%);
   background:
     -webkit-linear-gradient(bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
-    -webkit-linear-gradient(left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    -webkit-linear-gradient(left, #fff 0%, rgb(255 255 255 / 0) 100%);
   background-color: #f00;
   float: left;
 }
