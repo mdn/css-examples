@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: "0 9 1 * *"
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   lock:
     uses: mdn/workflows/.github/workflows/lock-closed.yml@main
